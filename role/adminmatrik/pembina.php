@@ -106,8 +106,8 @@
                             </div>
                             <select class="form-control" name="gender">
                               <option>Pilih Jenis Kelamin</option>
-                              <option>Laki-laki</option>
-                              <option>Perempuan</option>
+                              <option>Ikhwan</option>
+                              <option>Akhwat</option>
                             </select>                    
                         </div>                            
                           </div>                         
