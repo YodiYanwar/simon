@@ -179,7 +179,9 @@
     <script type="text/javascript">
       //Date picker
       $('#datepicker').datepicker({
-        autoclose: true
+        format: "yyyy-mm-dd",
+        autoclose: true,
+        todayHighlight: true
       })      
 
       $('[data-mask]').inputmask()
