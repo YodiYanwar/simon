@@ -48,10 +48,10 @@
                   <th>Aksi</th>
                 </tr>
                   <?php 
-                    $rowaPembina = tampilPembina();
+                    $dataPembina = tampilPembina();
                     
                     $no = 1;
-                    foreach($rowaPembina as $row){
+                    foreach($dataPembina as $row){
 
                    ?>
                 <tr>
@@ -60,11 +60,11 @@
                   <td><?php echo $row['j_kelamin'] ?></td>
                   <td><?php echo $row['email'] ?></td>
                   <td><?php echo $row['telp'] ?></td>
-                  <td><!--
-                    <button class="btn btn-outline-warning btn-sm" title="Edit <?php echo $row['nama'] ?>" data-toggle="modal" data-target="#editMhs"><i class="fa fa-edit" aria-hidden="true"></i></button>&nbsp;
-                    -->
+                  <td>
+                    <button class="btn btn-warning btn-sm" title="Edit <?php echo $row['nama'] ?>" data-toggle="modal" data-target="#editMhs"><i class="fa fa-pencil fa-lg" aria-hidden="true"></i></button>&nbsp;
+                    
                       
-                    <?php //echo "<button class='btn btn-outline-danger btn-sm' title='Hapus ".$row['nama']."' data-toggle='modal' data-target='#hapusMhs' data-href='hapusmhs.php?id=".$row['id']."'><i class='fa fa-trash' aria-hidden='true'></i></button>"; ?>                          
+                    <?php echo "<button class='btn btn-danger btn-sm' title='Hapus ".$row['nama']."' data-toggle='modal' data-target='#hapusMhs' data-href='simon/index.php?page=pembina&hapusid=".$row['id_pembina']."'><i class='fa fa-trash fa-lg' aria-hidden='true'></i></button>"; ?>                          
                     
                   </td>
                 </tr>
