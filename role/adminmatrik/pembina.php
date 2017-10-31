@@ -119,7 +119,7 @@
                             <div class="input-group-addon">
                               <i class="fa fa-calendar"></i>
                             </div>
-                            <input type="text" class="form-control pull-right" id="datepicker">
+                            <input type="text" class="form-control pull-right" id="datepicker" name="tgl_lahir">
                           </div>
                           <!-- /.input group -->                          
                         </div>
@@ -165,7 +165,7 @@
                       <div class="form-group">
                         <label for="telp" class="col-sm-2 control-label">No. Telp</label>
                         <div class="col-sm-10">
-                          <input type="text" name="telp" placeholder="No Telepon" id="telp" class="form-control" data-inputmask='"mask": "999-9999-9999"' data-mask required />
+                          <input type="number" name="telp" placeholder="No Telepon" id="telp" class="form-control" required />
                         </div>
                       </div>
                       <div class="form-group">
@@ -194,9 +194,9 @@
 
     <?php 
       if (isset($_POST['tambahPembina'])) {
-        tambahPembina($_POST['nama'], $_POST['gender'], $_POST['gelar'], $_POST['asalkota'], $_POST['email'], $_POST['telp'], $_POST['username'], $_POST['password']);
+        tambahPembina($_POST['nama'], $_POST['gender'], date("Y-m-d", strtotime($_POST['tgl_lahir'])), $_POST['gelar'], $_POST['asalkota'], $_POST['email'], $_POST['telp'], $_POST['username'], $_POST['password']);
         
-        echo "<script>document.location='/simon/adminmatrik/index.php?page=pembina'</script>";
+        echo "<script>document.location='/simon/index.php?page=pembina'</script>";
       }
     ?>           
     </section>
