@@ -42,33 +42,35 @@
                 <tr>
                   <th>NO</th>
                   <th>Nama Pembina</th>
+                  <th>Jenis Kelamin</th>
                   <th>Email</th>
                   <th>Telp</th>
+                  <th>Aksi</th>
                 </tr>
+                  <?php 
+                    $rowaPembina = tampilPembina();
+                    
+                    $no = 1;
+                    foreach($rowaPembina as $row){
+
+                   ?>
                 <tr>
-                  <td>183</td>
-                  <td>John Doe</td>
-                  <td>11-7-2014</td>
-                  <td><span class="label label-success">Approved</span></td>
+                  <td><?php echo $no ?></td>
+                  <td><?php echo "<a href='simon/index.php?page=pembina&id=".$row['id_pembina']."'>".$row['nama']."</a>" ?></td>
+                  <td><?php echo $row['j_kelamin'] ?></td>
+                  <td><?php echo $row['email'] ?></td>
+                  <td><?php echo $row['telp'] ?></td>
+                  <td><!--
+                    <button class="btn btn-outline-warning btn-sm" title="Edit <?php echo $row['nama'] ?>" data-toggle="modal" data-target="#editMhs"><i class="fa fa-edit" aria-hidden="true"></i></button>&nbsp;
+                    -->
+                      
+                    <?php //echo "<button class='btn btn-outline-danger btn-sm' title='Hapus ".$row['nama']."' data-toggle='modal' data-target='#hapusMhs' data-href='hapusmhs.php?id=".$row['id']."'><i class='fa fa-trash' aria-hidden='true'></i></button>"; ?>                          
+                    
+                  </td>
                 </tr>
-                <tr>
-                  <td>219</td>
-                  <td>Alexander Pierce</td>
-                  <td>11-7-2014</td>
-                  <td><span class="label label-warning">Pending</span></td>
-                </tr>
-                <tr>
-                  <td>657</td>
-                  <td>Bob Doe</td>
-                  <td>11-7-2014</td>
-                  <td><span class="label label-primary">Approved</span></td>
-                </tr>
-                <tr>
-                  <td>175</td>
-                  <td>Mike Doe</td>
-                  <td>11-7-2014</td>
-                  <td><span class="label label-danger">Denied</span></td>
-                </tr>
+                  <?php 
+                    $no++; }
+                   ?>                
               </table>
             </div>
             <!-- /.box-body -->
