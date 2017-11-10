@@ -17,6 +17,7 @@
             <li><a href="?page=mahasiswa"><i class="fa fa-users"></i> Mahasiswa</a></li>
             <li><a href="?page=pembina"><i class="fa fa-user"></i> Pembina Mahasiswa</a></li>
           </ul>
+          </li>
       </ul>
     </section>
     <!-- /.sidebar -->
