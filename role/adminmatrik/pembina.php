@@ -38,15 +38,18 @@
             </div>
             <!-- /.box-header -->
             <div class="box-body table-responsive no-padding">
-              <table class="table table-hover">
-                <tr>
-                  <th>NO</th>
-                  <th>Nama Pembina</th>
-                  <th>Jenis Kelamin</th>
-                  <th>Email</th>
-                  <th>Telp</th>
-                  <th>Aksi</th>
-                </tr>
+              <table id="example1" class="table table-bordered table-striped">
+                <thead>
+                  <tr>
+                    <th>NO</th>
+                    <th>Nama Pembina</th>
+                    <th>Jenis Kelamin</th>
+                    <th>Email</th>
+                    <th>Telp</th>
+                    <th>Aksi</th>
+                  </tr>
+                </thead>
+                <tbody>
                   <?php 
                     $dataPembina = tampilPembina();
                     
@@ -70,7 +73,8 @@
                 </tr>
                   <?php 
                     $no++; }
-                   ?>                
+                   ?>      
+                </tbody>          
               </table>
             </div>
             <!-- /.box-body -->

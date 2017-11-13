@@ -21,6 +21,8 @@
   <link rel="stylesheet" href="assets/css/font-awesome.min.css">
   <!-- Ionicons -->
   <link rel="stylesheet" href="assets/css/ionicons.min.css">
+  <!-- DataTables -->
+  <link rel="stylesheet" href="assets/css/dataTables.bootstrap.min.css">  
   <!-- Theme style -->
   <link rel="stylesheet" href="assets/css/AdminLTE.min.css">
   <!-- AdminLTE Skins. Choose a skin from the css/skins
@@ -148,6 +150,9 @@
     <script src="assets/js/popper.min.js"></script>  
   <!-- Bootstrap 3.3.7 -->
   <script src="assets/js/bootstrap.min.js"></script> 
+  <!-- DataTables -->
+  <script src="assets/js/jquery.dataTables.min.js"></script>
+  <script src="assets/js/dataTables.bootstrap.min.js"></script>  
   <!-- Morris.js charts -->
   <script src="assets/js/raphael.min.js"></script>
   <script src="assets/js/morris.min.js"></script>
@@ -187,6 +192,12 @@
       $('[data-mask]').inputmask()
       
     </script> 
+<!-- page script -->
+<script>
+  $(function () {
+    $('#example1').DataTable()
+  })
+</script>    
 
 </body>
 </html>
