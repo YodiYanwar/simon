@@ -24,21 +24,10 @@
           <div class="box">
             <div class="box-header">
              <button class="btn btn-primary" data-toggle="modal" data-target="#tambahPembina"><i class="fa fa-plus"></i>&nbsp;Tambah Data Pembina</button>
-
-              <div class="box-tools">
-
-                <div class="input-group input-group-sm" style="width: 150px;">
-                  <input type="text" name="table_search" class="form-control pull-right" placeholder="Search">
-
-                  <div class="input-group-btn">
-                    <button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
-                  </div>
-                </div>
-              </div>
             </div>
             <!-- /.box-header -->
-            <div class="box-body table-responsive no-padding">
-              <table id="example1" class="table table-bordered table-striped">
+            <div class="box-body">
+              <table id="example1" class="table table-bordered table-hover">
                 <thead>
                   <tr>
                     <th>NO</th>
