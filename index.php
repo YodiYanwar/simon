@@ -197,6 +197,20 @@
                 }
             });
          });
+
+        $('#ModalHapus').on('show.bs.modal', function (e) {
+            var idPembina = $(e.relatedTarget).data('id');
+            //menggunakan fungsi ajax untuk pengambilan data
+            $.ajax({
+                type : 'post',
+                url : 'role/adminmatrik/pembina_modalHapus.php',
+                data :  'idPembina='+ idPembina,
+                success : function(data){
+                $('.fetched-hapus').html(data);//menampilkan data ke dalam modal
+                }
+            });
+         });
+
     });
   </script>  
 

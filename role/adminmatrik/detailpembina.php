@@ -66,9 +66,9 @@
                   <b>Performa Rata-rata Binaan</b> <div class="pull-right">&nbsp;&nbsp;&nbsp;<a class="btn btn-secondary" href=""><i class="fa fa-dashboard fa-lg"></i></a></div>
                 </li>                           
               </ul>
-              <?php echo "<a href='#ModalEdit' class='btn btn-primary btn-block' id='custId' data-toggle='modal' data-id=".$row['id_pembina']."><b><i class='fa fa-pencil'></i>&nbsp;Edit Profil</b></a>"; ?>
+              <?php echo "<a href='#ModalEdit' class='btn btn-primary btn-block' data-toggle='modal' data-id=".$row['id_pembina']."><b><i class='fa fa-pencil'></i>&nbsp;Edit Profil</b></a>"; ?>
+              <?php echo "<a href='#ModalHapus' class='btn btn-danger btn-outline btn-block' data-toggle='modal' data-id=".$row['id_pembina']."><i class='fa fa-trash'></i>&nbsp;Hapus Pembina</a>"; ?>
               
-              <a href="" class="btn btn-danger btn-outline btn-block"><i class="fa fa-trash"></i>&nbsp;Hapus Pembina</a>
             </div>
             <!-- /.box-body -->
           </div>
@@ -94,5 +94,15 @@
                 </div>
             </div>
         </div>
+
+        <div class="modal fade" id="ModalHapus" role="dialog">
+            <div class="modal-dialog modal-sm" role="document">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <div class="fetched-data"></div>
+                    </div>
+                </div>
+            </div>
+        </div>        
 
       </div>      

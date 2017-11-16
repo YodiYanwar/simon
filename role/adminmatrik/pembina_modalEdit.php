@@ -1,5 +1,4 @@
 <?php 
-
 	include '../../functions.php';
 
     if($_POST['idPembina']) {

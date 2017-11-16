@@ -34,5 +34,9 @@
 			
 	}
 
+	function hapusPembina($id){
+		mysql_query("DELETE FROM pembina WHERE id_pembina = $id");
+	}
+
 
  ?>
