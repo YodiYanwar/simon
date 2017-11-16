@@ -45,9 +45,10 @@
                   <b>ID Pembina</b> <div class="pull-right"><?php echo $row['id_pembina']; ?>&nbsp;&nbsp;&nbsp;<span class="btn btn-secondary" href=""><i class="fa fa-user fa-lg"></i></span></div>
                 </li>                             
                 <li class="list-group-item">
-                  <b>Email</b> <div class="pull-right"><?php echo $row['email']; ?>&nbsp;&nbsp;&nbsp;<a class="btn btn-secondary" href=""><i class="fa fa-envelope-o fa-lg"></i></a></div>
+                  <b>Email</b> <div class="pull-right"><?php echo $row['email']; ?>&nbsp;&nbsp;&nbsp;<a class="btn btn-primary btn-outline" href=""><i class="fa fa-envelope-o fa-lg"></i></a></div>
+                </li>             
                 <li class="list-group-item">
-                  <b>No Telp</b> <div class="pull-right"><?php echo $row['telp']; ?>&nbsp;&nbsp;&nbsp;<a class="btn btn-secondary" href=""><i class="fa fa-whatsapp fa-lg"></i></a></div>
+                  <b>No Telp</b> <div class="pull-right"><?php echo $row['telp']; ?>&nbsp;&nbsp;&nbsp;<a class="btn btn-primary btn-outline" href=""><i class="fa fa-whatsapp fa-lg"></i></a></div>
                 </li>
                 <li class="list-group-item">
                   <b>Jenis Kelamin</b> <div class="pull-right"><?php echo $row['j_kelamin']; ?>&nbsp;&nbsp;&nbsp;<span class="btn btn-secondary" href=""><i class="fa fa-venus-mars fa-lg"></i></span></div>
@@ -65,8 +66,8 @@
                   <b>Performa Rata-rata Binaan</b> <div class="pull-right">&nbsp;&nbsp;&nbsp;<a class="btn btn-secondary" href=""><i class="fa fa-dashboard fa-lg"></i></a></div>
                 </li>                           
               </ul>
-
-              <a href="#" class="btn btn-primary btn-block"><b><i class="fa fa-pencil"></i>&nbsp;Edit Profil</b></a><br>
+              <?php echo "<a href='#ModalEdit' class='btn btn-primary btn-block' id='custId' data-toggle='modal' data-id=".$row['id_pembina']."><b><i class='fa fa-pencil'></i>&nbsp;Edit Profil</b></a>"; ?>
+              
               <a href="" class="btn btn-danger btn-outline btn-block"><i class="fa fa-trash"></i>&nbsp;Hapus Pembina</a>
             </div>
             <!-- /.box-body -->
@@ -75,4 +76,23 @@
         </div>
 
         <?php } ?>
+
+        <div class="modal fade" id="ModalEdit" role="dialog">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title"><i class="fa fa-pencil"></i>&nbsp;&nbsp;<b>Edit Profil Pembina</b></h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="fetched-data"></div>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-undo" aria-hidden="true"></i>&nbsp;Batal</button>
+                      <button type="submit" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-check" aria-hidden="true"></i>&nbsp;Simpan</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
       </div>      

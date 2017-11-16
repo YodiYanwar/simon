@@ -76,13 +76,13 @@
             <!-- User Account: style can be found in dropdown.less -->
             <li class="dropdown user user-menu">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                <img src="dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
+                <img src="assets/img/user/spidey_cute.jpg" class="user-image" alt="User Image">
                 <span class="hidden-xs"><?php echo $_SESSION['username']; ?></span>
               </a>
               <ul class="dropdown-menu">
                 <!-- User image -->
                 <li class="user-header">
-                  <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+                  <img src="assets/img/user/spidey_cute.jpg" class="img-circle" alt="User Image">
 
                   <p>
                     Alexander Pierce - Web Developer
@@ -107,7 +107,7 @@
                 <!-- Menu Footer-->
                 <li class="user-footer">
                   <div class="pull-left">
-                    <a href="#" class="btn btn-default btn-flat">Profile</a>
+                    <a href="#" class="btn btn-primary btn-flat"><i class="fa fa-user-circle-o"></i>&nbsp;&nbsp;Profile</a>
                   </div>
                   <div class="pull-right">
                     <a href="logout.php" class="btn btn-danger btn-flat"><i class="fa fa-power-off"></i>&nbsp;&nbsp;Logout</a>
@@ -182,6 +182,23 @@
   <script src="assets/js/dashboard.js"></script>
   <!-- AdminLTE for demo purposes -->
   <script src="assets/js/demo.js"></script> 
+  <script type="text/javascript">
+
+    $(document).ready(function(){
+        $('#ModalEdit').on('show.bs.modal', function (e) {
+            var idPembina = $(e.relatedTarget).data('id');
+            //menggunakan fungsi ajax untuk pengambilan data
+            $.ajax({
+                type : 'post',
+                url : 'role/adminmatrik/pembina_modalEdit.php',
+                data :  'idPembina='+ idPembina,
+                success : function(data){
+                $('.fetched-data').html(data);//menampilkan data ke dalam modal
+                }
+            });
+         });
+    });
+  </script>  
 
     <script type="text/javascript">
       //Date picker

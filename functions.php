@@ -1,7 +1,7 @@
 <?php 
 
 	mysql_connect("localhost", "root", "");
-	mysql_select_db("simon");	
+	mysql_select_db("simon");
 
 	function tambahPembina($nama, $j_kelamin, $tgl_lahir, $gelar, $asalkota, $email, $telp, $user, $pass){
 		mysql_query("INSERT INTO users (username, password, level) VALUES ('$user','$pass', 3)");

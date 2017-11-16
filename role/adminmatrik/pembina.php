@@ -23,7 +23,7 @@
         <div class="col-xs-12">
           <div class="box">
             <div class="box-header">
-             <button class="btn btn-primary" data-toggle="modal" data-target="#tambahPembina"><i class="fa fa-plus"></i>&nbsp;Tambah Data Pembina</button>
+             <button class="btn btn-primary" data-toggle="modal" data-target="#tambahPembina"><i class="fa fa-user-plus"></i>&nbsp;Tambah Data Pembina</button>
             </div>
             <!-- /.box-header -->
             <div class="box-body">
