@@ -34,7 +34,7 @@
             <div class="box-body box-profile">
               <div class="col-md-3"></div>
               <div class="col-md-5">
-              <img class="profile-user-img img-responsive img-circle" src="../../dist/img/user4-128x128.jpg" alt="User profile picture">
+              <img class="profile-user-img img-responsive img-circle" src="assets/img/user/spidey_cute.jpg" alt="User profile picture">
 
               <h3 class="profile-username text-center"><?php echo $row['nama'].' '.$row['gelar']; ?></h3>
 
@@ -56,13 +56,13 @@
                   <b>Kota Asal</b> <div class="pull-right"><?php echo $row['asalkota']; ?>&nbsp;&nbsp;&nbsp;<span class="btn btn-secondary" href=""><i class="fa fa-flag-o fa-lg"></i></span></div>
                 </li> 
                 <li class="list-group-item">
-                  <b>Tanggal Lahir</b> <div class="pull-right"><?php echo $row['tgl_lahir']; ?>&nbsp;&nbsp;&nbsp;<span class="btn btn-secondary" href=""><i class="fa fa-calendar-o fa-lg"></i></span></div>
+                  <b>Tanggal Lahir</b> <div class="pull-right"><?php echo date('d F Y', strtotime($row['tgl_lahir'])); ?>&nbsp;&nbsp;&nbsp;<span class="btn btn-secondary" href=""><i class="fa fa-calendar-o fa-lg"></i></span></div>
                 </li>                                  
                 <li class="list-group-item">
-                  <b>Jumlah Binaan</b> <div class="pull-right"></div>
+                  <b>Jumlah Binaan</b> <div class="pull-right">&nbsp;&nbsp;&nbsp;<a class="btn btn-secondary" href=""><i class="fa fa-users fa-lg"></i></a></div>
                 </li>      
                 <li class="list-group-item">
-                  <b>Performa Rata-rata Binaan</b> <div class="pull-right"></div>
+                  <b>Performa Rata-rata Binaan</b> <div class="pull-right">&nbsp;&nbsp;&nbsp;<a class="btn btn-secondary" href=""><i class="fa fa-dashboard fa-lg"></i></a></div>
                 </li>                           
               </ul>
 
