@@ -30,7 +30,9 @@
   				include 'mahasiswa.php';
   			} else if ($_GET['page'] == 'pembina') {
   				include 'pembina.php';
-  			}
+  			} else if ($_GET['page'] == 'pembinadetails') {
+          include 'detailpembina.php';
+        }
   		} else{
   			include 'dashboard.php';
   		}

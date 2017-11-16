@@ -15,14 +15,23 @@
 	}
 
 	function tampilPembina(){
-		$ambildata = mysql_query("SELECT id_pembina, nama, j_kelamin, email, telp FROM pembina");
+		$ambildata = mysql_query("SELECT id_pembina, nama, j_kelamin, email, telp FROM pembina") or die(mysql_error());
 		if (mysql_num_rows($ambildata) > 0) {
 			while ($ad = mysql_fetch_assoc($ambildata)) // Perulangan while ini jangan pake {}
 				$data[] = $ad;
 				return $data;
-			} else{
-				echo "Daftar pembina kosong";
-			}		
+		} else{
+			echo "Daftar pembina kosong";
+		}		
+	}
+
+	function pembinaDetails($id){
+		$ambildata = mysql_query("SELECT * FROM pembina WHERE id_pembina = $id");
+		
+			$ad = mysql_fetch_assoc($ambildata); // Perulangan while ini jangan pake {}
+				$data[] = $ad;
+				return $data;
+			
 	}
 
 
