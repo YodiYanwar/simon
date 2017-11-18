@@ -68,7 +68,7 @@ if(isset($_POST['login'])){
     <body class="hold-transition login-page">
         <div class="login-box">
           <div class="login-logo">
-            <a href="index.php"> <img src="assets/img/icon.png">&nbsp;<b>Simon</b>Matrik</a><br>
+            <a href="index.php"> <img src="assets/img/icon.png">&nbsp;<b>Graph</b>Matrik</a><br>
           </div>
           <!-- /.login-logo -->
           <div class="login-box-body">

@@ -35,7 +35,7 @@
                     <th>Jenis Kelamin</th>
                     <th>Email</th>
                     <th>Telp</th>
-                    <th>Aksi</th>
+                    <th></th>
                   </tr>
                 </thead>
                 <tbody>
@@ -53,10 +53,8 @@
                   <td><?php echo $row['email'] ?></td>
                   <td><?php echo $row['telp'] ?></td>
                   <td>
-                    <button class="btn btn-warning btn-sm" title="Edit <?php echo $row['nama'] ?>" data-toggle="modal" data-target="#editMhs"><i class="fa fa-pencil fa-lg" aria-hidden="true"></i></button>&nbsp;
                     
-                      
-                    <?php echo "<button class='btn btn-danger btn-sm' title='Hapus ".$row['nama']."' data-toggle='modal' data-target='#hapusMhs' data-href='simon/index.php?page=pembina&hapusid=".$row['id_pembina']."'><i class='fa fa-trash fa-lg' aria-hidden='true'></i></button>"; ?>                          
+                    <?php echo "<a href='index.php?page=pembinadetails&id=".$row['id_pembina']."' class='btn btn-warning btn-sm' title='Atur ".$row['nama']."'><i class='fa fa-pencil fa-lg' aria-hidden='true'></i></a>"; ?>                          
                     
                   </td>
                 </tr>

@@ -60,9 +60,9 @@
       <!-- Logo -->
       <a href="index2.html" class="logo">
         <!-- mini logo for sidebar mini 50x50 pixels -->
-        <span class="logo-mini"><b>S</b>M</span>
+        <span class="logo-mini"><b>G</b>M</span>
         <!-- logo for regular state and mobile devices -->
-        <span class="logo-lg"><img src="assets/img/icon30.png">&nbsp;<b>Simon</b>Matrik</span>
+        <span class="logo-lg"><img src="assets/img/icon30.png">&nbsp;<b>Graph</b>Matrik</span>
       </a>
       <!-- Header Navbar: style can be found in header.less -->
       <nav class="navbar navbar-static-top">
@@ -185,7 +185,7 @@
   <script type="text/javascript">
 
     $(document).ready(function(){
-        $('#ModalEdit').on('show.bs.modal', function (e) {
+        $('#ModalEditPembina').on('show.bs.modal', function (e) {
             var idPembina = $(e.relatedTarget).data('id');
             //menggunakan fungsi ajax untuk pengambilan data
             $.ajax({
@@ -198,18 +198,12 @@
             });
          });
 
-        $('#ModalHapus').on('show.bs.modal', function (e) {
-            var idPembina = $(e.relatedTarget).data('id');
-            //menggunakan fungsi ajax untuk pengambilan data
-            $.ajax({
-                type : 'post',
-                url : 'role/adminmatrik/pembina_modalHapus.php',
-                data :  'idPembina='+ idPembina,
-                success : function(data){
-                $('.fetched-hapus').html(data);//menampilkan data ke dalam modal
-                }
-            });
-         });
+    //Hapus Data
+    $(document).ready(function() {
+        $('#ModalHapusPembina').on('show.bs.modal', function(e) {
+            $(this).find('.btn-ok').attr('href', $(e.relatedTarget).data('href'));
+        });
+    });
 
     });
   </script>  
