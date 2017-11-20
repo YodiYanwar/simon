@@ -53,9 +53,16 @@
                   <td><?php echo $row['email'] ?></td>
                   <td><?php echo $row['telp'] ?></td>
                   <td>
-                    
-                    <?php echo "<a href='index.php?page=pembinadetails&id=".$row['id_pembina']."' class='btn btn-warning btn-sm' title='Atur ".$row['nama']."'><i class='fa fa-pencil fa-lg' aria-hidden='true'></i></a>"; ?>                          
-                    
+
+<div class="dropdown">
+  <button class="btn btn-default btn-sm dropdown-toggle " type="button" data-toggle="dropdown"><i class="fa fa-cog fa-lg"></i>&nbsp;&nbsp;
+  <span class="caret"></span></button>
+  <ul class="dropdown-menu">
+    <li><a href="#"><?php echo "<a href='index.php?page=pembinadetails&id=".$row['id_pembina']."' class='dropdown-item'><i class='fa fa-edit' aria-hidden='true'></i>&nbsp;Edit</a>"; ?></a></li>
+    <li><?php echo "<a href='index.php?page=pembinadetails&id=".$row['id_pembina']."' class='dropdown-item'><i class='fa fa-remove' aria-hidden='true'></i>&nbsp;Hapus</a>"; ?></li>
+    
+  </ul>
+</div>
                   </td>
                 </tr>
                   <?php 
