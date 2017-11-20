@@ -15,7 +15,7 @@
 	}
 
 	function tampilPembina(){
-		$ambildata = mysql_query("SELECT id_pembina, nama, j_kelamin, email, telp FROM pembina ORDER BY nama") or die(mysql_error());
+		$ambildata = mysql_query("SELECT * FROM pembina ORDER BY nama") or die(mysql_error());
 		if (mysql_num_rows($ambildata) > 0) {
 			while ($ad = mysql_fetch_assoc($ambildata)) // Perulangan while ini jangan pake {}
 				$data[] = $ad;

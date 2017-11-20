@@ -53,16 +53,16 @@
                   <td><?php echo $row['email'] ?></td>
                   <td><?php echo $row['telp'] ?></td>
                   <td>
-
-<div class="dropdown">
-  <button class="btn btn-default btn-sm dropdown-toggle " type="button" data-toggle="dropdown"><i class="fa fa-cog fa-lg"></i>&nbsp;&nbsp;
-  <span class="caret"></span></button>
-  <ul class="dropdown-menu">
-    <li><a href="#"><?php echo "<a href='index.php?page=pembinadetails&id=".$row['id_pembina']."' class='dropdown-item'><i class='fa fa-edit' aria-hidden='true'></i>&nbsp;Edit</a>"; ?></a></li>
-    <li><?php echo "<a href='index.php?page=pembinadetails&id=".$row['id_pembina']."' class='dropdown-item'><i class='fa fa-remove' aria-hidden='true'></i>&nbsp;Hapus</a>"; ?></li>
-    
-  </ul>
-</div>
+                    <div class="dropdown">
+                      <button class="btn btn-default btn-sm dropdown-toggle " type="button" data-toggle="dropdown">
+                        <i class="fa fa-cog fa-lg"></i>&nbsp;&nbsp;<span class="caret"></span>
+                      </button>
+                      <ul class="dropdown-menu">
+                        <li><?php echo "<a href='index.php?page=pembinadetails&id=".$row['id_pembina']."' class='dropdown-item'><i class='fa fa-edit' aria-hidden='true'></i>&nbsp;Edit</a>"; ?></li>
+                        <li><?php echo "<a href='#ModalHapusPembina' class='dropdown-item' data-toggle='modal' data-href='action/hapus.php?idpembina=".$row['id_pembina']."&iduser=".$row['id_user']."' aria-hidden='true'><i class='fa fa-remove'></i>&nbsp;Hapus</a>"; ?></li>
+                        
+                      </ul>
+                    </div>
                   </td>
                 </tr>
                   <?php 
@@ -75,7 +75,7 @@
           </div>
           <!-- /.box -->
         </div>
-      </div>      
+      </div>        
 
       <!-- Modal Tambah Pembina -->
       <div class="modal fade" id="tambahPembina" role="dialog">
@@ -191,6 +191,20 @@
               </div>
         </div>
         <!-- /Modal Tambah Pembina -->
+
+        <!-- Modal Hapus Pembina -->
+        <div class="modal fade" id="ModalHapusPembina" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <b>Anda yakin ingin menghapus akun pembina ?</b><br><br>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal"><i class="fa fa-undo"></i>&nbsp;Batal</button>
+                        <a class="btn btn-danger btn-ok"><i class="fa fa-remove"></i>&nbsp;Hapus</a>
+                    </div>
+                </div>
+            </div>
+        </div>        
+        <!-- /Modal Hapus Pembina -->
 
     <?php 
       if (isset($_POST['tambahPembina'])) {
