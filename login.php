@@ -72,7 +72,7 @@ if(isset($_POST['login'])){
           </div>
           <!-- /.login-logo -->
           <div class="login-box-body">
-            <p class="login-box-msg">Sistem Informasi Monitoring<br>Matrikulasi</p>
+            <p class="login-box-msg">Sistem Informasi Monitoring<br>Matrikulasi STEI Tazkia</p>
 
             <form action="login.php" method="POST">
               <div class="form-group has-feedback">

@@ -11,7 +11,7 @@
         <small>Pembina Mahasiswa</small>
       </h1>
       <ol class="breadcrumb">
-        <li><a href="/simon/admin"><i class="fa fa-dashboard"></i> Dashboard</a></li>
+        <li><a href="/simon"><i class="fa fa-dashboard"></i>&nbsp;Dashboard</a></li>
         <li>Manajemen Pengguna</li>
         <li class="active">Pembina Mahasiswa</li>
       </ol>
@@ -23,12 +23,12 @@
         <div class="col-xs-12">
           <div class="box">
             <div class="box-header">
-             <button class="btn btn-primary" data-toggle="modal" data-target="#tambahPembina"><i class="fa fa-user-plus"></i>&nbsp;Tambah Data Pembina</button>
+             <button class="btn btn-primary" data-toggle="modal" data-target="#tambahPembina"><i class="ion ion-person-add"></i>&nbsp;&nbsp;Tambah Akun Pembina</button>
             </div>
             <!-- /.box-header -->
             <div class="box-body">
               <!-- Table Daftar Pembina -->
-              <table id="tablePembina" class="table table-bordered table-hover">
+              <table id="tablePembina" class="table table-bordered table-hover table-condensed">
                 <thead>
                   <tr>
                     <th>NO</th>
@@ -59,8 +59,8 @@
                         <i class="fa fa-cog fa-lg"></i>&nbsp;&nbsp;<span class="caret"></span>
                       </button>
                       <ul class="dropdown-menu">
-                        <li><a href="index.php?page=editpembina&id=<?php echo $row['id_pembina']; ?>" class='dropdown-item'><i class='fa fa-edit'></i>&nbsp;Edit</a></li>
-                        <li><?php echo "<a href='#ModalHapusPembina' class='dropdown-item' data-toggle='modal' data-href='action/hapus.php?idpembina=".$row['id_pembina']."&iduser=".$row['id_user']."' aria-hidden='true'><i class='fa fa-remove'></i>&nbsp;Hapus</a>"; ?></li>
+                        <li><a style="color:#3C8DBC;" href="index.php?page=editpembina&id=<?php echo $row['id_pembina']; ?>" class='dropdown-item'><i class='fa fa-edit'></i>Edit</a></li>
+                        <li><?php echo "<a style='color:#DD4B39;' href='#ModalHapusPembina' class='dropdown-item' data-toggle='modal' data-href='action/hapus.php?idpembina=".$row['id_pembina']."&iduser=".$row['id_user']."' aria-hidden='true'><i class='fa fa-remove'></i>Hapus</a>"; ?></li>
                         
                       </ul>
                     </div>

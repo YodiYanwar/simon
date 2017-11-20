@@ -41,5 +41,11 @@
 		mysql_query("UPDATE pembina SET nama = '$nama', j_kelamin = '$j_kelamin', tgl_lahir = '$tgl_lahir', gelar = '$gelar', asalkota = '$asalkota', email = '$email', telp = '$telp' WHERE id_pembina = $id ");
 	}
 
+	function totalPembina(){
+		$ambildata = mysql_query("SELECT COUNT(id_pembina) as Total from pembina");
+		$data = mysql_fetch_assoc($ambildata);
+		return $data;
+	}
+
 
  ?>
