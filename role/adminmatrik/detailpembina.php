@@ -1,6 +1,9 @@
 <?php 
 
   include 'functions.php';
+    $id = $_GET['id'];
+      $dataPembina = pembinaDetails($id);
+      foreach($dataPembina as $row){  
   
  ?>
 
@@ -15,15 +18,9 @@
         <li><a href="/simon"><i class="fa fa-dashboard"></i> Dashboard</a></li>
         <li>Manajemen Pengguna</li>
         <li><a href="index.php?page=pembina">Pembina Mahasiswa</a></li>
-        <li class="active">Profil</li>
+        <li class="active"><?php echo $row['nama'] ?></li>
       </ol>
     </section> 
-
-    <?php 
-      $dataPembina = pembinaDetails($_GET['id']);
-      foreach($dataPembina as $row){
-
-     ?>
 
     <!-- Main content -->
     <section class="content">

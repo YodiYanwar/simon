@@ -21,9 +21,11 @@
         <small>Pembina Mahasiswa</small>
       </h1>
       <ol class="breadcrumb">
-        <li><a href="/simon/admin"><i class="fa fa-dashboard"></i> Dashboard</a></li>
-        <li class="active">Manajemen Pengguna</li>
-        <li>Pembina Mahasiswa</li>
+        <li><a href="/simon"><i class="fa fa-dashboard"></i> Dashboard</a></li>
+        <li >Manajemen Pengguna</li>
+        <li><a href="index.php?page=pembina">Pembina Mahasiswa</a></li>
+        <li><a href="index.php?page=pembinadetails&id=<?php echo $id ?>"><?php echo $row['nama']; ?></a></li>
+        <li class="active">Edit Profil</li>
       </ol>
     </section>
 
