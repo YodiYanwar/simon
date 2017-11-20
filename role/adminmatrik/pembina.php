@@ -59,7 +59,7 @@
                         <i class="fa fa-cog fa-lg"></i>&nbsp;&nbsp;<span class="caret"></span>
                       </button>
                       <ul class="dropdown-menu">
-                        <li><a href="index.php?page=pembinaedit&id=<?php echo $row['id_pembina']; ?>" class='dropdown-item'><i class='fa fa-edit'></i>&nbsp;Edit</a></li>
+                        <li><a href="index.php?page=editpembina&id=<?php echo $row['id_pembina']; ?>" class='dropdown-item'><i class='fa fa-edit'></i>&nbsp;Edit</a></li>
                         <li><?php echo "<a href='#ModalHapusPembina' class='dropdown-item' data-toggle='modal' data-href='action/hapus.php?idpembina=".$row['id_pembina']."&iduser=".$row['id_user']."' aria-hidden='true'><i class='fa fa-remove'></i>&nbsp;Hapus</a>"; ?></li>
                         
                       </ul>

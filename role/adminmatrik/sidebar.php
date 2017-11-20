@@ -32,7 +32,7 @@
   				include 'pembina.php';
   			} else if ($_GET['page'] == 'pembinadetails') {
           include 'detailpembina.php';
-        } else if ($_GET['page'] == 'pembinaedit') {
+        } else if ($_GET['page'] == 'editpembina') {
           include 'edit_pembina.php';
         }
   		} else{

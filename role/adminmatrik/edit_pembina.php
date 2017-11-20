@@ -2,16 +2,10 @@
 
   include 'functions.php';
 
-  $id = $_GET['id'];
-
-        
-            $pembina = pembinaDetails($id);
-
-            foreach($pembina as $row){ 
-
-          
-
- ?>
+  $id = $_GET['id'];     
+  $pembina = pembinaDetails($id);
+  foreach($pembina as $row){ 
+?>
 
     <!-- Content Header (Page header) -->
     <section class="content-header">
