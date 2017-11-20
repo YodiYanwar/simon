@@ -66,8 +66,11 @@
                   <b>Performa Rata-rata Binaan</b> <div class="pull-right">&nbsp;&nbsp;&nbsp;<a class="btn btn-secondary" href=""><i class="fa fa-dashboard fa-lg"></i></a></div>
                 </li>                           
               </ul>
-              <?php echo "<a href='#ModalEditPembina' class='btn btn-primary btn-block' data-toggle='modal' data-id=".$row['id_pembina']."><b><i class='fa fa-pencil'></i>&nbsp;Edit Profil</b></a>"; ?>
-              <?php echo "<a href='#ModalHapusPembina' class='btn btn-danger btn-outline btn-block' data-toggle='modal' data-href='action/hapus.php?idpembina=".$row['id_pembina']."'><i class='fa fa-trash'></i>&nbsp;Hapus Pembina</a>"; ?>
+                <a href="index.php?page=pembinaedit&id=<?php echo $row['id_pembina']; ?>" class='btn btn-primary btn-block'><b><i class='fa fa-pencil'></i>&nbsp;Edit Profi</b></a>
+
+              <!-- <?php echo "<a href='#ModalEditPembina' class='btn btn-primary btn-block' data-toggle='modal' data-id=".$row['id_pembina']."><b><i class='fa fa-pencil'></i>&nbsp;Edit Profil</b></a>"; ?> -->
+
+              <?php echo "<a href='#ModalHapusPembina' class='btn btn-danger btn-outline btn-block' data-toggle='modal' data-href='action/hapus.php?idpembina=".$row['id_pembina']."&iduser=".$row['id_user']."'><i class='fa fa-trash'></i>&nbsp;Hapus Pembina</a>"; ?>
               
             </div>
             <!-- /.box-body -->
@@ -95,16 +98,16 @@
             </div>
         </div>
 
-    <div class="modal fade" id="ModalHapusPembina" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-body">
-                    <b>Anda yakin ingin menghapus akun pembina ?</b><br><br>
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal"><i class="fa fa-close"></i>&nbsp;Batal</button>
-                    <a class="btn btn-danger btn-ok"><i class="fa fa-remove"></i>&nbsp;Hapus</a>
+        <div class="modal fade" id="ModalHapusPembina" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <b>Anda yakin ingin menghapus akun pembina ?</b><br><br>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal"><i class="fa fa-undo"></i>&nbsp;Batal</button>
+                        <a class="btn btn-danger btn-ok"><i class="fa fa-remove"></i>&nbsp;Hapus</a>
+                    </div>
                 </div>
             </div>
-        </div>
-    </div>       
+        </div>       
 
-      </div>      
+      </div>       

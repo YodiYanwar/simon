@@ -27,15 +27,18 @@
 
 	function pembinaDetails($id){
 		$ambildata = mysql_query("SELECT * FROM pembina WHERE id_pembina = $id");
-		
-			$ad = mysql_fetch_assoc($ambildata); // Perulangan while ini jangan pake {}
+			$ad = mysql_fetch_assoc($ambildata);
 				$data[] = $ad;
 				return $data;
-			
 	}
 
-	function hapusPembina($id){
-		mysql_query("DELETE FROM pembina WHERE id_pembina = $id");
+	function hapusPembina($idPembina, $idUser){
+		mysql_query("DELETE FROM pembina WHERE id_pembina = $idPembina");
+		mysql_query("DELETE FROM users WHERE id_user = $idUser");
+	}
+
+	function editPembina($id, $nama, $j_kelamin, $tgl_lahir, $gelar, $asalkota, $email, $telp){
+		mysql_query("UPDATE pembina SET nama = '$nama', j_kelamin = '$j_kelamin', tgl_lahir = '$tgl_lahir', gelar = '$gelar', asalkota = '$asalkota', email = '$email', telp = '$telp' WHERE id_pembina = $id ");
 	}
 
 

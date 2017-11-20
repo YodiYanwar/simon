@@ -47,3 +47,15 @@
         </form>
 
         <?php } } ?>
+
+    <script type="text/javascript">
+      //Date picker
+      $('#datepicker').datepicker({
+        format: "yyyy-mm-dd",
+        autoclose: true,
+        todayHighlight: true
+      })      
+
+      // $('[data-mask]').inputmask()
+      
+    </script>        
