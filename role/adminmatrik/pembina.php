@@ -28,7 +28,7 @@
             <!-- /.box-header -->
             <div class="box-body">
               <!-- Table Daftar Pembina -->
-              <table id="example1" class="table table-bordered table-hover">
+              <table id="tablePembina" class="table table-bordered table-hover">
                 <thead>
                   <tr>
                     <th>NO</th>

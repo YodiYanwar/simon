@@ -28,8 +28,6 @@
   <!-- AdminLTE Skins. Choose a skin from the css/skins
        folder instead of downloading all of them to reduce the load. -->
   <link rel="stylesheet" href="assets/css/_all-skins.min.css">
-  <!-- Morris chart -->
-  <link rel="stylesheet" href="assets/css/morris.css">
   <!-- jvectormap -->
   <link rel="stylesheet" href="assets/css/jquery-jvectormap.css">
   <!-- Date Picker -->
@@ -155,9 +153,10 @@
   <!-- DataTables -->
   <script src="assets/js/jquery.dataTables.min.js"></script>
   <script src="assets/js/dataTables.bootstrap.min.js"></script>  
-  <!-- Morris.js charts -->
-  <script src="assets/js/raphael.min.js"></script>
-  <script src="assets/js/morris.min.js"></script>
+<!-- Morris.js charts -->
+<!-- <script src="assets/js/raphael.min.js"></script>
+<script src="assets/js/morris.min.js"></script> -->
+  
   <!-- Sparkline -->
   <script src="assets/js/jquery.sparkline.min.js"></script>
   <!-- jvectormap -->
@@ -179,11 +178,11 @@
   <!-- AdminLTE App -->
   <script src="assets/js/adminlte.min.js"></script>
   <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-  <script src="assets/js/dashboard.js"></script>
+  <!-- <script src="assets/js/dashboard.js"></script> -->
   <!-- AdminLTE for demo purposes -->
   <script src="assets/js/demo.js"></script> 
+  
   <script type="text/javascript">
-
     $(document).ready(function(){
         $('#ModalEditPembina').on('show.bs.modal', function (e) {
             var idPembina = $(e.relatedTarget).data('id');
@@ -197,6 +196,7 @@
                 }
             });
          });
+      });
 
     //Hapus Data
     $(document).ready(function() {
@@ -204,26 +204,23 @@
             $(this).find('.btn-ok').attr('href', $(e.relatedTarget).data('href'));
         });
     });
-
-    });
   </script>  
 
     <script type="text/javascript">
-      //Date picker
-      $('#datepicker').datepicker({
-        format: "yyyy-mm-dd",
-        autoclose: true,
-        todayHighlight: true
-      })      
-
-      $('[data-mask]').inputmask()
-      
+      $(document).ready(function() {
+        //Date picker
+        $('#datepicker').datepicker({
+          format: "yyyy-mm-dd",
+          autoclose: true,
+          todayHighlight: true
+        });
+      }); 
     </script> 
 <!-- page script -->
 <script>
-  $(function () {
-    $('#example1').DataTable()
-  })
+  $(document).ready(function() {
+    $('#tablePembina').DataTable()
+  });
 </script>    
 
 </body>

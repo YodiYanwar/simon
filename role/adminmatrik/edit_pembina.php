@@ -76,18 +76,7 @@
             <button type="submit" class="btn btn-primary" ><i class="fa fa-pencil"></i>&nbsp;Edit Data Pembina</button>
         </form>
 
-        <?php } ?>
-
-    <script type="text/javascript">
-      //Date picker
-      $('#datepicker').datepicker({
-        format: "yyyy-mm-dd",
-        autoclose: true,
-        todayHighlight: true
-      })      
-
-      // $('[data-mask]').inputmask()
-    </script>        
+        <?php } ?>      
             </div>
             <!-- /.box-body -->
           </div>
