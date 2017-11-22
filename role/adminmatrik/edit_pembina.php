@@ -29,27 +29,31 @@
         <div class="col-xs-12">
           <div class="box">
             <div class="box-header">
-             Edit Pembina <?php echo $row['nama'] ?>
+             <h4>Edit Akun Pembina : <b><?php echo $row['nama'] ?></b></h4>
             </div>
             <!-- /.box-header -->
             <div class="box-body">
 
-        <form action="editPembina" method="post">
+        <form method="post">
             <div class="form-group">
                 <label>ID Pembina </label>
-                <input type="text" class="form-control" name="id" value="<?php echo $row['id_pembina']; ?>" disabled>
+                <input type="text" class="form-control" name="idPembina" value="<?php echo $row['id_pembina']; ?>" disabled>
             </div>            
             <div class="form-group">
                 <label>Nama </label>
                 <input type="text" class="form-control" name="nama" value="<?php echo $row['nama']; ?>">
             </div>
             <div class="form-group">
+                <label>Nama </label>
+                <input type="text" class="form-control" name="gelar" value="<?php echo $row['gelar']; ?>">
+            </div>            
+            <div class="form-group">
                 <label>Email </label>
-                <input type="text" class="form-control" name="nama" value="<?php echo $row['email']; ?>">
+                <input type="text" class="form-control" name="email" value="<?php echo $row['email']; ?>">
             </div>
             <div class="form-group">
                 <label>No Telp </label>
-                <input type="text" class="form-control" name="nama" value="<?php echo $row['telp']; ?>">
+                <input type="text" class="form-control" name="telp" value="<?php echo $row['telp']; ?>">
             </div>
             <div class="form-group">
                 <label>Jenis Kelamin </label>
@@ -67,29 +71,33 @@
             </div>
             <div class="form-group">
                 <label>Kota Asal </label>
-                <input type="text" class="form-control" name="nama" value="<?php echo $row['asalkota']; ?>">
+                <input type="text" class="form-control" name="asalkota" value="<?php echo $row['asalkota']; ?>">
             </div>
             <div class="form-group">
                 <label>Tanggal Lahir </label>
                 <input type="text" class="form-control pull-right" id="datepicker" name="tgl_lahir" value="<?php echo $row['tgl_lahir']; ?>">
             </div><br>
-            <button type="submit" class="btn btn-primary" ><i class="fa fa-pencil"></i>&nbsp;Edit Data Pembina</button>
+            <button type="submit" class="btn btn-primary" name="editPembina"><i class="fa fa-edit"></i>&nbsp;Edit Data Pembina</button>
         </form>
 
-        <?php } ?>      
+              
             </div>
             <!-- /.box-body -->
           </div>
           <!-- /.box -->
         </div>
-      </div>      
+      </div>       
+         
+    <?php
 
-    <?php 
-      if (isset($_POST['editPembina'])) {
-        editPembina($_POST['id'], $_POST['nama'], $_POST['gender'], date("Y-m-d", strtotime($_POST['tgl_lahir'])), $_POST['gelar'], $_POST['asalkota'], $_POST['email'], $_POST['telp']);
-        
-        echo "<script>document.location='/simon/index.php?page=pembinadetails&id=".$_POST['id']."'</script>";
-      }
-    ?>           
+        if (isset($_POST['editPembina'])) {
+          editPembina($id, $_POST['nama'], $_POST['gender'], date("Y-m-d", strtotime($_POST['tgl_lahir'])), $_POST['gelar'], $_POST['asalkota'], $_POST['email'], $_POST['telp']);
+          
+          echo "<script>document.location='/simon/index.php?page=pembinadetails&id=".$id."'</script>";
+        }
+    } 
+    ?>
+
+
     </section>
     <!-- /.content -->
