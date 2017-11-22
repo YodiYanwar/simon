@@ -11,10 +11,13 @@ if(isset($_POST['login'])){
 	$pass = mysql_real_escape_string(htmlentities(($_POST['password'])));
 
 	$sql = mysql_query("SELECT * FROM users WHERE username='$user' AND password='$pass'") or die(mysql_error());
+
 	if(mysql_num_rows($sql) == 0){
 		echo 'User tidak ditemukan';
 	}else{
 		$row = mysql_fetch_assoc($sql);
+    $id = $row['id_user'];
+
 		if($row['level'] == 0){
 			
 			$_SESSION['role'] = 'admin';
@@ -22,11 +25,21 @@ if(isset($_POST['login'])){
 			//$_SESSION['nama'] = $row['nama'];
 			echo '<script language="javascript">document.location="index.php";</script>';
 		}else if($row['level'] == 2){
+      $sql_profil = mysql_query("SELECT * FROM adminmatrik WHERE id_user=$id") or die(mysql_error());
 
-			$_SESSION['role'] = 'adminmatrik';
-			$_SESSION['username'] = $user;
-			//$_SESSION['nama'] = $row['nama'];
-			echo '<script language="javascript">document.location="index.php";</script>';
+      while($adminmatrik = mysql_fetch_assoc($sql_profil)){
+        $nama = $adminmatrik['nama'];
+        $email = $adminmatrik['email'];
+        $telp = $adminmatrik['telp'];
+        
+        echo '<script language="javascript">document.location="index.php";</script>';
+      }
+
+        $_SESSION['nama'] = $nama;
+        $_SESSION['role'] = 'adminmatrik';
+        $_SESSION['rolename'] = 'Admin Matrikulasi';
+        $_SESSION['username'] = $user;   
+           
 		}else if($row['level'] == 3){
 
       $_SESSION['role'] = 'pembina';

@@ -75,7 +75,7 @@
             <li class="dropdown user user-menu">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                 <img src="assets/img/user/spidey_cute.jpg" class="user-image" alt="User Image">
-                <span class="hidden-xs"><?php echo $_SESSION['username']; ?></span>
+                <span class="hidden-xs"><?php echo $_SESSION['nama']; ?></span>
               </a>
               <ul class="dropdown-menu">
                 <!-- User image -->
@@ -83,12 +83,12 @@
                   <img src="assets/img/user/spidey_cute.jpg" class="img-circle" alt="User Image">
 
                   <p>
-                    Alexander Pierce - Web Developer
-                    <small>Member since Nov. 2012</small>
+                    <?php echo $_SESSION['nama']; ?>
+                    <small><?php echo $_SESSION['rolename']; ?></small>
                   </p>
                 </li>
                 <!-- Menu Body -->
-                <li class="user-body">
+<!--                 <li class="user-body">
                   <div class="row">
                     <div class="col-xs-4 text-center">
                       <a href="#">Followers</a>
@@ -99,7 +99,7 @@
                     <div class="col-xs-4 text-center">
                       <a href="#">Friends</a>
                     </div>
-                  </div>
+                  </div> -->
                   <!-- /.row -->
                 </li>
                 <!-- Menu Footer-->
