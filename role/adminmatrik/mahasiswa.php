@@ -6,8 +6,8 @@
       </h1>
       <ol class="breadcrumb">
         <li><a href="/simon/admin"><i class="fa fa-dashboard"></i> Dashboard</a></li>
-        <li class="active">Manajemen Pengguna</li>
-        <li>Mahasiswa</li>
+        <li>Manajemen Pengguna</li>
+        <li class="active">Mahasiswa</li>
       </ol>
     </section>
 
@@ -40,112 +40,28 @@
       <!-- Modal Tambah Pembina -->
       <div class="modal fade" id="tambahPembina" role="dialog">
             <div class="modal-dialog" role="document">
-            <form class="form-horizontal" method="POST">
+            <form method="POST">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h4 class="modal-title"><i class="fa fa-address-card-o" aria-hidden="true"></i>&nbsp; <b>Tambah Data Pembina</b></h4>
+                        <h4 class="modal-title"><i class="fa fa-folder-open" aria-hidden="true"></i>&nbsp; <b>Import Data Mahasiswa</b></h4>
                     </div>
-                    <div class="modal-body">      
-            <div class="btn btn-default image-preview-input"> <span class="glyphicon glyphicon-folder-open"></span> <span class="image-preview-input-title">Browse</span>
-              <input type="file" accept=".mdb" name="input-file-preview"/>
-              <!-- rename it --> 
-            </div>                    
-                      <div class="form-group has-feedback">
-                        <label for="nama" class="col-sm-2 control-label">Nama</label>
-                        <div class="col-sm-10">
-                          <div class="input-group date">
-                            <div class="input-group-addon">
-                              <i class="fa fa-user"></i>
-                            </div>
-                            <input type="text" name="nama" placeholder="Nama" id="nama" class="form-control" required/>
-                          </div>                        
+                    <div class="modal-body">
+                      <div class="row">
+                        <div class="col-md-5">
+                          <label>Pilih File Database Ms.Access</label>
+                          <input type="file" accept=".mdb" name="dbMahasiswa"/>                          
+                        </div>
+                        <div class="col-md-5">
+                          <label>Pilih Tahun Angkatan</label>
+                          <select class="form-control" name="angkatan">
+                            <option>Angkatan</option>
+                            <option>15</option>
+                            <option>16</option>
+                            <option>17</option>
+                          </select>
                         </div>
                       </div>
-                      <div class="form-group">
-                        <label for="jKelamin" class="col-sm-2 control-label">Gender</label>
-                        <div class="col-sm-10">
-                          <div class="input-group">
-                            <div class="input-group-addon">
-                              <i class="fa fa-venus-mars"></i>
-                            </div>
-                            <select class="form-control" name="gender">
-                              <option>Pilih Jenis Kelamin</option>
-                              <option>Laki-laki</option>
-                              <option>Perempuan</option>
-                            </select>                    
-                        </div>                            
-                          </div>                         
-                      </div>
-                      <div class="form-group">
-                        <label for="gelar" class="col-sm-2 control-label">Tanggal lahir</label>
-                        <div class="col-sm-10">
-                          <div class="input-group">
-                            <div class="input-group-addon">
-                              <i class="fa fa-calendar"></i>
-                            </div>
-                            <input type="text" class="form-control pull-right" id="datepicker" name="tgl_lahir">
-                          </div>
-                          <!-- /.input group -->                          
-                        </div>
-                      </div>                       
-                      <div class="form-group">
-                        <label for="gelar" class="col-sm-2 control-label">Gelar</label>
-                        <div class="col-sm-10">
-                          <div class="input-group">
-                            <div class="input-group-addon">
-                              <i class="fa fa-graduation-cap"></i>
-                            </div>
-                            <input type="text" list="autogelar" name="gelar" placeholder="Gelar Pendidikan" id="gelar" class="form-control" required/>
-                          </div>                        
-                          
-                        </div>
-                      </div>                        
-                          <datalist id="autogelar">
-                              <option value="S.E">
-                              <option value="S.Ei">
-                              <option value="S.Pd">
-                              <option value="S.Pdi">
-                              <option value="S.Ag">
-                              <option value="M.A">
-                              <option value="A.Ag">
-                              <option value="Lc.">
-                              <option value="Dr.">
-                              <option value="Prof.">
-                              <option value="S.Kom.">
-                              <option value="M.Kom.">
-                          </datalist>                          
-                      <div class="form-group">
-                        <label for="asalkota" class="col-sm-2 control-label">Kota</label>
-                        <div class="col-sm-10">
-                          <input type="text" name="asalkota" placeholder="Kota Asal" id="asalkota" class="form-control" required />
-                        </div>
-                      </div>     
-                      <div class="form-group">
-                        <label for="email" class="col-sm-2 control-label">Email</label>
-                        <div class="col-sm-10">
-                          <input type="email" name="email" placeholder="Email" id="email" class="form-control" required />
-                        </div>
-                      </div>                
-                      <div class="form-group">
-                        <label for="telp" class="col-sm-2 control-label">No. Telp</label>
-                        <div class="col-sm-10">
-                          <input type="number" name="telp" placeholder="No Telepon" id="telp" class="form-control" required />
-                        </div>
-                      </div>
-                      <div class="form-group">
-                        <label for="username" class="col-sm-2 control-label">Username</label>
-                        <div class="col-sm-10">
-                          <input type="text" name="username" placeholder="Username" id="username" class="form-control" required />
-                        </div>
-                      </div>                
-                      <div class="form-group">
-                        <label for="password" class="col-sm-2 control-label">Password</label>
-                        <div class="col-sm-10">
-                          <input type="password" name="password" placeholder="Password" id="password" class="form-control" required />
-                        </div>
-                      </div>                        
-                    </div>                  
-
+                    </div>
                     <div class="modal-footer">
                       <button type="button" class="btn btn-secondary" data-dismiss="modal"><i class="fa fa-undo" aria-hidden="true"></i>&nbsp;Batal</button>                
                       <button type="submit" class="btn btn-primary" name="tambahPembina"><i class="fa fa-check" aria-hidden="true"></i>&nbsp;Submit</button>

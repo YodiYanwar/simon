@@ -4,7 +4,7 @@
 
   $id = $_GET['id'];     
   $pembina = pembinaDetails($id);
-  foreach($pembina as $row){ 
+  foreach($pembina as $row){
 ?>
 
     <!-- Content Header (Page header) -->

@@ -2,7 +2,7 @@
 
   include 'functions.php';
   $tb = totalPembina();
-  foreach($tb as $totalPembina){ 
+   
 ?>
 
     <!-- Content Header (Page header) -->
@@ -24,8 +24,7 @@
           <!-- small box -->
           <div class="small-box bg-aqua">
             <div class="inner">
-              <h3><?php echo $totalPembina; ?></h3>
-
+              <h3><?php foreach($tb as $totalPembina){ echo $totalPembina; }?></h3>
               <p>Jumlah Pembina</p>
             </div>
             <div class="icon">
@@ -82,6 +81,5 @@
         <!-- ./col -->
       </div>
       <!-- /.row -->      
-      <?php } ?>
     </section>
     <!-- /.content -->
