@@ -25,16 +25,18 @@ if(isset($_POST['login'])){
 			//$_SESSION['nama'] = $row['nama'];
 			echo '<script language="javascript">document.location="index.php";</script>';
 		}else if($row['level'] == 2){
-      $sql_profil = mysql_query("SELECT * FROM adminmatrik WHERE id_user=$id") or die(mysql_error());
+      		$sql_profil = mysql_query("SELECT * FROM adminmatrik WHERE id_user=$id") or die(mysql_error());
 
-      while($adminmatrik = mysql_fetch_assoc($sql_profil)){
-        $nama = $adminmatrik['nama'];
-        $email = $adminmatrik['email'];
-        $telp = $adminmatrik['telp'];
-        
-        echo '<script language="javascript">document.location="index.php";</script>';
-      }
+	      while($adminmatrik = mysql_fetch_assoc($sql_profil)){
+	      	$id_AM = $adminmatrik['id_adminmatrik'];
+	        $nama = $adminmatrik['nama'];
+	        $email = $adminmatrik['email'];
+	        $telp = $adminmatrik['telp'];
+	        
+	        echo '<script language="javascript">document.location="index.php";</script>';
+	      }
 
+	    $_SESSION['id_AM'] = $id_AM;
         $_SESSION['nama'] = $nama;
         $_SESSION['role'] = 'adminmatrik';
         $_SESSION['rolename'] = 'Admin Matrikulasi';

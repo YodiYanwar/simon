@@ -105,7 +105,7 @@
                 <!-- Menu Footer-->
                 <li class="user-footer">
                   <div class="pull-left">
-                    <a href="#" class="btn btn-primary btn-flat"><i class="fa fa-user-circle-o"></i>&nbsp;&nbsp;Profile</a>
+                    <a href="index.php?page=profil" class="btn btn-primary btn-flat"><i class="fa fa-user-circle-o"></i>&nbsp;&nbsp;Profile</a>
                   </div>
                   <div class="pull-right">
                     <a href="logout.php" class="btn btn-danger btn-flat"><i class="fa fa-power-off"></i>&nbsp;&nbsp;Logout</a>

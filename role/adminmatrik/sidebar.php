@@ -34,6 +34,8 @@
           include 'detailpembina.php';
         } else if ($_GET['page'] == 'editpembina') {
           include 'edit_pembina.php';
+        } else if ($_GET['page'] == 'profil') {
+          include 'profil.php';
         }
   		} else{
   			include 'dashboard.php';

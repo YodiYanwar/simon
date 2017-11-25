@@ -47,5 +47,10 @@
 		return $data;
 	}
 
-
+	function adminMatrikDetails($id){
+		$ambildata = mysql_query("SELECT * FROM adminmatrik WHERE id_adminmatrik = $id");
+			$ad = mysql_fetch_assoc($ambildata);
+				$data[] = $ad;
+				return $data;
+	}
  ?>
