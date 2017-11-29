@@ -221,7 +221,25 @@
   $(document).ready(function() {
     $('#tablePembina').DataTable()
   });
-</script>   
+</script>
+
+  <!-- Modal Ganti Password -->
+  <script type="text/javascript">
+    $(document).ready(function(){
+        $('#ModalGantiPass').on('show.bs.modal', function (e) {
+            var rowid = $(e.relatedTarget).data('id');
+            //menggunakan fungsi ajax untuk pengambilan data
+            $.ajax({
+                type : 'post',
+                url : 'detail.php',
+                data :  'rowid='+ rowid,
+                success : function(data){
+                $('.fetched-data').html(data);//menampilkan data ke dalam modal
+                }
+            });
+         });
+    });
+  </script>   
 
 </body>
 </html>
