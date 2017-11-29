@@ -14,9 +14,8 @@
       </h1>
       <ol class="breadcrumb">
         <li><a href="/simon"><i class="fa fa-dashboard"></i> Dashboard</a></li>
-        <li>Manajemen Pengguna</li>
-        <li><a href="index.php?page=pembina">Pembina Mahasiswa</a></li>
-        <li><?php echo $row['nama'] ?></li>
+        <li>Profil</li>
+        <li class="active"><?php echo $row['nama'] ?></li>
       </ol>
     </section> 
 
@@ -29,7 +28,7 @@
             <div class="box-body box-profile">
               <div class="col-md-3"></div>
               <div class="col-md-5">
-              <a href="#ModalUploadAva" data-toggle='modal'><img class="profile-user-img img-responsive img-circle" src="assets/img/user/<?php echo $_row['avatar']; ?>" alt="User profile picture"></a>
+              <a href="#ModalUploadAva" title="Klik untuk Ganti Foto Profil" data-toggle='modal'><img class="profile-user-img img-responsive img-circle" src=<?php echo "assets/img/user/".$row['avatar']; ?> alt="User profile picture"></a>
               <h3 class="profile-username text-center"><?php echo $_SESSION['nama']; ?></h3>
 
               <p class="text-muted text-center">Admin Matrikulasi</p>
@@ -98,21 +97,21 @@
         <!-- Modal Upload Avatar -->
         <div class="modal fade" id="ModalUploadAva" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-sm">
-                <div class="modal-content">
-                  <form action="upload.php" method="post" enctype="multipart/form-data">
+                <form action="upload.php" method="post" enctype="multipart/form-data">
+                  <div class="modal-content">
                     <div class="modal-header">
                         <h4><b><i class="fa fa-user-circle fa-lg"></i>&nbsp;&nbsp;Upload Foto Profil</b></h4>
                     </div>
                     <div class="modal-body">
                       
-                        <input type="file" name="AvaProfilFile">
+                        <input type="file" name="file">
                     </div>                    
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal"><i class="fa fa-undo"></i>&nbsp;Batal</button>
-                        <button type="submit" class="btn btn-primary btn-ok" name="uploadAvaAM"><i class="fa fa-cloud-upload"></i>&nbsp;Upload</button>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
+                        <input type="submit" class="btn btn-primary" name="upload" value="Upload">
                     </div>
-                  </form>
-                </div>
+                  </div>
+                </form>
               </div>
         </div>        
         <!-- /Modal Upload Avatar --> 

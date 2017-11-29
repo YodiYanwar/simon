@@ -1,19 +1,19 @@
 <?php 
 		include 'koneksi.php';
-		if($_POST['uploadAvaAM']){
+		if($_POST['upload']){
 			$ekstensi_diperbolehkan	= array('png','jpg');
-			$filename = $_FILES['file']['name'];
-			$x = explode('.', $filename);
+			$nama = $_FILES['file']['name'];
+			$x = explode('.', $nama);
 			$ekstensi = strtolower(end($x));
 			$ukuran	= $_FILES['file']['size'];
 			$file_tmp = $_FILES['file']['tmp_name'];	
  
 			if(in_array($ekstensi, $ekstensi_diperbolehkan) === true){
 				if($ukuran < 1044070){			
-					move_uploaded_file($file_tmp, 'assets/img/user/'.$filename);
-					$query = mysql_query("UPDATE adminmatrik SET avatar = ".$filename." WHERE id_adminmatrik = ".$_SESSION['id_AM']);
+					move_uploaded_file($file_tmp, 'assets/img/user/'.$nama);
+					$query = mysql_query("UPDATE adminmatrik SET avatar = '$nama' WHERE id_adminmatrik = ".$_SESSION['id_AM']);
 					if($query){
-						echo 'FILE BERHASIL DI UPLOAD';
+						echo "<script>document.location='/simon/index.php?page=profil'</script>";
 					}else{
 						echo 'GAGAL MENGUPLOAD GAMBAR';
 					}
@@ -23,6 +23,6 @@
 			}else{
 				echo 'EKSTENSI FILE YANG DI UPLOAD TIDAK DI PERBOLEHKAN';
 			}
-			echo "<script>document.location='/simon/index.php?page=profil'</script>";
+			
 		}
 ?>

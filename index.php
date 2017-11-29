@@ -221,7 +221,7 @@
   $(document).ready(function() {
     $('#tablePembina').DataTable()
   });
-</script>    
+</script>   
 
 </body>
 </html>
