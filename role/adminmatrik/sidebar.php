@@ -4,8 +4,22 @@
     <section class="sidebar">
       <!-- sidebar menu: : style can be found in sidebar.less -->
       <ul class="sidebar-menu" data-widget="tree">
-        <li><a href="/simon"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a></li>
-        <li class="treeview">
+        <li <?php 
+              if ($_SERVER['REQUEST_URI'] == '/simon/') {
+                 echo "class='active'";
+              }
+            ?>
+        ><a href="/simon"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a></li>
+        <li class="treeview <?php 
+              if (isset($_GET['page'])) {
+                    if ($_GET['page'] == 'pembina'|| $_GET['page'] == 'pembinadetails' || $_GET['page'] == 'editpembina'|| $_GET['page'] == 'mahasiswa') {
+                      echo ' active';
+                    } else{
+                      echo '';
+                    }
+                  }
+             ?>"
+        >
           <a href="#">
             <i class="fa fa-user-circle-o"></i>
             <span>Manajemen Pengguna</span>
@@ -14,8 +28,22 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="?page=mahasiswa"><i class="fa fa-users"></i> Mahasiswa</a></li>
-            <li><a href="?page=pembina"><i class="fa fa-user"></i> Pembina Mahasiswa</a></li>
+            <li <?php 
+                  if (isset($_GET['page'])) {
+                    if ($_GET['page'] == 'mahasiswa') {
+                      echo "class='active'";
+                    }
+                  }
+                ?>
+            ><a href="?page=mahasiswa"><i class="fa fa-users"></i> Mahasiswa</a></li>
+            <li <?php 
+                  if (isset($_GET['page'])) {
+                    if ($_GET['page'] == 'pembina'|| $_GET['page'] == 'pembinadetails' || $_GET['page'] == 'editpembina') {
+                      echo "class='active'";
+                    }
+                  }
+                ?>
+             ><a href="?page=pembina"><i class="fa fa-user"></i> Pembina Mahasiswa</a></li>
           </ul>
           </li>
       </ul>
