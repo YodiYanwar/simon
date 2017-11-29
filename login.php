@@ -29,6 +29,7 @@ if(isset($_POST['login'])){
       		$sql_profil = mysql_query("SELECT * FROM adminmatrik WHERE id_user=$id") or die(mysql_error());
 
 	      while($adminmatrik = mysql_fetch_assoc($sql_profil)){
+          $ava = $adminmatrik['avatar'];
 	      	$id_AM = $adminmatrik['id_adminmatrik'];
 	        $nama = $adminmatrik['nama'];
 	        $email = $adminmatrik['email'];
@@ -37,6 +38,7 @@ if(isset($_POST['login'])){
 	        echo '<script language="javascript">document.location="index.php";</script>';
 	      }
 
+        $_SESSION['ava'] = $ava;
 	      $_SESSION['id_AM'] = $id_AM;
         $_SESSION['nama'] = $nama;
         $_SESSION['role'] = 'adminmatrik';
