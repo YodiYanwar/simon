@@ -53,7 +53,8 @@
                   <b>Tanggal Lahir</b> <div class="pull-right"><?php echo date('d F Y', strtotime($row['tgl_lahir'])); ?>&nbsp;&nbsp;&nbsp;<span class="btn btn-secondary" href=""><i class="fa fa-calendar-o fa-lg"></i></span></div>
                 </li>                                  
               </ul>
-                <a href="index.php?page=editpembina&id=<?php echo $row['id_adminmatrik']; ?>" class='btn btn-primary btn-block'><b><i class='fa fa-pencil'></i>&nbsp;Edit Data Profil</b></a>
+                <a href="index.php?page=editpembina&id=<?php echo $row['id_adminmatrik']; ?>" class='btn btn-primary btn-block'><i class='fa fa-pencil'></i>&nbsp;&nbsp;Edit Data Profil</a>
+                <?php echo "<a href='#ModalGantiPass' class='btn btn-warning btn-outline btn-block' data-toggle='modal' data-href='action/hapus.php?&iduser=".$row['id_user']."'><i class='fa fa-lock'></i>&nbsp;&nbsp;Ganti Password</a>"; ?>
             </div>
             <!-- /.box-body -->
           </div>
@@ -117,5 +118,26 @@
               </div>
         </div>        
         <!-- /Modal Upload Avatar --> 
+
+        <!-- Modal Ganti Password -->
+        <div class="modal fade" id="ModalGantiPass" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-sm">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4><b><i class="fa fa-lock fa-lg"></i>&nbsp;&nbsp;Ganti Password</b></h4>
+                    </div>
+                    <div class="modal-body">
+                      <form action="upload.php" method="post" enctype="multipart/form-data">
+                        <input type="file" name="AvaProfilFile">
+                    </div>                    
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal"><i class="fa fa-undo"></i>&nbsp;Batal</button>
+                        <button type="submit" class="btn btn-primary btn-ok" name="uploadAva"><i class="fa fa-cloud-upload"></i>&nbsp;Upload</button>
+                      </form>
+                    </div>
+                </div>
+            </div>
+        </div>        
+        <!-- /Modal Ganti Password -->         
 
       </div>       
