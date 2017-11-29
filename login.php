@@ -17,6 +17,7 @@ if(isset($_POST['login'])){
 	}else{
 		$row = mysql_fetch_assoc($sql);
     $id = $row['id_user'];
+    $_SESSION['id_user'] = $id;
 
 		if($row['level'] == 0){
 			
@@ -36,7 +37,7 @@ if(isset($_POST['login'])){
 	        echo '<script language="javascript">document.location="index.php";</script>';
 	      }
 
-	    $_SESSION['id_AM'] = $id_AM;
+	      $_SESSION['id_AM'] = $id_AM;
         $_SESSION['nama'] = $nama;
         $_SESSION['role'] = 'adminmatrik';
         $_SESSION['rolename'] = 'Admin Matrikulasi';

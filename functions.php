@@ -48,7 +48,7 @@
 	}
 
 	function adminMatrikDetails($id){
-		$ambildata = mysql_query("SELECT * FROM adminmatrik WHERE id_adminmatrik = $id");
+		$ambildata = mysql_query("SELECT adminmatrik.*, users.username, users.password FROM adminmatrik, users WHERE users.id_user = $id");
 			$ad = mysql_fetch_assoc($ambildata);
 				$data[] = $ad;
 				return $data;

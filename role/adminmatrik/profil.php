@@ -1,7 +1,7 @@
 <?php 
 
   include 'functions.php';
-      $dataAdminMatrik = adminMatrikDetails($_SESSION['id_AM']);
+      $dataAdminMatrik = adminMatrikDetails($_SESSION['id_user']);
       foreach($dataAdminMatrik as $row){ 
  ?>
 
@@ -34,8 +34,11 @@
 
               <ul class="list-group list-group-unbordered">
                 <li class="list-group-item">
-                  <b>ID Admin Matrikulasi</b> <div class="pull-right"><?php echo $row['id_adminmatrik']; ?>&nbsp;&nbsp;&nbsp;<span class="btn btn-secondary" href=""><i class="fa fa-user fa-lg"></i></span></div>
-                </li>                             
+                  <b>ID Admin Matrikulasi</b> <div class="pull-right"><?php echo $row['id_adminmatrik']; ?>&nbsp;&nbsp;&nbsp;<span class="btn btn-secondary" href=""><i class="fa fa-id-badge fa-lg"></i></span></div>
+                </li> 
+                <li class="list-group-item">
+                  <b>Username</b> <div class="pull-right"><code><?php echo $row['username']; ?></code>&nbsp;&nbsp;&nbsp;<span class="btn btn-secondary" href=""><i class="fa fa-user-o fa-lg"></i></span></div>
+                </li> 
                 <li class="list-group-item">
                   <b>Email</b> <div class="pull-right"><?php echo $row['email']; ?>&nbsp;&nbsp;&nbsp;<a class="btn btn-primary btn-outline" href=""><i class="fa fa-envelope-o fa-lg"></i></a></div>
                 </li>             
