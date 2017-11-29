@@ -8,7 +8,6 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        <a class="btn btn-primary" href="index.php?page=pembina"><i class="fa fa-arrow-left"></i></a>&nbsp;
         Profil Saya
         <small></small>
       </h1>
