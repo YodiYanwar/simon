@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 29, 2017 at 09:59 AM
+-- Generation Time: Nov 30, 2017 at 10:48 AM
 -- Server version: 10.1.25-MariaDB
 -- PHP Version: 5.6.31
 
@@ -44,7 +44,8 @@ CREATE TABLE `adminmatrik` (
 --
 
 INSERT INTO `adminmatrik` (`id_adminmatrik`, `nama`, `telp`, `email`, `j_kelamin`, `tgl_lahir`, `id_user`, `avatar`) VALUES
-(2, 'Derry Doang', '085637242', 'derry@tazkia.ac.id', 'Laki-laki', '1987-01-02', 2, 'color-combinatioin-black.jpg');
+(2, 'Derry Doang', '085637242', 'derry@tazkia.ac.id', 'Laki-laki', '1987-01-02', 2, 'color-combinatioin-black.jpg'),
+(3, 'Hasan Ishaq', '081265484', 'hasan@tazkia.ac.id', 'Laki-laki', '2017-11-11', 23, NULL);
 
 -- --------------------------------------------------------
 
@@ -61,6 +62,7 @@ CREATE TABLE `pembina` (
   `asalkota` varchar(20) DEFAULT NULL,
   `email` varchar(35) NOT NULL,
   `telp` varchar(13) NOT NULL,
+  `avatar` varchar(100) DEFAULT NULL,
   `id_user` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -68,12 +70,9 @@ CREATE TABLE `pembina` (
 -- Dumping data for table `pembina`
 --
 
-INSERT INTO `pembina` (`id_pembina`, `nama`, `j_kelamin`, `tgl_lahir`, `gelar`, `asalkota`, `email`, `telp`, `id_user`) VALUES
-(7, 'Sri Wahyuni', 'Perempuan', '1992-03-26', 'M.E', 'Wonogiri', 'sri.wahyuni@tazkia.ac.id', '2147483647', 10),
-(9, 'Abdul Hamid', 'Laki-laki', '1985-08-01', 'S.Ei', 'Solo', 'abdulhamid@tazkia.ac.id', '2147483647', 12),
-(10, 'Bintang Pamuncak', 'Laki-laki', '1990-07-18', 'S.Ei', 'Jakarta', 'bintang@tazkia.ac.id', '0859473235', 6),
-(16, 'Adita Dyah Asokawati', 'Perempuan', '2017-11-25', 'S.E', 'Pekanbaru', 'adita@tazkia.ac.id', '0812478748', 19),
-(17, 'Hayatul Mujadidah', 'Perempuan', '2017-11-11', 'S.E.i', 'Sukabumi', 'aya@tazkia.ac.id', '08563728423', 20);
+INSERT INTO `pembina` (`id_pembina`, `nama`, `j_kelamin`, `tgl_lahir`, `gelar`, `asalkota`, `email`, `telp`, `avatar`, `id_user`) VALUES
+(18, 'Bintang Pamuncak', 'Laki-laki', '2017-11-10', 'S.Ei', 'Semarang', 'bintang@tazkia.ac.id', '0859473235', 'hp.png', 21),
+(19, 'Hayatul Mujadidah', 'Perempuan', '2017-11-14', 'S.Ei', 'Sukabumi', 'aya@tazkia.ac.id', '081654812', 'Canon-Logo-Feature.jpg', 22);
 
 -- --------------------------------------------------------
 
@@ -85,24 +84,20 @@ CREATE TABLE `users` (
   `id_user` int(11) NOT NULL,
   `username` varchar(30) NOT NULL,
   `password` varchar(50) NOT NULL,
-  `level` int(11) NOT NULL
+  `level` int(11) NOT NULL,
+  `last_login` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id_user`, `username`, `password`, `level`) VALUES
-(1, 'admin', 'admin', 0),
-(2, 'derry', 'derry123', 2),
-(6, 'bintang', 'bintang123', 3),
-(7, 'dfgvbdf@gmail.com', '0812456345', 3),
-(10, 'sri', 'sri123', 3),
-(12, 'hamid', 'hamid123', 3),
-(13, 'bintang', 'bintang123', 3),
-(17, 'c', 'c123', 3),
-(19, 'adita', 'adita123', 3),
-(20, 'aya', 'aya123', 3);
+INSERT INTO `users` (`id_user`, `username`, `password`, `level`, `last_login`) VALUES
+(1, 'admin', 'admin', 0, '0000-00-00 00:00:00'),
+(2, 'derry', 'derry123', 2, '2017-11-30 14:34:53'),
+(21, 'bintang', 'bintang123', 3, '2017-11-30 14:28:50'),
+(22, 'aya', 'hayatul', 3, '2017-11-30 16:46:38'),
+(23, 'hasan', 'hasan123', 2, '0000-00-00 00:00:00');
 
 --
 -- Indexes for dumped tables
@@ -136,17 +131,17 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `adminmatrik`
 --
 ALTER TABLE `adminmatrik`
-  MODIFY `id_adminmatrik` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_adminmatrik` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT for table `pembina`
 --
 ALTER TABLE `pembina`
-  MODIFY `id_pembina` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `id_pembina` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 --
 -- Constraints for dumped tables
 --
