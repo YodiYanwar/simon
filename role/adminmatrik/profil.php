@@ -27,6 +27,16 @@
             <div class="box-body box-profile">
               <div class="col-md-3"></div>
               <div class="col-md-5">
+              <?php 
+                if (isset($_GET['alert'])) {
+                  if ($_GET['alert'] == 'passchanged') {
+                    echo "<div class='alert alert-success alert-dismissable fade in'>
+                          <a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a>
+                          <strong>Sukses !</strong> Password berhasil diubah. Anda dapat login dengan password yang baru
+                        </div>";
+                  }
+                }
+               ?>
               <a href="#ModalUploadAva" title="Klik untuk Ganti Foto Profil" data-toggle='modal'><img class="profile-user-img img-responsive img-circle" src=<?php echo "assets/img/user/".$row['avatar']; ?> alt="User profile picture"></a>
               <h3 class="profile-username text-center"><?php echo $_SESSION['nama']; ?></h3>
 
@@ -134,7 +144,7 @@
                         <input type="password" name="passConf" class="form-control" id="pwinput3" placeholder="Masukan Ulang Password Baru" required>
                         <!-- &nbsp;<input type="checkbox" id="pwcheck" />&nbsp;Tampilkan Password -->
 
-                    </div>                    
+                    </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal"><i class="fa fa-undo"></i>&nbsp;Batal</button>
                         <button type="submit" class="btn btn-primary btn-ok" name="gantiPass"><i class="fa fa-check"></i>&nbsp;Simpan</button>
@@ -150,7 +160,7 @@
 <?php 
   if (isset($_POST['gantiPass'])) {
     gantiUserPassword($_SESSION['id_user'], $_POST['pass']);
-    echo "<script>document.location='/simon/index.php?page=profil'</script>";
+    echo "<script>document.location='/simon/index.php?page=profil&alert=passchanged'</script>";
   }
 
  ?>
