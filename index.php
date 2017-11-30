@@ -278,6 +278,21 @@ $(document).ready(function(){
         }
     });
 });
+
+var pwinput2 = document.getElementById("pwinput2")
+  , pwinput3 = document.getElementById("pwinput3");
+
+function validatePassword(){
+  if(pwinput2.value != pwinput3.value) {
+    pwinput3.setCustomValidity("Passwords Tidak Sama !");
+  } else {
+    pwinput3.setCustomValidity('');
+  }
+}
+
+pwinput2.onchange = validatePassword;
+pwinput3.onkeyup = validatePassword;
+
 </script>
 
 </body>

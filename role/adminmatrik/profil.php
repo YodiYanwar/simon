@@ -122,25 +122,26 @@
         <!-- Modal Ganti Password -->
         <div class="modal fade" id="ModalGantiPass" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-sm">
+              <form method="POST">
                 <div class="modal-content">
                     <div class="modal-header">
                         <h4><b><i class="fa fa-lock fa-lg"></i>&nbsp;&nbsp;Ganti Password</b></h4>
                     </div>
                     <div class="modal-body">
                         <label>Password Lama : </label>
-                        <input type="password" name="pass" class="form-control" id="pwinput1" placeholder="Masukan Password Sebelumnya">
+                        <input type="password" name="pass" class="form-control" id="pwinput1" placeholder="Masukan Password Lama" required>
                         <label>Password Baru : </label>
-                        <input type="password" name="pass" class="form-control" id="pwinput2" placeholder="Masukan Password Yang Baru">
+                        <input type="password" name="pass" class="form-control" id="pwinput2" placeholder="Masukan Password Baru" required>
                         <label>Konfirmasi Password : </label>
-                        <input type="password" name="pass" class="form-control" id="pwinput3" placeholder="Masukan Ulang Password Baru"><br>
-                        <input type="checkbox" id="pwcheck" />&nbsp;Tampilkan Password
+                        <input type="password" name="pass" class="form-control" id="pwinput3" placeholder="Masukan Ulang Password Baru" required><br>
+                        &nbsp;<input type="checkbox" id="pwcheck" />&nbsp;Tampilkan Password
                     </div>                    
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal"><i class="fa fa-undo"></i>&nbsp;Batal</button>
-                        <button type="submit" class="btn btn-primary btn-ok" name="uploadAva"><i class="fa fa-cloud-upload"></i>&nbsp;Upload</button>
-                      
+                        <button type="submit" class="btn btn-primary btn-ok" name="uploadAva"><i class="fa fa-check"></i>&nbsp;Simpan</button>
                     </div>
                 </div>
+              </form>
             </div>
         </div>        
         <!-- /Modal Ganti Password -->         
