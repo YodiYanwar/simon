@@ -223,62 +223,8 @@
   });
 </script>
 
-  <!-- Modal Ganti Password -->
-  <script type="text/javascript">
-    $(document).ready(function(){
-        $('#ModalGantiPass').on('show.bs.modal', function (e) {
-            var rowid = $(e.relatedTarget).data('id');
-            //menggunakan fungsi ajax untuk pengambilan data
-            $.ajax({
-                type : 'post',
-                url : 'detail.php',
-                data :  'rowid='+ rowid,
-                success : function(data){
-                $('.fetched-data').html(data);//menampilkan data ke dalam modal
-                }
-            });
-         });
-    });
-  </script>   
-
-<!-- Funsi Show & Hide password -->
-<script>
-$(document).ready(function(){
-
-    // $("#pwinput").focus();
-
-    $("#pwcheck").click(function(){
-        if ($("#pwcheck").is(":checked"))
-        {
-            $("#pwinput1").clone()
-            .attr("type", "text").insertAfter("#pwinput1")
-            .prev().remove();
-
-            $("#pwinput2").clone()
-            .attr("type", "text").insertAfter("#pwinput2")
-            .prev().remove();
-
-            $("#pwinput3").clone()
-            .attr("type", "text").insertAfter("#pwinput3")
-            .prev().remove();
-        }
-        else
-        {
-            $("#pwinput1").clone()
-            .attr("type","password").insertAfter("#pwinput1")
-            .prev().remove();
-
-            $("#pwinput2").clone()
-            .attr("type","password").insertAfter("#pwinput2")
-            .prev().remove();
-
-            $("#pwinput3").clone()
-            .attr("type","password").insertAfter("#pwinput3")
-            .prev().remove();
-        }
-    });
-});
-
+<!-- Fungsi Validasi Password Confirm -->
+<script type="text/javascript">
 var pwinput2 = document.getElementById("pwinput2")
   , pwinput3 = document.getElementById("pwinput3");
 
@@ -291,8 +237,38 @@ function validatePassword(){
 }
 
 pwinput2.onchange = validatePassword;
-pwinput3.onkeyup = validatePassword;
+pwinput3.onkeyup = validatePassword;  
+</script>
 
+<!-- Funsi Show & Hide password -->
+<script>
+/*$(document).ready(function(){
+
+    // $("#pwinput").focus();
+
+    $("#pwcheck").click(function(){
+        if ($("#pwcheck").is(":checked"))
+        {
+            $("#pwinput2").clone()
+            .attr("type", "text").insertAfter("#pwinput2")
+            .prev().remove();
+
+            $("#pwinput3").clone()
+            .attr("type", "text").insertAfter("#pwinput3")
+            .prev().remove();
+        }
+        else
+        {
+            $("#pwinput2").clone()
+            .attr("type","password").insertAfter("#pwinput2")
+            .prev().remove();
+
+            $("#pwinput3").clone()
+            .attr("type","password").insertAfter("#pwinput3")
+            .prev().remove();
+        }
+    });
+});*/
 </script>
 
 </body>

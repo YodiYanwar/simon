@@ -128,22 +128,29 @@
                         <h4><b><i class="fa fa-lock fa-lg"></i>&nbsp;&nbsp;Ganti Password</b></h4>
                     </div>
                     <div class="modal-body">
-                        <label>Password Lama : </label>
-                        <input type="password" name="pass" class="form-control" id="pwinput1" placeholder="Masukan Password Lama" required>
                         <label>Password Baru : </label>
                         <input type="password" name="pass" class="form-control" id="pwinput2" placeholder="Masukan Password Baru" required>
                         <label>Konfirmasi Password : </label>
-                        <input type="password" name="pass" class="form-control" id="pwinput3" placeholder="Masukan Ulang Password Baru" required><br>
-                        &nbsp;<input type="checkbox" id="pwcheck" />&nbsp;Tampilkan Password
+                        <input type="password" name="passConf" class="form-control" id="pwinput3" placeholder="Masukan Ulang Password Baru" required>
+                        <!-- &nbsp;<input type="checkbox" id="pwcheck" />&nbsp;Tampilkan Password -->
+
                     </div>                    
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal"><i class="fa fa-undo"></i>&nbsp;Batal</button>
-                        <button type="submit" class="btn btn-primary btn-ok" name="uploadAva"><i class="fa fa-check"></i>&nbsp;Simpan</button>
+                        <button type="submit" class="btn btn-primary btn-ok" name="gantiPass"><i class="fa fa-check"></i>&nbsp;Simpan</button>
                     </div>
                 </div>
               </form>
             </div>
         </div>        
         <!-- /Modal Ganti Password -->         
-
       </div>       
+      <!-- row -->
+
+<?php 
+  if (isset($_POST['gantiPass'])) {
+    gantiUserPassword($_SESSION['id_user'], $_POST['pass']);
+    echo "<script>document.location='/simon/index.php?page=profil'</script>";
+  }
+
+ ?>

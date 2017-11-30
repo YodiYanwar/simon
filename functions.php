@@ -55,6 +55,6 @@
 	}
 
 	function gantiUserPassword($idUser, $newPass){
-		mysql_query("UPDATE users SET `password` = '$newPass', WHERE id_user = '$idUser'");
+		mysql_query("UPDATE users SET `password` = '$newPass' WHERE id_user = '$idUser'");
 	}
  ?>
