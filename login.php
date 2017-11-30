@@ -13,7 +13,7 @@ if(isset($_POST['login'])){
 	$sql = mysql_query("SELECT * FROM users WHERE username='$user' AND password='$pass'") or die(mysql_error());
 
 	if(mysql_num_rows($sql) == 0){
-		echo 'User tidak ditemukan';
+		echo '<script language="javascript">document.location="login.php?alert=error";</script>';
 	}else{
 		$row = mysql_fetch_assoc($sql);
     $id = $row['id_user'];
@@ -115,9 +115,18 @@ if(isset($_POST['login'])){
             -->
           </div>
           <!-- /.login-box-body -->
+            <?php 
+              if (isset($_GET['alert'])) {
+                if ($_GET['alert'] == 'error') {
+                echo "<div class='alert alert-danger alert-dismissable fade in'>
+                        <a href='#'' class='close' data-dismiss='alert' aria-label='close'>&times;</a>
+                        <strong>Login Gagal !</strong> Username dan atau Password Salah.
+                      </div>";
+                }
+              }
+             ?>           
         </div>
-        <!-- /.login-box -->
-
+        <!-- /.login-box -->       
 
         <!-- jQuery 3 -->
         <script src="assets/js/jquery.min.js"></script>
