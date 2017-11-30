@@ -15,7 +15,7 @@
 	}
 
 	function tampilPembina(){
-		$ambildata = mysql_query("SELECT * FROM pembina ORDER BY nama") or die(mysql_error());
+		$ambildata = mysql_query("SELECT pembina.*, users.* FROM users INNER JOIN pembina ON pembina.id_user = users.id_user ORDER BY nama") or die(mysql_error());
 		if (mysql_num_rows($ambildata) > 0) {
 			while ($ad = mysql_fetch_assoc($ambildata)) // Perulangan while ini jangan pake {}
 				$data[] = $ad;

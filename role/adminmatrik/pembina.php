@@ -54,7 +54,7 @@
                   <td><?php echo $row['j_kelamin'] ?></td>
                   <td><?php echo $row['email'] ?></td>
                   <td><?php echo $row['telp'] ?></td>
-                  <td><?php echo $row['telp'] ?></td>
+                  <td><?php echo $row['last_login'] ?></td>
                   <td>
                     <div class="dropdown">
                       <button class="btn btn-default btn-sm dropdown-toggle " type="button" data-toggle="dropdown">

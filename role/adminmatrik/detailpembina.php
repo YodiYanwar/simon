@@ -42,7 +42,10 @@
                 </li>     
                 <li class="list-group-item">
                   <b>Username</b> <div class="pull-right"><code><?php echo $row['username']; ?></code>&nbsp;&nbsp;&nbsp;<span class="btn btn-secondary" href=""><i class="fa fa-user fa-lg"></i></span></div>
-                </li>                        
+                </li>   
+                <li class="list-group-item">
+                  <b>Terakhir Login</b> <div class="pull-right"><?php echo $row['last_login']; ?>&nbsp;&nbsp;&nbsp;<span class="btn btn-secondary" href=""><i class="fa fa-user fa-lg"></i></span></div>
+                </li>                     
                 <li class="list-group-item">
                   <b>Email</b> <div class="pull-right"><?php echo $row['email']; ?>&nbsp;&nbsp;&nbsp;<a class="btn btn-primary btn-outline" href=""><i class="fa fa-envelope-o fa-lg"></i></a></div>
                 </li>             
