@@ -25,8 +25,8 @@
 		}		
 	}
 
-	function pembinaDetails($id){
-		$ambildata = mysql_query("SELECT * FROM pembina WHERE id_pembina = $id");
+	function pembinaDetails($idUser){
+		$ambildata = mysql_query("SELECT pembina.*, users.* FROM users INNER JOIN pembina ON pembina.id_user = users.id_user WHERE users.id_user = $idUser");
 			$ad = mysql_fetch_assoc($ambildata);
 				$data[] = $ad;
 				return $data;
@@ -48,7 +48,7 @@
 	}
 
 	function adminMatrikDetails($id){
-		$ambildata = mysql_query("SELECT adminmatrik.*, users.username, users.password FROM adminmatrik, users WHERE users.id_user = $id");
+		$ambildata = mysql_query("SELECT adminmatrik.*, users.* FROM users INNER JOIN adminmatrik ON adminmatrik.id_user = users.id_user WHERE users.id_user = $id");
 			$ad = mysql_fetch_assoc($ambildata);
 				$data[] = $ad;
 				return $data;

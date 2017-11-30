@@ -36,6 +36,7 @@
                     <th>Jenis Kelamin</th>
                     <th>Email</th>
                     <th>Telp</th>
+                    <th>Login Terakhir</th>
                     <th></th>
                   </tr>
                 </thead>
@@ -49,9 +50,10 @@
                    ?>
                 <tr>
                   <td><?php echo $no ?></td>
-                  <td><?php echo "<a href='index.php?page=pembinadetails&id=".$row['id_pembina']."'>".$row['nama']."</a>" ?></td>
+                  <td><?php echo "<a href='index.php?page=pembinadetails&id=".$row['id_user']."'>".$row['nama']."</a>" ?></td>
                   <td><?php echo $row['j_kelamin'] ?></td>
                   <td><?php echo $row['email'] ?></td>
+                  <td><?php echo $row['telp'] ?></td>
                   <td><?php echo $row['telp'] ?></td>
                   <td>
                     <div class="dropdown">
