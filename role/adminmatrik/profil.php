@@ -127,13 +127,18 @@
                         <h4><b><i class="fa fa-lock fa-lg"></i>&nbsp;&nbsp;Ganti Password</b></h4>
                     </div>
                     <div class="modal-body">
-                      <form action="upload.php" method="post" enctype="multipart/form-data">
-                        <input type="file" name="AvaProfilFile">
+                        <label>Password Lama : </label>
+                        <input type="password" name="pass" class="form-control" id="pwinput1" placeholder="Masukan Password Sebelumnya">
+                        <label>Password Baru : </label>
+                        <input type="password" name="pass" class="form-control" id="pwinput2" placeholder="Masukan Password Yang Baru">
+                        <label>Konfirmasi Password : </label>
+                        <input type="password" name="pass" class="form-control" id="pwinput3" placeholder="Masukan Ulang Password Baru"><br>
+                        <input type="checkbox" id="pwcheck" />&nbsp;Tampilkan Password
                     </div>                    
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal"><i class="fa fa-undo"></i>&nbsp;Batal</button>
                         <button type="submit" class="btn btn-primary btn-ok" name="uploadAva"><i class="fa fa-cloud-upload"></i>&nbsp;Upload</button>
-                      </form>
+                      
                     </div>
                 </div>
             </div>

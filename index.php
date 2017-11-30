@@ -241,5 +241,44 @@
     });
   </script>   
 
+<!-- Funsi Show & Hide password -->
+<script>
+$(document).ready(function(){
+
+    // $("#pwinput").focus();
+
+    $("#pwcheck").click(function(){
+        if ($("#pwcheck").is(":checked"))
+        {
+            $("#pwinput1").clone()
+            .attr("type", "text").insertAfter("#pwinput1")
+            .prev().remove();
+
+            $("#pwinput2").clone()
+            .attr("type", "text").insertAfter("#pwinput2")
+            .prev().remove();
+
+            $("#pwinput3").clone()
+            .attr("type", "text").insertAfter("#pwinput3")
+            .prev().remove();
+        }
+        else
+        {
+            $("#pwinput1").clone()
+            .attr("type","password").insertAfter("#pwinput1")
+            .prev().remove();
+
+            $("#pwinput2").clone()
+            .attr("type","password").insertAfter("#pwinput2")
+            .prev().remove();
+
+            $("#pwinput3").clone()
+            .attr("type","password").insertAfter("#pwinput3")
+            .prev().remove();
+        }
+    });
+});
+</script>
+
 </body>
 </html>
