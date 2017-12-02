@@ -43,7 +43,7 @@
                 }
                ?>
               <a href="#ModalUploadAva" title="Klik untuk Ganti Foto Profil" data-toggle='modal'><img class="profile-user-img img-responsive img-circle" src=<?php echo "assets/img/user/".$row['avatar']; ?> alt="User profile picture"></a>
-              <h3 class="profile-username text-center"><?php echo $_SESSION['nama']; ?></h3>
+              <h3 class="profile-username text-center"><?php echo $row['nama']; ?></h3>
 
               <p class="text-muted text-center">Pembina Mahasiswa</p>
 
@@ -68,7 +68,7 @@
                   <b>Tanggal Lahir</b> <div class="pull-right"><?php echo date('d F Y', strtotime($row['tgl_lahir'])); ?>&nbsp;&nbsp;&nbsp;<span class="btn btn-secondary" href=""><i class="fa fa-calendar-o fa-lg"></i></span></div>
                 </li>                                  
               </ul>
-                <a href="index.php?page=editpembina&id=<?php echo $row['id_adminmatrik']; ?>" class='btn btn-primary btn-block'><i class='fa fa-pencil'></i>&nbsp;&nbsp;Edit Data Profil</a>
+                <a href="index.php?page=editprofil" class='btn btn-primary btn-block'><i class='fa fa-pencil'></i>&nbsp;&nbsp;Edit Data Profil</a>
                 <?php echo "<a href='#ModalGantiPass' class='btn btn-warning btn-outline btn-block' data-toggle='modal' data-href='action/hapus.php?&iduser=".$row['id_user']."'><i class='fa fa-lock'></i>&nbsp;&nbsp;Ganti Password</a>"; ?>
             </div>
             <!-- /.box-body -->
@@ -77,24 +77,6 @@
         </div>
 
         <?php } ?>
-
-        <div class="modal fade" id="ModalEditPembina" role="dialog">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        <h4 class="modal-title"><i class="fa fa-pencil"></i>&nbsp;&nbsp;<b>Edit Profil Pembina</b></h4>
-                    </div>
-                    <div class="modal-body">
-                        <div class="fetched-data"></div>
-                    </div>
-                    <div class="modal-footer">
-                      <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-undo" aria-hidden="true"></i>&nbsp;Batal</button>
-                      <button type="submit" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-check" aria-hidden="true"></i>&nbsp;Simpan</button>
-                    </div>
-                </div>
-            </div>
-        </div>
 
         <!-- Modal Hapus Pembina -->
         <div class="modal fade" id="ModalHapusPembina" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
