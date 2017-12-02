@@ -123,7 +123,7 @@
     </header>   
 
     <?php  
-      if ($_SESSION['role'] =='admin') {
+      if ($_SESSION['role'] =='administrator') {
         include 'role/admin/sidebar.php';
       } else
       if($_SESSION['role'] =='adminmatrik'){
@@ -183,22 +183,7 @@
   <script src="assets/js/demo.js"></script> 
   
   <script type="text/javascript">
-    $(document).ready(function(){
-        $('#ModalEditPembina').on('show.bs.modal', function (e) {
-            var idPembina = $(e.relatedTarget).data('id');
-            //menggunakan fungsi ajax untuk pengambilan data
-            $.ajax({
-                type : 'post',
-                url : 'role/adminmatrik/pembina_modalEdit.php',
-                data :  'idPembina='+ idPembina,
-                success : function(data){
-                $('.fetched-data').html(data);//menampilkan data ke dalam modal
-                }
-            });
-         });
-      });
-
-    //Hapus Data
+    //Modal Hapus Data Pembina
     $(document).ready(function() {
         $('#ModalHapusPembina').on('show.bs.modal', function(e) {
             $(this).find('.btn-ok').attr('href', $(e.relatedTarget).data('href'));
@@ -225,7 +210,7 @@
 
 <!-- Fungsi Validasi Password Confirm -->
 <script type="text/javascript">
-/*var pwinput2 = document.getElementById("pwinput2")
+var pwinput2 = document.getElementById("pwinput2")
   , pwinput3 = document.getElementById("pwinput3");
 
 function validatePassword(){
@@ -237,7 +222,7 @@ function validatePassword(){
 }
 
 pwinput2.onchange = validatePassword;
-pwinput3.onkeyup = validatePassword;  */
+pwinput3.onkeyup = validatePassword;
 </script>
 
 <!-- Funsi Show & Hide password -->

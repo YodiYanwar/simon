@@ -34,12 +34,14 @@ if(isset($_POST['login'])){
           echo '<script language="javascript">document.location="index.php";</script>';
         }
 
+
+
         $_SESSION['ava'] = $ava;
         $_SESSION['id_admin'] = $id_admin;
-        $_SESSION['nama'] = $nama;
         $_SESSION['role'] = 'administrator';
+        $_SESSION['nama'] = $nama;        
         $_SESSION['rolename'] = 'Admininstrator';
-        $_SESSION['username'] = $user; 
+        $_SESSION['username'] = $user;
         
 		}else if($row['level'] == 2){
       	$sql_profil = mysql_query("SELECT * FROM adminmatrik WHERE id_user=$id") or die(mysql_error());
