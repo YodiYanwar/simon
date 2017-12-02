@@ -10,7 +10,7 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        <a class="btn btn-primary" href="index.php?page=pembinadetails&id=<?php echo $row['id_pembina']; ?> "><i class="fa fa-arrow-left"></i></a>&nbsp;
+        <a class="btn btn-primary" href="index.php?page=pembinadetails&id=<?php echo $row['id_user']; ?> "><i class="fa fa-arrow-left"></i></a>&nbsp;
         Manajemen Pengguna
         <small>Pembina Mahasiswa</small>
       </h1>
