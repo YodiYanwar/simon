@@ -47,6 +47,18 @@
 		return $data;
 	}
 
+	function totalUser(){
+		$ambildata = mysql_query("SELECT COUNT(id_user) as Total from users");
+		$data = mysql_fetch_assoc($ambildata);
+		return $data;		
+	}
+
+	function totalAdminMatrik(){
+		$ambildata = mysql_query("SELECT COUNT(id_adminmatrik) as Total from adminmatrik");
+		$data = mysql_fetch_assoc($ambildata);
+		return $data;		
+	}	
+
 	function adminMatrikDetails($idUser){
 		$ambildata = mysql_query("SELECT adminmatrik.*, users.* FROM users INNER JOIN adminmatrik ON adminmatrik.id_user = users.id_user WHERE users.id_user = $idUser");
 			$ad = mysql_fetch_assoc($ambildata);
