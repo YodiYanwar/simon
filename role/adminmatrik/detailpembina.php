@@ -68,7 +68,7 @@
                   <b>Performa Rata-rata Binaan</b> <div class="pull-right">&nbsp;&nbsp;&nbsp;<a class="btn btn-secondary" href=""><i class="fa fa-dashboard fa-lg"></i></a></div>
                 </li>                           
               </ul>
-                <a href="index.php?page=editpembina&id=<?php echo $row['id_pembina']; ?>" class='btn btn-primary btn-block'><b><i class='fa fa-pencil'></i>&nbsp;&nbsp;Edit Data Profil</b></a>
+                <a href="index.php?page=editpembina&id=<?php echo $row['id_user']; ?>" class='btn btn-primary btn-block'><b><i class='fa fa-pencil'></i>&nbsp;&nbsp;Edit Data Profil</b></a>
 
               <?php echo "<a href='#ModalHapusPembina' class='btn btn-danger btn-outline btn-block' data-toggle='modal' data-href='action/hapus.php?idpembina=".$row['id_pembina']."&iduser=".$row['id_user']."'><i class='fa fa-trash'></i>&nbsp;&nbsp;Hapus Pembina</a>"; ?>
               
