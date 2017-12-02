@@ -30,13 +30,22 @@ if(isset($_POST['login'])){
           $nama = $admin['nama'];
           $email = $admin['email'];
           $telp = $admin['telp'];
+          $gender = $admin['j_kelamin'];
           
           echo '<script language="javascript">document.location="index.php";</script>';
         }
 
-
-
-        $_SESSION['ava'] = $ava;
+        if ($ava == NULL) {
+          if ($gender == 'Perempuan'){
+            $_SESSION['ava'] ='default-female.jpg';
+          } else
+          if ($gender == 'Laki-laki'){
+            $_SESSION['ava'] ='default-male.png';
+          }
+        } else{
+          $_SESSION['ava'] = $ava;
+        } 
+        
         $_SESSION['id_admin'] = $id_admin;
         $_SESSION['role'] = 'administrator';
         $_SESSION['nama'] = $nama;        
@@ -52,11 +61,22 @@ if(isset($_POST['login'])){
 	        $nama = $adminmatrik['nama'];
 	        $email = $adminmatrik['email'];
 	        $telp = $adminmatrik['telp'];
+          $gender = $adminmatrik['j_kelamin'];
 	        
 	        echo '<script language="javascript">document.location="index.php";</script>';
 	      }
 
-        $_SESSION['ava'] = $ava;
+        if ($ava == NULL) {
+          if ($gender == 'Perempuan'){
+            $_SESSION['ava'] ='default-female.jpg';
+          } else
+          if ($gender == 'Laki-laki'){
+            $_SESSION['ava'] ='default-male.png';
+          }
+        } else{
+          $_SESSION['ava'] = $ava;
+        } 
+
 	      $_SESSION['id_AM'] = $id_AM;
         $_SESSION['nama'] = $nama;
         $_SESSION['role'] = 'adminmatrik';
@@ -73,11 +93,22 @@ if(isset($_POST['login'])){
           $nama = $pembina['nama'];
           $email = $pembina['email'];
           $telp = $pembina['telp'];
+          $gender = $pembina['j_kelamin'];
           
           echo '<script language="javascript">document.location="index.php";</script>';
         }
 
-        $_SESSION['ava'] = $ava;
+        if ($ava == NULL) {
+          if ($gender == 'Perempuan'){
+            $_SESSION['ava'] ='default-female.jpg';
+          } else
+          if ($gender == 'Laki-laki'){
+            $_SESSION['ava'] ='default-male.png';
+          }
+        } else{
+          $_SESSION['ava'] = $ava;
+        } 
+
         $_SESSION['id_pembina'] = $id_pembina;
         $_SESSION['nama'] = $nama;
         $_SESSION['role'] = 'pembina';
@@ -87,10 +118,11 @@ if(isset($_POST['login'])){
       $_SESSION['role'] = 'pembina';
       $_SESSION['username'] = $user;
       //$_SESSION['nama'] = $row['nama'];
-      echo '<script language="javascript">document.location="index.php";</script>';
+      //echo '<script language="javascript">document.location="index.php";</script>';
     }
 	}
 }
+
 ?>
 
 <!DOCTYPE html>

@@ -42,7 +42,18 @@
                   }
                 }
                ?>
-              <a href="#ModalUploadAva" title="Klik untuk Ganti Foto Profil" data-toggle='modal'><img class="profile-user-img img-responsive img-circle" src=<?php echo "assets/img/user/".$row['avatar']; ?> alt="User profile picture"></a>
+              <a href="#ModalUploadAva" title="Klik untuk Ganti Foto Profil" data-toggle='modal'><img class="profile-user-img img-responsive img-circle" src=<?php
+                if ($row['avatar'] == NULL) {
+                  if ($row['j_kelamin'] == 'Perempuan'){
+                    echo 'assets/img/user/default-female.jpg';
+                  } else
+                  if ($row['j_kelamin'] == 'Laki-laki'){
+                    echo 'assets/img/user/default-male.png';
+                  }
+                } else{
+                  echo $row['avatar'];
+                }               
+              ?> alt="User profile picture"></a>
               <h3 class="profile-username text-center"><?php echo $row['nama']; ?></h3>
 
               <p class="text-muted text-center">Pembina Mahasiswa</p>

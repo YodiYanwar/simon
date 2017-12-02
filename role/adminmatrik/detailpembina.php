@@ -31,7 +31,19 @@
             <div class="box-body box-profile">
               <div class="col-md-3"></div>
               <div class="col-md-5">
-              <a href="#ModalUploadAva" data-toggle='modal'><img class="profile-user-img img-responsive img-circle" src=<?php echo "assets/img/user/".$row['avatar']; ?> alt="User profile picture"></a>
+              <a href="#ModalUploadAva" data-toggle='modal'><img class="profile-user-img img-responsive img-circle" src=
+              <?php 
+        if ($row['avatar'] == NULL) {
+          if ($row['j_kelamin'] == 'Perempuan'){
+            echo 'assets/img/user/default-female.jpg';
+          } else
+          if ($row['j_kelamin'] == 'Laki-laki'){
+            echo 'assets/img/user/default-male.png';
+          }
+        } else{
+          echo $row['avatar'];
+        }
+               ?> alt="User profile picture"></a>
               <h3 class="profile-username text-center"><?php echo $row['nama'].' '.$row['gelar']; ?></h3>
 
               <p class="text-muted text-center">Pembina Mahasiswa</p>
@@ -44,7 +56,7 @@
                   <b>Username</b> <div class="pull-right"><code><?php echo $row['username']; ?></code>&nbsp;&nbsp;&nbsp;<span class="btn btn-secondary" href=""><i class="fa fa-user fa-lg"></i></span></div>
                 </li>   
                 <li class="list-group-item">
-                  <b>Terakhir Login</b> <div class="pull-right"><?php echo $row['last_login']; ?>&nbsp;&nbsp;&nbsp;<span class="btn btn-secondary" href=""><i class="fa fa-user fa-lg"></i></span></div>
+                  <b>Login Terakhir</b> <div class="pull-right"><?php if ($row['last_login'] == '0000-00-00 00:00:00'){ echo 'Belum Pernah';}else{ echo date("d-m-Y H:i", strtotime($row['last_login']));} ?>&nbsp;&nbsp;&nbsp;<span class="btn btn-secondary" href=""><i class="fa fa-user fa-lg"></i></span></div>
                 </li>                     
                 <li class="list-group-item">
                   <b>Email</b> <div class="pull-right"><?php echo $row['email']; ?>&nbsp;&nbsp;&nbsp;<a class="btn btn-primary btn-outline" href=""><i class="fa fa-envelope-o fa-lg"></i></a></div>
@@ -68,7 +80,7 @@
                   <b>Performa Rata-rata Binaan</b> <div class="pull-right">&nbsp;&nbsp;&nbsp;<a class="btn btn-secondary" href=""><i class="fa fa-dashboard fa-lg"></i></a></div>
                 </li>                           
               </ul>
-                <a href="index.php?page=editpembina&id=<?php echo $row['id_user']; ?>" class='btn btn-primary btn-block'><b><i class='fa fa-pencil'></i>&nbsp;&nbsp;Edit Data Profil</b></a>
+                <a href="index.php?page=editpembina&id=<?php echo $row['id_user']; ?>" class='btn btn-primary btn-block'><i class='fa fa-pencil'></i>&nbsp;&nbsp;Edit Data Profil</a>
 
               <?php echo "<a href='#ModalHapusPembina' class='btn btn-danger btn-outline btn-block' data-toggle='modal' data-href='action/hapus.php?idpembina=".$row['id_pembina']."&iduser=".$row['id_user']."'><i class='fa fa-trash'></i>&nbsp;&nbsp;Hapus Pembina</a>"; ?>
               

@@ -4,7 +4,12 @@
     <section class="sidebar">
       <!-- sidebar menu: : style can be found in sidebar.less -->
       <ul class="sidebar-menu" data-widget="tree">
-        <li><a href="/simon"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a></li>
+        <li <?php 
+              if ($_SERVER['REQUEST_URI'] == '/simon/' || $_SERVER['REQUEST_URI'] == '/simon/index.php') {
+                 echo "class='active'";
+              }
+            ?>
+        ><a href="/simon"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a></li>
         <li><a href="?page=user"><i class="fa fa-user"></i> <span>Managemen Pengguna</span></a></li>
       </ul>
     </section>
