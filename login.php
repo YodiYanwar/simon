@@ -22,13 +22,27 @@ if(isset($_POST['login'])){
     mysql_query("UPDATE users SET last_login = NOW() WHERE id_user = $id");
 
 		if($row['level'] == 0){
-			
-			$_SESSION['role'] = 'admin';
-			$_SESSION['username'] = $user;
-			//$_SESSION['nama'] = $row['nama'];
-			echo '<script language="javascript">document.location="index.php";</script>';
+        $sql_profil = mysql_query("SELECT * FROM administrator WHERE id_user=$id") or die(mysql_error());
+
+        while($admin = mysql_fetch_assoc($sql_profil)){
+          $ava = $admin['avatar'];
+          $id_admin = $admin['id_admin'];
+          $nama = $admin['nama'];
+          $email = $admin['email'];
+          $telp = $admin['telp'];
+          
+          echo '<script language="javascript">document.location="index.php";</script>';
+        }
+
+        $_SESSION['ava'] = $ava;
+        $_SESSION['id_admin'] = $id_admin;
+        $_SESSION['nama'] = $nama;
+        $_SESSION['role'] = 'administrator';
+        $_SESSION['rolename'] = 'Admininstrator';
+        $_SESSION['username'] = $user; 
+        
 		}else if($row['level'] == 2){
-      		$sql_profil = mysql_query("SELECT * FROM adminmatrik WHERE id_user=$id") or die(mysql_error());
+      	$sql_profil = mysql_query("SELECT * FROM adminmatrik WHERE id_user=$id") or die(mysql_error());
 
 	      while($adminmatrik = mysql_fetch_assoc($sql_profil)){
           $ava = $adminmatrik['avatar'];

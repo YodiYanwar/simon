@@ -225,7 +225,7 @@
 
 <!-- Fungsi Validasi Password Confirm -->
 <script type="text/javascript">
-var pwinput2 = document.getElementById("pwinput2")
+/*var pwinput2 = document.getElementById("pwinput2")
   , pwinput3 = document.getElementById("pwinput3");
 
 function validatePassword(){
@@ -237,7 +237,7 @@ function validatePassword(){
 }
 
 pwinput2.onchange = validatePassword;
-pwinput3.onkeyup = validatePassword;  
+pwinput3.onkeyup = validatePassword;  */
 </script>
 
 <!-- Funsi Show & Hide password -->

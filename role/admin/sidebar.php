@@ -12,7 +12,7 @@
   </aside>    
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
-    <?php  
+    <?php
       if (isset($_GET['page'])) {
         if ($_GET['page'] == 'mahasiswa') {
           include 'mahasiswa.php';
