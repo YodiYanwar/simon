@@ -64,6 +64,8 @@
           include 'edit_pembina.php';
         } else if ($_GET['page'] == 'profil') {
           include 'profil.php';
+        } else if ($_GET['page'] == 'editprofil') {
+          include 'edit_profil.php';
         }
   		} else{
   			include 'dashboard.php';
