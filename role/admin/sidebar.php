@@ -5,12 +5,79 @@
       <!-- sidebar menu: : style can be found in sidebar.less -->
       <ul class="sidebar-menu" data-widget="tree">
         <li <?php 
-              if ($_SERVER['REQUEST_URI'] == '/simon/' || $_SERVER['REQUEST_URI'] == '/simon/index.php') {
+              if ($_SERVER['REQUEST_URI'] == '/simon/') {
                  echo "class='active'";
               }
             ?>
         ><a href="/simon"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a></li>
-        <li><a href="?page=user"><i class="fa fa-user"></i> <span>Managemen Pengguna</span></a></li>
+        <li class="treeview <?php 
+              if (isset($_GET['page'])) {
+                    if ($_GET['page'] == 'users') {
+                      echo ' active';
+                    } else{
+                      echo '';
+                    }
+                  }
+             ?>"
+        >
+          <a href="#">
+            <i class="fa fa-user-circle-o"></i>
+            <span>Manajemen Pengguna</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li <?php 
+                  if (isset($_GET['page'])) {
+                    if ($_GET['page'] == 'users') {
+                      echo "class='active'";
+                    }
+                  }
+                ?>
+            ><a href="?page=users"><i class="fa fa-users"></i> Semua</a></li>
+            <li <?php 
+                  if (isset($_GET['page'])) {
+                    if ($_GET['page'] == 'administrator') {
+                      echo "class='active'";
+                    }
+                  }
+                ?>
+             ><a href="?page=administrator"><i class="fa fa-user"></i> Admininstrator</a></li>   
+            <li <?php 
+                  if (isset($_GET['page'])) {
+                    if ($_GET['page'] == 'pimpinan') {
+                      echo "class='active'";
+                    }
+                  }
+                ?>
+             ><a href="?page=pimpinan"><i class="fa fa-user"></i> Pimpinan Matrikulasi</a></li>
+            <li <?php 
+                  if (isset($_GET['page'])) {
+                    if ($_GET['page'] == 'adminmatrik') {
+                      echo "class='active'";
+                    }
+                  }
+                ?>
+             ><a href="?page=adminmatrik"><i class="fa fa-user"></i> Admin Matrikulasi</a></li>
+            <li <?php 
+                  if (isset($_GET['page'])) {
+                    if ($_GET['page'] == 'pembina'|| $_GET['page'] == 'pembinadetails' || $_GET['page'] == 'editpembina') {
+                      echo "class='active'";
+                    }
+                  }
+                ?>
+             ><a href="?page=pembina"><i class="fa fa-user"></i> Pembina Mahasiswa</a></li>
+            <li <?php 
+                  if (isset($_GET['page'])) {
+                    if ($_GET['page'] == 'mahasiswa'|| $_GET['page'] == 'mahasiswadetails' || $_GET['page'] == 'mahasiswapembina') {
+                      echo "class='active'";
+                    }
+                  }
+                ?>
+             ><a href="?page=mahasiswa"><i class="fa fa-user"></i> Mahasiswa</a></li>
+          </ul>
+          </li>
       </ul>
     </section>
     <!-- /.sidebar -->
