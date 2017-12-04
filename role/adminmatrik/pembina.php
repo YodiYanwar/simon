@@ -55,7 +55,6 @@
                   <td><?php echo $row['email'] ?></td>
                   <td><?php echo $row['telp'] ?></td>
                   <td><?php if ($row['last_login'] == '0000-00-00 00:00:00'){ echo 'Belum Pernah';}else{ echo date("d-m-Y H:i", strtotime($row['last_login'])) ;}
-                    # code...
                   ?></td>
                   <td>
                     <div class="dropdown">

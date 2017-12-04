@@ -21,6 +21,9 @@
       if (isset($_GET['page'])) {
         if ($_GET['page'] == 'mahasiswa') {
           include 'mahasiswa.php';
+        } else
+        if ($_GET['page'] == 'users') {
+          include 'users.php';
         }
       } else{
         include 'dashboard.php';

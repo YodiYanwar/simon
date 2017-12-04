@@ -31,13 +31,13 @@
             <div class="icon">
               <i class="ion ion-ios-people-outline"></i>
             </div>
-            <a href="index.php?page=pembina" class="small-box-footer">Lebih Detil &nbsp;<i class="fa fa-arrow-circle-right"></i></a>
+            <a href="index.php?page=users" class="small-box-footer">Lebih Detil &nbsp;<i class="fa fa-arrow-circle-right"></i></a>
           </div>         
         </div>
         <!-- ./col -->
         <div class="col-lg-3 col-xs-6">
           <!-- small box -->
-          <div class="small-box bg-aqua">
+          <div class="small-box bg-green">
             <div class="inner">
               <h3><?php foreach($tam as $totalAM){ echo $totalAM; }?></h3>
               <p>Jumlah Admin Matrikulasi</p>
@@ -52,7 +52,7 @@
         <!-- ./col -->
         <div class="col-lg-3 col-xs-6">
           <!-- small box -->
-          <div class="small-box bg-aqua">
+          <div class="small-box bg-yellow">
             <div class="inner">
               <h3><?php foreach($tp as $totalPembina){ echo $totalPembina; }?></h3>
               <p>Jumlah Pembina Mahasiswa</p>

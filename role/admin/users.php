@@ -8,12 +8,12 @@
     <section class="content-header">
       <h1>
         Manajemen Pengguna
-        <small>Pembina Mahasiswa</small>
+        <small>Sistem</small>
       </h1>
       <ol class="breadcrumb">
         <li><a href="/simon/admin"><i class="fa fa-dashboard"></i> Dashboard</a></li>
-        <li class="active">Manajemen Pengguna</li>
-        <li>Pembina Mahasiswa</li>
+        <li>Manajemen Pengguna</li>
+        <li class="active">Semua</li>
       </ol>
     </section>
 
@@ -23,39 +23,42 @@
         <div class="col-xs-12">
           <div class="box">
             <div class="box-header">
-             <button class="btn btn-primary" data-toggle="modal" data-target="#tambahPembina"><i class="fa fa-user-plus"></i>&nbsp;Tambah Data Pembina</button>
+             <button class="btn btn-primary" data-toggle="modal" data-target="#tambahUser"><i class="fa fa-user-plus"></i>&nbsp;Tambah Pengguna Sistem</button>
             </div>
             <!-- /.box-header -->
             <div class="box-body">
-              <table id="example1" class="table table-bordered table-hover">
+              <table id="tableUsers" class="table table-bordered table-hover table-condensed">
                 <thead>
                   <tr>
                     <th>NO</th>
-                    <th>Nama Pembina</th>
-                    <th>Jenis Kelamin</th>
-                    <th>Email</th>
-                    <th>Telp</th>
+                    <th>Username</th>
+                    <th>ID User</th>
+                    <th>Level</th>
+                    <th>Terakhir Login</th>
                     <th></th>
                   </tr>
                 </thead>
                 <tbody>
                   <?php 
-                    $dataPembina = tampilPembina();
-                    
+                    $dataUser = tampilUsers();
                     $no = 1;
-                    foreach($dataPembina as $row){
-
+                    foreach($dataUser as $row){
                    ?>
                 <tr>
                   <td><?php echo $no ?></td>
-                  <td><?php echo "<a href='index.php?page=pembinadetails&id=".$row['id_pembina']."'>".$row['nama']."</a>" ?></td>
-                  <td><?php echo $row['j_kelamin'] ?></td>
-                  <td><?php echo $row['email'] ?></td>
-                  <td><?php echo $row['telp'] ?></td>
-                  <td>
-                    
-                    <?php echo "<a href='index.php?page=pembinadetails&id=".$row['id_pembina']."' class='btn btn-warning btn-sm' title='Atur ".$row['nama']."'><i class='fa fa-pencil fa-lg' aria-hidden='true'></i></a>"; ?>                          
-                    
+                  <td><?php echo $row['username'] ?></td>
+                  <td><?php echo $row['id_user'] ?></td>
+                  <td><?php if ($row['level'] == '0'){ echo 'Administrator';}else if($row['level'] == '1'){ echo 'Pimpinan Matrikulasi' ;}else if($row['level'] == '2'){ echo 'Admin Matrikulasi' ;}else if($row['level'] == '3'){ echo 'Pembina Mahasiswa' ;} ?></td>
+                  <td><?php if ($row['last_login'] == '0000-00-00 00:00:00'){ echo 'Belum Pernah';}else{ echo date("d-m-Y H:i", strtotime($row['last_login'])) ;} ?></td>
+                  <td>                         
+                    <div class="dropdown">
+                      <button class="btn btn-default btn-sm dropdown-toggle " type="button" data-toggle="dropdown">
+                        <i class="fa fa-cog fa-lg"></i>&nbsp;&nbsp;<span class="caret"></span>
+                      </button>
+                      <ul class="dropdown-menu">
+                        <li><a style="color:#3C8DBC;" href="index.php?page=editpembina&id=<?php echo $row['id_user']; ?>" class='dropdown-item'><i class='fa fa-unlock-alt'></i>&nbsp;Reset Password</a></li>
+                      </ul>
+                    </div>
                   </td>
                 </tr>
                   <?php 
