@@ -12,7 +12,7 @@
         ><a href="/simon"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a></li>
         <li class="treeview <?php 
               if (isset($_GET['page'])) {
-                    if ($_GET['page'] == 'users') {
+                    if ($_GET['page'] == 'users' || $_GET['page'] == 'administrator' || $_GET['page'] == 'pimpinan' || $_GET['page'] == 'adminmatrik' || $_GET['page'] == 'pembina' || $_GET['page'] == 'mahasiswa') {
                       echo ' active';
                     } else{
                       echo '';
@@ -91,6 +91,9 @@
         } else
         if ($_GET['page'] == 'users') {
           include 'users.php';
+        } else
+        if ($_GET['page'] == 'pembina') {
+          include 'pembina.php';
         }
       } else{
         include 'dashboard.php';
