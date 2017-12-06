@@ -94,6 +94,12 @@
         } else
         if ($_GET['page'] == 'pembina') {
           include 'pembina.php';
+        } else
+        if ($_GET['page'] == 'adminmatrik') {
+          include 'adminmatrik.php';
+        } else
+        if ($_GET['page'] == 'administrator') {
+          include 'administrator.php';
         }
       } else{
         include 'dashboard.php';

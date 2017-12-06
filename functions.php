@@ -36,6 +36,28 @@
 		}		
 	}	
 
+	function tampilAdminmatrik(){
+		$ambildata = mysql_query("SELECT adminmatrik.*, users.* FROM users INNER JOIN adminmatrik ON adminmatrik.id_user = users.id_user ORDER BY nama") or die(mysql_error());
+		if (mysql_num_rows($ambildata) > 0) {
+			while ($ad = mysql_fetch_assoc($ambildata)) // Perulangan while ini jangan pake {}
+				$data[] = $ad;
+				return $data;
+		} else{
+			echo "Daftar pembina kosong";
+		}		
+	}
+
+	function tampilAdministrator(){
+		$ambildata = mysql_query("SELECT administrator.*, users.* FROM users INNER JOIN administrator ON administrator.id_user = users.id_user ORDER BY nama") or die(mysql_error());
+		if (mysql_num_rows($ambildata) > 0) {
+			while ($ad = mysql_fetch_assoc($ambildata)) // Perulangan while ini jangan pake {}
+				$data[] = $ad;
+				return $data;
+		} else{
+			echo "Daftar pembina kosong";
+		}		
+	}	
+
 	function pembinaDetails($idUser){
 		$ambildata = mysql_query("SELECT pembina.*, users.* FROM users INNER JOIN pembina ON pembina.id_user = users.id_user WHERE users.id_user = $idUser");
 			$ad = mysql_fetch_assoc($ambildata);
