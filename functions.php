@@ -36,6 +36,17 @@
 		}		
 	}	
 
+	function tampilMahasiswa(){
+		$ambildata = mysql_query("SELECT * FROM mahasiswa ORDER BY nama") or die(mysql_error());
+		if (mysql_num_rows($ambildata) > 0) {
+			while ($ad = mysql_fetch_assoc($ambildata)) // Perulangan while ini jangan pake {}
+				$data[] = $ad;
+				return $data;
+		} else{
+			echo "Daftar mahasiswa kosong";
+		}		
+	}	
+
 	function tampilAdminmatrik(){
 		$ambildata = mysql_query("SELECT adminmatrik.*, users.* FROM users INNER JOIN adminmatrik ON adminmatrik.id_user = users.id_user ORDER BY nama") or die(mysql_error());
 		if (mysql_num_rows($ambildata) > 0) {
@@ -89,8 +100,8 @@
 	function totalAdminMatrik(){
 		$ambildata = mysql_query("SELECT COUNT(id_adminmatrik) as Total from adminmatrik");
 		$data = mysql_fetch_assoc($ambildata);
-		return $data;		
-	}	
+		return $data;
+	}
 
 	function adminMatrikDetails($idUser){
 		$ambildata = mysql_query("SELECT adminmatrik.*, users.* FROM users INNER JOIN adminmatrik ON adminmatrik.id_user = users.id_user WHERE users.id_user = $idUser");
@@ -106,4 +117,30 @@
 	function gantiUserPassword($idUser, $newPass){
 		mysql_query("UPDATE users SET `password` = '$newPass' WHERE id_user = '$idUser'");
 	}
+
+	function importMahasiswa($angkatan){
+		$koneksi_mdb = odbc_connect( 'att2000', "", "");
+		
+		$sql = "SELECT USERID,Badgenumber,Name FROM USERINFO WHERE Badgenumber LIKE '$angkatan' & '1011%' ORDER BY Name";
+		$result = odbc_exec($koneksi_mdb, $sql);
+		$nama = "";
+
+		//echo $koneksi;
+
+		while($row_mdb = odbc_fetch_array($result)){
+
+			/*$namaTanpaSpasi = str_replace(' ', '', $row_mdb['Name']);
+			$pass = $namaTanpaSpasi.(substr($row_mdb['Badgenumber'], -5));*/
+			$nama = strtolower(str_replace(' ', '', $row_mdb['Name']));
+
+			//if(strpos($row_mdb['Name'], $row_mdb['Badgenumber']) === FALSE){
+				$mysql_insert_mhs = "INSERT INTO mahasiswa (id_mahasiswa, nim, nama) VALUES ('".$row_mdb['USERID']."', '".$row_mdb['Badgenumber']."', '".$row_mdb['Name']."')";
+				$mysql_insert_usr = "INSERT INTO users(username, password, level) VALUES ('$nama', CONCAT('$nama','123'), '4')";
+				mysql_query($mysql_insert_mhs);
+				mysql_query($mysql_insert_usr);
+				//echo $row_mdb['Name']." Berhasil diinput <br>";
+			//}
+		}
+	}
+
  ?>

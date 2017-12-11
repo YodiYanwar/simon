@@ -1,7 +1,5 @@
 <?php 
-
   include 'functions.php';
-
  ?>
 
     <!-- Content Header (Page header) -->
