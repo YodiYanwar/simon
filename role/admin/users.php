@@ -61,7 +61,8 @@
                         <i class="fa fa-cog fa-lg"></i>&nbsp;&nbsp;<span class="caret"></span>
                       </button>
                       <ul class="dropdown-menu">
-                        <li><a style="color:#3C8DBC;" href="index.php?page=editpembina&id=<?php echo $row['id_user']; ?>" class='dropdown-item'><i class='fa fa-unlock-alt'></i><br>Reset Password</a></li>
+                        <li><a style="color:#3C8DBC;" href="index.php?page=editpembina&id=<?php echo $row['id_user']; ?>" class='dropdown-item'><i class='fa fa-unlock-alt'></i>Reset Password</a></li>
+                        <li><?php echo "<a style='color:#DD4B39;' href='#ModalHapusPembina' class='dropdown-item' data-toggle='modal' data-href='action/hapus.php?iduser=".$row['id_user']."' aria-hidden='true'><i class='fa fa-remove'></i>Hapus Akun</a>"; ?></li>
                       </ul>
                     </div>
                   </td>
