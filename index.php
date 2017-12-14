@@ -131,7 +131,11 @@
       } else
       if($_SESSION['role'] =='pembina'){
         include 'role/pembina/sidebar.php';
+      } else
+      if($_SESSION['role'] =='mahasiswa'){
+        include 'role/mahasiswa/sidebar.php';
       }
+
 
     ?> 
 

@@ -116,7 +116,44 @@ if(isset($_POST['login'])){
         $_SESSION['username'] = $user; 
 
       $_SESSION['role'] = 'pembina';
-      $_SESSION['username'] = $user;
+      //$_SESSION['nama'] = $row['nama'];
+      //echo '<script language="javascript">document.location="index.php";</script>';
+    } else if($row['level'] == 4){
+
+      // $id dibawah masih menggunakan id_user yg berarti bakal terjadi error
+      $sql_profil = mysql_query("SELECT * FROM mahasiswa WHERE id_mahasiswa=$id") or die(mysql_error());
+
+        while($mahasiswa = mysql_fetch_assoc($sql_profil)){
+          $ava = $mahasiswa['avatar'];
+          $id_mahasiswa = $mahasiswa['id_mahasiswa'];
+          $nama = $mahasiswa['nama'];
+          $email = $mahasiswa['email'];
+          $telp = $mahasiswa['telp'];
+          $gender = $mahasiswa['j_kelamin'];
+          
+          echo '<script language="javascript">document.location="index.php";</script>';
+        }
+
+        if ($ava == NULL) {
+          if ($gender == 'Perempuan'){
+            $_SESSION['ava'] ='default-female.jpg';
+          } else
+          if ($gender == 'Laki-laki'){
+            $_SESSION['ava'] ='default-male.png';
+          } else{
+            $_SESSION['ava'] ='default-male.png';
+          }
+        } else{
+          $_SESSION['ava'] = $ava;
+        } 
+
+        $_SESSION['id_mahasiswa'] = $id_mahasiswa;
+        $_SESSION['nama'] = $nama;
+        $_SESSION['role'] = 'pembina';
+        $_SESSION['rolename'] = 'Mahasiswa';
+        $_SESSION['username'] = $user; 
+
+      $_SESSION['role'] = 'mahasiswa';
       //$_SESSION['nama'] = $row['nama'];
       //echo '<script language="javascript">document.location="index.php";</script>';
     }
