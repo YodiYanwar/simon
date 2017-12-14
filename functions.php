@@ -91,6 +91,12 @@
 		return $data;
 	}
 
+	function totalMahasiswa(){
+		$ambildata = mysql_query("SELECT COUNT(id_mahasiswa) as Total from mahasiswa");
+		$data = mysql_fetch_assoc($ambildata);
+		return $data;
+	}	
+
 	function totalUser(){
 		$ambildata = mysql_query("SELECT COUNT(id_user) as Total from users");
 		$data = mysql_fetch_assoc($ambildata);
