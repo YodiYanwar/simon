@@ -140,10 +140,15 @@
 			$nama = strtolower(str_replace(' ', '', $row_mdb['Name']));
 
 			//if(strpos($row_mdb['Name'], $row_mdb['Badgenumber']) === FALSE){
-				$mysql_insert_mhs = "INSERT INTO mahasiswa (id_mahasiswa, nim, nama) VALUES ('".$row_mdb['USERID']."', '".$row_mdb['Badgenumber']."', '".$row_mdb['Name']."')";
-				$mysql_insert_usr = "INSERT INTO users(username, password, level) VALUES ('$nama', CONCAT('$nama','123'), '4')";
-				mysql_query($mysql_insert_mhs);
+				$mysql_insert_usr = "INSERT INTO users(username, password, level) VALUES ('".$row_mdb['Badgenumber']."', CONCAT('$nama','123'), '4')";
 				mysql_query($mysql_insert_usr);
+
+				$sql = mysql_query("SELECT id_user FROM users WHERE username='".$row_mdb['Badgenumber']."'") or die(mysql_error());
+				$row = mysql_fetch_assoc($sql);
+				$id_user = $row['id_user'];
+
+				$mysql_insert_mhs = "INSERT INTO mahasiswa (id_mahasiswa, nim, nama, id_user) VALUES ('".$row_mdb['USERID']."', '".$row_mdb['Badgenumber']."', '".$row_mdb['Name']."', '$id_user')";
+				mysql_query($mysql_insert_mhs);
 				//echo $row_mdb['Name']." Berhasil diinput <br>";
 			//}
 		}
