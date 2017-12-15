@@ -120,7 +120,7 @@ if(isset($_POST['login'])){
       //echo '<script language="javascript">document.location="index.php";</script>';
     } else if($row['level'] == 4){
 
-      $sql_profil = mysql_query("SELECT * FROM mahasiswa WHERE id_user=$id") or die(mysql_error());
+      $sql_profil = mysql_query("SELECT * FROM mahasiswa WHERE id_user = $id") or die(mysql_error());
 
         while($mahasiswa = mysql_fetch_assoc($sql_profil)){
           $ava = $mahasiswa['avatar'];

@@ -47,6 +47,7 @@
                         </div>";
                   }
                 }
+                
                ?>
               <a href="#ModalUploadAva" title="Klik untuk Ganti Foto Profil" data-toggle='modal'><img class="profile-user-img img-responsive img-circle" src=<?php
                 if ($row['avatar'] == NULL) {
