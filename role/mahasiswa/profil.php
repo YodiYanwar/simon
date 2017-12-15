@@ -1,8 +1,8 @@
 <?php 
 
   include 'functions.php';
-      $dataPembina = pembinaDetails($_SESSION['id_user']);
-      foreach($dataPembina as $row){ 
+      $dataMahasiswa = mahasiswaDetails($_SESSION['id_user']);
+      foreach($dataMahasiswa as $row){ 
  ?>
 
     <!-- Content Header (Page header) -->
@@ -49,6 +49,9 @@
                   } else
                   if ($row['j_kelamin'] == 'Laki-laki'){
                     echo 'assets/img/user/default-male.png';
+                  } else
+                  if ($row['j_kelamin'] == NULL){
+                    echo 'assets/img/user/default-male.png';
                   }
                 } else{
                   echo $row['avatar'];
@@ -56,27 +59,27 @@
               ?> alt="User profile picture"></a>
               <h3 class="profile-username text-center"><?php echo $row['nama']; ?></h3>
 
-              <p class="text-muted text-center">Pembina Mahasiswa</p>
+              <p class="text-muted text-center">Mahasiswa</p>
 
               <ul class="list-group list-group-unbordered">
                 <li class="list-group-item">
-                  <b>ID Pembina</b> <div class="pull-right"><?php echo $row['id_pembina']; ?>&nbsp;&nbsp;&nbsp;<span class="btn btn-secondary" href=""><i class="fa fa-id-badge fa-lg"></i></span></div>
+                  <b>Nomor Induk Mahasiswa</b> <div class="pull-right"><?php echo $row['nim']; ?>&nbsp;&nbsp;&nbsp;<span class="btn btn-secondary" href=""><i class="fa fa-id-badge fa-lg"></i></span></div>
                 </li> 
                 <li class="list-group-item">
                   <b>Username</b> <div class="pull-right"><code><?php echo $_SESSION['username']; ?></code>&nbsp;&nbsp;&nbsp;<span class="btn btn-secondary" href=""><i class="fa fa-user-o fa-lg"></i></span></div>
                 </li> 
                 <li class="list-group-item">
-                  <b>Email</b> <div class="pull-right"><?php echo $row['email']; ?>&nbsp;&nbsp;&nbsp;<a class="btn btn-primary btn-outline" href=""><i class="fa fa-envelope-o fa-lg"></i></a></div>
+                  <b>Email</b> <div class="pull-right"><?php if($row['email'] == NULL){echo 'Belum diatur';}else{echo date('d F Y', strtotime($row['email']));} ?>&nbsp;&nbsp;&nbsp;<a class="btn btn-primary btn-outline" href=""><i class="fa fa-envelope-o fa-lg"></i></a></div>
                 </li>             
                 <li class="list-group-item">
-                  <b>No Telp</b> <div class="pull-right"><?php echo $row['telp']; ?>&nbsp;&nbsp;&nbsp;<a class="btn btn-primary btn-outline" href=""><i class="fa fa-whatsapp fa-lg"></i></a></div>
+                  <b>No Telp</b> <div class="pull-right"><?php if($row['telp'] == NULL){echo 'Belum diatur';}else{echo date('d F Y', strtotime($row['telp']));} ?>&nbsp;&nbsp;&nbsp;<a class="btn btn-primary btn-outline" href=""><i class="fa fa-whatsapp fa-lg"></i></a></div>
                 </li>
                 <li class="list-group-item">
-                  <b>Jenis Kelamin</b> <div class="pull-right"><?php echo $row['j_kelamin']; ?>&nbsp;&nbsp;&nbsp;<span class="btn btn-secondary" href=""><i class="fa fa-venus-mars fa-lg"></i></span></div>
+                  <b>Jenis Kelamin</b> <div class="pull-right"><?php if($row['j_kelamin'] == NULL){echo 'Belum diatur';}else{echo date('d F Y', strtotime($row['j_kelamin']));} ?>&nbsp;&nbsp;&nbsp;<span class="btn btn-secondary" href=""><i class="fa fa-venus-mars fa-lg"></i></span></div>
                 </li>                  
                 
                 <li class="list-group-item">
-                  <b>Tanggal Lahir</b> <div class="pull-right"><?php echo date('d F Y', strtotime($row['tgl_lahir'])); ?>&nbsp;&nbsp;&nbsp;<span class="btn btn-secondary" href=""><i class="fa fa-calendar-o fa-lg"></i></span></div>
+                  <b>Tanggal Lahir</b> <div class="pull-right"><?php if($row['tgl_lahir'] == NULL){echo 'Belum diatur';}else{echo date('d F Y', strtotime($row['tgl_lahir']));} ?>&nbsp;&nbsp;&nbsp;<span class="btn btn-secondary" href=""><i class="fa fa-calendar-o fa-lg"></i></span></div>
                 </li>                                  
               </ul>
                 <a href="index.php?page=editprofil" class='btn btn-primary btn-block'><i class='fa fa-pencil'></i>&nbsp;&nbsp;Edit Data Profil</a>

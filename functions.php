@@ -76,6 +76,13 @@
 				return $data;
 	}
 
+	function mahasiswaDetails($idUser){
+		$ambildata = mysql_query("SELECT mahasiswa.*, users.* FROM users INNER JOIN mahasiswa ON mahasiswa.id_user = users.id_user WHERE users.id_user = $idUser");
+			$ad = mysql_fetch_assoc($ambildata);
+				$data[] = $ad;
+				return $data;
+	}	
+
 	function hapusPembina($idPembina, $idUser){
 		mysql_query("DELETE FROM pembina WHERE id_pembina = $idPembina");
 		mysql_query("DELETE FROM users WHERE id_user = $idUser");
