@@ -39,6 +39,12 @@
                           <a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a>
                           <strong>Sukses !</strong> Foto Profil berhasil diupload. Akan sepenuhnya muncul saat anda login kembali
                         </div>";
+                  }  else
+                  if ($_GET['alert'] == 'profileupdated') {
+                    echo "<div class='alert alert-success alert-dismissable fade in'>
+                          <a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a>
+                          <strong>Sukses !</strong> Data profil berhasil diubah
+                        </div>";
                   }
                 }
                ?>
@@ -69,13 +75,13 @@
                   <b>Username</b> <div class="pull-right"><code><?php echo $_SESSION['username']; ?></code>&nbsp;&nbsp;&nbsp;<span class="btn btn-secondary" href=""><i class="fa fa-user-o fa-lg"></i></span></div>
                 </li> 
                 <li class="list-group-item">
-                  <b>Email</b> <div class="pull-right"><?php if($row['email'] == NULL){echo 'Belum diatur';}else{echo date('d F Y', strtotime($row['email']));} ?>&nbsp;&nbsp;&nbsp;<a class="btn btn-primary btn-outline" href=""><i class="fa fa-envelope-o fa-lg"></i></a></div>
+                  <b>Email</b> <div class="pull-right"><?php if($row['email'] == NULL){echo 'Belum diatur';}else{echo $row['email'];} ?>&nbsp;&nbsp;&nbsp;<a class="btn btn-primary btn-outline" href=""><i class="fa fa-envelope-o fa-lg"></i></a></div>
                 </li>             
                 <li class="list-group-item">
-                  <b>No Telp</b> <div class="pull-right"><?php if($row['telp'] == NULL){echo 'Belum diatur';}else{echo date('d F Y', strtotime($row['telp']));} ?>&nbsp;&nbsp;&nbsp;<a class="btn btn-primary btn-outline" href=""><i class="fa fa-whatsapp fa-lg"></i></a></div>
+                  <b>No Telp</b> <div class="pull-right"><?php if($row['telp'] == NULL){echo 'Belum diatur';}else{echo $row['telp'];} ?>&nbsp;&nbsp;&nbsp;<a class="btn btn-primary btn-outline" href=""><i class="fa fa-whatsapp fa-lg"></i></a></div>
                 </li>
                 <li class="list-group-item">
-                  <b>Jenis Kelamin</b> <div class="pull-right"><?php if($row['j_kelamin'] == NULL){echo 'Belum diatur';}else{echo date('d F Y', strtotime($row['j_kelamin']));} ?>&nbsp;&nbsp;&nbsp;<span class="btn btn-secondary" href=""><i class="fa fa-venus-mars fa-lg"></i></span></div>
+                  <b>Jenis Kelamin</b> <div class="pull-right"><?php if($row['j_kelamin'] == NULL){echo 'Belum diatur';}else{echo $row['j_kelamin'];} ?>&nbsp;&nbsp;&nbsp;<span class="btn btn-secondary" href=""><i class="fa fa-venus-mars fa-lg"></i></span></div>
                 </li>                  
                 
                 <li class="list-group-item">

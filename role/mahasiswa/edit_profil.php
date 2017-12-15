@@ -1,8 +1,8 @@
 <?php 
 
   include 'functions.php';
-      $dataPembina = pembinaDetails($_SESSION['id_user']);
-      foreach($dataPembina as $row){ 
+      $dataMahasiswa = mahasiswaDetails($_SESSION['id_user']);
+      foreach($dataMahasiswa as $row){ 
  ?>
 
     <!-- Content Header (Page header) -->
@@ -31,17 +31,13 @@
 
         <form method="post">
             <div class="form-group">
-                <label>ID Pembina </label>
-                <input type="text" class="form-control" name="idPembina" value="<?php echo $row['id_pembina']; ?>" disabled>
-            </div>            
+                <label>Nomor Induk Mahasiswa </label>
+                <input type="text" class="form-control" name="idPembina" value="<?php echo $row['nim']; ?>" disabled>
+            </div>   
             <div class="form-group">
                 <label>Nama </label>
                 <input type="text" class="form-control" name="nama" value="<?php echo $row['nama']; ?>">
             </div>
-            <div class="form-group">
-                <label>Nama </label>
-                <input type="text" class="form-control" name="gelar" value="<?php echo $row['gelar']; ?>">
-            </div>            
             <div class="form-group">
                 <label>Email </label>
                 <input type="text" class="form-control" name="email" value="<?php echo $row['email']; ?>">
@@ -52,14 +48,18 @@
             </div>
             <div class="form-group">
                 <label>Jenis Kelamin </label>
-                            <select class="form-control" name="gender" value="<?php echo $row['j_kelamin']; ?>">
-                              <option><?php echo $row['j_kelamin']; ?></option>
+                            <select class="form-control" name="gender" >
                               <?php 
                                   if ($row['j_kelamin'] == "Laki-laki") {
                                     echo "<option>Perempuan</option>";
                                   } else
                                   if($row['j_kelamin'] == "Perempuan"){
                                     echo "<option>Laki-laki</option>";
+                                  } else
+                                  if($row['j_kelamin'] == NULL){
+                                    echo "<option selected='selected'>Pilih Jenis Kelamin</option>
+                                          <option>Laki-laki</option>
+                                          <option>Perempuan</option>";
                                   }
                                ?>
                             </select>                 
@@ -83,8 +83,8 @@
          
 <?php
     if (isset($_POST['editProfilSaya'])) {
-        editPembina($row['id_pembina'], $_POST['nama'], $_POST['gender'], date("Y-m-d", strtotime($_POST['tgl_lahir'])), $_POST['gelar'], $_POST['asalkota'], $_POST['email'], $_POST['telp']);
-      echo "<script>document.location='/simon/index.php?page=profil'</script>";
+        editMahasiswa($row['id_mahasiswa'], $_POST['nama'], $_POST['gender'], date("Y-m-d", strtotime($_POST['tgl_lahir'])), $_POST['asalkota'], $_POST['email'], $_POST['telp']);
+      echo "<script>document.location='/simon/index.php?page=profil&alert=profileupdated'</script>";
     }
   } 
 ?>
