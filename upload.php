@@ -34,7 +34,7 @@
 			$file_tmp = $_FILES['file']['tmp_name'];	
  
 			if(in_array($ekstensi, $ekstensi_diperbolehkan) === true){
-				if($ukuran < 1044070){			
+				if($ukuran < 1044070){
 					move_uploaded_file($file_tmp, 'assets/img/user/'.$nama);
 					$query = mysql_query("UPDATE pembina SET avatar = '$nama' WHERE id_pembina = ".$_SESSION['id_pembina']);
 					if($query){
