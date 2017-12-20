@@ -60,8 +60,8 @@
                   if ($row['j_kelamin'] == NULL){
                     echo 'assets/img/user/default-male.png';
                   }
-                } else{
-                  echo $row['avatar'];
+                } else if($row['avatar'] != NULL){
+                  echo 'assets/img/user/'.$row['avatar'];
                 }               
               ?> alt="User profile picture"></a>
               <h3 class="profile-username text-center"><?php echo $row['nama']; ?></h3>
@@ -129,7 +129,7 @@
                     </div>                    
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
-                        <input type="submit" class="btn btn-primary" name="uploadAvaPembina" value="Upload">
+                        <input type="submit" class="btn btn-primary" name="uploadAvaMahasiswa" value="Upload">
                     </div>
                   </div>
                 </form>
