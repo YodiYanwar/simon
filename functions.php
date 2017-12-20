@@ -140,7 +140,7 @@
 		
 		$sql = "SELECT USERID,Badgenumber,Name FROM USERINFO WHERE Badgenumber LIKE '$angkatan' & '1011%' ORDER BY Name";
 		$result = odbc_exec($koneksi_mdb, $sql);
-		$nama = "";
+		
 
 		//echo $koneksi;
 
@@ -148,10 +148,10 @@
 
 			/*$namaTanpaSpasi = str_replace(' ', '', $row_mdb['Name']);
 			$pass = $namaTanpaSpasi.(substr($row_mdb['Badgenumber'], -5));*/
-			$nama = strtolower(str_replace(' ', '', $row_mdb['Name']));
+			$randpass = substr(str_shuffle(str_repeat("0123456789aAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZ", 5)), 0, 5);
 
 			//if(strpos($row_mdb['Name'], $row_mdb['Badgenumber']) === FALSE){
-				$mysql_insert_usr = "INSERT INTO users(username, password, level) VALUES ('".$row_mdb['Badgenumber']."', CONCAT('$nama','123'), '4')";
+				$mysql_insert_usr = "INSERT INTO users(username, password, level) VALUES ('".$row_mdb['Badgenumber']."', '".$randpass."', '4')";
 				mysql_query($mysql_insert_usr);
 
 				$sql = mysql_query("SELECT id_user FROM users WHERE username='".$row_mdb['Badgenumber']."'") or die(mysql_error());
