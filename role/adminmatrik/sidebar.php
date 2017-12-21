@@ -12,7 +12,7 @@
         ><a href="/simon"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a></li>
         <li class="treeview <?php 
               if (isset($_GET['page'])) {
-                    if ($_GET['page'] == 'pembina'|| $_GET['page'] == 'pembinadetails' || $_GET['page'] == 'editpembina'|| $_GET['page'] == 'mahasiswa') {
+                    if ($_GET['page'] == 'pembina'|| $_GET['page'] == 'pembinadetails' || $_GET['page'] == 'editpembina'|| $_GET['page'] == 'mahasiswa' || $_GET['page'] == 'mahasiswadetails' || $_GET['page'] == 'editmahasiswa') {
                       echo ' active';
                     } else{
                       echo '';
@@ -30,7 +30,7 @@
           <ul class="treeview-menu">
             <li <?php 
                   if (isset($_GET['page'])) {
-                    if ($_GET['page'] == 'mahasiswa') {
+                    if ($_GET['page'] == 'mahasiswa'|| $_GET['page'] == 'mahasiswadetails' || $_GET['page'] == 'editmahasiswa') {
                       echo "class='active'";
                     }
                   }
@@ -66,6 +66,8 @@
           include 'profil.php';
         } else if ($_GET['page'] == 'editprofil') {
           include 'edit_profil.php';
+        } else if ($_GET['page'] == 'mahasiswadetails') {
+          include 'detailmahasiswa.php';
         }
   		} else{
   			include 'dashboard.php';

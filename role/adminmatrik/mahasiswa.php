@@ -46,7 +46,7 @@
                 <tr>
                   <td><?php echo $no ?></td>
                   <td><?php echo "<span class='badge bg-green'>".$row['nim']."</span>" ?></td>
-                  <td><?php echo $row['nama'] ?></td>
+                  <td><?php echo "<a href='index.php?page=mahasiswadetails&id=".$row['id_user']."'>".$row['nama']."</a>" ?></td>
                   <td>
                     <div class="dropdown">
                       <button class="btn btn-default btn-sm dropdown-toggle " type="button" data-toggle="dropdown">
