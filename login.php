@@ -10,7 +10,7 @@ if(isset($_POST['login'])){
 	$user = mysql_real_escape_string(htmlentities($_POST['username']));
 	$pass = mysql_real_escape_string(htmlentities(($_POST['password'])));
 
-	$sql = mysql_query("SELECT * FROM users WHERE username='$user' AND password='$pass'") or die(mysql_error());
+	$sql = mysql_query("SELECT * FROM users WHERE `username`='$user' AND BINARY `password`='$pass'") or die(mysql_error());
 
 	if(mysql_num_rows($sql) == 0){
 		echo '<script language="javascript">document.location="login.php?alert=error";</script>';
@@ -225,7 +225,8 @@ if(isset($_POST['login'])){
                 if ($_GET['alert'] == 'error') {
                 echo "<div class='alert alert-danger alert-dismissable fade in'>
                         <a href='#'' class='close' data-dismiss='alert' aria-label='close'>&times;</a>
-                        <strong>Login Gagal !</strong> Username dan atau Password Salah.
+                        <strong>Login Gagal !</strong> Username dan atau Password Salah.<br>
+                        Password yang diinput harus sama persis (Case Sensitive)
                       </div>";
                 }
               }

@@ -140,9 +140,6 @@
 		
 		$sql = "SELECT USERID,Badgenumber,Name FROM USERINFO WHERE Badgenumber LIKE '$angkatan' & '1011%' ORDER BY Name";
 		$result = odbc_exec($koneksi_mdb, $sql);
-		
-
-		//echo $koneksi;
 
 		while($row_mdb = odbc_fetch_array($result)){
 
