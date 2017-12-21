@@ -37,7 +37,7 @@
 	}	
 
 	function tampilMahasiswa(){
-		$ambildata = mysql_query("SELECT * FROM mahasiswa ORDER BY nama") or die(mysql_error());
+		$ambildata = mysql_query("SELECT mahasiswa.*, users.* FROM users INNER JOIN mahasiswa ON mahasiswa.id_user = users.id_user ORDER BY nama") or die(mysql_error());
 		if (mysql_num_rows($ambildata) > 0) {
 			while ($ad = mysql_fetch_assoc($ambildata)) // Perulangan while ini jangan pake {}
 				$data[] = $ad;
