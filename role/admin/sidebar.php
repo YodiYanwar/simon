@@ -12,7 +12,7 @@
         ><a href="/simon"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a></li>
         <li class="treeview <?php 
               if (isset($_GET['page'])) {
-                    if ($_GET['page'] == 'users' || $_GET['page'] == 'administrator' || $_GET['page'] == 'pimpinan' || $_GET['page'] == 'adminmatrik' || $_GET['page'] == 'pembina' || $_GET['page'] == 'mahasiswa' || $_GET['page'] == 'pembinadetails' || $_GET['page'] == 'editpembina' || $_GET['page'] == 'mahasiswadetails' || $_GET['page'] == 'editmahasiswa') {
+                    if ($_GET['page'] == 'users' || $_GET['page'] == 'administrator' || $_GET['page'] == 'pimpinan' || $_GET['page'] == 'adminmatrik' || $_GET['page'] == 'pembina' || $_GET['page'] == 'mahasiswa' || $_GET['page'] == 'pembinadetails' || $_GET['page'] == 'editpembina' || $_GET['page'] == 'mahasiswadetails' || $_GET['page'] == 'editmahasiswa'|| $_GET['page'] == 'adminmatrikdetails') {
                       echo ' active';
                     } else{
                       echo '';
@@ -54,7 +54,7 @@
              ><a href="?page=pimpinan"><i class="fa fa-user"></i> Pimpinan Matrikulasi</a></li>
             <li <?php 
                   if (isset($_GET['page'])) {
-                    if ($_GET['page'] == 'adminmatrik') {
+                    if ($_GET['page'] == 'adminmatrik'|| $_GET['page'] == 'adminmatrikdetails') {
                       echo "class='active'";
                     }
                   }
@@ -97,6 +97,9 @@
         } else
         if ($_GET['page'] == 'adminmatrik') {
           include 'adminmatrik.php';
+        } else
+        if ($_GET['page'] == 'adminmatrikdetails') {
+          include 'detailadminmatrik.php';
         } else
         if ($_GET['page'] == 'administrator') {
           include 'administrator.php';
