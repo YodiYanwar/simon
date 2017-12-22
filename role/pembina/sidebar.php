@@ -4,8 +4,22 @@
     <section class="sidebar">
       <!-- sidebar menu: : style can be found in sidebar.less -->
       <ul class="sidebar-menu" data-widget="tree">
-        <li><a href="/simon"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a></li>
-        <li class="treeview">
+        <li <?php 
+              if ($_SERVER['REQUEST_URI'] == '/simon/') {
+                 echo "class='active'";
+              }
+            ?>
+        ><a href="/simon"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a></li>
+        <li class="treeview <?php 
+              if (isset($_GET['page'])) {
+                    if ($_GET['page'] == 'mahasiswabinaan') {
+                      echo ' active';
+                    } else{
+                      echo '';
+                    }
+                  }
+             ?>"
+        >
           <a href="#">
             <i class="fa fa-sun-o"></i>
             <span>Pembinaan</span>
@@ -14,7 +28,14 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="?page=mahasiswa"><i class="fa fa-users"></i> Mahasiswa Binaan</a></li>
+            <li <?php 
+                  if (isset($_GET['page'])) {
+                    if ($_GET['page'] == 'mahasiswabinaan') {
+                      echo "class='active'";
+                    }
+                  }
+                ?>
+             ><a href="?page=mahasiswabinaan"><i class="fa fa-users"></i> Mahasiswa Binaan</a></li>
           </ul>
       </ul>
     </section>
@@ -31,6 +52,8 @@
           include 'profil.php';
         } else if ($_GET['page'] == 'editprofil') {
           include 'edit_profil.php';
+        } else if ($_GET['page'] == 'mahasiswabinaan') {
+          include 'mahasiswa_binaan.php';
         }
   		} else{
   			include 'dashboard.php';

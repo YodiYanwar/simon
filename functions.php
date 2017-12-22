@@ -137,6 +137,13 @@
 		return $data;		
 	}
 
+	function BinaanByPembina($idPembina){
+		$ambildata = mysql_query("SELECT * from mahasiswa WHERE id_pembina = $idPembina");
+			$ad = mysql_fetch_assoc($ambildata);
+				$data[] = $ad;
+				return $data;		
+	}	
+
 	function adminMatrikDetails($idUser){
 		$ambildata = mysql_query("SELECT adminmatrik.*, users.* FROM users INNER JOIN adminmatrik ON adminmatrik.id_user = users.id_user WHERE users.id_user = $idUser");
 			$ad = mysql_fetch_assoc($ambildata);

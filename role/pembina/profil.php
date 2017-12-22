@@ -75,7 +75,7 @@
                   <b>Tanggal Lahir</b> <div class="pull-right"><?php echo date('d F Y', strtotime($row['tgl_lahir'])); ?>&nbsp;&nbsp;&nbsp;<span class="btn btn-secondary" href=""><i class="fa fa-calendar-o fa-lg"></i></span></div>
                 </li>   
                 <li class="list-group-item">
-                  <b>Jumlah Binaan</b> <div class="pull-right"><?php foreach($jumlahBinaan as $jml){ echo $jml; } ?>&nbsp;&nbsp;&nbsp;<a class="btn btn-secondary" href=""><i class="fa fa-users fa-lg"></i></a></div>
+                  <b>Jumlah Binaan</b> <div class="pull-right"><a href="index.php?page=mahasiswabinaan"><?php foreach($jumlahBinaan as $jml){ echo $jml; } ?></a>&nbsp;&nbsp;&nbsp;<a class="btn btn-secondary" href=""><i class="fa fa-users fa-lg"></i></a></div>
                 </li>      
                 <li class="list-group-item">
                   <b>Performa Rata-rata Binaan</b> <div class="pull-right">&nbsp;&nbsp;&nbsp;<a class="btn btn-secondary" href=""><i class="fa fa-dashboard fa-lg"></i></a></div>
