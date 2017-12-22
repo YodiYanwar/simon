@@ -68,6 +68,8 @@
           include 'edit_profil.php';
         } else if ($_GET['page'] == 'mahasiswadetails') {
           include 'detailmahasiswa.php';
+        } else if ($_GET['page'] == 'editmahasiswa') {
+          include 'edit_mahasiswa.php';
         }
   		} else{
   			include 'dashboard.php';
