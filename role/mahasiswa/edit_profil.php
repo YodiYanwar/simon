@@ -51,10 +51,12 @@
                             <select class="form-control" name="gender" >
                               <?php 
                                   if ($row['j_kelamin'] == "Laki-laki") {
-                                    echo "<option>Perempuan</option>";
+                                    echo "<option>Laki-laki</option>
+                                          <option>Perempuan</option>";
                                   } else
                                   if($row['j_kelamin'] == "Perempuan"){
-                                    echo "<option>Laki-laki</option>";
+                                    echo "<option>Perempuan</option>
+                                          <option>Laki-laki</option>";
                                   } else
                                   if($row['j_kelamin'] == NULL){
                                     echo "<option selected='selected'>Pilih Jenis Kelamin</option>
@@ -83,7 +85,7 @@
          
 <?php
     if (isset($_POST['editProfilSaya'])) {
-        editMahasiswa($row['id_mahasiswa'], $_POST['nama'], $_POST['gender'], date("Y-m-d", strtotime($_POST['tgl_lahir'])), $_POST['asalkota'], $_POST['email'], $_POST['telp']);
+        editMahasiswa($_SESSION['id_user'], $_POST['nama'], $_POST['gender'], date("Y-m-d", strtotime($_POST['tgl_lahir'])), $_POST['asalkota'], $_POST['email'], $_POST['telp']);
       echo "<script>document.location='/simon/index.php?page=profil&alert=profileupdated'</script>";
     }
   } 
