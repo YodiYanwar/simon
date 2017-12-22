@@ -12,7 +12,7 @@
         ><a href="/simon"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a></li>
         <li class="treeview <?php 
               if (isset($_GET['page'])) {
-                    if ($_GET['page'] == 'users' || $_GET['page'] == 'administrator' || $_GET['page'] == 'pimpinan' || $_GET['page'] == 'adminmatrik' || $_GET['page'] == 'pembina' || $_GET['page'] == 'mahasiswa' || $_GET['page'] == 'pembinadetails' || $_GET['page'] == 'editpembina') {
+                    if ($_GET['page'] == 'users' || $_GET['page'] == 'administrator' || $_GET['page'] == 'pimpinan' || $_GET['page'] == 'adminmatrik' || $_GET['page'] == 'pembina' || $_GET['page'] == 'mahasiswa' || $_GET['page'] == 'pembinadetails' || $_GET['page'] == 'editpembina' || $_GET['page'] == 'mahasiswadetails' || $_GET['page'] == 'editmahasiswa') {
                       echo ' active';
                     } else{
                       echo '';
@@ -70,7 +70,7 @@
              ><a href="?page=pembina"><i class="fa fa-user"></i> Pembina Mahasiswa</a></li>
             <li <?php 
                   if (isset($_GET['page'])) {
-                    if ($_GET['page'] == 'mahasiswa'|| $_GET['page'] == 'mahasiswadetails' || $_GET['page'] == 'mahasiswapembina') {
+                    if ($_GET['page'] == 'mahasiswa'|| $_GET['page'] == 'mahasiswadetails' || $_GET['page'] == 'editmahasiswa') {
                       echo "class='active'";
                     }
                   }
@@ -106,6 +106,9 @@
         } else
         if ($_GET['page'] == 'pembinadetails') {
           include 'detailpembina.php';
+        } else
+        if ($_GET['page'] == 'mahasiswadetails') {
+          include 'detailmahasiswa.php';
         }
       } else{
         include 'dashboard.php';
