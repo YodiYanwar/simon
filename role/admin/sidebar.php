@@ -112,6 +112,9 @@
         } else
         if ($_GET['page'] == 'mahasiswadetails') {
           include 'detailmahasiswa.php';
+        } else
+        if ($_GET['page'] == 'pimpinan') {
+          include 'pimpinan.php';
         }
       } else{
         include 'dashboard.php';
