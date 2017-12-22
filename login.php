@@ -140,7 +140,7 @@ if(isset($_POST['login'])){
           if ($gender == 'Laki-laki'){
             $_SESSION['ava'] ='default-male.png';
           } else{
-            $_SESSION['ava'] ='default-male.png';
+            $_SESSION['ava'] ='default.png';
           }
         } else{
           $_SESSION['ava'] = $ava;

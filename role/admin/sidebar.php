@@ -100,6 +100,9 @@
         } else
         if ($_GET['page'] == 'administrator') {
           include 'administrator.php';
+        } else
+        if ($_GET['page'] == 'profil') {
+          include 'profil.php';
         }
       } else{
         include 'dashboard.php';

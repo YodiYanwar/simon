@@ -127,6 +127,13 @@
 				return $data;
 	}
 
+	function admininstratorDetails($idUser){
+		$ambildata = mysql_query("SELECT administrator.*, users.* FROM users INNER JOIN administrator ON administrator.id_user = users.id_user WHERE users.id_user = $idUser");
+			$ad = mysql_fetch_assoc($ambildata);
+				$data[] = $ad;
+				return $data;
+	}	
+
 	function editAdminMatrikDetails($id_AM, $nama, $telp, $email, $j_kelamin, $tgl_lahir){
 		mysql_query("UPDATE adminmatrik SET nama='$nama', telp='$telp', email='$email', j_kelamin='$j_kelamin', tgl_lahir='$tgl_lahir' WHERE id_adminmatrik='$id_AM' ") or die(mysql_error());
 	}

@@ -50,7 +50,7 @@
                    ?>
                 <tr>
                   <td><?php echo $no ?></td>
-                  <td><?php echo "<a href='index.php?page=administratordetails&id=".$row['id_user']."'>".$row['nama']."</a>" ?></td>
+                  <td><?php if ($row['nama'] == $_SESSION['nama']) {echo  "<a href='index.php?page=profil'>".$row['nama']."</a>";}else{ echo "<a href='index.php?page=administratordetails&id=".$row['id_user']."'>".$row['nama']."</a>"; } ?></td>
                   <td><?php echo $row['j_kelamin'] ?></td>
                   <td><?php echo $row['email'] ?></td>
                   <td><?php echo $row['telp'] ?></td>
@@ -62,8 +62,8 @@
                         <i class="fa fa-cog fa-lg"></i>&nbsp;&nbsp;<span class="caret"></span>
                       </button>
                       <ul class="dropdown-menu">
-                        <li><a style="color:#3C8DBC;" href="index.php?page=editadministrator&id=<?php echo $row['id_administrator']; ?>" class='dropdown-item'><i class='fa fa-edit'></i>Edit</a></li>
-                        <li><?php echo "<a style='color:#DD4B39;' href='#ModalHapusPembina' class='dropdown-item' data-toggle='modal' data-href='action/hapus.php?idadministrator=".$row['id_administrator']."&iduser=".$row['id_user']."' aria-hidden='true'><i class='fa fa-remove'></i>Hapus</a>"; ?></li>
+                        <li><a style="color:#3C8DBC;" href="index.php?page=editadministrator&id=<?php echo $row['id_admin']; ?>" class='dropdown-item'><i class='fa fa-edit'></i>Edit</a></li>
+                        <li><?php echo "<a style='color:#DD4B39;' href='#ModalHapusPembina' class='dropdown-item' data-toggle='modal' data-href='action/hapus.php?idadministrator=".$row['id_admin']."&iduser=".$row['id_user']."' aria-hidden='true'><i class='fa fa-remove'></i>Hapus</a>"; ?></li>
                         
                       </ul>
                     </div>

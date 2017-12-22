@@ -1,8 +1,8 @@
 <?php 
 
   include 'functions.php';
-      $dataMahasiswa = mahasiswaDetails($_SESSION['id_user']);
-      foreach($dataMahasiswa as $row){ 
+      $dataAdministrator = admininstratorDetails($_SESSION['id_user']);
+      foreach($dataAdministrator as $row){ 
  ?>
 
     <!-- Content Header (Page header) -->
@@ -21,6 +21,7 @@
     <!-- Main content -->
     <section class="content">
       <div class="row">
+
           <!-- Profile Image -->
           <div class="box box-primary">
             <div class="box-body box-profile">
@@ -33,21 +34,8 @@
                           <a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a>
                           <strong>Sukses !</strong> Password berhasil diubah. Anda dapat login dengan password yang baru
                         </div>";
-                  } else
-                  if ($_GET['alert'] == 'avaupdated') {
-                    echo "<div class='alert alert-success alert-dismissable fade in'>
-                          <a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a>
-                          <strong>Sukses !</strong> Foto Profil berhasil diupload. Akan sepenuhnya muncul saat anda login kembali
-                        </div>";
-                  }  else
-                  if ($_GET['alert'] == 'profileupdated') {
-                    echo "<div class='alert alert-success alert-dismissable fade in'>
-                          <a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a>
-                          <strong>Sukses !</strong> Data profil berhasil diubah
-                        </div>";
                   }
                 }
-                
                ?>
               <a href="#ModalUploadAva" title="Klik untuk Ganti Foto Profil" data-toggle='modal'><img class="profile-user-img img-responsive img-circle" src=<?php
                 if ($row['avatar'] == NULL) {
@@ -66,27 +54,24 @@
               ?> alt="User profile picture"></a>
               <h3 class="profile-username text-center"><?php echo $row['nama']; ?></h3>
 
-              <p class="text-muted text-center">Mahasiswa</p>
+              <p class="text-muted text-center">Admininstrator</p>
 
               <ul class="list-group list-group-unbordered">
                 <li class="list-group-item">
-                  <b>Nomor Induk Mahasiswa</b> <div class="pull-right"><?php echo $row['nim']; ?>&nbsp;&nbsp;&nbsp;<span class="btn btn-secondary" href=""><i class="fa fa-id-badge fa-lg"></i></span></div>
+                  <b>Username</b> <div class="pull-right"><code><?php echo $row['username']; ?></code>&nbsp;&nbsp;&nbsp;<span class="btn btn-secondary" href=""><i class="fa fa-user-o fa-lg"></i></span></div>
                 </li> 
                 <li class="list-group-item">
-                  <b>Username</b> <div class="pull-right"><code><?php echo $_SESSION['username']; ?></code>&nbsp;&nbsp;&nbsp;<span class="btn btn-secondary" href=""><i class="fa fa-user-o fa-lg"></i></span></div>
-                </li> 
-                <li class="list-group-item">
-                  <b>Email</b> <div class="pull-right"><?php if($row['email'] == NULL){echo 'Belum diatur';}else{echo $row['email'];} ?>&nbsp;&nbsp;&nbsp;<a class="btn btn-primary btn-outline" href=""><i class="fa fa-envelope-o fa-lg"></i></a></div>
+                  <b>Email</b> <div class="pull-right"><?php echo $row['email']; ?>&nbsp;&nbsp;&nbsp;<a class="btn btn-primary btn-outline" href=""><i class="fa fa-envelope-o fa-lg"></i></a></div>
                 </li>             
                 <li class="list-group-item">
-                  <b>No Telp</b> <div class="pull-right"><?php if($row['telp'] == NULL){echo 'Belum diatur';}else{echo $row['telp'];} ?>&nbsp;&nbsp;&nbsp;<a class="btn btn-primary btn-outline" href=""><i class="fa fa-whatsapp fa-lg"></i></a></div>
+                  <b>No Telp</b> <div class="pull-right"><?php echo $row['telp']; ?>&nbsp;&nbsp;&nbsp;<a class="btn btn-primary btn-outline" href=""><i class="fa fa-whatsapp fa-lg"></i></a></div>
                 </li>
                 <li class="list-group-item">
-                  <b>Jenis Kelamin</b> <div class="pull-right"><?php if($row['j_kelamin'] == NULL){echo 'Belum diatur';}else{echo $row['j_kelamin'];} ?>&nbsp;&nbsp;&nbsp;<span class="btn btn-secondary" href=""><i class="fa fa-venus-mars fa-lg"></i></span></div>
+                  <b>Jenis Kelamin</b> <div class="pull-right"><?php echo $row['j_kelamin']; ?>&nbsp;&nbsp;&nbsp;<span class="btn btn-secondary" href=""><i class="fa fa-venus-mars fa-lg"></i></span></div>
                 </li>                  
                 
                 <li class="list-group-item">
-                  <b>Tanggal Lahir</b> <div class="pull-right"><?php if($row['tgl_lahir'] == NULL){echo 'Belum diatur';}else{echo date('d F Y', strtotime($row['tgl_lahir']));} ?>&nbsp;&nbsp;&nbsp;<span class="btn btn-secondary" href=""><i class="fa fa-calendar-o fa-lg"></i></span></div>
+                  <b>Tanggal Lahir</b> <div class="pull-right"><?php echo date('d F Y', strtotime($row['tgl_lahir'])); ?>&nbsp;&nbsp;&nbsp;<span class="btn btn-secondary" href=""><i class="fa fa-calendar-o fa-lg"></i></span></div>
                 </li>                                  
               </ul>
                 <a href="index.php?page=editprofil" class='btn btn-primary btn-block'><i class='fa fa-pencil'></i>&nbsp;&nbsp;Edit Data Profil</a>
@@ -129,7 +114,7 @@
                     </div>                    
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
-                        <input type="submit" class="btn btn-primary" name="uploadAvaMahasiswa" value="Upload">
+                        <input type="submit" class="btn btn-primary" name="upload" value="Upload">
                     </div>
                   </div>
                 </form>
