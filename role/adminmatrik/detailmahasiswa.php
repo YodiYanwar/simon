@@ -10,14 +10,14 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        <a class="btn btn-primary" href="index.php?page=pembina"><i class="fa fa-arrow-left"></i></a>&nbsp;
+        <a class="btn btn-primary" href="index.php?page=mahasiswa"><i class="fa fa-arrow-left"></i></a>&nbsp;
         Profil Mahasiswa
         <small></small>
       </h1>
       <ol class="breadcrumb">
         <li><a href="/simon"><i class="fa fa-dashboard"></i> Dashboard</a></li>
         <li>Manajemen Pengguna</li>
-        <li><a href="index.php?page=pembina">Mahasiswa</a></li>
+        <li><a href="index.php?page=mahasiswa">Mahasiswa</a></li>
         <li class="active"><?php echo $row['nama'] ?></li>
       </ol>
     </section> 
@@ -71,7 +71,7 @@
                   <b>Tanggal Lahir</b> <div class="pull-right"><?php if($row['tgl_lahir'] == NULL){echo 'Belum diatur';}else{echo date('d F Y', strtotime($row['tgl_lahir']));} ?>&nbsp;&nbsp;&nbsp;<span class="btn btn-secondary" href=""><i class="fa fa-calendar-o fa-lg"></i></span></div>
                 </li>  
                 <li class="list-group-item">
-                  <b>Password Default</b> <div class="pull-right"><?php if(strlen($row['password']) == 5){ echo $row['password'];} else{echo "Sudah Diubah" ;} ?>&nbsp;&nbsp;&nbsp;<span class="btn btn-secondary" href=""><i class="fa fa fa-lock fa-lg"></i></span></div>
+                  <b>Password Default</b> <div class="pull-right"><?php if(strlen($row['password']) == 5){ echo "<span class='badge bg-aqua'>".$row['password']."</span>";} else{echo "<span class='badge bg-green'>Sudah Diubah</span>" ;} ?>&nbsp;&nbsp;&nbsp;<span class="btn btn-secondary" href=""><i class="fa fa fa-lock fa-lg"></i></span></div>
                 </li>                                
               </ul>
                 <a href="index.php?page=editpembina&id=<?php echo $row['id_user']; ?>" class='btn btn-primary btn-block'><i class='fa fa-pencil'></i>&nbsp;&nbsp;Edit Data Profil</a>
