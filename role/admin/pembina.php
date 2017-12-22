@@ -49,7 +49,7 @@
                    ?>
                 <tr>
                   <td><?php echo $no ?></td>
-                  <td><?php echo $row['nama']?></td>
+                  <td><?php echo "<a href='index.php?page=pembinadetails&id=".$row['id_user']."'>".$row['nama']."</a>"?></td>
                   <td><?php echo $row['username'] ?></td>
                   <td><?php echo $row['j_kelamin'] ?></td>
                   <td><?php echo $row['email'] ?></td>

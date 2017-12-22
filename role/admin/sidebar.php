@@ -12,7 +12,7 @@
         ><a href="/simon"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a></li>
         <li class="treeview <?php 
               if (isset($_GET['page'])) {
-                    if ($_GET['page'] == 'users' || $_GET['page'] == 'administrator' || $_GET['page'] == 'pimpinan' || $_GET['page'] == 'adminmatrik' || $_GET['page'] == 'pembina' || $_GET['page'] == 'mahasiswa') {
+                    if ($_GET['page'] == 'users' || $_GET['page'] == 'administrator' || $_GET['page'] == 'pimpinan' || $_GET['page'] == 'adminmatrik' || $_GET['page'] == 'pembina' || $_GET['page'] == 'mahasiswa' || $_GET['page'] == 'pembinadetails' || $_GET['page'] == 'editpembina') {
                       echo ' active';
                     } else{
                       echo '';
@@ -103,6 +103,9 @@
         } else
         if ($_GET['page'] == 'profil') {
           include 'profil.php';
+        } else
+        if ($_GET['page'] == 'pembinadetails') {
+          include 'detailpembina.php';
         }
       } else{
         include 'dashboard.php';
