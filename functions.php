@@ -153,6 +153,11 @@
 		mysql_query("UPDATE users SET `password` = '$newPass' WHERE id_user = '$idUser'");
 	}
 
+	function resetPassword($idUser){
+		$randpass = substr(str_shuffle(str_repeat("0123456789aAbBcCdDeEfFgGhHiIjJ0123456789kKlLmMnNoOpPqQrRsStT0123456789uUvVwWxXyYzZ", 5)), 0, 5);
+		mysql_query("UPDATE users SET `password` = '$randpass' WHERE id_user = '$idUser'");
+	}
+
 	function importMahasiswa($angkatan){
 		$koneksi_mdb = odbc_connect( 'att2000', "", "");
 		
