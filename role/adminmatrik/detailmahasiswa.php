@@ -4,10 +4,6 @@
     $id = $_GET['id'];
       $dataMahasiswa = mahasiswaDetails($id);
 
-  if (isset($_POST['resetPass'])) {
-    resetPassword($id);
-    echo "<script>document.location='/simon/index.php?page=mahasiswadetails&id=".$id."</script>";
-  }
       foreach($dataMahasiswa as $row){
  ?>
 
@@ -52,13 +48,6 @@
               ?>
                alt="User profile picture"></a>
               <h3 class="profile-username text-center"><?php echo $row['nama']; ?></h3>
-<?php 
-  if (isset($_POST['resetPass'])) {
-    echo "POST Method is Set";
-  } else{
-    "POST Method Isn't Set";
-  }
- ?>
               <p class="text-muted text-center">Mahasiswa</p>
               
 
@@ -86,7 +75,7 @@
                 </li>                                
               </ul>
                 <a href="index.php?page=editpembina&id=<?php echo $row['id_user']; ?>" class='btn btn-primary btn-block'><i class='fa fa-pencil'></i>&nbsp;&nbsp;Edit Data Profil</a>
-              <?php if(strlen($row['password']) > 5){ echo "<a href='#ModalResetPassword' class='btn btn-warning btn-block' data-toggle='modal' data-href='action/hapus.php?&iduser=".$row['id_user']."'><i class='fa fa-unlock-alt'></i>&nbsp;&nbsp;Reset Password</a>";} ?>
+              <?php if(strlen($row['password']) > 5){ echo "<a href='#ModalResetPassword' class='btn btn-warning btn-block' data-toggle='modal'><i class='fa fa-unlock-alt'></i>&nbsp;&nbsp;Reset Password</a>";} ?>
 
               <?php echo "<a href='#ModalHapusPembina' class='btn btn-danger btn-outline btn-block' data-toggle='modal' data-href='action/hapus.php?idpembina=".$row['id_pembina']."&iduser=".$row['id_user']."'><i class='fa fa-trash'></i>&nbsp;&nbsp;Hapus Mahasiswa</a>"; ?>
               
@@ -171,3 +160,10 @@
         </div>        
         <!-- /Modal Upload Avatar -->         
       </div>   
+
+<?php 
+  if (isset($_POST['resetPass'])) {
+    resetPassword($id);
+    echo "<script type='text/javascript'>window.location.href='index.php?page=mahasiswadetails&id=".$id."';</script>";
+  }
+ ?>
