@@ -2,6 +2,7 @@
 
   include 'functions.php';
       $dataPembina = pembinaDetails($_SESSION['id_user']);
+      $jumlahBinaan = totalBinaanByPembina($_SESSION['id_pembina']);
       foreach($dataPembina as $row){ 
  ?>
 
@@ -44,14 +45,9 @@
                ?>
               <a href="#ModalUploadAva" title="Klik untuk Ganti Foto Profil" data-toggle='modal'><img class="profile-user-img img-responsive img-circle" src=<?php
                 if ($row['avatar'] == NULL) {
-                  if ($row['j_kelamin'] == 'Perempuan'){
-                    echo 'assets/img/user/default-female.jpg';
-                  } else
-                  if ($row['j_kelamin'] == 'Laki-laki'){
-                    echo 'assets/img/user/default-male.png';
-                  }
+                  echo 'assets/img/user/default.png';
                 } else{
-                  echo $row['avatar'];
+                  echo 'assets/img/user/'.$row['avatar'];
                 }               
               ?> alt="User profile picture"></a>
               <h3 class="profile-username text-center"><?php echo $row['nama']; ?></h3>
@@ -77,7 +73,13 @@
                 
                 <li class="list-group-item">
                   <b>Tanggal Lahir</b> <div class="pull-right"><?php echo date('d F Y', strtotime($row['tgl_lahir'])); ?>&nbsp;&nbsp;&nbsp;<span class="btn btn-secondary" href=""><i class="fa fa-calendar-o fa-lg"></i></span></div>
-                </li>                                  
+                </li>   
+                <li class="list-group-item">
+                  <b>Jumlah Binaan</b> <div class="pull-right"><?php foreach($jumlahBinaan as $jml){ echo $jml; } ?>&nbsp;&nbsp;&nbsp;<a class="btn btn-secondary" href=""><i class="fa fa-users fa-lg"></i></a></div>
+                </li>      
+                <li class="list-group-item">
+                  <b>Performa Rata-rata Binaan</b> <div class="pull-right">&nbsp;&nbsp;&nbsp;<a class="btn btn-secondary" href=""><i class="fa fa-dashboard fa-lg"></i></a></div>
+                </li>                                                
               </ul>
                 <a href="index.php?page=editprofil" class='btn btn-primary btn-block'><i class='fa fa-pencil'></i>&nbsp;&nbsp;Edit Data Profil</a>
                 <?php echo "<a href='#ModalGantiPass' class='btn btn-warning btn-outline btn-block' data-toggle='modal' data-href='action/hapus.php?&iduser=".$row['id_user']."'><i class='fa fa-lock'></i>&nbsp;&nbsp;Ganti Password</a>"; ?>

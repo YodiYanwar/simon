@@ -4,7 +4,7 @@
     <section class="sidebar">
       <!-- sidebar menu: : style can be found in sidebar.less -->
       <ul class="sidebar-menu" data-widget="tree">
-        <li><a href="/simon/admin"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a></li>
+        <li><a href="/simon"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a></li>
         <li class="treeview">
           <a href="#">
             <i class="fa fa-sun-o"></i>
