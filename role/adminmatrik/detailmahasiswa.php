@@ -67,12 +67,15 @@
                 <li class="list-group-item">
                   <b>Jenis Kelamin</b> <div class="pull-right"><?php if($row['j_kelamin'] == NULL){echo 'Belum diatur';}else{echo $row['j_kelamin'];} ?>&nbsp;&nbsp;&nbsp;<span class="btn btn-secondary" href=""><i class="fa fa-venus-mars fa-lg"></i></span></div>
                 </li>                  
-                
                 <li class="list-group-item">
                   <b>Tanggal Lahir</b> <div class="pull-right"><?php if($row['tgl_lahir'] == NULL){echo 'Belum diatur';}else{echo date('d F Y', strtotime($row['tgl_lahir']));} ?>&nbsp;&nbsp;&nbsp;<span class="btn btn-secondary" href=""><i class="fa fa-calendar-o fa-lg"></i></span></div>
-                </li>                                  
+                </li>  
+                <li class="list-group-item">
+                  <b>Password Default</b> <div class="pull-right"><?php if(strlen($row['password']) == 5){ echo $row['password'];} else{echo "Sudah Diubah" ;} ?>&nbsp;&nbsp;&nbsp;<span class="btn btn-secondary" href=""><i class="fa fa fa-lock fa-lg"></i></span></div>
+                </li>                                
               </ul>
                 <a href="index.php?page=editpembina&id=<?php echo $row['id_user']; ?>" class='btn btn-primary btn-block'><i class='fa fa-pencil'></i>&nbsp;&nbsp;Edit Data Profil</a>
+              <?php echo "<a href='#ModalGantiPass' class='btn btn-warning btn-block' data-toggle='modal' data-href='action/hapus.php?&iduser=".$row['id_user']."'><i class='fa fa-lock'></i>&nbsp;&nbsp;Reset Password</a>"; ?>
 
               <?php echo "<a href='#ModalHapusPembina' class='btn btn-danger btn-outline btn-block' data-toggle='modal' data-href='action/hapus.php?idpembina=".$row['id_pembina']."&iduser=".$row['id_user']."'><i class='fa fa-trash'></i>&nbsp;&nbsp;Hapus Mahasiswa</a>"; ?>
               

@@ -20,7 +20,7 @@
         <div class="col-xs-12">
           <div class="box">
             <div class="box-header">
-             <button class="btn btn-primary" data-toggle="modal" data-target="#importMhsModal"><i class="fa fa-chevron-circle-down"></i>&nbsp;Tambah Pimpinan</button>
+             <button class="btn btn-primary" data-toggle="modal" data-target="#importMhsModal"><i class="ion ion-person-add"></i>&nbsp;Tambah Pimpinan</button>
             </div>
             <!-- /.box-header -->
             <!-- /.box-header -->
@@ -88,7 +88,7 @@
 
       <!-- Modal Tambah Pembina -->
       <div class="modal fade" id="importMhsModal" role="dialog">
-            <div class="modal-dialog modal-sm" role="document">
+            <div class="modal-dialog " role="document">
             <form method="POST">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -100,15 +100,7 @@
                           <label>Pilih File Database Ms.Access</label>
                           <input type="file" accept=".mdb" name="dbMahasiswa"/>                          
                         </div> -->
-                        <div class="col-lg-12">
-                          <label>Pilih Tahun Angkatan</label>
-                          <select class="form-control" name="angkatan">
-                            <option>Angkatan</option>
-                            <option>15</option>
-                            <option>16</option>
-                            <option>17</option>
-                          </select>
-                        </div>
+                        
                       </div>
                     </div>
                     <div class="modal-footer">
