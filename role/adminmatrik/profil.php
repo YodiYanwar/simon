@@ -121,9 +121,9 @@
                     </div>
                     <div class="modal-body">
                         <label>Password Baru : </label>
-                        <input type="password" name="pass" class="form-control" id="pwinput2" placeholder="Masukan Password Baru" required>
+                        <input type="password" name="pass" class="form-control" id="pwinput2" placeholder="Masukan Password Baru" pattern=".{0}|.{6,}" title="6 Karakter Minimal" required>
                         <label>Konfirmasi Password : </label>
-                        <input type="password" name="passConf" class="form-control" id="pwinput3" placeholder="Masukan Ulang Password Baru" required>
+                        <input type="password" name="passConf" class="form-control" id="pwinput3" placeholder="Masukan Ulang Password Baru" pattern=".{0}|.{6,}" title="6 Karakter Minimal" required>
                         <!-- &nbsp;<input type="checkbox" id="pwcheck" />&nbsp;Tampilkan Password -->
 
                     </div>
