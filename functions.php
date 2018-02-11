@@ -138,11 +138,18 @@
 	}
 
 	function BinaanByPembina($idPembina){
-		$ambildata = mysql_query("SELECT * from mahasiswa WHERE id_pembina = $idPembina");
+		$ambildata = mysql_query("SELECT * from mhs_binaan WHERE id_pembina = $idPembina");
 			$ad = mysql_fetch_assoc($ambildata);
 				$data[] = $ad;
 				return $data;		
 	}	
+
+	function mahasiswaByPembina($idPembina){
+		$ambildata = mysql_query("SELECT mahasiswa.nim AS nim, mahasiswa.nama AS nama FROM mhs_binaan INNER JOIN mahasiswa on mhs_binaan.id_mahasiswa = mahasiswa.id_mahasiswa WHERE mhs_binaan.id_pembina = $idPembina");
+			$ad = mysql_fetch_assoc($ambildata);
+				$data[] = $ad;
+				return $data;		
+			}
 
 	function adminMatrikDetails($idUser){
 		$ambildata = mysql_query("SELECT adminmatrik.*, users.* FROM users INNER JOIN adminmatrik ON adminmatrik.id_user = users.id_user WHERE users.id_user = $idUser");
