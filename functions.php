@@ -81,7 +81,7 @@
 	}	
 
 	function pembinaDetails($idUser){
-		$ambildata = mysql_query("SELECT pembina.*, users.* FROM users INNER JOIN pembina ON pembina.id_user = users.id_user WHERE users.id_user = $idUser");
+		$ambildata = mysql_query("SELECT p.*, u.*, COUNT(mb.id_mahasiswa) AS 'jml_binaan' FROM pembina p LEFT JOIN users u ON p.id_user = u.id_user LEFT JOIN m_binaan mb ON p.id_pembina = mb.id_pembina WHERE u.id_user = $idUser GROUP BY p.nama");
 			$ad = mysql_fetch_assoc($ambildata);
 				$data[] = $ad;
 				return $data;
