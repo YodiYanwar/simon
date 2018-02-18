@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 19, 2017 at 10:04 AM
+-- Generation Time: Feb 18, 2018 at 02:43 PM
 -- Server version: 10.1.25-MariaDB
 -- PHP Version: 5.6.31
 
@@ -97,10 +97,10 @@ CREATE TABLE `mahasiswa` (
 --
 
 INSERT INTO `mahasiswa` (`id_mahasiswa`, `nim`, `nama`, `angkatan`, `j_kelamin`, `asalkota`, `email`, `telp`, `avatar`, `tgl_lahir`, `id_pembina`, `id_user`) VALUES
-(1352, 17101103, 'Farid Hidayatullah', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2048),
-(1354, 17101102, 'Ridwan', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2110),
-(1356, 17101101, 'Arland Pratama Wijaya', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2033),
-(1358, 17101100, 'M Haekal Fajrul Falah', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2070),
+(1352, 17101103, 'Farid Hidayatullah', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 21, 2048),
+(1354, 17101102, 'Ridwan', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 18, 2110),
+(1356, 17101101, 'Arland Pratama Wijaya', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 24, 2033),
+(1358, 17101100, 'M Haekal Fajrul Falah', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 21, 2070),
 (1362, 17101106, 'Muhammad Syahri Ramadani', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2096),
 (1363, 17101104, 'Imaduddin Dwi Hananto', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2061),
 (1364, 17101118, 'Fahmi Marjuki', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2046),
@@ -149,7 +149,7 @@ INSERT INTO `mahasiswa` (`id_mahasiswa`, `nim`, `nama`, `angkatan`, `j_kelamin`,
 (1445, 17101144, 'Muhammad Ananda Fajar', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2081),
 (1446, 17101143, 'Moch. Lukmannul Hakim', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2075),
 (1447, 17101141, 'Ramadhana Devandani Enti', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2105),
-(1448, 17101140, 'Adam Nurdiansyah', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2028),
+(1448, 17101140, 'Adam Nurdiansyah', NULL, 'Laki-laki', '', '', '', NULL, '1970-01-01', NULL, 2028),
 (1451, 17101139, 'Juan Fadri Ramdhani', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2065),
 (1452, 17101138, 'Herdy Almadiptha Rahman', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2056),
 (1455, 17101137, 'Muhammad Denito Bastian', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2083),
@@ -195,6 +195,27 @@ INSERT INTO `mahasiswa` (`id_mahasiswa`, `nim`, `nama`, `angkatan`, `j_kelamin`,
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `m_binaan`
+--
+
+CREATE TABLE `m_binaan` (
+  `id_pembina` int(11) DEFAULT NULL,
+  `id_mahasiswa` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `m_binaan`
+--
+
+INSERT INTO `m_binaan` (`id_pembina`, `id_mahasiswa`) VALUES
+(21, 1352),
+(18, 1354),
+(24, 1356),
+(21, 1358);
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `pembina`
 --
 
@@ -216,18 +237,51 @@ CREATE TABLE `pembina` (
 --
 
 INSERT INTO `pembina` (`id_pembina`, `nama`, `j_kelamin`, `tgl_lahir`, `gelar`, `asalkota`, `email`, `telp`, `avatar`, `id_user`) VALUES
-(18, 'Bintang Pamuncak', 'Laki-laki', '2017-11-10', 'S.Ei', 'Semarang', 'bintang@tazkia.ac.id', '0859473235', 'hp.png', 21),
+(18, 'Bintang Pamuncak', 'Laki-laki', '2017-11-10', 'S.Ei', 'Semarang', 'bintang@tazkia.ac.id', '0859473235', 'default.png', 21),
 (19, 'Hayatul Mujadidah', 'Perempuan', '2017-11-14', 'S.Ei', 'Sukabumi', 'aya@tazkia.ac.id', '081654812', NULL, 22),
 (20, 'Rizky Akbar Cholilullah', 'Laki-laki', '2017-12-13', 'S.Ei', 'Pekalongan', 'rizky_akbar@tazkia.ac.id', '0816384924', NULL, 24),
 (21, 'Rian Alfiansyah', 'Laki-laki', '2017-12-20', 'S.Ei', 'Tasikmalaya', 'rian@tazkia.ac.id', '0856483922', NULL, 25),
 (22, 'Adita Dyah Asokawati', 'Perempuan', '2017-12-28', 'S.E', 'Bogor', 'adita@tazkia.ac.id', '08127384924', NULL, 26),
-(23, 'Riyan Ariyandi', 'Laki-laki', '2017-12-08', 'S.Pd', 'Riau', 'riyan.ariyandi@tazkia.ac.id', '0812474829', NULL, 27),
+(23, 'Riyan Ariyandi', 'Laki-laki', '2017-12-08', 'S.Pd', 'Riau', 'riyan.ariyandi@tazkia.ac.id', '0812474829', 'spidey_cute.jpg', 27),
 (24, 'Rizqan Abadi', 'Laki-laki', '2017-12-22', 'S.Pd', 'Lombok', 'rizqan@tazkia.ac.id', '0857382844', NULL, 28),
 (25, 'Sofi', 'Perempuan', '2017-12-11', 'S.Pd', 'Palembang', 'sofi@tazkia.ac.id', '0896473824', NULL, 29),
 (26, 'Diva Azka Karimah', 'Perempuan', '2017-12-13', 'S.E', 'Jakarta', 'diva@tazkia.ac.id', '0812758382', NULL, 30),
 (27, 'Nashrudin Al-Huda', 'Laki-laki', '2017-12-20', 'S.E', 'Semarang', 'huda@tazkia.ac.id', '0856738232', NULL, 31),
 (28, 'Alfin', 'Laki-laki', '2017-12-16', 'S.E', 'Banten', 'alfin@tazkia.ac.id', '0856738283', NULL, 32),
 (29, 'Sri Wahyuni', 'Perempuan', '2017-12-27', 'M.Ei', 'Bandung', 'sri@tazkia.ac.id', '0816384293', NULL, 33);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `p_shalat`
+--
+
+CREATE TABLE `p_shalat` (
+  `id_p_shalat` int(11) NOT NULL,
+  `id_mahasiswa` int(11) DEFAULT NULL,
+  `tgl` date DEFAULT NULL,
+  `tapping` time DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `p_shalat`
+--
+
+INSERT INTO `p_shalat` (`id_p_shalat`, `id_mahasiswa`, `tgl`, `tapping`) VALUES
+(1, 1352, '2017-09-21', '19:29:26'),
+(2, 1352, '2017-09-21', '05:02:10'),
+(3, 1352, '2017-09-22', '15:33:30'),
+(4, 1352, '2017-09-22', '18:16:52'),
+(5, 1352, '2017-09-22', '19:30:32'),
+(6, 1352, '2017-10-21', '15:15:22'),
+(7, 1352, '2017-10-21', '15:15:28'),
+(8, 1352, '2017-10-21', '04:43:01'),
+(9, 1352, '2017-10-21', '12:04:50'),
+(10, 1352, '2017-09-21', '12:14:54'),
+(11, 1352, '2017-09-21', '15:24:52'),
+(12, 1352, '2017-09-21', '18:13:07'),
+(13, 1352, '2017-09-22', '12:21:07'),
+(14, 1352, '2017-09-22', '04:58:13');
 
 -- --------------------------------------------------------
 
@@ -249,22 +303,22 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`id_user`, `username`, `password`, `level`, `last_login`) VALUES
 (1, 'admin', 'admin', 0, '2017-12-11 16:32:50'),
-(2, 'derry', 'derry123', 2, '2017-12-15 14:47:44'),
-(21, 'bintang', 'bintang123', 3, '2017-12-02 17:03:39'),
+(2, 'derry', 'derry123', 2, '2018-02-18 16:59:46'),
+(21, 'bintang', 'bintang123', 3, '2017-12-22 20:30:02'),
 (22, 'aya', 'aya123', 3, '2017-12-02 16:23:35'),
 (23, 'hasan', 'hasan123', 2, '2017-11-30 17:06:08'),
 (24, 'rizky@tazkia.ac.id', 'rizy123', 3, '0000-00-00 00:00:00'),
 (25, 'rian', 'rian123', 3, '0000-00-00 00:00:00'),
 (26, 'adita', 'adita123', 3, '0000-00-00 00:00:00'),
-(27, 'riyan', 'riyan123', 3, '0000-00-00 00:00:00'),
+(27, 'riyan', 'riyan123', 3, '2017-12-22 20:28:02'),
 (28, 'rizqan', 'rizqan123', 3, '0000-00-00 00:00:00'),
 (29, 'sofi', 'sofi123', 3, '2017-12-02 21:28:17'),
 (30, 'diva', 'diva123', 3, '0000-00-00 00:00:00'),
 (31, 'huda', 'huda123', 3, '2017-12-02 21:27:39'),
 (32, 'alfin', 'alfin123', 3, '0000-00-00 00:00:00'),
 (33, 'sri', 'sri123', 3, '0000-00-00 00:00:00'),
-(2027, '17101148', 'abdullahhaidar123', 4, '2017-12-15 14:05:43'),
-(2028, '17101140', 'adamnurdiansyah123', 4, '0000-00-00 00:00:00'),
+(2027, '17101148', 'nCs92', 4, '2017-12-15 14:05:43'),
+(2028, '17101140', 'bismillah', 4, '2017-12-22 20:07:39'),
 (2029, '17101179', 'adipahlevi123', 4, '0000-00-00 00:00:00'),
 (2030, '17101122', 'ahlamnabila123', 4, '0000-00-00 00:00:00'),
 (2031, '17101187', 'ahmadhilmijamaludin123', 4, '0000-00-00 00:00:00'),
@@ -385,11 +439,25 @@ ALTER TABLE `mahasiswa`
   ADD KEY `id_user` (`id_user`);
 
 --
+-- Indexes for table `m_binaan`
+--
+ALTER TABLE `m_binaan`
+  ADD KEY `id_pembina` (`id_pembina`),
+  ADD KEY `id_mahasiswa` (`id_mahasiswa`);
+
+--
 -- Indexes for table `pembina`
 --
 ALTER TABLE `pembina`
   ADD PRIMARY KEY (`id_pembina`),
   ADD UNIQUE KEY `id_user` (`id_user`);
+
+--
+-- Indexes for table `p_shalat`
+--
+ALTER TABLE `p_shalat`
+  ADD PRIMARY KEY (`id_p_shalat`),
+  ADD KEY `id_mahasiswa` (`id_mahasiswa`);
 
 --
 -- Indexes for table `users`
@@ -416,6 +484,11 @@ ALTER TABLE `adminmatrik`
 --
 ALTER TABLE `pembina`
   MODIFY `id_pembina` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
+--
+-- AUTO_INCREMENT for table `p_shalat`
+--
+ALTER TABLE `p_shalat`
+  MODIFY `id_p_shalat` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 --
 -- AUTO_INCREMENT for table `users`
 --
@@ -445,10 +518,23 @@ ALTER TABLE `mahasiswa`
   ADD CONSTRAINT `mahasiswa_ibfk_2` FOREIGN KEY (`id_user`) REFERENCES `users` (`id_user`);
 
 --
+-- Constraints for table `m_binaan`
+--
+ALTER TABLE `m_binaan`
+  ADD CONSTRAINT `m_binaan_ibfk_1` FOREIGN KEY (`id_pembina`) REFERENCES `pembina` (`id_pembina`),
+  ADD CONSTRAINT `m_binaan_ibfk_2` FOREIGN KEY (`id_mahasiswa`) REFERENCES `mahasiswa` (`id_mahasiswa`);
+
+--
 -- Constraints for table `pembina`
 --
 ALTER TABLE `pembina`
   ADD CONSTRAINT `pembina_ibfk_1` FOREIGN KEY (`id_user`) REFERENCES `users` (`id_user`);
+
+--
+-- Constraints for table `p_shalat`
+--
+ALTER TABLE `p_shalat`
+  ADD CONSTRAINT `p_shalat_ibfk_1` FOREIGN KEY (`id_mahasiswa`) REFERENCES `mahasiswa` (`id_mahasiswa`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
