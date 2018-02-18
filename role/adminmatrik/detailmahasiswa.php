@@ -59,7 +59,7 @@
                   <b>Username</b> <div class="pull-right"><code><?php echo $row['username']; ?></code>&nbsp;&nbsp;&nbsp;<span class="btn btn-secondary" href=""><i class="fa fa-user-o fa-lg"></i></span></div>
                 </li>
                 <li class="list-group-item">
-                  <b>Pembina</b> <div class="pull-right"><a href="index.php?page=pembinadetails&id=<?php echo $row['id_user_pembina']; ?>"><?php echo $row['nama_pembina']; ?></a>&nbsp;&nbsp;&nbsp;<span class="btn btn-secondary" href=""><i class="fa fa-user-o fa-lg"></i></span></div>
+                  <b>Pembina</b> <div class="pull-right"> <?php if($row['nama_pembina'] == NULL){echo 'Belum Diset';} else{ echo "<a href=index.php?page=pembinadetails&id=".$row['id_user_pembina'].">".$row['nama_pembina']."</a>";} ?> &nbsp;&nbsp;&nbsp;<span class="btn btn-secondary" href=""><i class="fa fa-user-o fa-lg"></i></span></div>
                 </li> 
                 <li class="list-group-item">
                   <b>Email</b> <div class="pull-right"><?php if($row['email'] == NULL){echo 'Belum diatur';}else{echo $row['email'];} ?>&nbsp;&nbsp;&nbsp;<a class="btn btn-primary btn-outline" href=""><i class="fa fa-envelope-o fa-lg"></i></a></div>
