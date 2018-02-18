@@ -88,7 +88,7 @@
 	}
 
 	function mahasiswaDetails($idUser){
-		$ambildata = mysql_query("SELECT mahasiswa.*, users.*, pembina.nama AS nama_pembina, pembina.id_user AS id_user_pembina FROM mahasiswa LEFT JOIN pembina ON mahasiswa.id_pembina = pembina.id_pembina LEFT JOIN users ON mahasiswa.id_user = users.id_user WHERE users.id_user = $idUser");
+		$ambildata = mysql_query("SELECT m.*, u.*, up.id_user AS uid_pembina, p.nama AS nama_pembina FROM mahasiswa m LEFT JOIN m_binaan mb ON m.id_mahasiswa = mb.id_mahasiswa LEFT JOIN pembina p ON p.id_pembina = mb.id_pembina LEFT JOIN users u ON m.id_user = u.id_user LEFT JOIN users up ON p.id_user = up.id_user WHERE m.id_user = $idUser");
 			$ad = mysql_fetch_assoc($ambildata);
 				$data[] = $ad;
 				return $data;
