@@ -80,6 +80,17 @@
 		}		
 	}	
 
+	function tampilMhsByPembina(){
+		$ambildata = mysql_query("SELECT p.id_pembina, p.nama, COUNT(mb.id_mahasiswa) AS 'jml_binaan' FROM pembina p LEFT JOIN m_binaan mb ON p.id_pembina = mb.id_pembina GROUP BY p.nama") or die(mysql_error());
+		if (mysql_num_rows($ambildata) > 0) {
+			while ($ad = mysql_fetch_assoc($ambildata)) // Perulangan while ini JANGAN pake {}
+				$data[] = $ad;
+				return $data;
+		} else{
+			echo "Daftar Binaan Berdasarkan Pembina Kosong";
+		}		
+	}
+
 	function pembinaDetails($idUser){
 		$ambildata = mysql_query("SELECT p.*, u.*, COUNT(mb.id_mahasiswa) AS 'jml_binaan' FROM pembina p LEFT JOIN users u ON p.id_user = u.id_user LEFT JOIN m_binaan mb ON p.id_pembina = mb.id_pembina WHERE u.id_user = $idUser GROUP BY p.nama");
 			$ad = mysql_fetch_assoc($ambildata);

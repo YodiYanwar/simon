@@ -12,6 +12,42 @@
         ><a href="/simon"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a></li>
         <li class="treeview <?php 
               if (isset($_GET['page'])) {
+                    if ($_GET['page'] == 'bypembina'|| $_GET['page'] == 'bypembinadetails') {
+                      echo ' active';
+                    } else{
+                      echo '';
+                    }
+                  }
+             ?>"
+        >
+          <a href="#">
+            <i class="fa fa-fire"></i>
+            <span>Pembinaan</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+	          <ul class="treeview-menu">
+	            <li <?php 
+	                  if (isset($_GET['page'])) {
+	                    if ($_GET['page'] == 'bymahasiswa'|| $_GET['page'] == 'bymahasiswadetails') {
+	                      echo "class='active'";
+	                    }
+	                  }
+	                ?>
+	            ><a href="?page=bymahasiswa"><i class="fa fa-users"></i> Berdasarkan Mahasiswa</a></li>
+	            <li <?php 
+	                  if (isset($_GET['page'])) {
+	                    if ($_GET['page'] == 'bypembina'|| $_GET['page'] == 'bypembinadetails') {
+	                      echo "class='active'";
+	                    }
+	                  }
+	                ?>
+	             ><a href="?page=bypembina"><i class="fa fa-user"></i> Berdasarkan Pembina</a></li>
+	          </ul>
+          </li>
+        <li class="treeview <?php 
+              if (isset($_GET['page'])) {
                     if ($_GET['page'] == 'pembina'|| $_GET['page'] == 'pembinadetails' || $_GET['page'] == 'editpembina'|| $_GET['page'] == 'mahasiswa' || $_GET['page'] == 'mahasiswadetails' || $_GET['page'] == 'editmahasiswa') {
                       echo ' active';
                     } else{
@@ -70,6 +106,8 @@
           include 'detailmahasiswa.php';
         } else if ($_GET['page'] == 'editmahasiswa') {
           include 'edit_mahasiswa.php';
+        } else if ($_GET['page'] == 'bypembina') {
+          include 'bypembina.php';
         }
   		} else{
   			include 'dashboard.php';
