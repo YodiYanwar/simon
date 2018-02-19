@@ -1,19 +1,26 @@
 <?php 
 
   include 'functions.php';
+  $idPembina = $_GET['idPembina'];
+
+  $np = namaPembinaById($idPembina);
+                  
+
 
  ?>
 
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Pembinaan
-        <small>Mahasiswa Berdasarkan Pembina</small>
+        <a class="btn btn-primary" href="index.php?page=bypembina"><i class="fa fa-arrow-left"></i></a>&nbsp;
+        Mahasiswa Berdasarkan Pembina : 
+        <?php foreach($np as $namaPembina){ echo $namaPembina; }?>
       </h1>
       <ol class="breadcrumb">
         <li><a href="/simon"><i class="fa fa-dashboard"></i>&nbsp;Dashboard</a></li>
         <li>Pembinaan</li>
-        <li class="active">Berdasarkan Pembina</li>
+        <li><a href="index.php?page=bypembina">Berdasarkan Pembina</a></li>
+        <li class="active"><?php foreach($np as $namaPembina){ echo $namaPembina; }?></li>
       </ol>
     </section>
 
@@ -23,32 +30,30 @@
         <div class="col-xs-12">
           <div class="box">
             <div class="box-header">
-             <!-- <button class="btn btn-primary" data-toggle="modal" data-target="#tambahPembina"><i class="ion ion-person-add"></i>&nbsp;&nbsp;Tambah Akun Pembina</button> -->
+             <button class="btn btn-primary" data-toggle="modal" data-target="#tambahMhsBinaan"><i class="ion ion-person-add"></i>&nbsp;&nbsp;Tambah Mahasiswa Binaan</button>
             </div>
             <!-- /.box-header -->
             <div class="box-body">
+
               <!-- Table Daftar Pembina -->
               <table id="tablePembina" class="table table-bordered table-hover table-condensed">
                 <thead>
                   <tr>
                     <th>NO</th>
-                    <th>Nama Pembina</th>
-                    <th>Jumlah Mahasiswa Binaan</th>
+                    <th>Nama Mahasiswa Binaan</th>
                     <th></th>
                   </tr>
                 </thead>
                 <tbody>
-                  <?php 
-                    $dataByPembina = tampilMhsByPembina();
-                    
-                    $no = 1;
-                    foreach($dataByPembina as $row){
-
-                   ?>
+                <?php 
+                  $dataByPembina = MhsByPembinaDetail($idPembina);
+                  
+                  $no = 1;
+                  foreach($dataByPembina as $row){  
+                ?>
                 <tr>
                   <td><?php echo $no ?></td>
-                  <td><?php echo "<a href='index.php?page=bypembinadetail&idPembina=".$row['id_pembina']."'>".$row['nama']."</a>" ?></td>
-                  <td><?php echo $row['jml_binaan']?></td>
+                  <td><?php echo $row['nama_mahasiswa']?></td>
                   <td>
                     <div class="dropdown">
                       <button class="btn btn-default btn-sm dropdown-toggle " type="button" data-toggle="dropdown">

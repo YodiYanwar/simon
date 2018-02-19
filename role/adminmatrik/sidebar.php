@@ -12,7 +12,7 @@
         ><a href="/simon"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a></li>
         <li class="treeview <?php 
               if (isset($_GET['page'])) {
-                    if ($_GET['page'] == 'bypembina'|| $_GET['page'] == 'bypembinadetails') {
+                    if ($_GET['page'] == 'bypembina'|| $_GET['page'] == 'bypembinadetail') {
                       echo ' active';
                     } else{
                       echo '';
@@ -38,7 +38,7 @@
 	            ><a href="?page=bymahasiswa"><i class="fa fa-users"></i> Berdasarkan Mahasiswa</a></li>
 	            <li <?php 
 	                  if (isset($_GET['page'])) {
-	                    if ($_GET['page'] == 'bypembina'|| $_GET['page'] == 'bypembinadetails') {
+	                    if ($_GET['page'] == 'bypembina'|| $_GET['page'] == 'bypembinadetail') {
 	                      echo "class='active'";
 	                    }
 	                  }
@@ -108,6 +108,8 @@
           include 'edit_mahasiswa.php';
         } else if ($_GET['page'] == 'bypembina') {
           include 'bypembina.php';
+        } else if ($_GET['page'] == 'bypembinadetail') {
+          include 'bypembinadetail.php';
         }
   		} else{
   			include 'dashboard.php';
