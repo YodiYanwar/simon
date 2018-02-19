@@ -17,7 +17,7 @@
 	function tampilPembina(){
 		$ambildata = mysql_query("SELECT pembina.*, users.* FROM users INNER JOIN pembina ON pembina.id_user = users.id_user ORDER BY nama") or die(mysql_error());
 		if (mysql_num_rows($ambildata) > 0) {
-			while ($ad = mysql_fetch_assoc($ambildata)) // Perulangan while ini jangan pake {}
+			while ($ad = mysql_fetch_assoc($ambildata)) // Perulangan while ini JANGAN pake {}
 				$data[] = $ad;
 				return $data;
 		} else{
@@ -28,7 +28,7 @@
 	function tampilUsers(){
 		$ambildata = mysql_query("SELECT * FROM users ORDER BY username") or die(mysql_error());
 		if (mysql_num_rows($ambildata) > 0) {
-			while ($ad = mysql_fetch_assoc($ambildata)) // Perulangan while ini jangan pake {}
+			while ($ad = mysql_fetch_assoc($ambildata)) // Perulangan while ini JANGAN pake {}
 				$data[] = $ad;
 				return $data;
 		} else{
@@ -39,7 +39,7 @@
 	function tampilMahasiswa(){
 		$ambildata = mysql_query("SELECT mahasiswa.*, users.* FROM users INNER JOIN mahasiswa ON mahasiswa.id_user = users.id_user ORDER BY nama") or die(mysql_error());
 		if (mysql_num_rows($ambildata) > 0) {
-			while ($ad = mysql_fetch_assoc($ambildata)) // Perulangan while ini jangan pake {}
+			while ($ad = mysql_fetch_assoc($ambildata)) // Perulangan while ini JANGAN pake {}
 				$data[] = $ad;
 				return $data;
 		} else{
@@ -50,7 +50,7 @@
 	function tampilAdminmatrik(){
 		$ambildata = mysql_query("SELECT adminmatrik.*, users.* FROM users INNER JOIN adminmatrik ON adminmatrik.id_user = users.id_user ORDER BY nama") or die(mysql_error());
 		if (mysql_num_rows($ambildata) > 0) {
-			while ($ad = mysql_fetch_assoc($ambildata)) // Perulangan while ini jangan pake {}
+			while ($ad = mysql_fetch_assoc($ambildata)) // Perulangan while ini JANGAN pake {}
 				$data[] = $ad;
 				return $data;
 		} else{
@@ -61,7 +61,7 @@
 	function tampilPimpinan(){
 		$ambildata = mysql_query("SELECT pimpinan.*, users.* FROM users INNER JOIN pimpinan ON pimpinan.id_user = users.id_user ORDER BY nama") or die(mysql_error());
 		if (mysql_num_rows($ambildata) > 0) {
-			while ($ad = mysql_fetch_assoc($ambildata)) // Perulangan while ini jangan pake {}
+			while ($ad = mysql_fetch_assoc($ambildata)) // Perulangan while ini JANGAN pake {}
 				$data[] = $ad;
 				return $data;
 		} else{
@@ -72,7 +72,7 @@
 	function tampilAdministrator(){
 		$ambildata = mysql_query("SELECT administrator.*, users.* FROM users INNER JOIN administrator ON administrator.id_user = users.id_user ORDER BY nama") or die(mysql_error());
 		if (mysql_num_rows($ambildata) > 0) {
-			while ($ad = mysql_fetch_assoc($ambildata)) // Perulangan while ini jangan pake {}
+			while ($ad = mysql_fetch_assoc($ambildata)) // Perulangan while ini JANGAN pake {}
 				$data[] = $ad;
 				return $data;
 		} else{

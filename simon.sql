@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 18, 2018 at 02:43 PM
+-- Generation Time: Feb 19, 2018 at 11:17 AM
 -- Server version: 10.1.25-MariaDB
 -- PHP Version: 5.6.31
 
@@ -88,7 +88,6 @@ CREATE TABLE `mahasiswa` (
   `telp` varchar(13) DEFAULT NULL,
   `avatar` varchar(100) DEFAULT NULL,
   `tgl_lahir` date DEFAULT NULL,
-  `id_pembina` int(11) DEFAULT NULL,
   `id_user` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -96,101 +95,101 @@ CREATE TABLE `mahasiswa` (
 -- Dumping data for table `mahasiswa`
 --
 
-INSERT INTO `mahasiswa` (`id_mahasiswa`, `nim`, `nama`, `angkatan`, `j_kelamin`, `asalkota`, `email`, `telp`, `avatar`, `tgl_lahir`, `id_pembina`, `id_user`) VALUES
-(1352, 17101103, 'Farid Hidayatullah', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 21, 2048),
-(1354, 17101102, 'Ridwan', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 18, 2110),
-(1356, 17101101, 'Arland Pratama Wijaya', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 24, 2033),
-(1358, 17101100, 'M Haekal Fajrul Falah', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 21, 2070),
-(1362, 17101106, 'Muhammad Syahri Ramadani', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2096),
-(1363, 17101104, 'Imaduddin Dwi Hananto', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2061),
-(1364, 17101118, 'Fahmi Marjuki', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2046),
-(1365, 17101117, 'Zubeir Abdul Wahid Chan', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2118),
-(1368, 17101116, 'Muhamad Lutfi', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2079),
-(1370, 17101115, 'Noviyandi Difa Pratama', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2102),
-(1372, 17101113, 'Sesa Afrian Yahya', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2114),
-(1373, 17101111, 'Muhamad Solehudin', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2080),
-(1375, 17101114, 'Yody Nur Rachmat', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2116),
-(1376, 17101112, 'Zahid Ahmad', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2117),
-(1377, 17101109, 'Arta Saiful Hilmi', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2035),
-(1382, 17101108, 'Aziz Guntur Purnamaputra', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2036),
-(1383, 17101107, 'Wildan Maulid Hanafi', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2115),
-(1384, 17101105, 'Arman Fadil Maulana', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2034),
-(1389, 17101127, 'Hanif Dwi Putra', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2054),
-(1390, 17101128, 'Zulfitra Hadianto Palwam', NULL, 'Laki-laki', 'Malang', 'zulfitra@tazkia.ac.id', '0834627642', NULL, '2017-12-13', NULL, 2120),
-(1391, 17101124, 'Lalu Rizky Adriansyah', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2069),
-(1392, 17101126, 'Difan Nurhafidzar Juanda', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2041),
-(1395, 17101123, 'Farras Mubasysyirsyah', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2049),
-(1397, 17101122, 'Ahlam Nabila', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2030),
-(1398, 17101119, 'Fikri Abdurrohman Maajid', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2052),
-(1400, 17101121, 'Khalel Mohammed Amar', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2066),
-(1402, 17101120, 'Alif Limka Firdaus', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2032),
-(1404, 17101135, 'Ibnu Rasyid Hamidi', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2058),
-(1407, 17101133, 'Naufal Ahmad', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2100),
-(1408, 17101134, 'Muhammad Zacky Makarim S', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2097),
-(1409, 17101132, 'Muhammad Fathan Farizan', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2088),
-(1410, 17101130, 'L. M. Cahya Kurnia Harma', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2067),
-(1412, 17101131, 'Labib Ulwan', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2068),
-(1415, 17101125, 'Edo Abdulrahim Fattah', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2043),
-(1416, 17101129, 'Moh Ala Furqoni', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2076),
-(1420, 17101157, 'Naufal Raditya Krisna', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2101),
-(1421, 17101154, 'Faatihan Aulia Azwin', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2045),
-(1424, 17101156, 'Hafisz Maulana Rasjid', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2053),
-(1425, 17101155, 'Muhammad Haniful Amin', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2090),
-(1426, 17101153, 'Hilmy Fikri', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2057),
-(1428, 17101152, 'Miftah Faruq Nugraha', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2073),
-(1431, 17101151, 'Irvan Riyansyah', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2063),
-(1434, 17101148, 'Abdullah Haidar', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2027),
-(1436, 17101150, 'Muhammad Puji Pangestu', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2093),
-(1437, 17101149, 'Muhammad Rizki Sinar Ila', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2095),
-(1438, 17101147, 'Falah Ageng Pakerti', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2047),
-(1439, 17101146, 'Iza Fais Saputra', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2064),
-(1441, 17101145, 'Muhammad Angga Abdullah', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2082),
-(1443, 17101142, 'Reynaldi Wahab', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2109),
-(1445, 17101144, 'Muhammad Ananda Fajar', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2081),
-(1446, 17101143, 'Moch. Lukmannul Hakim', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2075),
-(1447, 17101141, 'Ramadhana Devandani Enti', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2105),
-(1448, 17101140, 'Adam Nurdiansyah', NULL, 'Laki-laki', '', '', '', NULL, '1970-01-01', NULL, 2028),
-(1451, 17101139, 'Juan Fadri Ramdhani', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2065),
-(1452, 17101138, 'Herdy Almadiptha Rahman', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2056),
-(1455, 17101137, 'Muhammad Denito Bastian', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2083),
-(1456, 17101136, 'Muhammad Faisal', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2086),
-(1457, 17101166, 'Nurrahman Wira Aji', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2103),
-(1458, 17101165, 'Zuhdi Anjari Tigara', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2119),
-(1459, 17101164, 'Muhammad.daffa As-syauqi', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2098),
-(1460, 17101163, 'Billy Muhammad Fadilah', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2040),
-(1462, 17101162, 'Hariz Ilmam Husnan', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2055),
-(1465, 17101161, 'Baso Ratulangi', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2039),
-(1468, 17101159, 'Ridwan Hasyim', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2111),
-(1469, 17101160, 'Rizal Muhammad Fauzan', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2113),
-(1471, 17101158, 'Muhammad Nasyith Sholahu', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2092),
-(1472, 17101176, 'Muhammad Fadhil Mujahid', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2085),
-(1473, 17101175, 'Rayhan Pasa Aryandra', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2107),
-(1476, 17101174, 'Muhammad Fitriana Hasan', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2089),
-(1477, 17101171, 'Ferdi Wijaya', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2050),
-(1478, 17101172, 'Risang Muhammad', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2112),
-(1479, 17101173, 'Muahmmad Hafidz Fathoni', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2078),
-(1480, 17101167, 'Moh.yanis Yosfiah', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2077),
-(1481, 17101170, 'Azmi Syahid', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2038),
-(1482, 17101169, 'Indra Wijaya', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2062),
-(1483, 17101168, 'Ilham Akbar Ramadhan', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2059),
-(1484, 17101180, 'Dimas Adektama', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2042),
-(1485, 17101179, 'Adi Pahlevi', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2029),
-(1487, 17101178, 'M. Ridwan Saufi', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2071),
-(1490, 17101177, 'Muhammad Diaz Advani', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2084),
-(1491, 17101182, 'Renaldi Septiawan', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2108),
-(1492, 17101183, 'Ilham Muhammad Ghifari', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2060),
-(1494, 17101181, 'M.farid', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2072),
-(1495, 17101184, 'Ramadan Arudi Satyagraha', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2104),
-(1496, 17101185, 'Muhammad Iqbal', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2091),
-(1497, 17101187, 'Ahmad Hilmi Jamaludin', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2031),
-(1498, 17101189, 'Muhammad Farhan Maulana', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2087),
-(1499, 17101188, 'Azka Muharam', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2037),
-(1502, 17101186, 'Nabil Nur Salsabil', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2099),
-(1505, 17101190, 'Muhammad Rasyid Ridha', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2094),
-(2048, 17101195, 'Mikal Mufid Asdika', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2074),
-(2051, 17101193, 'Feydhul Qodir Muwaffaq', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2051),
-(2052, 17101192, 'Rangga Adithiya', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2106),
-(2080, 17101194, 'Elisa', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2044);
+INSERT INTO `mahasiswa` (`id_mahasiswa`, `nim`, `nama`, `angkatan`, `j_kelamin`, `asalkota`, `email`, `telp`, `avatar`, `tgl_lahir`, `id_user`) VALUES
+(1352, 17101103, 'Farid Hidayatullah', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2048),
+(1354, 17101102, 'Ridwan', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2110),
+(1356, 17101101, 'Arland Pratama Wijaya', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2033),
+(1358, 17101100, 'M Haekal Fajrul Falah', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2070),
+(1362, 17101106, 'Muhammad Syahri Ramadani', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2096),
+(1363, 17101104, 'Imaduddin Dwi Hananto', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2061),
+(1364, 17101118, 'Fahmi Marjuki', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2046),
+(1365, 17101117, 'Zubeir Abdul Wahid Chan', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2118),
+(1368, 17101116, 'Muhamad Lutfi', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2079),
+(1370, 17101115, 'Noviyandi Difa Pratama', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2102),
+(1372, 17101113, 'Sesa Afrian Yahya', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2114),
+(1373, 17101111, 'Muhamad Solehudin', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2080),
+(1375, 17101114, 'Yody Nur Rachmat', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2116),
+(1376, 17101112, 'Zahid Ahmad', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2117),
+(1377, 17101109, 'Arta Saiful Hilmi', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2035),
+(1382, 17101108, 'Aziz Guntur Purnamaputra', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2036),
+(1383, 17101107, 'Wildan Maulid Hanafi', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2115),
+(1384, 17101105, 'Arman Fadil Maulana', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2034),
+(1389, 17101127, 'Hanif Dwi Putra', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2054),
+(1390, 17101128, 'Zulfitra Hadianto Palwam', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2120),
+(1391, 17101124, 'Lalu Rizky Adriansyah', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2069),
+(1392, 17101126, 'Difan Nurhafidzar Juanda', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2041),
+(1395, 17101123, 'Farras Mubasysyirsyah', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2049),
+(1397, 17101122, 'Ahlam Nabila', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2030),
+(1398, 17101119, 'Fikri Abdurrohman Maajid', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2052),
+(1400, 17101121, 'Khalel Mohammed Amar', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2066),
+(1402, 17101120, 'Alif Limka Firdaus', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2032),
+(1404, 17101135, 'Ibnu Rasyid Hamidi', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2058),
+(1407, 17101133, 'Naufal Ahmad', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2100),
+(1408, 17101134, 'Muhammad Zacky Makarim S', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2097),
+(1409, 17101132, 'Muhammad Fathan Farizan', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2088),
+(1410, 17101130, 'L. M. Cahya Kurnia Harma', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2067),
+(1412, 17101131, 'Labib Ulwan', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2068),
+(1415, 17101125, 'Edo Abdulrahim Fattah', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2043),
+(1416, 17101129, 'Moh Ala Furqoni', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2076),
+(1420, 17101157, 'Naufal Raditya Krisna', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2101),
+(1421, 17101154, 'Faatihan Aulia Azwin', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2045),
+(1424, 17101156, 'Hafisz Maulana Rasjid', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2053),
+(1425, 17101155, 'Muhammad Haniful Amin', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2090),
+(1426, 17101153, 'Hilmy Fikri', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2057),
+(1428, 17101152, 'Miftah Faruq Nugraha', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2073),
+(1431, 17101151, 'Irvan Riyansyah', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2063),
+(1434, 17101148, 'Abdullah Haidar', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2027),
+(1436, 17101150, 'Muhammad Puji Pangestu', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2093),
+(1437, 17101149, 'Muhammad Rizki Sinar Ila', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2095),
+(1438, 17101147, 'Falah Ageng Pakerti', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2047),
+(1439, 17101146, 'Iza Fais Saputra', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2064),
+(1441, 17101145, 'Muhammad Angga Abdullah', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2082),
+(1443, 17101142, 'Reynaldi Wahab', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2109),
+(1445, 17101144, 'Muhammad Ananda Fajar', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2081),
+(1446, 17101143, 'Moch. Lukmannul Hakim', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2075),
+(1447, 17101141, 'Ramadhana Devandani Enti', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2105),
+(1448, 17101140, 'Adam Nurdiansyah', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2028),
+(1451, 17101139, 'Juan Fadri Ramdhani', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2065),
+(1452, 17101138, 'Herdy Almadiptha Rahman', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2056),
+(1455, 17101137, 'Muhammad Denito Bastian', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2083),
+(1456, 17101136, 'Muhammad Faisal', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2086),
+(1457, 17101166, 'Nurrahman Wira Aji', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2103),
+(1458, 17101165, 'Zuhdi Anjari Tigara', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2119),
+(1459, 17101164, 'Muhammad.daffa As-syauqi', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2098),
+(1460, 17101163, 'Billy Muhammad Fadilah', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2040),
+(1462, 17101162, 'Hariz Ilmam Husnan', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2055),
+(1465, 17101161, 'Baso Ratulangi', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2039),
+(1468, 17101159, 'Ridwan Hasyim', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2111),
+(1469, 17101160, 'Rizal Muhammad Fauzan', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2113),
+(1471, 17101158, 'Muhammad Nasyith Sholahu', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2092),
+(1472, 17101176, 'Muhammad Fadhil Mujahid', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2085),
+(1473, 17101175, 'Rayhan Pasa Aryandra', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2107),
+(1476, 17101174, 'Muhammad Fitriana Hasan', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2089),
+(1477, 17101171, 'Ferdi Wijaya', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2050),
+(1478, 17101172, 'Risang Muhammad', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2112),
+(1479, 17101173, 'Muahmmad Hafidz Fathoni', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2078),
+(1480, 17101167, 'Moh.yanis Yosfiah', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2077),
+(1481, 17101170, 'Azmi Syahid', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2038),
+(1482, 17101169, 'Indra Wijaya', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2062),
+(1483, 17101168, 'Ilham Akbar Ramadhan', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2059),
+(1484, 17101180, 'Dimas Adektama', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2042),
+(1485, 17101179, 'Adi Pahlevi', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2029),
+(1487, 17101178, 'M. Ridwan Saufi', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2071),
+(1490, 17101177, 'Muhammad Diaz Advani', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2084),
+(1491, 17101182, 'Renaldi Septiawan', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2108),
+(1492, 17101183, 'Ilham Muhammad Ghifari', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2060),
+(1494, 17101181, 'M.farid', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2072),
+(1495, 17101184, 'Ramadan Arudi Satyagraha', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2104),
+(1496, 17101185, 'Muhammad Iqbal', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2091),
+(1497, 17101187, 'Ahmad Hilmi Jamaludin', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2031),
+(1498, 17101189, 'Muhammad Farhan Maulana', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2087),
+(1499, 17101188, 'Azka Muharam', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2037),
+(1502, 17101186, 'Nabil Nur Salsabil', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2099),
+(1505, 17101190, 'Muhammad Rasyid Ridha', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2094),
+(2048, 17101195, 'Mikal Mufid Asdika', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2074),
+(2051, 17101193, 'Feydhul Qodir Muwaffaq', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2051),
+(2052, 17101192, 'Rangga Adithiya', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2106),
+(2080, 17101194, 'Elisa', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2044);
 
 -- --------------------------------------------------------
 
@@ -199,8 +198,8 @@ INSERT INTO `mahasiswa` (`id_mahasiswa`, `nim`, `nama`, `angkatan`, `j_kelamin`,
 --
 
 CREATE TABLE `m_binaan` (
-  `id_pembina` int(11) DEFAULT NULL,
-  `id_mahasiswa` int(11) DEFAULT NULL
+  `id_pembina` int(11) NOT NULL,
+  `id_mahasiswa` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -249,39 +248,6 @@ INSERT INTO `pembina` (`id_pembina`, `nama`, `j_kelamin`, `tgl_lahir`, `gelar`, 
 (27, 'Nashrudin Al-Huda', 'Laki-laki', '2017-12-20', 'S.E', 'Semarang', 'huda@tazkia.ac.id', '0856738232', NULL, 31),
 (28, 'Alfin', 'Laki-laki', '2017-12-16', 'S.E', 'Banten', 'alfin@tazkia.ac.id', '0856738283', NULL, 32),
 (29, 'Sri Wahyuni', 'Perempuan', '2017-12-27', 'M.Ei', 'Bandung', 'sri@tazkia.ac.id', '0816384293', NULL, 33);
-
--- --------------------------------------------------------
-
---
--- Table structure for table `p_shalat`
---
-
-CREATE TABLE `p_shalat` (
-  `id_p_shalat` int(11) NOT NULL,
-  `id_mahasiswa` int(11) DEFAULT NULL,
-  `tgl` date DEFAULT NULL,
-  `tapping` time DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `p_shalat`
---
-
-INSERT INTO `p_shalat` (`id_p_shalat`, `id_mahasiswa`, `tgl`, `tapping`) VALUES
-(1, 1352, '2017-09-21', '19:29:26'),
-(2, 1352, '2017-09-21', '05:02:10'),
-(3, 1352, '2017-09-22', '15:33:30'),
-(4, 1352, '2017-09-22', '18:16:52'),
-(5, 1352, '2017-09-22', '19:30:32'),
-(6, 1352, '2017-10-21', '15:15:22'),
-(7, 1352, '2017-10-21', '15:15:28'),
-(8, 1352, '2017-10-21', '04:43:01'),
-(9, 1352, '2017-10-21', '12:04:50'),
-(10, 1352, '2017-09-21', '12:14:54'),
-(11, 1352, '2017-09-21', '15:24:52'),
-(12, 1352, '2017-09-21', '18:13:07'),
-(13, 1352, '2017-09-22', '12:21:07'),
-(14, 1352, '2017-09-22', '04:58:13');
 
 -- --------------------------------------------------------
 
@@ -338,7 +304,7 @@ INSERT INTO `users` (`id_user`, `username`, `password`, `level`, `last_login`) V
 (2045, '17101154', 'faatihanauliaazwin123', 4, '0000-00-00 00:00:00'),
 (2046, '17101118', 'fahmimarjuki123', 4, '0000-00-00 00:00:00'),
 (2047, '17101147', 'falahagengpakerti123', 4, '0000-00-00 00:00:00'),
-(2048, '17101103', 'faridhidayatullah123', 4, '0000-00-00 00:00:00'),
+(2048, '17101103', 'p88yE', 4, '0000-00-00 00:00:00'),
 (2049, '17101123', 'farrasmubasysyirsyah123', 4, '0000-00-00 00:00:00'),
 (2050, '17101171', 'ferdiwijaya123', 4, '0000-00-00 00:00:00'),
 (2051, '17101193', 'feydhulqodirmuwaffaq123', 4, '0000-00-00 00:00:00'),
@@ -410,7 +376,102 @@ INSERT INTO `users` (`id_user`, `username`, `password`, `level`, `last_login`) V
 (2117, '17101112', 'zahidahmad123', 4, '0000-00-00 00:00:00'),
 (2118, '17101117', 'zubeirabdulwahidchan123', 4, '0000-00-00 00:00:00'),
 (2119, '17101165', 'zuhdianjaritigara123', 4, '2017-12-15 16:00:04'),
-(2120, '17101128', 'zulfitra123', 4, '2017-12-15 16:08:07');
+(2120, '17101128', 'zulfitra123', 4, '2017-12-15 16:08:07'),
+(2121, '17101148', '38HPC', 4, '0000-00-00 00:00:00'),
+(2122, '17101140', '74hbn', 4, '0000-00-00 00:00:00'),
+(2123, '17101179', 'fJB2h', 4, '0000-00-00 00:00:00'),
+(2124, '17101122', 'u5O18', 4, '0000-00-00 00:00:00'),
+(2125, '17101187', 'K9j9A', 4, '0000-00-00 00:00:00'),
+(2126, '17101120', 'eRbI8', 4, '0000-00-00 00:00:00'),
+(2127, '17101101', '06Wj7', 4, '0000-00-00 00:00:00'),
+(2128, '17101105', '3iiHb', 4, '0000-00-00 00:00:00'),
+(2129, '17101109', 'Pgt4s', 4, '0000-00-00 00:00:00'),
+(2130, '17101108', 'd0rwW', 4, '0000-00-00 00:00:00'),
+(2131, '17101188', '3a7HR', 4, '0000-00-00 00:00:00'),
+(2132, '17101170', '6qE4Q', 4, '0000-00-00 00:00:00'),
+(2133, '17101161', 'i171t', 4, '0000-00-00 00:00:00'),
+(2134, '17101163', 'Ph78P', 4, '0000-00-00 00:00:00'),
+(2135, '17101126', 'I04l3', 4, '0000-00-00 00:00:00'),
+(2136, '17101180', 'u7ll3', 4, '0000-00-00 00:00:00'),
+(2137, '17101125', 'GT8Dy', 4, '0000-00-00 00:00:00'),
+(2138, '17101194', 'og298', 4, '0000-00-00 00:00:00'),
+(2139, '17101154', 'X0571', 4, '0000-00-00 00:00:00'),
+(2140, '17101118', 'Bu280', 4, '0000-00-00 00:00:00'),
+(2141, '17101147', '840C4', 4, '0000-00-00 00:00:00'),
+(2142, '17101103', 'l3OHn', 4, '0000-00-00 00:00:00'),
+(2143, '17101123', 'DBug6', 4, '0000-00-00 00:00:00'),
+(2144, '17101171', 'aWwrZ', 4, '0000-00-00 00:00:00'),
+(2145, '17101193', '0Q8tU', 4, '0000-00-00 00:00:00'),
+(2146, '17101119', 'Yq0Qz', 4, '0000-00-00 00:00:00'),
+(2147, '17101156', '30l9H', 4, '0000-00-00 00:00:00'),
+(2148, '17101127', 'T4QJl', 4, '0000-00-00 00:00:00'),
+(2149, '17101162', 'ffVdx', 4, '0000-00-00 00:00:00'),
+(2150, '17101138', 'kD44g', 4, '0000-00-00 00:00:00'),
+(2151, '17101153', '80sd8', 4, '0000-00-00 00:00:00'),
+(2152, '17101135', 'wmh1r', 4, '0000-00-00 00:00:00'),
+(2153, '17101168', 'NK8fM', 4, '0000-00-00 00:00:00'),
+(2154, '17101183', 'BbovL', 4, '0000-00-00 00:00:00'),
+(2155, '17101104', 'cDOkZ', 4, '0000-00-00 00:00:00'),
+(2156, '17101169', 'ux35T', 4, '0000-00-00 00:00:00'),
+(2157, '17101151', '7Dxxk', 4, '0000-00-00 00:00:00'),
+(2158, '17101146', '329eC', 4, '0000-00-00 00:00:00'),
+(2159, '17101139', 'sAR35', 4, '0000-00-00 00:00:00'),
+(2160, '17101121', 'Y7r4L', 4, '0000-00-00 00:00:00'),
+(2161, '17101130', 'AM0ey', 4, '0000-00-00 00:00:00'),
+(2162, '17101131', '92096', 4, '0000-00-00 00:00:00'),
+(2163, '17101124', 'm2MTn', 4, '0000-00-00 00:00:00'),
+(2164, '17101100', 'Um85y', 4, '0000-00-00 00:00:00'),
+(2165, '17101178', 'MW9FN', 4, '0000-00-00 00:00:00'),
+(2166, '17101181', 'L9Sq4', 4, '0000-00-00 00:00:00'),
+(2167, '17101152', 'UC6F1', 4, '0000-00-00 00:00:00'),
+(2168, '17101195', 'DThf4', 4, '0000-00-00 00:00:00'),
+(2169, '17101143', 'v9pG6', 4, '0000-00-00 00:00:00'),
+(2170, '17101129', 'IE83Y', 4, '0000-00-00 00:00:00'),
+(2171, '17101167', 'WZtI9', 4, '0000-00-00 00:00:00'),
+(2172, '17101173', '3Pb7F', 4, '0000-00-00 00:00:00'),
+(2173, '17101116', '0934T', 4, '0000-00-00 00:00:00'),
+(2174, '17101111', 'J8sn7', 4, '0000-00-00 00:00:00'),
+(2175, '17101144', 'SmXBj', 4, '0000-00-00 00:00:00'),
+(2176, '17101145', 'S22jQ', 4, '0000-00-00 00:00:00'),
+(2177, '17101137', '6YR7G', 4, '0000-00-00 00:00:00'),
+(2178, '17101177', 'oLCuP', 4, '0000-00-00 00:00:00'),
+(2179, '17101176', '6c7M2', 4, '0000-00-00 00:00:00'),
+(2180, '17101136', '640ep', 4, '0000-00-00 00:00:00'),
+(2181, '17101189', 'OiEl7', 4, '0000-00-00 00:00:00'),
+(2182, '17101132', '0fl76', 4, '0000-00-00 00:00:00'),
+(2183, '17101174', 'Qm59b', 4, '0000-00-00 00:00:00'),
+(2184, '17101155', 'wr6xf', 4, '0000-00-00 00:00:00'),
+(2185, '17101185', '28Y0n', 4, '0000-00-00 00:00:00'),
+(2186, '17101158', '3ghCk', 4, '0000-00-00 00:00:00'),
+(2187, '17101150', '3mQlF', 4, '0000-00-00 00:00:00'),
+(2188, '17101110', '1y0td', 4, '0000-00-00 00:00:00'),
+(2189, '17101190', 'ngoMp', 4, '0000-00-00 00:00:00'),
+(2190, '17101149', 'Lc7Qk', 4, '0000-00-00 00:00:00'),
+(2191, '17101106', 'CXFP7', 4, '0000-00-00 00:00:00'),
+(2192, '17101134', '92jK2', 4, '0000-00-00 00:00:00'),
+(2193, '17101164', 'Qm68u', 4, '0000-00-00 00:00:00'),
+(2194, '17101186', 'T3Z48', 4, '0000-00-00 00:00:00'),
+(2195, '17101133', '5VOgu', 4, '0000-00-00 00:00:00'),
+(2196, '17101157', '5rkX8', 4, '0000-00-00 00:00:00'),
+(2197, '17101115', '006GI', 4, '0000-00-00 00:00:00'),
+(2198, '17101166', 'K3d42', 4, '0000-00-00 00:00:00'),
+(2199, '17101184', 'tf14j', 4, '0000-00-00 00:00:00'),
+(2200, '17101141', '2tE44', 4, '0000-00-00 00:00:00'),
+(2201, '17101192', '6EWf6', 4, '0000-00-00 00:00:00'),
+(2202, '17101175', 'kYeyH', 4, '0000-00-00 00:00:00'),
+(2203, '17101182', '39FN3', 4, '0000-00-00 00:00:00'),
+(2204, '17101142', 'oTTk8', 4, '0000-00-00 00:00:00'),
+(2205, '17101102', '152eF', 4, '0000-00-00 00:00:00'),
+(2206, '17101159', 's6mFX', 4, '0000-00-00 00:00:00'),
+(2207, '17101172', '59Eo9', 4, '0000-00-00 00:00:00'),
+(2208, '17101160', 'EZeyU', 4, '0000-00-00 00:00:00'),
+(2209, '17101113', 'pL0L3', 4, '0000-00-00 00:00:00'),
+(2210, '17101107', 'G40n3', 4, '0000-00-00 00:00:00'),
+(2211, '17101114', 'hCJoD', 4, '0000-00-00 00:00:00'),
+(2212, '17101112', 'a3327', 4, '0000-00-00 00:00:00'),
+(2213, '17101117', '49v3v', 4, '0000-00-00 00:00:00'),
+(2214, '17101165', '41aIs', 4, '0000-00-00 00:00:00'),
+(2215, '17101128', '14z5b', 4, '0000-00-00 00:00:00');
 
 --
 -- Indexes for dumped tables
@@ -435,7 +496,6 @@ ALTER TABLE `adminmatrik`
 --
 ALTER TABLE `mahasiswa`
   ADD PRIMARY KEY (`id_mahasiswa`),
-  ADD KEY `id_pembina` (`id_pembina`),
   ADD KEY `id_user` (`id_user`);
 
 --
@@ -451,13 +511,6 @@ ALTER TABLE `m_binaan`
 ALTER TABLE `pembina`
   ADD PRIMARY KEY (`id_pembina`),
   ADD UNIQUE KEY `id_user` (`id_user`);
-
---
--- Indexes for table `p_shalat`
---
-ALTER TABLE `p_shalat`
-  ADD PRIMARY KEY (`id_p_shalat`),
-  ADD KEY `id_mahasiswa` (`id_mahasiswa`);
 
 --
 -- Indexes for table `users`
@@ -485,15 +538,10 @@ ALTER TABLE `adminmatrik`
 ALTER TABLE `pembina`
   MODIFY `id_pembina` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
 --
--- AUTO_INCREMENT for table `p_shalat`
---
-ALTER TABLE `p_shalat`
-  MODIFY `id_p_shalat` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
---
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2121;
+  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2216;
 --
 -- Constraints for dumped tables
 --
@@ -511,13 +559,6 @@ ALTER TABLE `adminmatrik`
   ADD CONSTRAINT `adminmatrik_ibfk_1` FOREIGN KEY (`id_user`) REFERENCES `users` (`id_user`);
 
 --
--- Constraints for table `mahasiswa`
---
-ALTER TABLE `mahasiswa`
-  ADD CONSTRAINT `mahasiswa_ibfk_1` FOREIGN KEY (`id_pembina`) REFERENCES `pembina` (`id_pembina`),
-  ADD CONSTRAINT `mahasiswa_ibfk_2` FOREIGN KEY (`id_user`) REFERENCES `users` (`id_user`);
-
---
 -- Constraints for table `m_binaan`
 --
 ALTER TABLE `m_binaan`
@@ -529,12 +570,6 @@ ALTER TABLE `m_binaan`
 --
 ALTER TABLE `pembina`
   ADD CONSTRAINT `pembina_ibfk_1` FOREIGN KEY (`id_user`) REFERENCES `users` (`id_user`);
-
---
--- Constraints for table `p_shalat`
---
-ALTER TABLE `p_shalat`
-  ADD CONSTRAINT `p_shalat_ibfk_1` FOREIGN KEY (`id_mahasiswa`) REFERENCES `mahasiswa` (`id_mahasiswa`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
