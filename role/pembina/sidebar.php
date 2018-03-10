@@ -21,7 +21,7 @@
              ?>"
         >
           <a href="#">
-            <i class="fa fa-sun-o"></i>
+            <i class="fa fa-fire"></i>
             <span>Pembinaan</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>

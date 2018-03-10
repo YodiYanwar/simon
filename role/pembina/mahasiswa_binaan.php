@@ -1,5 +1,6 @@
 <?php 
   include 'functions.php';
+  $idPembina = $_SESSION['id_pembina'];
  ?>    
     <!-- Content Header (Page header) -->
     <section class="content-header">
@@ -22,38 +23,34 @@
             <div class="box-header">
             </div>
             <!-- /.box-header -->
-            <!-- /.box-header -->
-            <div class="box-body">
+            
+              <div class="box-body">
               <!-- Table Daftar Pembina -->
               <table id="tablePembina" class="table table-bordered table-hover table-condensed">
                 <thead>
                   <tr>
                     <th>NO</th>
-                    <th>NIM</th>
-                    <th>Nama</th>
+                    <th>Nama Mahasiswa Binaan</th>
                     <th></th>
                   </tr>
                 </thead>
                 <tbody>
-                  <?php 
-                    $dataBinaan = BinaanByPembina($_SESSION['id_pembina']);
-                    
-                    $no = 1;
-                    foreach($dataBinaan as $row){
-
-                   ?>
+                <?php 
+                  $dataByPembina = MhsByPembinaDetail($idPembina);
+                  
+                  $no = 1;
+                  foreach($dataByPembina as $row){  
+                ?>
                 <tr>
                   <td><?php echo $no ?></td>
-                  <td><?php echo "<span class='badge bg-green'>".$row['nim']."</span>" ?></td>
-                  <td><?php echo "<a href='index.php?page=mahasiswadetails&id=".$row['id_user']."'>".$row['nama']."</a>" ?></td>
+                  <td><?php echo $row['nama_mahasiswa']?></td>
                   <td>
                     <div class="dropdown">
                       <button class="btn btn-default btn-sm dropdown-toggle " type="button" data-toggle="dropdown">
                         <i class="fa fa-cog fa-lg"></i>&nbsp;&nbsp;<span class="caret"></span>
                       </button>
                       <ul class="dropdown-menu">
-                        <li><?php echo "<a style='color:#DD4B39;' href='#ModalHapusPembina' class='dropdown-item' data-toggle='modal' data-href='action/hapus.php?idpembina=".$row['id_mahasiswa']."&iduser=".$row['id_user']."' aria-hidden='true'><i class='fa fa-remove'></i>Hapus Akun</a>"; ?></li>
-                        
+                        <li><a style="color:#3C8DBC;" href="index.php?page=editpembina&id=<?php echo $row['id_pembina']; ?>" class='dropdown-item'><i class='fa fa-edit'></i>Edit Daftar Binaan</a></li>
                       </ul>
                     </div>
                   </td>
@@ -64,10 +61,6 @@
                 </tbody>          
               </table>
               <!-- /Table Daftar Pembina -->
-            </div>
-            <!-- /.box-body -->            
-            <div class="box-body table-responsive no-padding">
-
             </div>
             <!-- /.box-body -->
           </div>
