@@ -49,7 +49,7 @@
             </div>
             <div class="form-group">
                 <label>No Telp </label>
-                <input type="text" class="form-control" name="telp" value="<?php echo $row['telp']; ?>">
+                <input type="number" class="form-control" name="telp" value="<?php echo $row['telp']; ?>">
             </div>
             <div class="form-group">
                 <label>Jenis Kelamin </label>
