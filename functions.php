@@ -26,7 +26,7 @@
 	}
 
 	function tampilUsers(){
-		$ambildata = mysql_query("SELECT * FROM users ORDER BY username") or die(mysql_error());
+		$ambildata = mysql_query("SELECT * FROM users ORDER BY level") or die(mysql_error());
 		if (mysql_num_rows($ambildata) > 0) {
 			while ($ad = mysql_fetch_assoc($ambildata)) // Perulangan while ini JANGAN pake {}
 				$data[] = $ad;

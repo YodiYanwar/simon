@@ -26,7 +26,7 @@
             
               <div class="box-body">
               <!-- Table Daftar Pembina -->
-              <table id="tablePembina" class="table table-bordered table-hover table-condensed">
+              <table id="tableMhsBinaan" class="table table-bordered table-hover table-condensed">
                 <thead>
                   <tr>
                     <th>NO</th>
