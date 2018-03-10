@@ -160,7 +160,7 @@
 	}
 
 	function totalBinaanByPembina($idPembina){
-		$ambildata = mysql_query("SELECT COUNT(id_mahasiswa) as JumlahBinaan from mahasiswa WHERE id_pembina = $idPembina");
+		$ambildata = mysql_query("SELECT COUNT(mb.id_mahasiswa) AS 'jml_binaan' FROM pembina p LEFT JOIN m_binaan mb ON p.id_pembina = mb.id_pembina WHERE p.id_pembina = $idPembina");
 		$data = mysql_fetch_assoc($ambildata);
 		return $data;		
 	}
