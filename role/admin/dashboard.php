@@ -45,7 +45,7 @@
             <div class="icon">
               <i class="ion ion-ios-people-outline"></i>
             </div>
-            <a href="index.php?page=pembina" class="small-box-footer">Lebih Detil &nbsp;<i class="fa fa-arrow-circle-right"></i></a>
+            <a href="index.php?page=adminmatrik" class="small-box-footer">Lebih Detil &nbsp;<i class="fa fa-arrow-circle-right"></i></a>
           </div>         
         </div>
         <!-- ./col -->    
