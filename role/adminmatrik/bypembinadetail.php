@@ -13,7 +13,7 @@
     <section class="content-header">
       <h1>
         <a class="btn btn-primary" href="index.php?page=bypembina"><i class="fa fa-arrow-left"></i></a>&nbsp;
-        Mahasiswa Berdasarkan Pembina : 
+        Mahasiswa Binaan 
         <?php foreach($np as $namaPembina){ echo $namaPembina; }?>
       </h1>
       <ol class="breadcrumb">
@@ -80,3 +80,25 @@
 
     </section>
     <!-- /.content -->
+
+      <!-- Modal Tambah Pembina -->
+      <div class="modal fade" id="tambahMhsBinaan" role="dialog">
+            <div class="modal-dialog" role="document">
+            <form class="form-horizontal" method="POST">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title"><i class="ion ion-person-add" aria-hidden="true"></i>&nbsp; <b>Tambah Mahasiswa Binaan</b></h4>
+                    </div>
+                    <div class="modal-body">      
+                                             
+                    </div>                  
+
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal"><i class="fa fa-undo" aria-hidden="true"></i>&nbsp;Batal</button>                
+                      <button type="submit" class="btn btn-primary" name="tambahPembina"><i class="fa fa-check" aria-hidden="true"></i>&nbsp;Submit</button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+        </div>
+        <!-- /Modal Tambah Pembina -->

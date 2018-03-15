@@ -31,7 +31,7 @@
             <div class="box-body box-profile">
               <div class="col-md-3"></div>
               <div class="col-md-5">
-              <a href="#ModalUploadAva" data-toggle='modal'><img class="profile-user-img img-responsive img-circle" src=<?php
+              <a href="#ModalUploadAva" data-toggle='modal' title="Klik untuk mengubah foto profil"><img class="profile-user-img img-responsive img-circle" src=<?php
                 if ($row['avatar'] == NULL) {
                   if ($row['j_kelamin'] == 'Perempuan'){
                     echo 'assets/img/user/default-female.jpg';
@@ -151,7 +151,7 @@
                     </div>
                     <div class="modal-body">
                       <form action="upload.php" method="post" enctype="multipart/form-data">
-                        <input type="file" name="AvaProfilFile">
+                        <input type="file" name="AvaProfilFile" accept="image/*">
                     </div>                    
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal"><i class="fa fa-undo"></i>&nbsp;Batal</button>
