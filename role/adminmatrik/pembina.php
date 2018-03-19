@@ -33,8 +33,8 @@
                   <tr>
                     <th>NO</th>
                     <th>Nama Pembina</th>
+                    <th>Jumlah Binaan</th>
                     <th>Jenis Kelamin</th>
-                    <th>Email</th>
                     <th>Telp</th>
                     <th>Terakhir Login</th>
                     <th></th>
@@ -51,8 +51,8 @@
                 <tr>
                   <td><?php echo $no ?></td>
                   <td><?php echo "<a href='index.php?page=pembinadetails&id=".$row['id_user']."'>".$row['nama']."</a>" ?></td>
+                  <td><?php echo $row['jml_binaan'] ?></td>
                   <td><?php echo $row['j_kelamin'] ?></td>
-                  <td><?php echo $row['email'] ?></td>
                   <td><?php echo $row['telp'] ?></td>
                   <td><?php if ($row['last_login'] == '0000-00-00 00:00:00'){ echo 'Belum Pernah';}else{ echo date("d-m-Y H:i", strtotime($row['last_login'])) ;}
                   ?></td>
