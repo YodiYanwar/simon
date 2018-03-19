@@ -45,7 +45,10 @@
                ?> alt="User profile picture"></a>
               <h3 class="profile-username text-center"><?php echo $row['nama'].' '.$row['gelar']; ?></h3>
 
-              <p class="text-muted text-center">Pembina Mahasiswa</p>
+              <p class="text-muted text-center">Pembina Mahasiswa</p><br>
+
+              </div>
+              <div class="col-md-5">
 
               <ul class="list-group list-group-unbordered">
                 <li class="list-group-item">
@@ -85,6 +88,8 @@
               
             </div>
             <!-- /.box-body -->
+            <div class="col-md-5">Tes</div>
+            </div>
           </div>
           <!-- /.box -->
         </div>
