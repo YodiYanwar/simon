@@ -99,11 +99,17 @@
 	}
 
 	function mahasiswaDetails($idUser){
-		$ambildata = mysql_query("SELECT m.*, u.*, up.id_user AS uid_pembina, p.nama AS nama_pembina FROM mahasiswa m LEFT JOIN m_binaan mb ON m.id_mahasiswa = mb.id_mahasiswa LEFT JOIN pembina p ON p.id_pembina = mb.id_pembina LEFT JOIN users u ON m.id_user = u.id_user LEFT JOIN users up ON p.id_user = up.id_user WHERE m.id_user = $idUser");
+		$ambildata = mysql_query("SELECT m.*, u.*, p.id_pembina, p.nama AS nama_pembina, p.gelar, p.id_user AS uid_pembina , p.j_kelamin AS jk_pembina, p.avatar AS ava_pembina FROM mahasiswa m LEFT JOIN m_binaan mb ON m.id_mahasiswa = mb.id_mahasiswa LEFT JOIN pembina p ON mb.id_pembina = p.id_pembina LEFT JOIN users u ON m.id_user = u.id_user WHERE m.id_user = $idUser");
 			$ad = mysql_fetch_assoc($ambildata);
 				$data[] = $ad;
 				return $data;
 	}	
+
+	function namaPembinaById($idPembina){
+	    $ambildata = mysql_query("SELECT p.nama FROM pembina p WHERE p.id_pembina = $idPembina");
+	      $data = mysql_fetch_assoc($ambildata);
+	        return $data;
+	  }
 
 	function hapusPembina($idPembina, $idUser){
 		mysql_query("DELETE FROM pembina WHERE id_pembina = $idPembina");
