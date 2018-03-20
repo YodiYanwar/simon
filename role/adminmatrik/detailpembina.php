@@ -114,9 +114,12 @@
 	                <tbody>
 	                <?php 
 	                  $dataByPembina = MhsByPembinaDetail($row['id_pembina']);
-	                  
+
 	                  $no = 1;
-	                  foreach($dataByPembina as $row){  
+
+                    if (is_array($dataByPembina) || is_object($dataByPembina)){
+
+	                   foreach($dataByPembina as $row){  
 	                ?>
 	                <tr>
 	                  <td><?php echo $no ?></td>
@@ -134,6 +137,7 @@
 	                </tr>
 	                  <?php 
 	                    $no++; }
+                     }
 	                   ?>      
 	                </tbody>          
 	              </table>

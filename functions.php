@@ -87,7 +87,7 @@
 				$data[] = $ad;
 				return $data;
 		} else{
-			echo "Daftar Binaan Berdasarkan Pembina Kosong";
+			echo "<strong>Belum ada Mahasiswa Binaan</strong>";
 		}		
 	}	
 
