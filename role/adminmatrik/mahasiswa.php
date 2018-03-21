@@ -58,8 +58,9 @@
                         <i class="fa fa-cog fa-lg"></i>&nbsp;&nbsp;<span class="caret"></span>
                       </button>
                       <ul class="dropdown-menu">
-                        <li><a style="color:#3C8DBC;" href="index.php?page=editpembina&id=<?php echo $row['id_pembina']; ?>" class='dropdown-item'><i class='fa fa-unlock-alt'></i>Reset Password</a></li>
-                        <li><?php echo "<a style='color:#DD4B39;' href='#ModalHapusMahasiswa' class='dropdown-item' data-toggle='modal' data-href='action/hapus.php?idmahasiswa=".$row['id_mahasiswa']."&iduser=".$row['id_user']."' aria-hidden='true'><i class='fa fa-remove'></i>Hapus Akun</a>"; ?></li>
+                        <li><a style="color:#3C8DBC;" href="index.php?page=editmahasiswa&id=<?php echo $row['id_user']; ?> " class='dropdown-item'><i class='fa fa-edit'></i>Edit</a></li>
+                        <?php if(strlen($row['password']) > 5){ echo "<li><a style='color:#3C8DBC;' href='#ModalResetPassword' class='dropdown-item' data-toggle='modal'><i class='fa fa-unlock-alt'></i>&nbsp;&nbsp;Reset Password</a></li>";} ?>
+                        <li><?php echo "<a style='color:#DD4B39;' href='#ModalHapusMahasiswa' class='dropdown-item' data-toggle='modal' data-href='action/hapus.php?idmahasiswa=".$row['id_mahasiswa']."&iduser=".$row['id_user']."' aria-hidden='true'><i class='fa fa-remove'></i>Hapus</a>"; ?></li>
                         
                       </ul>
                     </div>
@@ -122,7 +123,7 @@
             <div class="modal-dialog modal-sm">
                 <div class="modal-content">
                     <div class="modal-body">
-                        <h4><b><i class="fa fa-trash fa-lg"></i>&nbsp;&nbsp;Anda yakin ?</b></h4>
+                        <h4><b><i class="fa fa-trash fa-lg"></i>&nbsp;&nbsp;Hapus Akun Mahasiswa ?</b></h4>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal"><i class="fa fa-undo"></i>&nbsp;Batal</button>
