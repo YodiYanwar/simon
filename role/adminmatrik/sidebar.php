@@ -12,7 +12,7 @@
         ><a href="/simon"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a></li>
         <li class="treeview <?php 
               if (isset($_GET['page'])) {
-                    if ($_GET['page'] == 'bypembina'|| $_GET['page'] == 'bypembinadetail') {
+                    if ($_GET['page'] == 'shalat') {
                       echo ' active';
                     } else{
                       echo '';
@@ -28,22 +28,14 @@
             </span>
           </a>
 	          <ul class="treeview-menu">
-	            <!-- <li <?php 
-	                  /*if (isset($_GET['page'])) {
-	                    if ($_GET['page'] == 'bymahasiswa'|| $_GET['page'] == 'bymahasiswadetails') {
-	                      echo "class='active'";
-	                    }
-	                  }*/
-	                ?>
-	            ><a href="?page=bymahasiswa"><i class="fa fa-users"></i> Berdasarkan Mahasiswa</a></li>
 	            <li <?php 
-	                  /*if (isset($_GET['page'])) {
-	                    if ($_GET['page'] == 'bypembina'|| $_GET['page'] == 'bypembinadetail') {
+	                  if (isset($_GET['page'])) {
+	                    if ($_GET['page'] == 'shalat') {
 	                      echo "class='active'";
 	                    }
-	                  }*/
+	                  }
 	                ?>
-	             ><a href="?page=bypembina"><i class="fa fa-user"></i> Berdasarkan Pembina</a></li> -->
+	            ><a href="?page=shalat"><i class="fa fa-users"></i>&nbsp;Shalat Wajib</a></li>
 	          </ul>
           </li>
         <li class="treeview <?php 
@@ -112,6 +104,8 @@
           include 'bypembinadetail.php';
         } else if ($_GET['page'] == 'tambahbinaan') {
           include 'tambahbinaan.php';
+        } else if ($_GET['page'] == 'shalat') {
+          include 'shalat.php';
         }
   		} else{
   			include 'dashboard.php';
