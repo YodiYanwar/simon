@@ -1,21 +1,25 @@
 <?php 
   include 'functions.php';
 
-      $idPembina = $_GET['idPembina'];
-      $dataMhsBinaan = mahasiswaByPembina($idPembina);
-      foreach($dataMhsBinaan as $row){ 
+  $idPembina = $_GET['id'];
+  $np = namaPembinaById($idPembina);
+  $ip = idUserByIdPembina($idPembina);
+
 
  ?>    
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Manajemen Pengguna
-        <small>Mahasiswa</small>
+        <a class="btn btn-primary" href="index.php?page=pembinadetails&id=<?php foreach($ip as $idP){ echo $idP; }?>"><i class="fa fa-arrow-left"></i></a>&nbsp;
+        <?php foreach($np as $namaP){ echo $namaP['nama'].' '.$namaP['gelar']; }?>
+        <small>Tambah Mahasiswa Binaan</small>
       </h1>
       <ol class="breadcrumb">
-        <li><a href="/simon/admin"><i class="fa fa-dashboard"></i> Dashboard</a></li>
+        <li><a href="index.php"><i class="fa fa-dashboard"></i> Dashboard</a></li>
         <li>Manajemen Pengguna</li>
-        <li class="active">Mahasiswa</li>
+        <li><a href="index.php?page=pembina">Pembina</a></li>
+        <li><a href="index.php?page=pembinadetails&id=<?php foreach($ip as $idP){ echo $idP; }?>"><?php foreach($np as $namaP){ echo $namaP['nama'].' '.$namaP['gelar']; }?></a></li>
+        <li class="active">Tambah Mahasiswa Binaan</li>
       </ol>
     </section>
 
@@ -42,6 +46,11 @@
                   </tr>
                 </thead>
                 <tbody>
+                  <?php 
+                    $dataMahasiswa = tampilMahasiswa();
+                    $no = 1;
+                    foreach($dataMahasiswa as $row){
+                  ?>
                 <tr>
                   <td><?php echo $no ?></td>
                   <td><?php echo "<span class='badge bg-green'>".$row['nim']."</span>" ?></td>
@@ -63,7 +72,7 @@
                 </tr>
                   <?php 
                     $no++; }
-                   ?>      
+                  ?>      
                 </tbody>          
               </table>
               <!-- /Table Daftar Pembina -->

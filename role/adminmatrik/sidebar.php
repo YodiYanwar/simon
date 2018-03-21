@@ -48,7 +48,7 @@
           </li>
         <li class="treeview <?php 
               if (isset($_GET['page'])) {
-                    if ($_GET['page'] == 'pembina'|| $_GET['page'] == 'pembinadetails' || $_GET['page'] == 'editpembina'|| $_GET['page'] == 'mahasiswa' || $_GET['page'] == 'mahasiswadetails' || $_GET['page'] == 'editmahasiswa') {
+                    if ($_GET['page'] == 'pembina'|| $_GET['page'] == 'pembinadetails' || $_GET['page'] == 'editpembina'|| $_GET['page'] == 'mahasiswa' || $_GET['page'] == 'mahasiswadetails' || $_GET['page'] == 'editmahasiswa' || $_GET['page'] == 'tambahbinaan') {
                       echo ' active';
                     } else{
                       echo '';
@@ -110,6 +110,8 @@
           include 'bypembina.php';
         } else if ($_GET['page'] == 'bypembinadetail') {
           include 'bypembinadetail.php';
+        } else if ($_GET['page'] == 'tambahbinaan') {
+          include 'tambahbinaan.php';
         }
   		} else{
   			include 'dashboard.php';

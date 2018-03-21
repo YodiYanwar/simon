@@ -6,7 +6,8 @@
       $dataPembina = pembinaDetails($id);
       foreach($dataPembina as $row){  
 
-      	$np = namaPembinaById($row['id_pembina']);
+      	//$np = namaPembinaById($row['id_pembina']);
+        $idPembina = $row['id_pembina'];
  ?>
 
     <!-- Content Header (Page header) -->
@@ -130,23 +131,23 @@
 	                        <i class="fa fa-cog fa-lg"></i>&nbsp;&nbsp;<span class="caret"></span>
 	                      </button>
 	                      <ul class="dropdown-menu">
-	                        <li><a style="color:#3C8DBC;" href="index.php?page=editpembina&id=<?php echo $row['id_pembina']; ?>" class='dropdown-item'><i class='fa fa-edit'></i>Edit Daftar Binaan</a></li>
+	                        <li><a style="color:#3C8DBC;" href="index.php?page=editpembina&id=$idPembina" class='dropdown-item'><i class='fa fa-edit'></i>Edit Daftar Binaan</a></li>
 	                      </ul>
 	                    </div>
 	                  </td>
 	                </tr>
-	                  <?php 
-	                    $no++; }
-                     }
-	                   ?>      
+	               <?php 
+                    $no++; }
+                    }
+                  ?> 
 	                </tbody>          
 	              </table>
 	              <!-- /Table Daftar Pembina -->
 	            </div>
 	            <!-- /.box-body -->
 					<div class="box-footer">
-		            	<button class="btn btn-primary" data-toggle="modal" data-target="#tambahMhsBinaan"><i class="ion ion-person-add"></i>&nbsp;&nbsp;Tambah</button>&nbsp;&nbsp;
-		            	<button class="btn btn-primary" data-toggle="modal" data-target="#tambahMhsBinaan"><i class="fa fa-edit"></i>&nbsp;&nbsp;Edit</button>
+		            	<a href="index.php?page=tambahbinaan&id=<?php echo $idPembina; ?>" class="btn btn-primary" data-toggle="modal"><i class="ion ion-person-add"></i>&nbsp;&nbsp;Tambah</a>&nbsp;&nbsp;
+		            	<a href="index.php?page=editbinaan&id=<?php echo $idPembina; ?>" class="btn btn-primary" data-toggle="modal"><i class="fa fa-edit"></i>&nbsp;&nbsp;Edit</a>
 		            </div>
 	          </div>
 	          <!-- /.box -->

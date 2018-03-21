@@ -106,10 +106,17 @@
 	}	
 
 	function namaPembinaById($idPembina){
-	    $ambildata = mysql_query("SELECT p.nama FROM pembina p WHERE p.id_pembina = $idPembina");
-	      $data = mysql_fetch_assoc($ambildata);
+	    $ambildata = mysql_query("SELECT p.nama AS nama, p.gelar FROM pembina p WHERE p.id_pembina = $idPembina");
+	      $ad = mysql_fetch_assoc($ambildata);
+	      	$data[] = $ad;
 	        return $data;
-	  }
+	}
+
+	function idUserByIdPembina($idPembina){
+	    $ambildata = mysql_query("SELECT p.id_user FROM pembina p WHERE p.id_pembina = $idPembina");
+	      $data = mysql_fetch_assoc($ambildata);
+	        return $data;		
+	}
 
 	function hapusPembina($idPembina, $idUser){
 		mysql_query("DELETE FROM pembina WHERE id_pembina = $idPembina");
