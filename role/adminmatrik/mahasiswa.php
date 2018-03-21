@@ -59,7 +59,7 @@
                       </button>
                       <ul class="dropdown-menu">
                         <li><a style="color:#3C8DBC;" href="index.php?page=editpembina&id=<?php echo $row['id_pembina']; ?>" class='dropdown-item'><i class='fa fa-unlock-alt'></i>Reset Password</a></li>
-                        <li><?php echo "<a style='color:#DD4B39;' href='#ModalHapusPembina' class='dropdown-item' data-toggle='modal' data-href='action/hapus.php?idpembina=".$row['id_mahasiswa']."&iduser=".$row['id_user']."' aria-hidden='true'><i class='fa fa-remove'></i>Hapus Akun</a>"; ?></li>
+                        <li><?php echo "<a style='color:#DD4B39;' href='#ModalHapusMahasiswa' class='dropdown-item' data-toggle='modal' data-href='action/hapus.php?idmahasiswa=".$row['id_mahasiswa']."&iduser=".$row['id_user']."' aria-hidden='true'><i class='fa fa-remove'></i>Hapus Akun</a>"; ?></li>
                         
                       </ul>
                     </div>
@@ -82,7 +82,7 @@
         </div>
       </div>      
 
-      <!-- Modal Tambah Pembina -->
+      <!-- Modal Import Mahasiswa -->
       <div class="modal fade" id="importMhsModal" role="dialog">
             <div class="modal-dialog modal-sm" role="document">
             <form method="POST">
@@ -115,7 +115,23 @@
                 </form>
               </div>
         </div>
-        <!-- /Modal Tambah Pembina -->      
+        <!-- /Modal Import Mahasiswa -->      
+
+        <!-- Modal Hapus Mahasiswa -->
+        <div class="modal fade" id="ModalHapusMahasiswa" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-sm">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <h4><b><i class="fa fa-trash fa-lg"></i>&nbsp;&nbsp;Anda yakin ?</b></h4>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal"><i class="fa fa-undo"></i>&nbsp;Batal</button>
+                        <a class="btn btn-danger btn-ok"><i class="fa fa-remove"></i>&nbsp;Hapus</a>                    
+                    </div>
+                </div>
+            </div>
+        </div>        
+        <!-- /Modal Hapus Pembina -->        
 
     <?php 
       if (isset($_POST['importMahasiswa'])) {

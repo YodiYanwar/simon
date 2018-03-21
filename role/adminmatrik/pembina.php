@@ -49,7 +49,7 @@
                   <td><?php echo $no ?></td>  
                   <td><?php echo "<a href='index.php?page=pembinadetails&id=".$row['id_user']."'>".$row['nama']."</a>" ?></td>
                   <td><?php echo $row['jml_binaan'] ?></td>
-                  <td><?php if($row['j_kelamin'] == 'Ikhwan'){echo '<span class="label bg-green">Ikhwan</span>';} else if($row['j_kelamin'] == 'Akhwat'){echo '<span class="label bg-yellow">Akhwat</span>';} ?></td>
+                  <td><?php if($row['j_kelamin'] == 'Ikhwan' || $row['j_kelamin'] == 'Laki-laki'){echo '<span class="label bg-green">Ikhwan</span>';} else if($row['j_kelamin'] == 'Akhwat' || $row['j_kelamin'] == 'Perempuan'){echo '<span class="label bg-yellow">Akhwat</span>';} ?></td>
                   <td><?php echo $row['telp'] ?></td>
                   <td><?php if ($row['last_login'] == '0000-00-00 00:00:00'){ echo 'Belum Pernah';}else{ echo date("d-m-Y H:i", strtotime($row['last_login'])) ;}
                   ?></td>

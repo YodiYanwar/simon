@@ -136,6 +136,15 @@
 		mysql_query("DELETE FROM users WHERE id_user = $idUser");
 	}
 
+	function hapusMahasiswa($idMahasiswa, $idUser){
+		mysql_query("DELETE FROM mahasiswa WHERE id_mahasiswa = $idMahasiswa");
+		mysql_query("DELETE FROM users WHERE id_user = $idUser");
+	}	
+
+	function hapusMhsBinaan($idMahasiswa){
+		mysql_query("DELETE FROM m_binaan WHERE id_mahasiswa = $idMahasiswa");
+	}
+
 	function editPembina($idPembina, $nama, $j_kelamin, $tgl_lahir, $gelar, $asalkota, $email, $telp){
 		mysql_query("UPDATE pembina SET nama = '$nama', j_kelamin = '$j_kelamin', tgl_lahir = '$tgl_lahir', gelar = '$gelar', asalkota = '$asalkota', email = '$email', telp = '$telp' WHERE id_pembina = $idPembina ");
 	}

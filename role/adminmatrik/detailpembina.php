@@ -40,10 +40,10 @@
 	              <a href="#ModalUploadAva" data-toggle='modal' title="Klik untuk mengubah foto profil"><img class="profile-user-img img-responsive img-circle" src=
 	              <?php 
 			        if ($row['avatar'] == NULL) {
-			          if ($row['j_kelamin'] == 'Perempuan'){
+			          if ($row['j_kelamin'] == 'Akhwat' || $row['j_kelamin'] == 'Perempuan'){
 			            echo 'assets/img/user/default-female.jpg';
 			          } else
-			          if ($row['j_kelamin'] == 'Laki-laki'){
+			          if ($row['j_kelamin'] == 'Ikhwan' || $row['j_kelamin'] == 'Laki-laki'){
 			            echo 'assets/img/user/default-male.png';
 			          }
 			        } else{
@@ -133,7 +133,7 @@
 	                        <i class="fa fa-cog fa-lg"></i>&nbsp;&nbsp;<span class="caret"></span>
 	                      </button>
 	                      <ul class="dropdown-menu">
-	                        <li><a style="color:#DD4B39;" href="index.php?page=editpembina&id=<?php echo $row['uid_mahasiswa']; ?>" class='dropdown-item'><i class='fa fa-remove'></i>Hapus</a></li>
+	                        <li><?php echo "<a style='color:#DD4B39;' href='#ModalHapusBinaan' class='dropdown-item' data-toggle='modal' data-href='action/hapus.php?idMahasiswaBinaan=".$row['uid_mahasiswa']."&uidPembina=$id' aria-hidden='true'><i class='fa fa-remove'></i>Hapus</a>"; ?></li>
 	                      </ul>
 	                    </div>
 	                  </td>
@@ -190,7 +190,24 @@
                 </div>
             </div>
         </div>        
-        <!-- /Modal Hapus Pembina -->            
+        <!-- /Modal Hapus Pembina -->      
+
+
+        <!-- Modal Hapus Mahasiswa Binaan -->
+        <div class="modal fade" id="ModalHapusBinaan" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-sm">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4><b><i class="fa fa-trash fa-lg"></i>&nbsp;&nbsp;Hapus Mahasiswa Binaan ?</b></h4>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal"><i class="fa fa-undo"></i>&nbsp;Batal</button>
+                        <a class="btn btn-danger btn-ok"><i class="fa fa-remove"></i>&nbsp;Hapus</a>                    
+                    </div>
+                </div>
+            </div>
+        </div>        
+        <!-- /Modal Hapus Mahasiswa Binaan -->                
 
         <!-- Modal Upload Avatar -->
         <div class="modal fade" id="ModalUploadAva" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">

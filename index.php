@@ -193,6 +193,20 @@
             $(this).find('.btn-ok').attr('href', $(e.relatedTarget).data('href'));
         });
     });
+
+    //Modal Hapus Data Mahasiswa
+    $(document).ready(function() {
+        $('#ModalHapusMahasiswa').on('show.bs.modal', function(e) {
+            $(this).find('.btn-ok').attr('href', $(e.relatedTarget).data('href'));
+        });
+    });     
+
+    //Modal Hapus Data Mahasiswa Binaan By Pembina
+    $(document).ready(function() {
+        $('#ModalHapusBinaan').on('show.bs.modal', function(e) {
+            $(this).find('.btn-ok').attr('href', $(e.relatedTarget).data('href'));
+        });
+    });    
   </script>  
 
     <script type="text/javascript">
