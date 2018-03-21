@@ -18,7 +18,7 @@
         <li><a href="index.php"><i class="fa fa-dashboard"></i> Dashboard</a></li>
         <li>Manajemen Pengguna</li>
         <li><a href="index.php?page=pembina">Pembina</a></li>
-        <li><a href="index.php?page=pembinadetails&id=<?php foreach($ip as $idP){ echo $idP; }?>"><?php foreach($np as $namaP){ echo $namaP['nama'].' '.$namaP['gelar']; }?></a></li>
+        <li><a href="index.php?page=pembinadetails&id=<?php foreach($ip as $idP){ echo $idP; }?>"><?php foreach($np as $namaP){ echo $namaP['nama']; }?></a></li>
         <li class="active">Tambah Mahasiswa Binaan</li>
       </ol>
     </section>
@@ -27,48 +27,29 @@
     <section class="content">
       <div class="row">
         <div class="col-xs-12">
-          <div class="box">
-            <div class="box-header">
-             <button class="btn btn-primary" data-toggle="modal" data-target="#importMhsModal"><i class="fa fa-chevron-circle-down"></i>&nbsp;Import Data Mahasiswa</button>
-            </div>
-            <!-- /.box-header -->
-            <!-- /.box-header -->
+          <div class="box">            
             <div class="box-body">
               <!-- Table Daftar Pembina -->
               <table id="tablePembina" class="table table-bordered table-hover table-condensed">
                 <thead>
                   <tr>
-                    <th>NO</th>
+                    <th></th>
                     <th>NIM</th>
                     <th>Nama</th>
-                    <th>Terakhir Login</th>
-                    <th></th>
+                    <th>Ikhwan/Akhwat</th>
                   </tr>
                 </thead>
                 <tbody>
                   <?php 
-                    $dataMahasiswa = tampilMahasiswa();
+                    $calonBinaan = tampilCalonBinaan();
                     $no = 1;
-                    foreach($dataMahasiswa as $row){
+                    foreach($calonBinaan as $row){
                   ?>
                 <tr>
-                  <td><?php echo $no ?></td>
+                  <td><input type="checkbox" name="idMahasiswa[]" value="<?php echo $row['id_mahasiswa']; ?>"></td>
                   <td><?php echo "<span class='badge bg-green'>".$row['nim']."</span>" ?></td>
                   <td><?php echo "<a href='index.php?page=mahasiswadetails&id=".$row['id_user']."'>".$row['nama']."</a>" ?></td>
-                  <td><?php if ($row['last_login'] == '0000-00-00 00:00:00'){ echo 'Belum Pernah';}else{ echo date("d-m-Y H:i", strtotime($row['last_login'])) ;}
-                  ?></td>
-                  <td>
-                    <div class="dropdown">
-                      <button class="btn btn-default btn-sm dropdown-toggle " type="button" data-toggle="dropdown">
-                        <i class="fa fa-cog fa-lg"></i>&nbsp;&nbsp;<span class="caret"></span>
-                      </button>
-                      <ul class="dropdown-menu">
-                        <li><a style="color:#3C8DBC;" href="index.php?page=editpembina&id=<?php echo $row['id_pembina']; ?>" class='dropdown-item'><i class='fa fa-unlock-alt'></i>Reset Password</a></li>
-                        <li><?php echo "<a style='color:#DD4B39;' href='#ModalHapusPembina' class='dropdown-item' data-toggle='modal' data-href='action/hapus.php?idpembina=".$row['id_mahasiswa']."&iduser=".$row['id_user']."' aria-hidden='true'><i class='fa fa-remove'></i>Hapus Akun</a>"; ?></li>
-                        
-                      </ul>
-                    </div>
-                  </td>
+                  <td><?php if($row['j_kelamin'] == NULL) echo "Belum diset" ?></td>
                 </tr>
                   <?php 
                     $no++; }
@@ -82,6 +63,9 @@
 
             </div>
             <!-- /.box-body -->
+            <div class="box-footer">
+              <button class="btn btn-primary"><i class="fa fa-check"></i>&nbsp;Submit</button>
+            </div>
           </div>
           <!-- /.box -->
         </div>
@@ -96,21 +80,7 @@
                         <h4 class="modal-title"><i class="fa fa-folder-open" aria-hidden="true"></i>&nbsp; <b>Import Data Mahasiswa</b></h4>
                     </div>
                     <div class="modal-body">
-                      <div class="row">
-                        <!-- <div class="col-md-5">
-                          <label>Pilih File Database Ms.Access</label>
-                          <input type="file" accept=".mdb" name="dbMahasiswa"/>                          
-                        </div> -->
-                        <div class="col-lg-12">
-                          <label>Pilih Tahun Angkatan</label>
-                          <select class="form-control" name="angkatan">
-                            <option>Angkatan</option>
-                            <option>15</option>
-                            <option>16</option>
-                            <option>17</option>
-                          </select>
-                        </div>
-                      </div>
+                     
                     </div>
                     <div class="modal-footer">
                       <button type="button" class="btn btn-secondary" data-dismiss="modal"><i class="fa fa-undo" aria-hidden="true"></i>&nbsp;Batal</button>                
