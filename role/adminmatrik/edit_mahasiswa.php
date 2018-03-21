@@ -11,8 +11,8 @@
     <section class="content-header">
       <h1>
         <a class="btn btn-primary" href="index.php?page=mahasiswadetails&id=<?php echo $row['id_user']; ?> "><i class="fa fa-arrow-left"></i></a>&nbsp;
-        Manajemen Pengguna
-        <small>Mahasiswa</small>
+        Mahasiswa
+        <small>Edit Data</small>
       </h1>
       <ol class="breadcrumb">
         <li><a href="/simon"><i class="fa fa-dashboard"></i> Dashboard</a></li>
@@ -28,8 +28,8 @@
       <div class="row">
         <div class="col-xs-12">
           <div class="box">
-            <div class="box-header">
-             <h4>Edit Akun Mahasiswa : <b><?php echo $row['nama'] ?></b></h4>
+            <div class="box-header with-border">
+             <h3><?php echo $row['nama'] ?></h3>
             </div>
             <!-- /.box-header -->
             <div class="box-body">
@@ -55,18 +55,18 @@
                 <label>Jenis Kelamin </label>
                             <select class="form-control" name="gender" >
                               <?php 
-                                  if ($row['j_kelamin'] == "Laki-laki") {
-                                    echo "<option>Laki-laki</option>
-                                          <option>Perempuan</option>";
+                                  if ($row['j_kelamin'] == "Ikhwan") {
+                                    echo "<option>Ikhwan</option>
+                                          <option>Akhwat</option>";
                                   } else
-                                  if($row['j_kelamin'] == "Perempuan"){
-                                    echo "<option>Perempuan</option>
-                                          <option>Laki-laki</option>";
+                                  if($row['j_kelamin'] == "Akhwat"){
+                                    echo "<option>Akhwat</option>
+                                          <option>Ikhwan</option>";
                                   } else
                                   if($row['j_kelamin'] == NULL){
                                     echo "<option selected='selected'>Pilih Jenis Kelamin</option>
-                                          <option>Laki-laki</option>
-                                          <option>Perempuan</option>";
+                                          <option>Ikhwan</option>
+                                          <option>Akhwat</option>";
                                   }
                                ?>
                             </select>                 

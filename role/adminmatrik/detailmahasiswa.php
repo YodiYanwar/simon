@@ -33,10 +33,10 @@
               <div class="col-md-5">
               <a href="#ModalUploadAva" data-toggle='modal' title="Klik untuk mengubah foto profil"><img class="profile-user-img img-responsive img-circle" src=<?php
                 if ($row['avatar'] == NULL) {
-                  if ($row['j_kelamin'] == 'Perempuan'){
+                  if ($row['j_kelamin'] == 'Akhwat' || $row['j_kelamin'] == 'Perempuan'){
                     echo 'assets/img/user/default-female.jpg';
                   } else
-                  if ($row['j_kelamin'] == 'Laki-laki'){
+                  if ($row['j_kelamin'] == 'Ikhwan' || $row['j_kelamin'] == 'Laki-laki'){
                     echo 'assets/img/user/default-male.png';
                   } else
                   if ($row['j_kelamin'] == NULL){

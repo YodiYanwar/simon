@@ -11,8 +11,7 @@
     <section class="content-header">
       <h1>
         <a class="btn btn-primary" href="index.php?page=pembinadetails&id=<?php foreach($ip as $idP){ echo $idP; }?>"><i class="fa fa-arrow-left"></i></a>&nbsp;
-        <?php foreach($np as $namaP){ echo $namaP['nama'].' '.$namaP['gelar']; }?>
-        <small>Tambah Mahasiswa Binaan</small>
+        Tambah Mahasiswa Binaan
       </h1>
       <ol class="breadcrumb">
         <li><a href="index.php"><i class="fa fa-dashboard"></i> Dashboard</a></li>
@@ -28,7 +27,10 @@
       <div class="row">
         <div class="col-xs-12">
         <form method="POST">
-          <div class="box">            
+          <div class="box">      
+            <div class="box-header with-border">
+            	<h3 class="box-title"><?php foreach($np as $namaP){ echo $namaP['nama'].' '.$namaP['gelar']; }?></h3>
+            </div>                
             <div class="box-body">
               <form method="POST">
               <!-- Table Daftar Pembina -->
