@@ -49,9 +49,9 @@
                     ?>
                   <tr>
                     <td><input type="checkbox" name="idMahasiswa[]" value="<?php echo $row['id_mahasiswa']; ?>"></td>
-                    <td><?php echo "<span class='badge bg-green'>".$row['nim']."</span>" ?></td>
+                    <td><?php echo "<span class='badge'>".$row['nim']."</span>" ?></td>
                     <td><?php echo "<a href='index.php?page=mahasiswadetails&id=".$row['id_user']."'>".$row['nama']."</a>" ?></td>
-                    <td><?php if($row['j_kelamin'] == NULL) echo "Belum diset" ?></td>
+                    <td><?php if($row['j_kelamin'] == 'Ikhwan' || $row['j_kelamin'] == 'Laki-laki'){echo '<span class="label bg-green">Ikhwan</span>';} else if($row['j_kelamin'] == 'Akhwat' || $row['j_kelamin'] == 'Perempuan'){echo '<span class="label bg-yellow">Akhwat</span>';} else if($row['j_kelamin'] == NULL){echo '<span class="label bg-gray">Belum diset</span>';} ?></td>
                   </tr>
                     <?php 
                       $no++; }
