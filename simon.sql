@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 19, 2018 at 11:17 AM
+-- Generation Time: Mar 21, 2018 at 12:44 PM
 -- Server version: 10.1.25-MariaDB
 -- PHP Version: 5.6.31
 
@@ -100,26 +100,26 @@ INSERT INTO `mahasiswa` (`id_mahasiswa`, `nim`, `nama`, `angkatan`, `j_kelamin`,
 (1354, 17101102, 'Ridwan', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2110),
 (1356, 17101101, 'Arland Pratama Wijaya', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2033),
 (1358, 17101100, 'M Haekal Fajrul Falah', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2070),
-(1362, 17101106, 'Muhammad Syahri Ramadani', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2096),
+(1362, 17101106, 'Muhammad Syahri Ramadani', NULL, 'Laki-laki', NULL, NULL, NULL, NULL, NULL, 2096),
 (1363, 17101104, 'Imaduddin Dwi Hananto', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2061),
 (1364, 17101118, 'Fahmi Marjuki', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2046),
 (1365, 17101117, 'Zubeir Abdul Wahid Chan', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2118),
 (1368, 17101116, 'Muhamad Lutfi', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2079),
-(1370, 17101115, 'Noviyandi Difa Pratama', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2102),
-(1372, 17101113, 'Sesa Afrian Yahya', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2114),
+(1370, 17101115, 'Noviyandi Difa Pratama', NULL, 'Laki-laki', NULL, NULL, NULL, NULL, NULL, 2102),
+(1372, 17101113, 'Sesa Afrian Yahya', NULL, 'Laki-laki', NULL, NULL, NULL, NULL, NULL, 2114),
 (1373, 17101111, 'Muhamad Solehudin', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2080),
 (1375, 17101114, 'Yody Nur Rachmat', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2116),
 (1376, 17101112, 'Zahid Ahmad', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2117),
-(1377, 17101109, 'Arta Saiful Hilmi', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2035),
+(1377, 17101109, 'Arta Saiful Hilmi', NULL, 'Laki-laki', NULL, NULL, NULL, NULL, NULL, 2035),
 (1382, 17101108, 'Aziz Guntur Purnamaputra', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2036),
 (1383, 17101107, 'Wildan Maulid Hanafi', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2115),
 (1384, 17101105, 'Arman Fadil Maulana', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2034),
-(1389, 17101127, 'Hanif Dwi Putra', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2054),
+(1389, 17101127, 'Hanif Dwi Putra', NULL, 'Laki-laki', NULL, NULL, NULL, NULL, NULL, 2054),
 (1390, 17101128, 'Zulfitra Hadianto Palwam', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2120),
 (1391, 17101124, 'Lalu Rizky Adriansyah', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2069),
 (1392, 17101126, 'Difan Nurhafidzar Juanda', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2041),
 (1395, 17101123, 'Farras Mubasysyirsyah', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2049),
-(1397, 17101122, 'Ahlam Nabila', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2030),
+(1397, 17101122, 'Ahlam Nabila', NULL, 'Laki-laki', NULL, NULL, NULL, NULL, NULL, 2030),
 (1398, 17101119, 'Fikri Abdurrohman Maajid', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2052),
 (1400, 17101121, 'Khalel Mohammed Amar', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2066),
 (1402, 17101120, 'Alif Limka Firdaus', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2032),
@@ -173,7 +173,6 @@ INSERT INTO `mahasiswa` (`id_mahasiswa`, `nim`, `nama`, `angkatan`, `j_kelamin`,
 (1482, 17101169, 'Indra Wijaya', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2062),
 (1483, 17101168, 'Ilham Akbar Ramadhan', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2059),
 (1484, 17101180, 'Dimas Adektama', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2042),
-(1485, 17101179, 'Adi Pahlevi', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2029),
 (1487, 17101178, 'M. Ridwan Saufi', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2071),
 (1490, 17101177, 'Muhammad Diaz Advani', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2084),
 (1491, 17101182, 'Renaldi Septiawan', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2108),
@@ -207,10 +206,17 @@ CREATE TABLE `m_binaan` (
 --
 
 INSERT INTO `m_binaan` (`id_pembina`, `id_mahasiswa`) VALUES
-(21, 1352),
-(18, 1354),
 (24, 1356),
-(21, 1358);
+(21, 1358),
+(18, 1362),
+(18, 1365),
+(18, 1376),
+(18, 1383),
+(28, 1375),
+(28, 1384),
+(28, 1390),
+(20, 1370),
+(20, 1372);
 
 -- --------------------------------------------------------
 
@@ -236,18 +242,17 @@ CREATE TABLE `pembina` (
 --
 
 INSERT INTO `pembina` (`id_pembina`, `nama`, `j_kelamin`, `tgl_lahir`, `gelar`, `asalkota`, `email`, `telp`, `avatar`, `id_user`) VALUES
-(18, 'Bintang Pamuncak', 'Laki-laki', '2017-11-10', 'S.Ei', 'Semarang', 'bintang@tazkia.ac.id', '0859473235', 'default.png', 21),
-(19, 'Hayatul Mujadidah', 'Perempuan', '2017-11-14', 'S.Ei', 'Sukabumi', 'aya@tazkia.ac.id', '081654812', NULL, 22),
-(20, 'Rizky Akbar Cholilullah', 'Laki-laki', '2017-12-13', 'S.Ei', 'Pekalongan', 'rizky_akbar@tazkia.ac.id', '0816384924', NULL, 24),
-(21, 'Rian Alfiansyah', 'Laki-laki', '2017-12-20', 'S.Ei', 'Tasikmalaya', 'rian@tazkia.ac.id', '0856483922', NULL, 25),
-(22, 'Adita Dyah Asokawati', 'Perempuan', '2017-12-28', 'S.E', 'Bogor', 'adita@tazkia.ac.id', '08127384924', NULL, 26),
-(23, 'Riyan Ariyandi', 'Laki-laki', '2017-12-08', 'S.Pd', 'Riau', 'riyan.ariyandi@tazkia.ac.id', '0812474829', 'spidey_cute.jpg', 27),
-(24, 'Rizqan Abadi', 'Laki-laki', '2017-12-22', 'S.Pd', 'Lombok', 'rizqan@tazkia.ac.id', '0857382844', NULL, 28),
-(25, 'Sofi', 'Perempuan', '2017-12-11', 'S.Pd', 'Palembang', 'sofi@tazkia.ac.id', '0896473824', NULL, 29),
-(26, 'Diva Azka Karimah', 'Perempuan', '2017-12-13', 'S.E', 'Jakarta', 'diva@tazkia.ac.id', '0812758382', NULL, 30),
-(27, 'Nashrudin Al-Huda', 'Laki-laki', '2017-12-20', 'S.E', 'Semarang', 'huda@tazkia.ac.id', '0856738232', NULL, 31),
-(28, 'Alfin', 'Laki-laki', '2017-12-16', 'S.E', 'Banten', 'alfin@tazkia.ac.id', '0856738283', NULL, 32),
-(29, 'Sri Wahyuni', 'Perempuan', '2017-12-27', 'M.Ei', 'Bandung', 'sri@tazkia.ac.id', '0816384293', NULL, 33);
+(18, 'Bintang Pamuncak', 'Ikhwan', '2017-11-10', 'S.Ei', 'Semarang', 'bintang@tazkia.ac.id', '0859473235', NULL, 21),
+(19, 'Hayatul Mujadidah', 'Akhwat', '2017-11-14', 'S.Ei', 'Sukabumi', 'aya@tazkia.ac.id', '081654812', NULL, 22),
+(20, 'Rizky Akbar Cholilullah', 'Ikhwan', '2017-12-13', 'S.Ei', 'Pekalongan', 'rizky_akbar@tazkia.ac.id', '0816384924', NULL, 24),
+(21, 'Rian Alfiansyah', 'Ikhwan', '2017-12-20', 'S.Ei', 'Tasikmalaya', 'rian@tazkia.ac.id', '0856483922', NULL, 25),
+(22, 'Adita Dyah Asokawati', 'Akhwat', '2017-12-28', 'S.E', 'Bogor', 'adita@tazkia.ac.id', '08127384924', NULL, 26),
+(23, 'Riyan Ariyandi', 'Ikhwan', '2017-12-08', 'S.Pd', 'Riau', 'riyan.ariyandi@tazkia.ac.id', '0812474829', NULL, 27),
+(24, 'Rizqan Abadi', 'Ikhwan', '2017-12-22', 'S.Pd', 'Lombok', 'rizqan@tazkia.ac.id', '0857382844', NULL, 28),
+(25, 'Sofi', 'Akhwat', '2017-12-11', 'S.Pd', 'Palembang', 'sofi@tazkia.ac.id', '0896473824', NULL, 29),
+(26, 'Diva Azka Karimah', 'Akhwat', '2017-12-13', 'S.E', 'Jakarta', 'diva@tazkia.ac.id', '0812758382', NULL, 30),
+(27, 'Nashrudin Al-Huda', 'Ikhwan', '2017-12-20', 'S.E', 'Semarang', 'huda@tazkia.ac.id', '0856738232', NULL, 31),
+(28, 'Alfin', 'Ikhwan', '2017-12-16', 'S.E', 'Banten', 'alfin@tazkia.ac.id', '0856738283', NULL, 32);
 
 -- --------------------------------------------------------
 
@@ -268,30 +273,27 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id_user`, `username`, `password`, `level`, `last_login`) VALUES
-(1, 'admin', 'admin', 0, '2017-12-11 16:32:50'),
-(2, 'derry', 'derry123', 2, '2018-02-18 16:59:46'),
-(21, 'bintang', 'bintang123', 3, '2017-12-22 20:30:02'),
+(1, 'admin', 'admin', 0, '2018-03-12 08:11:33'),
+(2, 'derry', 'derry123', 2, '2018-03-21 13:33:30'),
+(21, 'bintang', 'bintang123', 3, '2018-03-12 08:11:09'),
 (22, 'aya', 'aya123', 3, '2017-12-02 16:23:35'),
 (23, 'hasan', 'hasan123', 2, '2017-11-30 17:06:08'),
 (24, 'rizky@tazkia.ac.id', 'rizy123', 3, '0000-00-00 00:00:00'),
-(25, 'rian', 'rian123', 3, '0000-00-00 00:00:00'),
+(25, 'rian', 'rian123', 3, '2018-03-12 08:09:33'),
 (26, 'adita', 'adita123', 3, '0000-00-00 00:00:00'),
-(27, 'riyan', 'riyan123', 3, '2017-12-22 20:28:02'),
+(27, 'riyan', 'riyan123', 3, '2018-03-12 08:10:45'),
 (28, 'rizqan', 'rizqan123', 3, '0000-00-00 00:00:00'),
 (29, 'sofi', 'sofi123', 3, '2017-12-02 21:28:17'),
 (30, 'diva', 'diva123', 3, '0000-00-00 00:00:00'),
 (31, 'huda', 'huda123', 3, '2017-12-02 21:27:39'),
 (32, 'alfin', 'alfin123', 3, '0000-00-00 00:00:00'),
-(33, 'sri', 'sri123', 3, '0000-00-00 00:00:00'),
 (2027, '17101148', 'nCs92', 4, '2017-12-15 14:05:43'),
 (2028, '17101140', 'bismillah', 4, '2017-12-22 20:07:39'),
-(2029, '17101179', 'adipahlevi123', 4, '0000-00-00 00:00:00'),
 (2030, '17101122', 'ahlamnabila123', 4, '0000-00-00 00:00:00'),
 (2031, '17101187', 'ahmadhilmijamaludin123', 4, '0000-00-00 00:00:00'),
 (2032, '17101120', 'aliflimkafirdaus123', 4, '0000-00-00 00:00:00'),
-(2033, '17101101', 'arlandpratamawijaya123', 4, '0000-00-00 00:00:00'),
+(2033, '17101101', 'q512U', 4, '0000-00-00 00:00:00'),
 (2034, '17101105', 'armanfadilmaulana123', 4, '0000-00-00 00:00:00'),
-(2035, '17101109', 'artasaifulhilmi123', 4, '0000-00-00 00:00:00'),
 (2036, '17101108', 'azizgunturpurnamaputra123', 4, '0000-00-00 00:00:00'),
 (2037, '17101188', 'azkamuharam123', 4, '0000-00-00 00:00:00'),
 (2038, '17101170', 'azmisyahid123', 4, '0000-00-00 00:00:00'),
@@ -327,7 +329,7 @@ INSERT INTO `users` (`id_user`, `username`, `password`, `level`, `last_login`) V
 (2068, '17101131', 'labibulwan123', 4, '0000-00-00 00:00:00'),
 (2069, '17101124', 'lalurizkyadriansyah123', 4, '0000-00-00 00:00:00'),
 (2070, '17101100', 'mhaekalfajrulfalah123', 4, '0000-00-00 00:00:00'),
-(2071, '17101178', 'm.ridwansaufi123', 4, '0000-00-00 00:00:00'),
+(2071, '17101178', '0mkFh', 4, '0000-00-00 00:00:00'),
 (2072, '17101181', 'm.farid123', 4, '0000-00-00 00:00:00'),
 (2073, '17101152', 'miftahfaruqnugraha123', 4, '0000-00-00 00:00:00'),
 (2074, '17101195', 'mikalmufidasdika123', 4, '0000-00-00 00:00:00'),
