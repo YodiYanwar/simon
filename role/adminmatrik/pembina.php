@@ -22,9 +22,6 @@
       <div class="row">
         <div class="col-xs-12">
           <div class="box">
-            <div class="box-header">
-             <button class="btn btn-primary" data-toggle="modal" data-target="#tambahPembina"><i class="ion ion-person-add"></i>&nbsp;&nbsp;Tambah Akun Pembina</button>
-            </div>
             <!-- /.box-header -->
             <div class="box-body">
               <!-- Table Daftar Pembina -->
@@ -77,6 +74,9 @@
               <!-- /Table Daftar Pembina -->
             </div>
             <!-- /.box-body -->
+            <div class="box-footer">
+             <button class="btn btn-primary" data-toggle="modal" data-target="#tambahPembina"><i class="ion ion-person-add"></i>&nbsp;&nbsp;Tambah Akun Pembina</button>
+            </div>            
           </div>
           <!-- /.box -->
         </div>
