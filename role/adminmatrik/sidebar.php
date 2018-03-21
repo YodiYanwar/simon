@@ -74,7 +74,7 @@
             ><a href="?page=mahasiswa"><i class="fa fa-users"></i> Mahasiswa</a></li>
             <li <?php 
                   if (isset($_GET['page'])) {
-                    if ($_GET['page'] == 'pembina'|| $_GET['page'] == 'pembinadetails' || $_GET['page'] == 'editpembina') {
+                    if ($_GET['page'] == 'pembina'|| $_GET['page'] == 'pembinadetails' || $_GET['page'] == 'editpembina' || $_GET['page'] == 'tambahbinaan') {
                       echo "class='active'";
                     }
                   }
