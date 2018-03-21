@@ -27,36 +27,38 @@
     <section class="content">
       <div class="row">
         <div class="col-xs-12">
+        <form method="POST">
           <div class="box">            
             <div class="box-body">
+              <form method="POST">
               <!-- Table Daftar Pembina -->
-              <table id="tablePembina" class="table table-bordered table-hover table-condensed">
-                <thead>
+                <table id="tablePembina" class="table table-bordered table-hover table-condensed">
+                  <thead>
+                    <tr>
+                      <th></th>
+                      <th>NIM</th>
+                      <th>Nama</th>
+                      <th>Ikhwan/Akhwat</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <?php 
+                      $calonBinaan = tampilCalonBinaan();
+                      $no = 1;
+                      foreach($calonBinaan as $row){
+                    ?>
                   <tr>
-                    <th></th>
-                    <th>NIM</th>
-                    <th>Nama</th>
-                    <th>Ikhwan/Akhwat</th>
+                    <td><input type="checkbox" name="idMahasiswa[]" value="<?php echo $row['id_mahasiswa']; ?>"></td>
+                    <td><?php echo "<span class='badge bg-green'>".$row['nim']."</span>" ?></td>
+                    <td><?php echo "<a href='index.php?page=mahasiswadetails&id=".$row['id_user']."'>".$row['nama']."</a>" ?></td>
+                    <td><?php if($row['j_kelamin'] == NULL) echo "Belum diset" ?></td>
                   </tr>
-                </thead>
-                <tbody>
-                  <?php 
-                    $calonBinaan = tampilCalonBinaan();
-                    $no = 1;
-                    foreach($calonBinaan as $row){
-                  ?>
-                <tr>
-                  <td><input type="checkbox" name="idMahasiswa[]" value="<?php echo $row['id_mahasiswa']; ?>"></td>
-                  <td><?php echo "<span class='badge bg-green'>".$row['nim']."</span>" ?></td>
-                  <td><?php echo "<a href='index.php?page=mahasiswadetails&id=".$row['id_user']."'>".$row['nama']."</a>" ?></td>
-                  <td><?php if($row['j_kelamin'] == NULL) echo "Belum diset" ?></td>
-                </tr>
-                  <?php 
-                    $no++; }
-                  ?>      
-                </tbody>          
-              </table>
-              <!-- /Table Daftar Pembina -->
+                    <?php 
+                      $no++; }
+                    ?>      
+                  </tbody>          
+                </table>
+                <!-- /Table Daftar Pembina -->
             </div>
             <!-- /.box-body -->            
             <div class="box-body table-responsive no-padding">
@@ -64,10 +66,11 @@
             </div>
             <!-- /.box-body -->
             <div class="box-footer">
-              <button class="btn btn-primary"><i class="fa fa-check"></i>&nbsp;Submit</button>
+              <button type="submit" name="submitBinaanMahasiswa" class="btn btn-primary"><i class="fa fa-check"></i>&nbsp;Submit</button>
             </div>
           </div>
           <!-- /.box -->
+        </form>
         </div>
       </div>      
 
@@ -93,10 +96,19 @@
         <!-- /Modal Tambah Pembina -->      
 
     <?php 
-      if (isset($_POST['importMahasiswa'])) {
-        importMahasiswa($_POST['angkatan']);
-        echo "<script>document.location='/simon/index.php?page=mahasiswa'</script>";
+
+    foreach($ip as $idP){
+      if (isset($_POST['submitBinaanMahasiswa'])) {
+
+        if(!empty($_POST['idMahasiswa'])) {
+          foreach($_POST['idMahasiswa'] as $idMhs) {
+            tambahMhsBinaan($idPembina, $idMhs);
+          }
+        }
+
+        echo "<script>document.location='index.php?page=pembinadetails&id=$idP'</script>";
       }
+    }
     ?>
 
     </section>

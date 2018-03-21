@@ -11,7 +11,10 @@
 		$id_user = $row['id_user'];
 
 		mysql_query("INSERT INTO pembina (nama, j_kelamin, tgl_lahir, gelar, asalkota, email, telp, id_user) VALUES ('$nama', '$j_kelamin', '$tgl_lahir', '$gelar', '$asalkota', '$email', '$telp', '$id_user')");
+	}
 
+	function tambahMhsBinaan($idPembina, $idMahasiswa){
+		mysql_query("INSERT INTO m_binaan (id_pembina, id_mahasiswa) VALUES ('$idPembina', '$idMahasiswa');");
 	}
 
 	function tampilPembina(){
