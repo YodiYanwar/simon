@@ -15,6 +15,7 @@
 
 	function tambahMhsBinaan($idPembina, $idMahasiswa){
 		mysql_query("INSERT INTO m_binaan (id_pembina, id_mahasiswa) VALUES ('$idPembina', '$idMahasiswa');");
+		mysql_query("UPDATE mahasiswa m SET m.j_kelamin=(SELECT p.j_kelamin FROM pembina p WHERE p.id_pembina = $idPembina) WHERE m.id_mahasiswa = $idMahasiswa;");
 	}
 
 	function tampilPembina(){
@@ -238,7 +239,6 @@
 				mysql_query($mysql_insert_mhs);
 				//echo $row_mdb['Name']." Berhasil diinput <br>";
 			//}
-			
 		}
 	}
 
