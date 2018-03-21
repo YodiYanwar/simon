@@ -34,7 +34,7 @@
                     <th>NO</th>
                     <th>Nama Pembina</th>
                     <th>Jumlah Binaan</th>
-                    <th>Jenis Kelamin</th>
+                    <th>Ikhwan/Akhwat</th>
                     <th>Telp</th>
                     <th>Terakhir Login</th>
                     <th></th>
@@ -52,7 +52,7 @@
                   <td><?php echo $no ?></td>  
                   <td><?php echo "<a href='index.php?page=pembinadetails&id=".$row['id_user']."'>".$row['nama']."</a>" ?></td>
                   <td><?php echo $row['jml_binaan'] ?></td>
-                  <td><?php echo $row['j_kelamin'] ?></td>
+                  <td><?php if($row['j_kelamin'] == 'Ikhwan'){echo '<span class="label bg-green">Ikhwan</span>';} else if($row['j_kelamin'] == 'Akhwat'){echo '<span class="label bg-yellow">Akhwat</span>';} ?></td>
                   <td><?php echo $row['telp'] ?></td>
                   <td><?php if ($row['last_login'] == '0000-00-00 00:00:00'){ echo 'Belum Pernah';}else{ echo date("d-m-Y H:i", strtotime($row['last_login'])) ;}
                   ?></td>

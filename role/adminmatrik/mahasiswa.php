@@ -32,6 +32,7 @@
                     <th>NO</th>
                     <th>NIM</th>
                     <th>Nama</th>
+                    <th>Ikhwan/Akhwat</th>
                     <th>Terakhir Login</th>
                     <th></th>
                   </tr>
@@ -48,6 +49,7 @@
                   <td><?php echo $no ?></td>
                   <td><?php echo "<span class='badge bg-green'>".$row['nim']."</span>" ?></td>
                   <td><?php echo "<a href='index.php?page=mahasiswadetails&id=".$row['id_user']."'>".$row['nama']."</a>" ?></td>
+                  <td></td>
                   <td><?php if ($row['last_login'] == '0000-00-00 00:00:00'){ echo 'Belum Pernah';}else{ echo date("d-m-Y H:i", strtotime($row['last_login'])) ;}
                   ?></td>
                   <td>
