@@ -104,10 +104,11 @@
 	            <div class="box-body">
 
 	              <!-- Table Daftar Pembina -->
-	              <table id="tableMhsBinaan" class="table table-bordered table-hover table-condensed">
+	              <table id="tableDaftarBinaan" class="table table-bordered table-hover table-condensed">
 	                <thead>
 	                  <tr>
 	                    <th>NO</th>
+                      <th>NIM</th>
 	                    <th>Nama Mahasiswa Binaan</th>
 	                    <th></th>
 	                  </tr>
@@ -124,14 +125,15 @@
 	                ?>
 	                <tr>
 	                  <td><?php echo $no ?></td>
-	                  <td><?php echo $row['nama_mahasiswa']?></td>
+                    <td><?php echo "<span class='badge bg-green'>".$row['nim']."</span>" ?></td>
+	                  <td><a href="index.php?page=mahasiswadetails&id=<?php echo $row['uid_mahasiswa']; ?>"><?php echo $row['nama_mahasiswa']?></a></td>
 	                  <td>
 	                    <div class="dropdown">
 	                      <button class="btn btn-default btn-sm dropdown-toggle " type="button" data-toggle="dropdown">
 	                        <i class="fa fa-cog fa-lg"></i>&nbsp;&nbsp;<span class="caret"></span>
 	                      </button>
 	                      <ul class="dropdown-menu">
-	                        <li><a style="color:#3C8DBC;" href="index.php?page=editpembina&id=$idPembina" class='dropdown-item'><i class='fa fa-edit'></i>Edit Daftar Binaan</a></li>
+	                        <li><a style="color:#DD4B39;" href="index.php?page=editpembina&id=<?php echo $row['uid_mahasiswa']; ?>" class='dropdown-item'><i class='fa fa-remove'></i>Hapus</a></li>
 	                      </ul>
 	                    </div>
 	                  </td>
@@ -147,7 +149,6 @@
 	            <!-- /.box-body -->
 					<div class="box-footer">
 		            	<a href="index.php?page=tambahbinaan&id=<?php echo $idPembina; ?>" class="btn btn-primary" data-toggle="modal"><i class="ion ion-person-add"></i>&nbsp;&nbsp;Tambah</a>&nbsp;&nbsp;
-		            	<a href="index.php?page=editbinaan&id=<?php echo $idPembina; ?>" class="btn btn-primary" data-toggle="modal"><i class="fa fa-edit"></i>&nbsp;&nbsp;Edit</a>
 		            </div>
 	          </div>
 	          <!-- /.box -->

@@ -218,6 +218,12 @@
   });
 </script>
 
+<script>
+  $(document).ready(function() {
+    $('#tableDaftarBinaan').DataTable()
+  });
+</script>
+
 <!-- Fungsi Validasi Password Confirm -->
 <script type="text/javascript">
 var pwinput2 = document.getElementById("pwinput2")
