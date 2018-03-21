@@ -19,11 +19,11 @@ include '../functions.php';
 	if(isset($_GET['idpage'])){
 		header('location:/simon/index.php'); 
 	} else
-	if(isset($_GET['idMahasiswaBinaan'])){
-		$idMahasiswaBinaan = $_GET['idMahasiswaBinaan'];
-		$uidPembina = $_GET['uidPembina'];
+	if(isset($_GET['idmahasiswabinaan'])){
+		$idMahasiswa = $_GET['idmahasiswabinaan'];
+		$idPembina = $_GET['uidpembina']; //nama variabel 'GET' JANGAN SAMA dengan 'GET' lainnya
 
-	    hapusMhsBinaan($idMahasiswaBinaan);
-	    header('location:index.php?page=pembinadetails&id=$uidPembina'); 
+	    hapusMhsBinaan($idMahasiswa);
+	    header('location:/simon/index.php?page=pembinadetails&id='.$idPembina); 
 	}
  ?>

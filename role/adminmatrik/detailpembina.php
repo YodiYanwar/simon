@@ -133,7 +133,7 @@
 	                        <i class="fa fa-cog fa-lg"></i>&nbsp;&nbsp;<span class="caret"></span>
 	                      </button>
 	                      <ul class="dropdown-menu">
-	                        <li><?php echo "<a style='color:#DD4B39;' href='#ModalHapusBinaan' class='dropdown-item' data-toggle='modal' data-href='action/hapus.php?idMahasiswaBinaan=".$row['uid_mahasiswa']."&uidPembina=$id' aria-hidden='true'><i class='fa fa-remove'></i>Hapus</a>"; ?></li>
+	                        <li><?php echo "<a style='color:#DD4B39;' href='#ModalHapusBinaan' class='dropdown-item' data-toggle='modal' data-href='action/hapus.php?idmahasiswabinaan=".$row['id_mahasiswa']."&uidpembina=".$row['uid_pembina']." 'aria-hidden='true'><i class='fa fa-remove'></i>Hapus</a>"; ?></li>
 	                      </ul>
 	                    </div>
 	                  </td>
