@@ -143,6 +143,7 @@
 
 	function hapusMhsBinaan($idMahasiswa){
 		mysql_query("DELETE FROM m_binaan WHERE id_mahasiswa = $idMahasiswa");
+		mysql_query("UPDATE mahasiswa SET j_kelamin = NULL WHERE id_mahasiswa = $idMahasiswa");
 	}
 
 	function editPembina($idPembina, $nama, $j_kelamin, $tgl_lahir, $gelar, $asalkota, $email, $telp){
