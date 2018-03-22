@@ -9,8 +9,8 @@
       </h1>
       <ol class="breadcrumb">
         <li><a href="/simon/admin"><i class="fa fa-dashboard"></i> Dashboard</a></li>
-        <li>Manajemen Pengguna</li>
-        <li class="active">Mahasiswa</li>
+        <li>Pembinaan</li>
+        <li class="active">Shalat Wajib</li>
       </ol>
     </section>
 

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 21, 2018 at 12:44 PM
+-- Generation Time: Mar 22, 2018 at 01:21 AM
 -- Server version: 10.1.25-MariaDB
 -- PHP Version: 5.6.31
 
@@ -96,8 +96,8 @@ CREATE TABLE `mahasiswa` (
 --
 
 INSERT INTO `mahasiswa` (`id_mahasiswa`, `nim`, `nama`, `angkatan`, `j_kelamin`, `asalkota`, `email`, `telp`, `avatar`, `tgl_lahir`, `id_user`) VALUES
-(1352, 17101103, 'Farid Hidayatullah', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2048),
-(1354, 17101102, 'Ridwan', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2110),
+(1352, 17101103, 'Farid Hidayatullah', NULL, 'Ikhwan', NULL, NULL, NULL, NULL, NULL, 2048),
+(1354, 17101102, 'Ridwan', NULL, 'Ikhwan', NULL, NULL, NULL, NULL, NULL, 2110),
 (1356, 17101101, 'Arland Pratama Wijaya', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2033),
 (1358, 17101100, 'M Haekal Fajrul Falah', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2070),
 (1362, 17101106, 'Muhammad Syahri Ramadani', NULL, 'Laki-laki', NULL, NULL, NULL, NULL, NULL, 2096),
@@ -107,7 +107,7 @@ INSERT INTO `mahasiswa` (`id_mahasiswa`, `nim`, `nama`, `angkatan`, `j_kelamin`,
 (1368, 17101116, 'Muhamad Lutfi', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2079),
 (1370, 17101115, 'Noviyandi Difa Pratama', NULL, 'Laki-laki', NULL, NULL, NULL, NULL, NULL, 2102),
 (1372, 17101113, 'Sesa Afrian Yahya', NULL, 'Laki-laki', NULL, NULL, NULL, NULL, NULL, 2114),
-(1373, 17101111, 'Muhamad Solehudin', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2080),
+(1373, 17101111, 'Muhamad Solehudin', NULL, 'Ikhwan', NULL, NULL, NULL, NULL, NULL, 2080),
 (1375, 17101114, 'Yody Nur Rachmat', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2116),
 (1376, 17101112, 'Zahid Ahmad', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2117),
 (1377, 17101109, 'Arta Saiful Hilmi', NULL, 'Laki-laki', NULL, NULL, NULL, NULL, NULL, 2035),
@@ -119,7 +119,7 @@ INSERT INTO `mahasiswa` (`id_mahasiswa`, `nim`, `nama`, `angkatan`, `j_kelamin`,
 (1391, 17101124, 'Lalu Rizky Adriansyah', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2069),
 (1392, 17101126, 'Difan Nurhafidzar Juanda', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2041),
 (1395, 17101123, 'Farras Mubasysyirsyah', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2049),
-(1397, 17101122, 'Ahlam Nabila', NULL, 'Laki-laki', NULL, NULL, NULL, NULL, NULL, 2030),
+(1397, 17101122, 'Ahlam Nabila', NULL, 'Ikhwan', '', '', '', NULL, '1970-01-01', 2030),
 (1398, 17101119, 'Fikri Abdurrohman Maajid', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2052),
 (1400, 17101121, 'Khalel Mohammed Amar', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2066),
 (1402, 17101120, 'Alif Limka Firdaus', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2032),
@@ -138,7 +138,7 @@ INSERT INTO `mahasiswa` (`id_mahasiswa`, `nim`, `nama`, `angkatan`, `j_kelamin`,
 (1426, 17101153, 'Hilmy Fikri', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2057),
 (1428, 17101152, 'Miftah Faruq Nugraha', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2073),
 (1431, 17101151, 'Irvan Riyansyah', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2063),
-(1434, 17101148, 'Abdullah Haidar', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2027),
+(1434, 17101148, 'Abdullah Haidar', NULL, 'Ikhwan', '', '', '', NULL, '1970-01-01', 2027),
 (1436, 17101150, 'Muhammad Puji Pangestu', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2093),
 (1437, 17101149, 'Muhammad Rizki Sinar Ila', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2095),
 (1438, 17101147, 'Falah Ageng Pakerti', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2047),
@@ -148,7 +148,7 @@ INSERT INTO `mahasiswa` (`id_mahasiswa`, `nim`, `nama`, `angkatan`, `j_kelamin`,
 (1445, 17101144, 'Muhammad Ananda Fajar', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2081),
 (1446, 17101143, 'Moch. Lukmannul Hakim', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2075),
 (1447, 17101141, 'Ramadhana Devandani Enti', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2105),
-(1448, 17101140, 'Adam Nurdiansyah', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2028),
+(1448, 17101140, 'Adam Nurdiansyah', NULL, 'Ikhwan', '', '', '', NULL, '1970-01-01', 2028),
 (1451, 17101139, 'Juan Fadri Ramdhani', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2065),
 (1452, 17101138, 'Herdy Almadiptha Rahman', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2056),
 (1455, 17101137, 'Muhammad Denito Bastian', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2083),
@@ -216,7 +216,10 @@ INSERT INTO `m_binaan` (`id_pembina`, `id_mahasiswa`) VALUES
 (28, 1384),
 (28, 1390),
 (20, 1370),
-(20, 1372);
+(20, 1372),
+(23, 1352),
+(23, 1354),
+(23, 1373);
 
 -- --------------------------------------------------------
 
@@ -257,6 +260,19 @@ INSERT INTO `pembina` (`id_pembina`, `nama`, `j_kelamin`, `tgl_lahir`, `gelar`, 
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `shalat`
+--
+
+CREATE TABLE `shalat` (
+  `id_mahasiswa` int(11) DEFAULT NULL,
+  `tanggal` date DEFAULT NULL,
+  `wkt_tapping` time DEFAULT NULL,
+  `wkt_shalat` varchar(7) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `users`
 --
 
@@ -274,7 +290,7 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`id_user`, `username`, `password`, `level`, `last_login`) VALUES
 (1, 'admin', 'admin', 0, '2018-03-12 08:11:33'),
-(2, 'derry', 'derry123', 2, '2018-03-21 13:33:30'),
+(2, 'derry', 'derry123', 2, '2018-03-22 05:36:08'),
 (21, 'bintang', 'bintang123', 3, '2018-03-12 08:11:09'),
 (22, 'aya', 'aya123', 3, '2017-12-02 16:23:35'),
 (23, 'hasan', 'hasan123', 2, '2017-11-30 17:06:08'),
@@ -515,6 +531,12 @@ ALTER TABLE `pembina`
   ADD UNIQUE KEY `id_user` (`id_user`);
 
 --
+-- Indexes for table `shalat`
+--
+ALTER TABLE `shalat`
+  ADD KEY `id_mahasiswa` (`id_mahasiswa`);
+
+--
 -- Indexes for table `users`
 --
 ALTER TABLE `users`
@@ -572,6 +594,12 @@ ALTER TABLE `m_binaan`
 --
 ALTER TABLE `pembina`
   ADD CONSTRAINT `pembina_ibfk_1` FOREIGN KEY (`id_user`) REFERENCES `users` (`id_user`);
+
+--
+-- Constraints for table `shalat`
+--
+ALTER TABLE `shalat`
+  ADD CONSTRAINT `shalat_ibfk_1` FOREIGN KEY (`id_mahasiswa`) REFERENCES `mahasiswa` (`id_mahasiswa`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
