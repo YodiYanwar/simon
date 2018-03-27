@@ -3,8 +3,8 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 22, 2018 at 01:21 AM
--- Server version: 10.1.25-MariaDB
+-- Generation Time: 27 Mar 2018 pada 07.42
+-- Versi Server: 10.1.25-MariaDB
 -- PHP Version: 5.6.31
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
@@ -25,7 +25,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `administrator`
+-- Struktur dari tabel `administrator`
 --
 
 CREATE TABLE `administrator` (
@@ -40,7 +40,7 @@ CREATE TABLE `administrator` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `administrator`
+-- Dumping data untuk tabel `administrator`
 --
 
 INSERT INTO `administrator` (`id_admin`, `nama`, `j_kelamin`, `tgl_lahir`, `email`, `telp`, `avatar`, `id_user`) VALUES
@@ -49,7 +49,7 @@ INSERT INTO `administrator` (`id_admin`, `nama`, `j_kelamin`, `tgl_lahir`, `emai
 -- --------------------------------------------------------
 
 --
--- Table structure for table `adminmatrik`
+-- Struktur dari tabel `adminmatrik`
 --
 
 CREATE TABLE `adminmatrik` (
@@ -64,7 +64,7 @@ CREATE TABLE `adminmatrik` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `adminmatrik`
+-- Dumping data untuk tabel `adminmatrik`
 --
 
 INSERT INTO `adminmatrik` (`id_adminmatrik`, `nama`, `telp`, `email`, `j_kelamin`, `tgl_lahir`, `id_user`, `avatar`) VALUES
@@ -74,7 +74,7 @@ INSERT INTO `adminmatrik` (`id_adminmatrik`, `nama`, `telp`, `email`, `j_kelamin
 -- --------------------------------------------------------
 
 --
--- Table structure for table `mahasiswa`
+-- Struktur dari tabel `mahasiswa`
 --
 
 CREATE TABLE `mahasiswa` (
@@ -92,7 +92,7 @@ CREATE TABLE `mahasiswa` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `mahasiswa`
+-- Dumping data untuk tabel `mahasiswa`
 --
 
 INSERT INTO `mahasiswa` (`id_mahasiswa`, `nim`, `nama`, `angkatan`, `j_kelamin`, `asalkota`, `email`, `telp`, `avatar`, `tgl_lahir`, `id_user`) VALUES
@@ -110,7 +110,7 @@ INSERT INTO `mahasiswa` (`id_mahasiswa`, `nim`, `nama`, `angkatan`, `j_kelamin`,
 (1373, 17101111, 'Muhamad Solehudin', NULL, 'Ikhwan', NULL, NULL, NULL, NULL, NULL, 2080),
 (1375, 17101114, 'Yody Nur Rachmat', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2116),
 (1376, 17101112, 'Zahid Ahmad', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2117),
-(1377, 17101109, 'Arta Saiful Hilmi', NULL, 'Laki-laki', NULL, NULL, NULL, NULL, NULL, 2035),
+(1377, 17101109, 'Arta Saiful Hilmi', NULL, 'Akhwat', NULL, NULL, NULL, NULL, NULL, 2035),
 (1382, 17101108, 'Aziz Guntur Purnamaputra', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2036),
 (1383, 17101107, 'Wildan Maulid Hanafi', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2115),
 (1384, 17101105, 'Arman Fadil Maulana', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2034),
@@ -138,7 +138,6 @@ INSERT INTO `mahasiswa` (`id_mahasiswa`, `nim`, `nama`, `angkatan`, `j_kelamin`,
 (1426, 17101153, 'Hilmy Fikri', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2057),
 (1428, 17101152, 'Miftah Faruq Nugraha', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2073),
 (1431, 17101151, 'Irvan Riyansyah', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2063),
-(1434, 17101148, 'Abdullah Haidar', NULL, 'Ikhwan', '', '', '', NULL, '1970-01-01', 2027),
 (1436, 17101150, 'Muhammad Puji Pangestu', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2093),
 (1437, 17101149, 'Muhammad Rizki Sinar Ila', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2095),
 (1438, 17101147, 'Falah Ageng Pakerti', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2047),
@@ -148,7 +147,6 @@ INSERT INTO `mahasiswa` (`id_mahasiswa`, `nim`, `nama`, `angkatan`, `j_kelamin`,
 (1445, 17101144, 'Muhammad Ananda Fajar', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2081),
 (1446, 17101143, 'Moch. Lukmannul Hakim', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2075),
 (1447, 17101141, 'Ramadhana Devandani Enti', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2105),
-(1448, 17101140, 'Adam Nurdiansyah', NULL, 'Ikhwan', '', '', '', NULL, '1970-01-01', 2028),
 (1451, 17101139, 'Juan Fadri Ramdhani', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2065),
 (1452, 17101138, 'Herdy Almadiptha Rahman', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2056),
 (1455, 17101137, 'Muhammad Denito Bastian', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2083),
@@ -193,7 +191,7 @@ INSERT INTO `mahasiswa` (`id_mahasiswa`, `nim`, `nama`, `angkatan`, `j_kelamin`,
 -- --------------------------------------------------------
 
 --
--- Table structure for table `m_binaan`
+-- Struktur dari tabel `m_binaan`
 --
 
 CREATE TABLE `m_binaan` (
@@ -202,7 +200,7 @@ CREATE TABLE `m_binaan` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `m_binaan`
+-- Dumping data untuk tabel `m_binaan`
 --
 
 INSERT INTO `m_binaan` (`id_pembina`, `id_mahasiswa`) VALUES
@@ -219,12 +217,13 @@ INSERT INTO `m_binaan` (`id_pembina`, `id_mahasiswa`) VALUES
 (20, 1372),
 (23, 1352),
 (23, 1354),
-(23, 1373);
+(23, 1373),
+(25, 1377);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `pembina`
+-- Struktur dari tabel `pembina`
 --
 
 CREATE TABLE `pembina` (
@@ -241,7 +240,7 @@ CREATE TABLE `pembina` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `pembina`
+-- Dumping data untuk tabel `pembina`
 --
 
 INSERT INTO `pembina` (`id_pembina`, `nama`, `j_kelamin`, `tgl_lahir`, `gelar`, `asalkota`, `email`, `telp`, `avatar`, `id_user`) VALUES
@@ -260,7 +259,7 @@ INSERT INTO `pembina` (`id_pembina`, `nama`, `j_kelamin`, `tgl_lahir`, `gelar`, 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `shalat`
+-- Struktur dari tabel `shalat`
 --
 
 CREATE TABLE `shalat` (
@@ -273,7 +272,30 @@ CREATE TABLE `shalat` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `users`
+-- Struktur dari tabel `tesshalat`
+--
+
+CREATE TABLE `tesshalat` (
+  `angkatan` int(11) NOT NULL,
+  `dari_tgl` date NOT NULL,
+  `sampai_tgl` date NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data untuk tabel `tesshalat`
+--
+
+INSERT INTO `tesshalat` (`angkatan`, `dari_tgl`, `sampai_tgl`) VALUES
+(17, '0000-00-00', '0000-00-00'),
+(17, '0000-00-00', '0000-00-00'),
+(15, '0000-00-00', '0000-00-00'),
+(16, '0000-00-00', '0000-00-00'),
+(0, '0000-00-00', '0000-00-00');
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `users`
 --
 
 CREATE TABLE `users` (
@@ -285,12 +307,12 @@ CREATE TABLE `users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `users`
+-- Dumping data untuk tabel `users`
 --
 
 INSERT INTO `users` (`id_user`, `username`, `password`, `level`, `last_login`) VALUES
 (1, 'admin', 'admin', 0, '2018-03-12 08:11:33'),
-(2, 'derry', 'derry123', 2, '2018-03-22 05:36:08'),
+(2, 'derry', 'derry123', 2, '2018-03-27 09:25:51'),
 (21, 'bintang', 'bintang123', 3, '2018-03-12 08:11:09'),
 (22, 'aya', 'aya123', 3, '2017-12-02 16:23:35'),
 (23, 'hasan', 'hasan123', 2, '2017-11-30 17:06:08'),
@@ -303,8 +325,6 @@ INSERT INTO `users` (`id_user`, `username`, `password`, `level`, `last_login`) V
 (30, 'diva', 'diva123', 3, '0000-00-00 00:00:00'),
 (31, 'huda', 'huda123', 3, '2017-12-02 21:27:39'),
 (32, 'alfin', 'alfin123', 3, '0000-00-00 00:00:00'),
-(2027, '17101148', 'nCs92', 4, '2017-12-15 14:05:43'),
-(2028, '17101140', 'bismillah', 4, '2017-12-22 20:07:39'),
 (2030, '17101122', 'ahlamnabila123', 4, '0000-00-00 00:00:00'),
 (2031, '17101187', 'ahmadhilmijamaludin123', 4, '0000-00-00 00:00:00'),
 (2032, '17101120', 'aliflimkafirdaus123', 4, '0000-00-00 00:00:00'),
@@ -560,43 +580,43 @@ ALTER TABLE `adminmatrik`
 -- AUTO_INCREMENT for table `pembina`
 --
 ALTER TABLE `pembina`
-  MODIFY `id_pembina` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
+  MODIFY `id_pembina` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
   MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2216;
 --
--- Constraints for dumped tables
+-- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
 --
 
 --
--- Constraints for table `administrator`
+-- Ketidakleluasaan untuk tabel `administrator`
 --
 ALTER TABLE `administrator`
   ADD CONSTRAINT `administrator_ibfk_1` FOREIGN KEY (`id_user`) REFERENCES `users` (`id_user`);
 
 --
--- Constraints for table `adminmatrik`
+-- Ketidakleluasaan untuk tabel `adminmatrik`
 --
 ALTER TABLE `adminmatrik`
   ADD CONSTRAINT `adminmatrik_ibfk_1` FOREIGN KEY (`id_user`) REFERENCES `users` (`id_user`);
 
 --
--- Constraints for table `m_binaan`
+-- Ketidakleluasaan untuk tabel `m_binaan`
 --
 ALTER TABLE `m_binaan`
   ADD CONSTRAINT `m_binaan_ibfk_1` FOREIGN KEY (`id_pembina`) REFERENCES `pembina` (`id_pembina`),
   ADD CONSTRAINT `m_binaan_ibfk_2` FOREIGN KEY (`id_mahasiswa`) REFERENCES `mahasiswa` (`id_mahasiswa`);
 
 --
--- Constraints for table `pembina`
+-- Ketidakleluasaan untuk tabel `pembina`
 --
 ALTER TABLE `pembina`
   ADD CONSTRAINT `pembina_ibfk_1` FOREIGN KEY (`id_user`) REFERENCES `users` (`id_user`);
 
 --
--- Constraints for table `shalat`
+-- Ketidakleluasaan untuk tabel `shalat`
 --
 ALTER TABLE `shalat`
   ADD CONSTRAINT `shalat_ibfk_1` FOREIGN KEY (`id_mahasiswa`) REFERENCES `mahasiswa` (`id_mahasiswa`);

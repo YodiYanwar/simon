@@ -218,7 +218,70 @@
           todayHighlight: true
         });
       }); 
+
+    //Date range picker
+    $('#reservation').daterangepicker()
     </script> 
+
+<script type="text/javascript">
+var startDate;
+var endDate;
+
+$(document).ready(function() {
+    $('#reportrange').daterangepicker(
+       {
+          startDate: moment().subtract('days', 29),
+          endDate: moment(),
+          //minDate: '01/01/2012',
+          //maxDate: '12/31/2014',
+          dateLimit: { days: 60 },
+          showDropdowns: true,
+          showWeekNumbers: true,
+          timePicker: false,
+          timePickerIncrement: 1,
+          timePicker12Hour: true,
+          ranges: {
+             'Hari ini': [moment(), moment()],
+             'Kemarin': [moment().subtract('days', 1), moment().subtract('days', 1)],
+             '7 Hari Terakhir': [moment().subtract('days', 6), moment()],
+             '30 Hari Terakhir': [moment().subtract('days', 29), moment()],
+             'Bulan Ini': [moment().startOf('month'), moment().endOf('month')]
+             //'Last Month': [moment().subtract('month', 1).startOf('month'), moment().subtract('month', 1).endOf('month')]
+          },
+          opens: 'left',
+          buttonClasses: ['btn btn-default'],
+          applyClass: 'btn-small btn-primary',
+          cancelClass: 'btn-small',
+          format: 'YYYY-MM-dd',
+          separator: ' to ',
+          locale: {
+              applyLabel: 'Submit',
+              fromLabel: 'Dari',
+              toLabel: 'Sampai',
+              customRangeLabel: 'Custom Range',
+              daysOfWeek: ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr','Sa'],
+              monthNames: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
+              firstDay: 1
+          }
+       },
+       function(start, end) {
+        console.log("Callback has been called!");
+        $('#reportrange span').html(start.format('D MMMM YYYY') + ' - ' + end.format('D MMMM YYYY'));
+        startDate = start;
+         endDate = end;    
+
+       }
+    );
+    //Set the initial state of the picker label
+    $('#reportrange span').html(moment().subtract('days', 29).format('D MMMM YYYY') + ' - ' + moment().format('D MMMM YYYY'));
+
+    $('#saveBtn').click(function(){
+        console.log(startDate.format('D MMMM YYYY') + ' - ' + endDate.format('D MMMM YYYY'));
+    });
+
+ });
+</script>  
+
 <!-- page script -->
 <script>
   $(document).ready(function() {

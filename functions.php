@@ -226,7 +226,7 @@
 	}
 
 	function importMahasiswa($angkatan){
-		$koneksi_mdb = odbc_connect( 'att2000', "", "");
+		$koneksi_mdb = odbc_connect( 'attBackup', "", "");
 		
 		$sql = "SELECT USERID,Badgenumber,Name FROM USERINFO WHERE Badgenumber LIKE '$angkatan' & '1011%' ORDER BY Name";
 		$result = odbc_exec($koneksi_mdb, $sql);
@@ -250,6 +250,10 @@
 				//echo $row_mdb['Name']." Berhasil diinput <br>";
 			//}
 		}
+	}
+
+	function importPresensiShalat($angkatan, $to, $from){
+		mysql_query("INSERT INTO tesshalat (angkatan, dari_tgl, sampai_tgl) VALUES ('$angkatan', '$to', '$from');");	
 	}
 
  ?>

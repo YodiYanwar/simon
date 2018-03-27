@@ -85,11 +85,11 @@
 
       <!-- Modal Import Mahasiswa -->
       <div class="modal fade" id="importMhsModal" role="dialog">
-            <div class="modal-dialog modal-sm" role="document">
+            <div class="modal-dialog modal-md" role="document">
             <form method="POST">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h4 class="modal-title"><i class="fa fa-folder-open" aria-hidden="true"></i>&nbsp; <b>Import Data Mahasiswa</b></h4>
+                        <h4 class="modal-title"><i class="fa fa-chevron-circle-down" aria-hidden="true"></i>&nbsp; <b>Import Data Presensi Shalat</b></h4>
                     </div>
                     <div class="modal-body">
                       <div class="row">
@@ -99,7 +99,7 @@
                         </div> -->
                         <div class="col-lg-12">
                           <label>Pilih Tahun Angkatan</label>
-                          <select class="form-control" name="angkatan">
+                          <select class="form-control" name="angkatan" value="17">
                             <option>Angkatan</option>
                             <option>15</option>
                             <option>16</option>
@@ -108,9 +108,24 @@
                         </div>
                       </div>
                     </div>
+                    <!-- Date range -->
+                    <div class="form-group">
+                      <div class="col-lg-12">
+                      <label>Periode :</label>
+
+                      <div class="input-group">
+                        <div class="input-group-addon">
+                          <i class="fa fa-calendar"></i>
+                        </div>
+                        <input type="text" class="form-control pull-right" id="reservation" name="daterangeShalat"><br><br>
+                      </div>
+                      <!-- /.input group -->
+                      </div>
+                    </div>
+                    <!-- /.form group -->                    
                     <div class="modal-footer">
-                      <button type="button" class="btn btn-secondary" data-dismiss="modal"><i class="fa fa-undo" aria-hidden="true"></i>&nbsp;Batal</button>                
-                      <button type="submit" class="btn btn-primary" name="importMahasiswa"><i class="fa fa-check" aria-hidden="true"></i>&nbsp;Submit</button>
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal"><i class="fa fa-undo" aria-hidden="true"></i>&nbsp;Batal</button>
+                      <button type="submit" class="btn btn-primary" name="importPresensiShalat"><i class="fa fa-check" aria-hidden="true"></i>&nbsp;Submit</button>
                     </div>
                   </div>
                 </form>
@@ -135,9 +150,13 @@
         <!-- /Modal Hapus Pembina -->        
 
     <?php 
-      if (isset($_POST['importMahasiswa'])) {
-        importMahasiswa($_POST['angkatan']);
-        echo "<script>document.location='/simon/index.php?page=mahasiswa'</script>";
+      if (isset($_POST['importPresensiShalat'])) {
+        $tgl = explode('-', $_POST['daterangeShalat']);
+        $tglDari = strtotime($tgl[0]);
+        $tglSampai = strtotime($tgl[1]);
+
+        importPresensiShalat($_POST['angkatan'], date('Y-M-d',$tglDari), date('Y-M-d',$tglSampai));
+        echo "<script>document.location='/simon/index.php?page=shalat'</script>";
       }
     ?>
 
