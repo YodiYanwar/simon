@@ -3,8 +3,8 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 27 Mar 2018 pada 07.42
--- Versi Server: 10.1.25-MariaDB
+-- Generation Time: Mar 27, 2018 at 12:02 PM
+-- Server version: 10.1.25-MariaDB
 -- PHP Version: 5.6.31
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
@@ -25,7 +25,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `administrator`
+-- Table structure for table `administrator`
 --
 
 CREATE TABLE `administrator` (
@@ -40,7 +40,7 @@ CREATE TABLE `administrator` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `administrator`
+-- Dumping data for table `administrator`
 --
 
 INSERT INTO `administrator` (`id_admin`, `nama`, `j_kelamin`, `tgl_lahir`, `email`, `telp`, `avatar`, `id_user`) VALUES
@@ -49,7 +49,7 @@ INSERT INTO `administrator` (`id_admin`, `nama`, `j_kelamin`, `tgl_lahir`, `emai
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `adminmatrik`
+-- Table structure for table `adminmatrik`
 --
 
 CREATE TABLE `adminmatrik` (
@@ -64,7 +64,7 @@ CREATE TABLE `adminmatrik` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `adminmatrik`
+-- Dumping data for table `adminmatrik`
 --
 
 INSERT INTO `adminmatrik` (`id_adminmatrik`, `nama`, `telp`, `email`, `j_kelamin`, `tgl_lahir`, `id_user`, `avatar`) VALUES
@@ -74,7 +74,7 @@ INSERT INTO `adminmatrik` (`id_adminmatrik`, `nama`, `telp`, `email`, `j_kelamin
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `mahasiswa`
+-- Table structure for table `mahasiswa`
 --
 
 CREATE TABLE `mahasiswa` (
@@ -92,7 +92,7 @@ CREATE TABLE `mahasiswa` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `mahasiswa`
+-- Dumping data for table `mahasiswa`
 --
 
 INSERT INTO `mahasiswa` (`id_mahasiswa`, `nim`, `nama`, `angkatan`, `j_kelamin`, `asalkota`, `email`, `telp`, `avatar`, `tgl_lahir`, `id_user`) VALUES
@@ -191,7 +191,7 @@ INSERT INTO `mahasiswa` (`id_mahasiswa`, `nim`, `nama`, `angkatan`, `j_kelamin`,
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `m_binaan`
+-- Table structure for table `m_binaan`
 --
 
 CREATE TABLE `m_binaan` (
@@ -200,7 +200,7 @@ CREATE TABLE `m_binaan` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `m_binaan`
+-- Dumping data for table `m_binaan`
 --
 
 INSERT INTO `m_binaan` (`id_pembina`, `id_mahasiswa`) VALUES
@@ -223,7 +223,7 @@ INSERT INTO `m_binaan` (`id_pembina`, `id_mahasiswa`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `pembina`
+-- Table structure for table `pembina`
 --
 
 CREATE TABLE `pembina` (
@@ -240,7 +240,7 @@ CREATE TABLE `pembina` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `pembina`
+-- Dumping data for table `pembina`
 --
 
 INSERT INTO `pembina` (`id_pembina`, `nama`, `j_kelamin`, `tgl_lahir`, `gelar`, `asalkota`, `email`, `telp`, `avatar`, `id_user`) VALUES
@@ -259,20 +259,52 @@ INSERT INTO `pembina` (`id_pembina`, `nama`, `j_kelamin`, `tgl_lahir`, `gelar`, 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `shalat`
+-- Table structure for table `shalat`
 --
 
 CREATE TABLE `shalat` (
   `id_mahasiswa` int(11) DEFAULT NULL,
-  `tanggal` date DEFAULT NULL,
-  `wkt_tapping` time DEFAULT NULL,
+  `tanggal` varchar(50) DEFAULT NULL,
+  `wkt_tapping` varchar(50) DEFAULT NULL,
   `wkt_shalat` varchar(7) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `shalat`
+--
+
+INSERT INTO `shalat` (`id_mahasiswa`, `tanggal`, `wkt_tapping`, `wkt_shalat`) VALUES
+(1352, '2017-09-20', '12:14:25', 'dzuhur '),
+(1352, '2017-09-20', '03:22:18', 'ashar  '),
+(1352, '2017-09-20', '06:19:39', 'maghrib'),
+(1352, '2017-09-20', '07:28:02', 'isya   '),
+(1352, '2017-09-21', '12:14:54', 'dzuhur '),
+(1352, '2017-09-21', '03:24:52', 'ashar  '),
+(1352, '2017-09-21', '06:13:07', 'maghrib'),
+(1352, '2017-09-21', '07:29:26', 'isya   '),
+(1352, '2017-09-22', '04:58:13', 'shubuh '),
+(1352, '2017-09-22', '12:21:07', 'dzuhur '),
+(1352, '2017-09-22', '03:33:30', 'ashar  '),
+(1352, '2017-09-22', '06:16:52', 'maghrib'),
+(1352, '2017-09-22', '07:30:32', 'isya   '),
+(1352, '2017-09-23', '12:12:04', 'dzuhur '),
+(1352, '2017-09-23', '03:32:35', 'ashar  '),
+(1352, '2017-09-23', '06:17:29', 'maghrib'),
+(1352, '2017-09-23', '07:27:42', 'isya   '),
+(1352, '2017-09-24', '04:56:37', 'shubuh '),
+(1352, '2017-09-24', '12:10:40', 'dzuhur '),
+(1352, '2017-09-24', '03:21:52', 'ashar  '),
+(1352, '2017-09-24', '06:16:50', 'maghrib'),
+(1352, '2017-09-24', '07:29:28', 'isya   '),
+(1352, '2017-09-25', '12:10:59', 'dzuhur '),
+(1352, '2017-09-25', '03:16:27', 'ashar  '),
+(1352, '2017-09-25', '06:09:58', 'maghrib'),
+(1352, '2017-09-25', '07:28:01', 'isya   ');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tesshalat`
+-- Table structure for table `tesshalat`
 --
 
 CREATE TABLE `tesshalat` (
@@ -282,20 +314,24 @@ CREATE TABLE `tesshalat` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `tesshalat`
+-- Dumping data for table `tesshalat`
 --
 
 INSERT INTO `tesshalat` (`angkatan`, `dari_tgl`, `sampai_tgl`) VALUES
-(17, '0000-00-00', '0000-00-00'),
+(15, '2018-03-20', '2018-03-27'),
+(17, '2018-03-21', '2018-03-27'),
+(16, '2018-03-01', '2018-03-31'),
 (17, '0000-00-00', '0000-00-00'),
 (15, '0000-00-00', '0000-00-00'),
 (16, '0000-00-00', '0000-00-00'),
-(0, '0000-00-00', '0000-00-00');
+(17, '2018-03-01', '2018-03-31'),
+(15, '2018-03-21', '2018-03-27'),
+(17, '2018-03-21', '2018-03-27');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `users`
+-- Table structure for table `users`
 --
 
 CREATE TABLE `users` (
@@ -307,12 +343,12 @@ CREATE TABLE `users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `users`
+-- Dumping data for table `users`
 --
 
 INSERT INTO `users` (`id_user`, `username`, `password`, `level`, `last_login`) VALUES
 (1, 'admin', 'admin', 0, '2018-03-12 08:11:33'),
-(2, 'derry', 'derry123', 2, '2018-03-27 09:25:51'),
+(2, 'derry', 'derry123', 2, '2018-03-27 17:00:10'),
 (21, 'bintang', 'bintang123', 3, '2018-03-12 08:11:09'),
 (22, 'aya', 'aya123', 3, '2017-12-02 16:23:35'),
 (23, 'hasan', 'hasan123', 2, '2017-11-30 17:06:08'),
@@ -587,36 +623,36 @@ ALTER TABLE `pembina`
 ALTER TABLE `users`
   MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2216;
 --
--- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
+-- Constraints for dumped tables
 --
 
 --
--- Ketidakleluasaan untuk tabel `administrator`
+-- Constraints for table `administrator`
 --
 ALTER TABLE `administrator`
   ADD CONSTRAINT `administrator_ibfk_1` FOREIGN KEY (`id_user`) REFERENCES `users` (`id_user`);
 
 --
--- Ketidakleluasaan untuk tabel `adminmatrik`
+-- Constraints for table `adminmatrik`
 --
 ALTER TABLE `adminmatrik`
   ADD CONSTRAINT `adminmatrik_ibfk_1` FOREIGN KEY (`id_user`) REFERENCES `users` (`id_user`);
 
 --
--- Ketidakleluasaan untuk tabel `m_binaan`
+-- Constraints for table `m_binaan`
 --
 ALTER TABLE `m_binaan`
   ADD CONSTRAINT `m_binaan_ibfk_1` FOREIGN KEY (`id_pembina`) REFERENCES `pembina` (`id_pembina`),
   ADD CONSTRAINT `m_binaan_ibfk_2` FOREIGN KEY (`id_mahasiswa`) REFERENCES `mahasiswa` (`id_mahasiswa`);
 
 --
--- Ketidakleluasaan untuk tabel `pembina`
+-- Constraints for table `pembina`
 --
 ALTER TABLE `pembina`
   ADD CONSTRAINT `pembina_ibfk_1` FOREIGN KEY (`id_user`) REFERENCES `users` (`id_user`);
 
 --
--- Ketidakleluasaan untuk tabel `shalat`
+-- Constraints for table `shalat`
 --
 ALTER TABLE `shalat`
   ADD CONSTRAINT `shalat_ibfk_1` FOREIGN KEY (`id_mahasiswa`) REFERENCES `mahasiswa` (`id_mahasiswa`);

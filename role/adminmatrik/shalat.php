@@ -103,7 +103,7 @@
                             <option>Angkatan</option>
                             <option>15</option>
                             <option>16</option>
-                            <option>17</option>
+                            <option selected='selected'>17</option>
                           </select>
                         </div>
                       </div>
@@ -117,7 +117,7 @@
                         <div class="input-group-addon">
                           <i class="fa fa-calendar"></i>
                         </div>
-                        <input type="text" class="form-control pull-right" id="reservation" name="daterangeShalat"><br><br>
+                        <input type="text" class="form-control pull-right" id="reportrange" name="daterangeShalat"><br><br>
                       </div>
                       <!-- /.input group -->
                       </div>
@@ -152,10 +152,15 @@
     <?php 
       if (isset($_POST['importPresensiShalat'])) {
         $tgl = explode('-', $_POST['daterangeShalat']);
-        $tglDari = strtotime($tgl[0]);
-        $tglSampai = strtotime($tgl[1]);
+        $from = $tgl[0];
+        $to = $tgl[1];
 
-        importPresensiShalat($_POST['angkatan'], date('Y-M-d',$tglDari), date('Y-M-d',$tglSampai));
+        $datefrom = date('Y-m-d', strtotime($from));
+        $dateto = date('Y-m-d',strtotime($to));
+
+        //importPresensiShalat($_POST['angkatan'], date('Y-m-d',$from), date('Y-m-d',$to));
+        importShalat($_POST['angkatan'], $datefrom, $dateto);
+        //importShalatTest($_POST['angkatan'], $datefrom, $dateto);
         echo "<script>document.location='/simon/index.php?page=shalat'</script>";
       }
     ?>

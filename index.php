@@ -209,7 +209,7 @@
     });    
   </script>  
 
-    <script type="text/javascript">
+<script type="text/javascript">
       $(document).ready(function() {
         //Date picker
         $('#datepicker').datepicker({
@@ -217,12 +217,11 @@
           autoclose: true,
           todayHighlight: true
         });
-      }); 
+      });
+</script> 
 
-    //Date range picker
-    $('#reservation').daterangepicker()
-    </script> 
 
+<!-- Daterange picker import data presensi shalat mahasiswa -->
 <script type="text/javascript">
 var startDate;
 var endDate;
@@ -252,7 +251,7 @@ $(document).ready(function() {
           buttonClasses: ['btn btn-default'],
           applyClass: 'btn-small btn-primary',
           cancelClass: 'btn-small',
-          format: 'YYYY-MM-dd',
+          format: 'DD/MM/YYYY',
           separator: ' to ',
           locale: {
               applyLabel: 'Submit',
