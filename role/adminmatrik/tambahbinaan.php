@@ -37,7 +37,7 @@
                 <table id="tablePembina" class="table table-bordered table-hover table-condensed">
                   <thead>
                     <tr>
-                      <th></th>
+                      <th>Pilih</th>
                       <th>NIM</th>
                       <th>Nama</th>
                       <th>Ikhwan/Akhwat</th>
@@ -50,7 +50,7 @@
                       foreach($calonBinaan as $row){
                     ?>
                   <tr>
-                    <td><input type="checkbox" name="idMahasiswa[]" value="<?php echo $row['id_mahasiswa']; ?>"></td>
+                    <td><input type="checkbox" class="flat-red" name="idMahasiswa[]" value="<?php echo $row['id_mahasiswa']; ?>"></td>
                     <td><?php echo "<span class='badge'>".$row['nim']."</span>" ?></td>
                     <td><?php echo "<a href='index.php?page=mahasiswadetails&id=".$row['id_user']."'>".$row['nama']."</a>" ?></td>
                     <td><?php if($row['j_kelamin'] == 'Ikhwan' || $row['j_kelamin'] == 'Laki-laki'){echo '<span class="label bg-green">Ikhwan</span>';} else if($row['j_kelamin'] == 'Akhwat' || $row['j_kelamin'] == 'Perempuan'){echo '<span class="label bg-yellow">Akhwat</span>';} else if($row['j_kelamin'] == NULL){echo '<span class="label bg-gray">Belum diset</span>';} ?></td>
