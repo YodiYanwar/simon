@@ -196,7 +196,7 @@
 			$ad = mysql_fetch_assoc($ambildata);
 				$data[] = $ad;
 				return $data;		
-			}
+	}
 
 	function adminMatrikDetails($idUser){
 		$ambildata = mysql_query("SELECT adminmatrik.*, users.* FROM users INNER JOIN adminmatrik ON adminmatrik.id_user = users.id_user WHERE users.id_user = $idUser");
@@ -228,7 +228,7 @@
 	function importMahasiswa($angkatan){
 		$koneksi_mdb = odbc_connect( 'attBackup', "", "");
 		
-		$sql = "SELECT USERID,Badgenumber,Name FROM USERINFO WHERE Badgenumber LIKE '$angkatan' & '1011%' ORDER BY Name";
+		$sql = "SELECT USERID,Badgenumber,Name FROM USERINFO WHERE Badgenumber LIKE '$angkatan%' AND Name NOT LIKE '$angkatan%'";
 		$result = odbc_exec($koneksi_mdb, $sql);
 
 		while($row_mdb = odbc_fetch_array($result)){
@@ -245,7 +245,9 @@
 				$row = mysql_fetch_assoc($sql);
 				$id_user = $row['id_user'];
 
-				$mysql_insert_mhs = "INSERT INTO mahasiswa (id_mahasiswa, nim, nama, id_user) VALUES ('".$row_mdb['USERID']."', '".$row_mdb['Badgenumber']."', '".$row_mdb['Name']."', '$id_user')";
+				$name = mysql_real_escape_string($row_mdb['Name']);
+
+				$mysql_insert_mhs = "INSERT INTO mahasiswa (id_mahasiswa, nim, nama, id_user) VALUES ('".$row_mdb['USERID']."', '".$row_mdb['Badgenumber']."', '".$name."', '$id_user')";
 				mysql_query($mysql_insert_mhs);
 				//echo $row_mdb['Name']." Berhasil diinput <br>";
 			//}
@@ -255,7 +257,7 @@
 	function importShalat($angkatan, $from, $to){
 		$koneksi_mdb = odbc_connect( 'attBackup', "", "");
 		
-		$sql = "SELECT userid AS id_mahasiswa, Format(tanggal, 'yyyy-mm-dd') AS tgl, Format(TimeValue(Min(t.CHECKTIME))) As wkt_tapping, session AS wkt_shalat FROM (SELECT session_from, session_to, date_from, date_to, session FROM ((timesetup i LEFT JOIN dateperiod d ON i.period_id = d.period_id) LEFT JOIN sessionrange q ON i.sessionrange_id = q.sessionrange_id)) As s INNER JOIN (SELECT Format(DateValue(CHECKTIME)) As tanggal, Format(TimeValue(CHECKTIME)) As tapping, u.userid, u.Badgenumber, CHECKTIME FROM CHECKINOUT c LEFT JOIN USERINFO u ON c.userid = u.userid WHERE (Format(DateValue(c.CHECKTIME), 'yyyy-mm-dd') BETWEEN '2017-09-30' AND '2017-09-30') AND (u.Badgenumber LIKE '17%') AND (u.userid = 1174)) t ON ((t.tanggal BETWEEN s.date_from AND s.date_to) AND (t.tapping BETWEEN s.session_from AND s.session_to)) GROUP BY userid, tanggal, session, u.Badgenumber ORDER BY userid, tanggal, Format(TimeValue(Min(t.CHECKTIME)))";
+		$sql = "SELECT userid AS id_mahasiswa, Format(tanggal, 'yyyy-mm-dd') AS tgl, Format(TimeValue(Min(t.CHECKTIME))) As wkt_tapping, session AS wkt_shalat FROM (SELECT session_from, session_to, date_from, date_to, session FROM ((timesetup i LEFT JOIN dateperiod d ON i.period_id = d.period_id) LEFT JOIN sessionrange q ON i.sessionrange_id = q.sessionrange_id)) As s INNER JOIN (SELECT Format(DateValue(CHECKTIME)) As tanggal, Format(TimeValue(CHECKTIME)) As tapping, u.userid, u.Badgenumber, CHECKTIME FROM CHECKINOUT c LEFT JOIN USERINFO u ON c.userid = u.userid WHERE (Format(DateValue(c.CHECKTIME), 'yyyy-mm-dd')  BETWEEN '2017-09-30' AND '2017-09-30') AND (u.Badgenumber LIKE '1710%')) t ON ((t.tanggal BETWEEN s.date_from AND s.date_to) AND (t.tapping BETWEEN s.session_from AND s.session_to)) GROUP BY userid, tanggal, session, u.Badgenumber ORDER BY userid, tanggal, Format(TimeValue(Min(t.CHECKTIME)))";
 
 		$result = odbc_exec($koneksi_mdb, $sql);		
 
@@ -271,12 +273,22 @@
 
 			//mysql_query("INSERT INTO shalat (id_mahasiswa, tanggal, wkt_tapping, wkt_shalat) VALUES ('$angkatan', '$to', '$from');");
 		}
-
-		
 	}
 
 	function importShalatTest($angkatan, $from, $to){
 		mysql_query("INSERT INTO tesshalat (angkatan, dari_tgl, sampai_tgl) VALUES ('$angkatan', '$from', '$to');");
+	}
+
+	function AllMahasiswaMDB(){
+		$koneksi_mdb = odbc_connect( 'attBackup', "", "");
+		
+		$sql = "SELECT userid, Badgenumber, Name FROM USERINFO WHERE Badgenumber LIKE '17%' ORDER BY Badgenumber";
+
+		$result = odbc_exec($koneksi_mdb, $sql);		
+
+		while ($ad = odbc_fetch_array($result)) // Perulangan while ini JANGAN pake {}
+				$data[] = $ad;
+				return $data;
 	}
 
  ?>
