@@ -325,7 +325,15 @@ $(document).ready(function() {
 <!-- page script -->
 <script>
   $(document).ready(function() {
-    $('#tablePembina').DataTable()
+    $('#tablePembina').DataTable({
+      "columnDefs": [
+        { 
+          "width": "5%", 
+          "targets": 0,
+          "orderable": false
+        }
+      ]      
+    })
   });
 </script>
 
