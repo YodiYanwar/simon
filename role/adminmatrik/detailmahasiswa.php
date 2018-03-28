@@ -56,7 +56,7 @@
                   <b>Nomor Induk Mahasiswa</b> <div class="pull-right"><?php echo $row['nim']; ?>&nbsp;&nbsp;&nbsp;<span class="btn btn-secondary" href=""><i class="fa fa-id-badge fa-lg"></i></span></div>
                 </li> 
                 <li class="list-group-item">
-                  <b>Username</b> <div class="pull-right"><code><?php echo $row['username']; ?></code>&nbsp;&nbsp;&nbsp;<span class="btn btn-secondary" href=""><i class="fa fa-user-o fa-lg"></i></span></div>
+                  <b>Username</b> <div class="pull-right"><span class='badge bg-aqua'><?php echo $row['username']; ?></span>&nbsp;&nbsp;&nbsp;<span class="btn btn-secondary" href=""><i class="fa fa-user-o fa-lg"></i></span></div>
                 </li>
                 <li class="list-group-item">
                   <b>Pembina</b> <div class="pull-right"> <?php if($row['nama_pembina'] == NULL){echo 'Belum Diset';} else{ echo "<a href=index.php?page=pembinadetails&id=".$row['uid_pembina'].">".$row['nama_pembina']."</a>";} ?> &nbsp;&nbsp;&nbsp;<span class="btn btn-secondary" href=""><i class="fa fa-user-o fa-lg"></i></span></div>
@@ -74,7 +74,7 @@
                   <b>Tanggal Lahir</b> <div class="pull-right"><?php if($row['tgl_lahir'] == NULL){echo 'Belum diatur';}else{echo date('d F Y', strtotime($row['tgl_lahir']));} ?>&nbsp;&nbsp;&nbsp;<span class="btn btn-secondary" href=""><i class="fa fa-calendar-o fa-lg"></i></span></div>
                 </li>  
                 <li class="list-group-item">
-                  <b>Password Default</b> <div class="pull-right"><?php if(strlen($row['password']) == 5){ echo "<span class='badge bg-aqua'>".$row['password']."</span>";} else{echo "<span class='badge bg-green'>Sudah Diubah</span>" ;} ?>&nbsp;&nbsp;&nbsp;<span class="btn btn-secondary" href=""><i class="fa fa fa-lock fa-lg"></i></span></div>
+                  <b>Password Default</b> <div class="pull-right"><?php if(strlen($row['password']) == 14){ echo "<code>".$row['password']."</code>";} else{echo "<span class='badge bg-green'>Sudah Diubah</span>" ;} ?>&nbsp;&nbsp;&nbsp;<span class="btn btn-secondary" href=""><i class="fa fa fa-lock fa-lg"></i></span></div>
                 </li>                                
               </ul>
                 <a href="index.php?page=editmahasiswa&id=<?php echo $row['id_user']; ?>" class='btn btn-primary btn-block'><i class='fa fa-pencil'></i>&nbsp;&nbsp;Edit Data Profil</a>

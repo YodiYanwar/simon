@@ -73,7 +73,7 @@
                   <b>Nomor Induk Mahasiswa</b> <div class="pull-right"><?php echo $row['nim']; ?>&nbsp;&nbsp;&nbsp;<span class="btn btn-secondary" href=""><i class="fa fa-id-badge fa-lg"></i></span></div>
                 </li> 
                 <li class="list-group-item">
-                  <b>Username</b> <div class="pull-right"><code><?php echo $_SESSION['username']; ?></code>&nbsp;&nbsp;&nbsp;<span class="btn btn-secondary" href=""><i class="fa fa-user-o fa-lg"></i></span></div>
+                  <b>Username</b> <div class="pull-right"><span class='badge bg-aqua'><?php echo $_SESSION['username']; ?></span>&nbsp;&nbsp;&nbsp;<span class="btn btn-secondary" href=""><i class="fa fa-user-o fa-lg"></i></span></div>
                 </li> 
                 <li class="list-group-item">
                   <b>Email</b> <div class="pull-right"><?php if($row['email'] == NULL){echo 'Belum diatur';}else{echo $row['email'];} ?>&nbsp;&nbsp;&nbsp;<a class="btn btn-primary btn-outline" href=""><i class="fa fa-envelope-o fa-lg"></i></a></div>
@@ -147,9 +147,9 @@
                     </div>
                     <div class="modal-body">
                         <label>Password Baru : </label>
-                        <input type="password" name="pass" class="form-control" id="pwinput2" placeholder="Masukan Password Baru" pattern=".{0}|.{6,}" title="6 Karakter Minimal" required>
+                        <input type="password" name="pass" class="form-control" id="pwinput2" placeholder="Masukan Password Baru" pattern=".{0}|.{8,}" title="8 Karakter Minimal" required>
                         <label>Konfirmasi Password : </label>
-                        <input type="password" name="passConf" class="form-control" id="pwinput3" placeholder="Masukan Ulang Password Baru" pattern=".{0}|.{6,}" title="6 Karakter Minimal" required>
+                        <input type="password" name="passConf" class="form-control" id="pwinput3" placeholder="Masukan Ulang Password Baru" pattern=".{0}|.{8,}" title="8 Karakter Minimal" required>
                         <!-- &nbsp;<input type="checkbox" id="pwcheck" />&nbsp;Tampilkan Password -->
                     </div>
                     <div class="modal-footer">

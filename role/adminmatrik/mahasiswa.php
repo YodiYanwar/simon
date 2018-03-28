@@ -42,6 +42,7 @@
                     $dataMahasiswa = tampilMahasiswa();
                     
                     $no = 1;
+                  if (is_array($dataMahasiswa) || is_object($dataMahasiswa)){
                     foreach($dataMahasiswa as $row){
 
                    ?>
@@ -66,9 +67,10 @@
                     </div>
                   </td>
                 </tr>
-                  <?php 
-                    $no++; }
-                   ?>      
+                 <?php 
+                   $no++; }
+                  }
+                ?>      
                 </tbody>          
               </table>
               <!-- /Table Daftar Pembina -->

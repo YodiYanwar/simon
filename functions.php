@@ -221,7 +221,7 @@
 	}
 
 	function resetPassword($idUser){
-		$randpass = substr(str_shuffle(str_repeat("0123456789aAbBcCdDeEfFgGhHiIjJ0123456789kKlLmMnNoOpPqQrRsStT0123456789uUvVwWxXyYzZ", 5)), 0, 5);
+		$randpass = substr(str_shuffle(str_repeat("0123456789aAbBcCdDeEfFgGhHiIjJ0123456789kKlLmMnNoOpPqQrRsStT0123456789uUvVwWxXyYzZ", 14)), 0, 14);
 		mysql_query("UPDATE users SET `password` = '$randpass' WHERE id_user = '$idUser'");
 	}
 
@@ -235,10 +235,11 @@
 
 			/*$namaTanpaSpasi = str_replace(' ', '', $row_mdb['Name']);
 			$pass = $namaTanpaSpasi.(substr($row_mdb['Badgenumber'], -5));*/
-			$randpass = substr(str_shuffle(str_repeat("0123456789aAbBcCdDeEfFgGhHiIjJ0123456789kKlLmMnNoOpPqQrRsStT0123456789uUvVwWxXyYzZ", 5)), 0, 5);
+			$randpass = substr(str_shuffle(str_repeat("0123456789aAbBcCdDeEfFgGhHiIjJ0123456789kKlLmMnNoOpPqQrRsStT0123456789uUvVwWxXyYzZ", 14)), 0, 14);
+			$_randpass = mysql_real_escape_string($randpass);
 
 			//if(strpos($row_mdb['Name'], $row_mdb['Badgenumber']) === FALSE){
-				$mysql_insert_usr = "INSERT INTO users(username, password, level) VALUES ('".$row_mdb['Badgenumber']."', '".$randpass."', '4')";
+				$mysql_insert_usr = "INSERT INTO users(username, password, level) VALUES ('".$row_mdb['Badgenumber']."', '$_randpass', '4')";
 				mysql_query($mysql_insert_usr);
 
 				$sql = mysql_query("SELECT id_user FROM users WHERE username='".$row_mdb['Badgenumber']."'") or die(mysql_error());
