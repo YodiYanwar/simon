@@ -36,15 +36,15 @@
                 </thead>
                 <tbody>
                   <?php 
-                    $all = AllMahasiswaMDB();
-                    foreach($all as $row){
+                    /*$all = AllMahasiswaMDB();
+                    foreach($all as $row){*/
                    ?>
                 <tr>
-                  	<td><?php echo $row['userid'];; ?></td>
- 					<td><?php echo $row['Badgenumber']; ?></td>
- 					<td><?php echo $row['Name']; ?></td>
+                  	<td><?php //echo $row['userid'];; ?></td>
+ 					<td><?php //echo $row['Badgenumber']; ?></td>
+ 					<td><?php //echo $row['Name']; ?></td>
                 </tr>
-                <?php } ?>
+                <?php //} ?>
                 </tbody>          
               </table>
               <!-- /Table Daftar Pembina -->
@@ -58,19 +58,14 @@
 
       <!-- Modal Import Mahasiswa -->
       <div class="modal fade" id="importMhsModal" role="dialog">
-            <div class="modal-dialog modal-md" role="document">
+            <div class="modal-dialog" role="document">
             <form method="POST">
                 <div class="modal-content">
                     <div class="modal-header">
                         <h4 class="modal-title"><i class="fa fa-chevron-circle-down" aria-hidden="true"></i>&nbsp; <b>Import Data Presensi Shalat</b></h4>
                     </div>
                     <div class="modal-body">
-                      <div class="row">
-                        <!-- <div class="col-md-5">
-                          <label>Pilih File Database Ms.Access</label>
-                          <input type="file" accept=".mdb" name="dbMahasiswa"/>                          
-                        </div> -->
-                        <div class="col-lg-12">
+                        <div class="form-group">
                           <label>Pilih Tahun Angkatan</label>
                           <select class="form-control" name="angkatan" value="17">
                             <option>Angkatan</option>
@@ -79,23 +74,73 @@
                             <option selected='selected'>17</option>
                           </select>
                         </div>
-                      </div>
-                    </div>
                     <!-- Date range -->
                     <div class="form-group">
-                      <div class="col-lg-12">
                       <label>Periode :</label>
-
                       <div class="input-group">
                         <div class="input-group-addon">
                           <i class="fa fa-calendar"></i>
                         </div>
-                        <input type="text" class="form-control pull-right" id="reportrange" name="daterangeShalat"><br><br>
+                        <input type="text" class="form-control pull-right" id="reportrange" name="daterangeShalat">
                       </div>
                       <!-- /.input group -->
+                    </div>
+                    <!-- /.form group -->    
+                    <!-- time Picker -->
+                    
+                    <div class="bootstrap-timepicker">
+                      <div class="row">
+                        <div class="col-md-3 nopadding" style="background-color:lavender;">
+                          <div class="form-group">
+                            <label>Shubuh :</label>
+                            
+                              <input type="text" class="form-control timepicker_shubuh_from">
+                              <input type="text" class="form-control timepicker_shubuh_to">
+                            <!-- /.form group -->
+                          </div>
+                        </div>
+                        <div class="col-lg-3 nopadding" style="background-color:lightcyan;">
+                          <div class="form-group">
+                            <label>Dzuhur :</label>
+                            
+                              <input type="text" class="form-control timepicker_dzuhur_from">
+                              <input type="text" class="form-control timepicker_dzuhur_to">
+                          <!-- /.form group -->
+                          </div>
+                        </div>
+                        <div class="col-lg-3 nopadding" style="background-color:lightgray;">
+                          <div class="form-group">
+                            <label>Ashar :</label>
+                            <div class="input-group">
+                              <input type="text" class="form-control timepicker_ashar_from">
+                              <input type="text" class="form-control timepicker_ashar_to">
+                            </div>
+                          <!-- /.form group -->
+                          </div>
+                        </div>
+                        <div class="col-lg-3 nopadding" style="background-color:lavenderblush;">
+                          <div class="form-group">
+                            <label>Maghrib :</label>
+                            <div class="input-group">
+                              <input type="text" class="form-control timepicker_maghrib_from">
+                              <input type="text" class="form-control timepicker_maghrib_to">
+                            </div>
+                          <!-- /.form group -->
+                          </div>
+                        </div>
+                        <div class="col-lg-3 nopadding">
+                          <div class="form-group">
+                            <label>Isya :</label>
+                            <div class="input-group">
+                              <input type="text" class="form-control timepicker_isya_from">
+                              <input type="text" class="form-control timepicker_isya_to">
+                            </div>
+                          <!-- /.form group -->
+                          </div>
+                        </div>
                       </div>
                     </div>
-                    <!-- /.form group -->                    
+                    </div>
                     <div class="modal-footer">
                       <button type="button" class="btn btn-secondary" data-dismiss="modal"><i class="fa fa-undo" aria-hidden="true"></i>&nbsp;Batal</button>
                       <button type="submit" class="btn btn-primary" name="importPresensiShalat"><i class="fa fa-check" aria-hidden="true"></i>&nbsp;Submit</button>

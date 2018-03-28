@@ -32,6 +32,8 @@
   <link rel="stylesheet" href="assets/css/jquery-jvectormap.css">
   <!-- Date Picker -->
   <link rel="stylesheet" href="assets/css/bootstrap-datepicker.min.css">
+  <!-- Bootstrap time Picker -->
+  <link rel="stylesheet" href="assets/css/bootstrap-timepicker.min.css">  
   <!-- Daterange picker -->
   <link rel="stylesheet" href="assets/css/daterangepicker.css">
   <!-- bootstrap wysihtml5 - text editor -->
@@ -173,6 +175,8 @@
   <script src="assets/js/daterangepicker.js"></script>
   <!-- datepicker -->
   <script src="assets/js/bootstrap-datepicker.min.js"></script>
+  <!-- bootstrap time picker -->
+  <script src="assets/js/bootstrap-timepicker.min.js"></script>  
   <!-- Bootstrap WYSIHTML5 -->
   <script src="assets/js/bootstrap3-wysihtml5.all.min.js"></script>
   <!-- Slimscroll -->
@@ -218,8 +222,32 @@
           todayHighlight: true
         });
       });
+
+  $('#datetimepicker1').datetimepicker({
+      format: 'HH:mm:ss',
+      defaultDate: moment('11:12:02', 'HH:mm:ss'),
+      minDate: moment('11:12:02', 'HH:mm:ss'),
+      maxDate: moment('11:30:20', 'HH:mm:ss'),
+      keepInvalid: true
+  });      
 </script> 
 
+<script type="text/javascript">
+    //Timepicker
+    $('.timepicker_shubuh_from').timepicker({
+      showInputs: false
+    })
+    $('.timepicker_shubuh_to').timepicker({
+      showInputs: false
+    })
+
+    $('.timepicker_dzuhur_from').timepicker({
+      showInputs: false
+    })
+    $('.timepicker_dzuhur_to').timepicker({
+      showInputs: false
+    })          
+</script>
 
 <!-- Daterange picker import data presensi shalat mahasiswa -->
 <script type="text/javascript">

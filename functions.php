@@ -276,11 +276,11 @@
 		}
 	}
 
-	function importShalatTest($angkatan, $from, $to){
+	/*function importShalatTest($angkatan, $from, $to){
 		mysql_query("INSERT INTO tesshalat (angkatan, dari_tgl, sampai_tgl) VALUES ('$angkatan', '$from', '$to');");
-	}
+	}*/
 
-	function AllMahasiswaMDB(){
+	/*function AllMahasiswaMDB(){
 		$koneksi_mdb = odbc_connect( 'attBackup', "", "");
 		
 		$sql = "SELECT userid, Badgenumber, Name FROM USERINFO WHERE Badgenumber LIKE '17%' ORDER BY Badgenumber";
@@ -290,6 +290,6 @@
 		while ($ad = odbc_fetch_array($result)) // Perulangan while ini JANGAN pake {}
 				$data[] = $ad;
 				return $data;
-	}
+	}*/
 
  ?>
