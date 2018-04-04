@@ -112,7 +112,7 @@
                     <a href="index.php?page=profil" class="btn btn-primary btn-flat"><i class="fa fa-user-circle-o"></i>&nbsp;&nbsp;Profile</a>
                   </div>
                   <div class="pull-right">
-                    <a href="logout.php" class="btn btn-danger btn-flat"><i class="fa fa-power-off"></i>&nbsp;&nbsp;Logout</a>
+                    <a href="#ModalLogout" class="btn btn-danger btn-flat" data-toggle='modal'><i class="fa fa-power-off"></i>&nbsp;&nbsp;Logout</a>
                   </div>
                 </li>
               </ul>
@@ -144,6 +144,22 @@
     ?> 
 
   </div>  
+
+        <!-- Modal Logout -->
+        <div class="modal fade" id="ModalLogout" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-sm">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4><b><i class="fa fa-power-off fa-lg"></i>&nbsp;&nbsp;Anda yakin akan keluar ?</b></h4>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal"><i class="fa fa-undo"></i>&nbsp;Batal</button>
+                        <a href="logout.php" class="btn btn-danger" name="resetPass"><i class="fa fa-power-off"></i>&nbsp;Logout</a>  
+                    </div>
+                </div>
+            </div>
+        </div>        
+        <!-- /Modal Logout -->   
  
 
   <!-- jQuery 3 -->

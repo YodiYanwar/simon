@@ -108,7 +108,7 @@
             </div>
         </div>
 
-        <!-- Modal Hapus Pembina -->
+        <!-- Modal Hapus Mahasiswa -->
         <div class="modal fade" id="ModalHapusPembina" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-sm">
                 <div class="modal-content">
@@ -122,9 +122,9 @@
                 </div>
             </div>
         </div>        
-        <!-- /Modal Hapus Pembina -->         
+        <!-- /Modal Hapus Mahasiswa -->         
 
-        <!-- Modal Hapus Pembina -->
+        <!-- Modal Hapus Mahasiswa -->
         <div class="modal fade" id="ModalResetPassword" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-sm">
               <form method="POST">
@@ -140,7 +140,7 @@
               </form>
             </div>
         </div>        
-        <!-- /Modal Hapus Pembina --> 
+        <!-- /Modal Hapus Mahasiswa --> 
 
         <!-- Modal Upload Avatar -->
         <div class="modal fade" id="ModalUploadAva" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
