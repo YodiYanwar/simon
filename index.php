@@ -356,7 +356,7 @@ var pwinput2 = document.getElementById("pwinput2")
 
 function validatePassword(){
   if(pwinput2.value != pwinput3.value) {
-    pwinput3.setCustomValidity("Passwords Tidak Sama !");
+    pwinput3.setCustomValidity("Password Tidak Sama !");
   } else {
     pwinput3.setCustomValidity('');
   }

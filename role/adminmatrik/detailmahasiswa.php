@@ -74,11 +74,11 @@
                   <b>Tanggal Lahir</b> <div class="pull-right"><?php if($row['tgl_lahir'] == NULL){echo 'Belum diatur';}else{echo date('d F Y', strtotime($row['tgl_lahir']));} ?>&nbsp;&nbsp;&nbsp;<span class="btn btn-secondary" href=""><i class="fa fa-calendar-o fa-lg"></i></span></div>
                 </li>  
                 <li class="list-group-item">
-                  <b>Password Default</b> <div class="pull-right"><?php if(strlen($row['password']) == 14){ echo "<code>".$row['password']."</code>";} else{echo "<span class='badge bg-green'>Sudah Diubah</span>" ;} ?>&nbsp;&nbsp;&nbsp;<span class="btn btn-secondary" href=""><i class="fa fa fa-lock fa-lg"></i></span></div>
+                  <b>Password Default</b> <div class="pull-right"><?php if(strlen($row['password']) == 10){ echo "<code>".$row['password']."</code>";} else{echo "<span class='badge bg-green'>Sudah Diubah</span>" ;} ?>&nbsp;&nbsp;&nbsp;<span class="btn btn-secondary" href=""><i class="fa fa fa-lock fa-lg"></i></span></div>
                 </li>                                
               </ul>
                 <a href="index.php?page=editmahasiswa&id=<?php echo $row['id_user']; ?>" class='btn btn-primary btn-block'><i class='fa fa-pencil'></i>&nbsp;&nbsp;Edit Data Profil</a>
-                <?php if(strlen($row['password']) > 5){ echo "<a href='#ModalResetPassword' class='btn btn-warning btn-block' data-toggle='modal'><i class='fa fa-unlock-alt'></i>&nbsp;&nbsp;Reset Password</a>";} ?>
+                <?php if($row['password_default'] == 0){ echo "<a href='#ModalResetPassword' class='btn btn-warning btn-block' data-toggle='modal'><i class='fa fa-unlock-alt'></i>&nbsp;&nbsp;Reset Password</a>";} ?>
 
               <?php echo "<a href='#ModalHapusPembina' class='btn btn-danger btn-outline btn-block' data-toggle='modal' data-href='action/hapus.php?idmahasiswa=".$row['id_mahasiswa']."&iduser=".$row['id_user']."'><i class='fa fa-trash'></i>&nbsp;&nbsp;Hapus Mahasiswa</a>"; ?>
               
