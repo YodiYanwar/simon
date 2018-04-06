@@ -90,51 +90,39 @@
                     
                     <div class="bootstrap-timepicker">
                       <div class="row">
-                        <div class="col-md-3 nopadding" style="background-color:lavender;">
+                        <div class="col-md-3 nopadding">
                           <div class="form-group">
                             <label>Shubuh :</label>
-                              <input type="text" id="shubuh_dari" class="form-control floating-label" placeholder="Dari">
-                              <input type="text" id="shubuh_sampai" class="form-control floating-label" placeholder="Sampai">
-                            <!-- /.form group -->
+                              <input type="text" id="shubuh_dari" class="form-control" placeholder="Dari">
+                              <input type="text" id="shubuh_sampai" class="form-control" placeholder="Sampai">
                           </div>
                         </div>
-                        <div class="col-lg-3 nopadding" style="background-color:lightcyan;">
+                        <div class="col-lg-3 nopadding">
                           <div class="form-group">
                             <label>Dzuhur :</label>
-                            
-                              <input type="text" class="form-control timepicker_dzuhur_from">
-                              <input type="text" class="form-control timepicker_dzuhur_to">
-                          <!-- /.form group -->
+                              <input type="text" id="dzuhur_dari" class="form-control" placeholder="Dari">
+                              <input type="text" id="dzuhur_sampai" class="form-control" placeholder="Sampai">
                           </div>
                         </div>
-                        <div class="col-lg-3 nopadding" style="background-color:lightgray;">
+                        <div class="col-lg-3 nopadding">
                           <div class="form-group">
                             <label>Ashar :</label>
-                            <div class="input-group">
-                              <input type="text" class="form-control timepicker_ashar_from">
-                              <input type="text" class="form-control timepicker_ashar_to">
-                            </div>
-                          <!-- /.form group -->
+                              <input type="text" id="ashar_dari" class="form-control" placeholder="Dari">
+                              <input type="text" id="ashar_sampai" class="form-control" placeholder="Sampai">
                           </div>
                         </div>
-                        <div class="col-lg-3 nopadding" style="background-color:lavenderblush;">
+                        <div class="col-lg-3 nopadding">
                           <div class="form-group">
                             <label>Maghrib :</label>
-                            <div class="input-group">
-                              <input type="text" class="form-control timepicker_maghrib_from">
-                              <input type="text" class="form-control timepicker_maghrib_to">
-                            </div>
-                          <!-- /.form group -->
+                              <input type="text" id="maghrib_dari" class="form-control" placeholder="Dari">
+                              <input type="text" id="maghrib_sampai" class="form-control" placeholder="Sampai">
                           </div>
                         </div>
                         <div class="col-lg-3 nopadding">
                           <div class="form-group">
                             <label>Isya :</label>
-                            <div class="input-group">
-                              <input type="text" class="form-control timepicker_isya_from">
-                              <input type="text" class="form-control timepicker_isya_to">
-                            </div>
-                          <!-- </.form group> -->
+                              <input type="text" id="isya_dari" class="form-control" placeholder="Dari">
+                              <input type="text" id="isya_sampai" class="form-control" placeholder="Sampai">
                           </div>
                         </div>
                       </div>

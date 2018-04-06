@@ -236,7 +236,7 @@
   </script>  
 
 <script type="text/javascript">
-      $(document).ready(function() {
+      /*$(document).ready(function() {
         //Date picker
         $('#datepicker').datepicker({
           format: "yyyy-mm-dd",
@@ -251,7 +251,7 @@
       minDate: moment('11:12:02', 'HH:mm:ss'),
       maxDate: moment('11:30:20', 'HH:mm:ss'),
       keepInvalid: true
-  });      
+  }); */     
 
 </script> 
 
@@ -356,6 +356,74 @@ $(document).ready(function()
       });
 
       $('#shubuh_sampai').bootstrapMaterialDatePicker
+      ({
+        date: false,
+        shortTime: false,
+        format: 'HH:mm',
+        clearButton: true
+      });
+
+
+      $('#dzuhur_dari').bootstrapMaterialDatePicker
+      ({
+        date: false,
+        shortTime: false,
+        format: 'HH:mm',
+        clearButton: true
+      });
+
+      $('#dzuhur_sampai').bootstrapMaterialDatePicker
+      ({
+        date: false,
+        shortTime: false,
+        format: 'HH:mm',
+        clearButton: true
+      });
+
+
+      $('#ashar_dari').bootstrapMaterialDatePicker
+      ({
+        date: false,
+        shortTime: false,
+        format: 'HH:mm',
+        clearButton: true
+      });
+
+      $('#ashar_sampai').bootstrapMaterialDatePicker
+      ({
+        date: false,
+        shortTime: false,
+        format: 'HH:mm',
+        clearButton: true
+      });
+
+
+      $('#maghrib_dari').bootstrapMaterialDatePicker
+      ({
+        date: false,
+        shortTime: false,
+        format: 'HH:mm',
+        clearButton: true
+      });
+
+      $('#maghrib_sampai').bootstrapMaterialDatePicker
+      ({
+        date: false,
+        shortTime: false,
+        format: 'HH:mm',
+        clearButton: true
+      });
+
+
+      $('#isya_dari').bootstrapMaterialDatePicker
+      ({
+        date: false,
+        shortTime: false,
+        format: 'HH:mm',
+        clearButton: true
+      });
+
+      $('#isya_sampai').bootstrapMaterialDatePicker
       ({
         date: false,
         shortTime: false,
