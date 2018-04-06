@@ -93,36 +93,36 @@
                         <div class="col-md-3 nopadding">
                           <div class="form-group">
                             <label>Shubuh :</label>
-                              <input type="text" id="shubuh_dari" class="form-control" placeholder="Dari">
-                              <input type="text" id="shubuh_sampai" class="form-control" placeholder="Sampai">
+                              <input type="text" id="shubuh_dari" class="form-control" placeholder="Dari" required>
+                              <input type="text" id="shubuh_sampai" class="form-control" placeholder="Sampai" required>
                           </div>
                         </div>
                         <div class="col-lg-3 nopadding">
                           <div class="form-group">
                             <label>Dzuhur :</label>
-                              <input type="text" id="dzuhur_dari" class="form-control" placeholder="Dari">
-                              <input type="text" id="dzuhur_sampai" class="form-control" placeholder="Sampai">
+                              <input type="text" id="dzuhur_dari" class="form-control" placeholder="Dari" required>
+                              <input type="text" id="dzuhur_sampai" class="form-control" placeholder="Sampai" required>
                           </div>
                         </div>
                         <div class="col-lg-3 nopadding">
                           <div class="form-group">
                             <label>Ashar :</label>
-                              <input type="text" id="ashar_dari" class="form-control" placeholder="Dari">
-                              <input type="text" id="ashar_sampai" class="form-control" placeholder="Sampai">
+                              <input type="text" id="ashar_dari" class="form-control" placeholder="Dari" required>
+                              <input type="text" id="ashar_sampai" class="form-control" placeholder="Sampai" required>
                           </div>
                         </div>
                         <div class="col-lg-3 nopadding">
                           <div class="form-group">
                             <label>Maghrib :</label>
-                              <input type="text" id="maghrib_dari" class="form-control" placeholder="Dari">
-                              <input type="text" id="maghrib_sampai" class="form-control" placeholder="Sampai">
+                              <input type="text" id="maghrib_dari" class="form-control" placeholder="Dari" required>
+                              <input type="text" id="maghrib_sampai" class="form-control" placeholder="Sampai" required>
                           </div>
                         </div>
                         <div class="col-lg-3 nopadding">
                           <div class="form-group">
                             <label>Isya :</label>
-                              <input type="text" id="isya_dari" class="form-control" placeholder="Dari">
-                              <input type="text" id="isya_sampai" class="form-control" placeholder="Sampai">
+                              <input type="text" id="isya_dari" class="form-control" placeholder="Dari" required>
+                              <input type="text" id="isya_sampai" class="form-control" placeholder="Sampai" required>
                           </div>
                         </div>
                       </div>
