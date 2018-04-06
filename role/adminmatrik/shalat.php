@@ -93,9 +93,8 @@
                         <div class="col-md-3 nopadding" style="background-color:lavender;">
                           <div class="form-group">
                             <label>Shubuh :</label>
-                            
-                              <input type="text" class="form-control timepicker_shubuh_from">
-                              <input type="text" class="form-control timepicker_shubuh_to">
+                              <input type="text" id="shubuh_dari" class="form-control floating-label" placeholder="Dari">
+                              <input type="text" id="shubuh_sampai" class="form-control floating-label" placeholder="Sampai">
                             <!-- /.form group -->
                           </div>
                         </div>
@@ -135,7 +134,7 @@
                               <input type="text" class="form-control timepicker_isya_from">
                               <input type="text" class="form-control timepicker_isya_to">
                             </div>
-                          <!-- /.form group -->
+                          <!-- </.form group> -->
                           </div>
                         </div>
                       </div>

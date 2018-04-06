@@ -19,6 +19,9 @@
   <link rel="stylesheet" href="assets/css/bootstrap.min.css">
   <!-- Font Awesome -->
   <link rel="stylesheet" href="assets/css/font-awesome.min.css">
+  <!--Material Datetime -->
+  <!-- <link rel="stylesheet" href="assets/css/bootstrap-material-design.min.css"/> -->
+  <link rel="stylesheet" href="assets/css/bootstrap-material-datetimepicker.css" />
   <!-- Ionicons -->
   <link rel="stylesheet" href="assets/css/ionicons.min.css">
   <!-- DataTables -->
@@ -139,12 +142,9 @@
       if($_SESSION['role'] =='mahasiswa'){
         include 'role/mahasiswa/sidebar.php';
       }
-
-
     ?> 
 
   </div>  
-
         <!-- Modal Logout -->
         <div class="modal fade" id="ModalLogout" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-sm">
@@ -161,7 +161,6 @@
         </div>        
         <!-- /Modal Logout -->   
  
-
   <!-- jQuery 3 -->
   <script src="assets/js/jquery.min.js"></script>
   <!-- jQuery UI 1.11.4 -->
@@ -174,9 +173,12 @@
     <script src="assets/js/popper.min.js"></script>  
   <!-- Bootstrap 3.3.7 -->
   <script src="assets/js/bootstrap.min.js"></script> 
+
+  <script src="assets/js/moment-with-locales.min.js"></script>
   <!-- DataTables -->
   <script src="assets/js/jquery.dataTables.min.js"></script>
   <script src="assets/js/dataTables.bootstrap.min.js"></script>  
+  <script src="assets/js/bootstrap-material-datetimepicker.js"></script>
 <!-- Morris.js charts -->
 <!-- <script src="assets/js/raphael.min.js"></script>
 <script src="assets/js/morris.min.js"></script> -->
@@ -261,23 +263,6 @@
     })  
 </script>
 
-<script type="text/javascript">
-    //Timepicker
-    $('.timepicker_shubuh_from').timepicker({
-      showInputs: false
-    })
-    $('.timepicker_shubuh_to').timepicker({
-      showInputs: false
-    })
-
-    $('.timepicker_dzuhur_from').timepicker({
-      showInputs: false
-    })
-    $('.timepicker_dzuhur_to').timepicker({
-      showInputs: false
-    })          
-</script>
-
 <!-- Daterange picker import data presensi shalat mahasiswa -->
 <script type="text/javascript">
 var startDate;
@@ -357,6 +342,29 @@ $(document).ready(function() {
   $(document).ready(function() {
     $('#tableUsers').DataTable()
   });
+</script>
+
+<script type="text/javascript">
+$(document).ready(function()
+    {
+      $('#shubuh_dari').bootstrapMaterialDatePicker
+      ({
+        date: false,
+        shortTime: false,
+        format: 'HH:mm',
+        clearButton: true
+      });
+
+      $('#shubuh_sampai').bootstrapMaterialDatePicker
+      ({
+        date: false,
+        shortTime: false,
+        format: 'HH:mm',
+        clearButton: true
+      });
+
+      $.material.init()
+    });
 </script>
 
 <script>
