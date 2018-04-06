@@ -12,7 +12,7 @@
         ><a href="/simon"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a></li>
         <li class="treeview <?php 
               if (isset($_GET['page'])) {
-                    if ($_GET['page'] == 'shalat') {
+                    if ($_GET['page'] == 'shalat' || $_GET['page'] == 'tahsin' || $_GET['page'] == 'talim') {
                       echo ' active';
                     } else{
                       echo '';
@@ -35,7 +35,23 @@
 	                    }
 	                  }
 	                ?>
-	            ><a href="?page=shalat"><i class="fa fa-users"></i>&nbsp;Shalat Wajib</a></li>
+	            ><a href="?page=shalat"><i class="fa fa-bell"></i>&nbsp;Shalat Wajib</a></li>
+	            <li <?php 
+	                  if (isset($_GET['page'])) {
+	                    if ($_GET['page'] == 'tahsin') {
+	                      echo "class='active'";
+	                    }
+	                  }
+	                ?>
+	            ><a href="?page=tahsin"><i class="fa fa-leanpub"></i>&nbsp;Tahsin/Tahfidz</a></li>
+	            <li <?php 
+	                  if (isset($_GET['page'])) {
+	                    if ($_GET['page'] == 'talim') {
+	                      echo "class='active'";
+	                    }
+	                  }
+	                ?>
+	            ><a href="?page=talim"><i class="fa fa-puzzle-piece"></i>&nbsp;Ta'lim</a></li>
 	          </ul>
           </li>
         <li class="treeview <?php 
