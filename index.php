@@ -271,7 +271,7 @@ var endDate;
 $(document).ready(function() {
     $('#reportrange').daterangepicker(
        {
-          startDate: moment().subtract('days', 29),
+          startDate: moment().subtract('days', 6),
           endDate: moment(),
           //minDate: '01/01/2012',
           //maxDate: '12/31/2014',
