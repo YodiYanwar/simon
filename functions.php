@@ -226,7 +226,7 @@
 	}
 
 	function importMahasiswa($angkatan){
-		$koneksi_mdb = odbc_connect( 'attBackup', "", "");
+		$koneksi_mdb = odbc_connect( 'att2000', "", "");
 		
 		$sql = "SELECT USERID,Badgenumber,Name FROM USERINFO WHERE Badgenumber LIKE '$angkatan%' AND Name NOT LIKE '$angkatan%'";
 		$result = odbc_exec($koneksi_mdb, $sql);
@@ -256,7 +256,7 @@
 	}
 
 	function importShalat($angkatan, $from, $to){
-		$koneksi_mdb = odbc_connect( 'attBackup', "", "");
+		$koneksi_mdb = odbc_connect( 'att2000', "", "");
 		
 		$sql = "SELECT userid AS id_mahasiswa, Format(tanggal, 'yyyy-mm-dd') AS tgl, Format(TimeValue(Min(t.CHECKTIME))) As wkt_tapping, session AS wkt_shalat FROM (SELECT session_from, session_to, date_from, date_to, session FROM ((timesetup i LEFT JOIN dateperiod d ON i.period_id = d.period_id) LEFT JOIN sessionrange q ON i.sessionrange_id = q.sessionrange_id)) As s INNER JOIN (SELECT Format(DateValue(CHECKTIME)) As tanggal, Format(TimeValue(CHECKTIME)) As tapping, u.userid, u.Badgenumber, CHECKTIME FROM CHECKINOUT c LEFT JOIN USERINFO u ON c.userid = u.userid WHERE (Format(DateValue(c.CHECKTIME), 'yyyy-mm-dd')  BETWEEN '$from' AND '$to') AND (u.Badgenumber LIKE '$angkatan%')) t ON ((t.tanggal BETWEEN s.date_from AND s.date_to) AND (t.tapping BETWEEN s.session_from AND s.session_to)) GROUP BY userid, tanggal, session, u.Badgenumber ORDER BY userid, tanggal, Format(TimeValue(Min(t.CHECKTIME)))";
 
