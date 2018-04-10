@@ -93,36 +93,36 @@
                         <div class="col-md-3 nopadding">
                           <div class="form-group">
                             <label>Shubuh :</label>
-                              <input type="text" name="shubuh" id="shubuh_dari" class="form-control" placeholder="Dari" value="04:00">
-                              <input type="text" name="shubuh" id="shubuh_sampai" class="form-control" placeholder="Sampai" value="06:00">
+                              <input type="text" name="shubuhFrom" id="shubuh_dari" class="form-control" placeholder="Dari" value="04:00">
+                              <input type="text" name="shubuhTo" id="shubuh_sampai" class="form-control" placeholder="Sampai" value="06:00">
                           </div>
                         </div>
                         <div class="col-lg-3 nopadding">
                           <div class="form-group">
                             <label>Dzuhur :</label>
-                              <input type="text" name="dzuhur_dari" id="dzuhur_dari" class="form-control" placeholder="Dari" value="12:00">
-                              <input type="text" name="dzuhur_sampai" id="dzuhur_sampai" class="form-control" placeholder="Sampai" value="13:00">
+                              <input type="text" name="dzuhurFrom" id="dzuhur_dari" class="form-control" placeholder="Dari" value="12:00">
+                              <input type="text" name="dzuhurTo" id="dzuhur_sampai" class="form-control" placeholder="Sampai" value="13:00">
                           </div>
                         </div>
                         <div class="col-lg-3 nopadding">
                           <div class="form-group">
                             <label>Ashar :</label>
-                              <input type="text" name="ashar_dari" id="ashar_dari" class="form-control" placeholder="Dari" value="15:00">
-                              <input type="text" name="ashar_sampai" id="ashar_sampai" class="form-control" placeholder="Sampai" value="16:00">
+                              <input type="text" name="asharFrom" id="ashar_dari" class="form-control" placeholder="Dari" value="15:00">
+                              <input type="text" name="asharTo" id="ashar_sampai" class="form-control" placeholder="Sampai" value="16:00">
                           </div>
                         </div>
                         <div class="col-lg-3 nopadding">
                           <div class="form-group">
                             <label>Maghrib :</label>
-                              <input type="text" name="maghrib_dari" id="maghrib_dari" class="form-control" placeholder="Dari" value="18:00">
-                              <input type="text" name="maghrib_sampai" id="maghrib_sampai" class="form-control" placeholder="Sampai" value="18:35">
+                              <input type="text" name="maghribFrom" id="maghrib_dari" class="form-control" placeholder="Dari" value="18:00">
+                              <input type="text" name="maghribTo" id="maghrib_sampai" class="form-control" placeholder="Sampai" value="18:35">
                           </div>
                         </div>
                         <div class="col-lg-3 nopadding">
                           <div class="form-group">
                             <label>Isya :</label>
-                              <input type="text" name="isya_dari" id="isya_dari" class="form-control" placeholder="Dari" value="19:00">
-                              <input type="text" name="isya_sampai" id="isya_sampai" class="form-control" placeholder="Sampai" value="20:00">
+                              <input type="text" name="isyaFrom" id="isya_dari" class="form-control" placeholder="Dari" value="19:00">
+                              <input type="text" name="isyaTo" id="isya_sampai" class="form-control" placeholder="Sampai" value="20:00">
                           </div>
                         </div>
                       </div>
@@ -161,13 +161,30 @@
         $from = $tgl[0];
         $to = $tgl[1];
 
+        /*
         $datefrom = date('Y-m-d', strtotime($from));
         $dateto = date('Y-m-d',strtotime($to));
 
-        //importPresensiShalat($_POST['angkatan'], date('Y-m-d',$from), date('Y-m-d',$to));
-        importShalat($_POST['angkatan'], $datefrom, $dateto);
-        //importShalatTest($_POST['angkatan'], $datefrom, $dateto);
-        echo "<script>document.location='/simon/index.php?page=shalat'</script>";
+        importShalat($_POST['angkatan'], $datefrom, $dateto);*/
+
+        $shubuhFrom = $_POST['shubuhFrom'];
+        $shubuhTo = $_POST['shubuhTo'];
+
+        $dzuhurFrom = $_POST['dzuhurFrom'];
+        $dzuhurTo = $_POST['dzuhurTo'];
+
+        $asharFrom = $_POST['asharFrom'];
+        $asharTo = $_POST['asharTo'];
+
+        $maghribFrom = $_POST['maghribFrom'];
+        $maghribTo = $_POST['maghribTo'];
+
+        $isyaFrom = $_POST['isyaFrom'];
+        $isyaTo = $_POST['isyaTo'];
+
+        updateTimeSetup($from, $to, $shubuhFrom, $shubuhTo, $dzuhurFrom, $dzuhurTo, $asharFrom, $asharTo, $maghribFrom, $maghribTo, $isyaFrom, $isyaTo);
+
+        //echo "<script>document.location='/simon/index.php?page=shalat'</script>";
       }
     ?>
 
