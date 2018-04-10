@@ -161,11 +161,8 @@
         $from = $tgl[0];
         $to = $tgl[1];
 
-        /*
         $datefrom = date('Y-m-d', strtotime($from));
         $dateto = date('Y-m-d',strtotime($to));
-
-        importShalat($_POST['angkatan'], $datefrom, $dateto);*/
 
         $shubuhFrom = $_POST['shubuhFrom'];
         $shubuhTo = $_POST['shubuhTo'];
@@ -183,8 +180,9 @@
         $isyaTo = $_POST['isyaTo'];
 
         updateTimeSetup($from, $to, $shubuhFrom, $shubuhTo, $dzuhurFrom, $dzuhurTo, $asharFrom, $asharTo, $maghribFrom, $maghribTo, $isyaFrom, $isyaTo);
+        importShalat($_POST['angkatan'], $datefrom, $dateto);
 
-        //echo "<script>document.location='/simon/index.php?page=shalat'</script>";
+        echo "<script>document.location='/simon/index.php?page=shalat'</script>";
       }
     ?>
 
