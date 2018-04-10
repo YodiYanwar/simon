@@ -276,6 +276,32 @@
 		}
 	}
 
+	function updateTimeSetup($_dateFrom, $_dateTo, $_shubuhFrom, $_shubuhTo, $_dzuhurFrom, $_dzuhurTo, $_asharFrom, $_asharTo, $_maghribFrom, $_maghribTo, $_isyaFrom, $_isyaTo){
+		$koneksi_mdb = odbc_connect( 'att2000', "", "");
+
+		$dateFrom = date('d/m/Y', strtotime($_dateFrom));
+		$dateTo = date('d/m/Y', strtotime($_dateTo));
+
+		$shubuhFrom = date('h.i.s', strtotime($_shubuhFrom));
+		$shubuhTo = date('h.i.s', strtotime($_shubuhTo));
+		$dzuhurFrom = date('h.i.s', strtotime($_dzuhurFrom));
+		$dzuhurTo = date('h.i.s', strtotime($_dzuhurTo));
+		$asharFrom = date('h.i.s', strtotime($_asharFrom));
+		$asharTo = date('h.i.s', strtotime($_asharTo));
+		$maghribFrom = date('h.i.s', strtotime($_maghribFrom));
+		$maghribTo = date('h.i.s', strtotime($_maghribTo));
+		$isyaFrom = date('h.i.s', strtotime($_isyaFrom));
+		$isyaTo = date('h.i.s', strtotime($_isyaTo));
+
+		$sql_update_dateperiod = "UPDATE dateperiod SET date_from = '$dateFrom', date_to = '$dateTo' WHERE period_id = 1";
+
+		$sql_update_shubuh = "UPDATE sessionrange SET session_from = '$shubuhFrom', session_to = '$shubuhTo' WHERE session = 'shubuh'";
+		$sql_update_dzuhur = "UPDATE sessionrange SET session_from = '$dzuhurFrom', session_to = '$dzuhurTo' WHERE session = 'dzuhur'";
+		$sql_update_ashar = "UPDATE sessionrange SET session_from = '$asharFrom', session_to = '$asharTo' WHERE session = 'maghrib'";
+		$sql_update_maghrib = "UPDATE sessionrange SET session_from = '$maghribFrom', session_to = '$maghribTo' WHERE session = 'ashar'"
+		$sql_update_isya = "UPDATE sessionrange SET session_from = '$isyaFrom', session_to = '$isyaTo' WHERE session = 'isya'";
+	}
+
 	/*function importShalatTest($angkatan, $from, $to){
 		mysql_query("INSERT INTO tesshalat (angkatan, dari_tgl, sampai_tgl) VALUES ('$angkatan', '$from', '$to');");
 	}*/

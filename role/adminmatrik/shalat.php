@@ -93,36 +93,36 @@
                         <div class="col-md-3 nopadding">
                           <div class="form-group">
                             <label>Shubuh :</label>
-                              <input type="text" name="shubuh" id="shubuh_dari" class="form-control" placeholder="Dari" >
-                              <input type="text" name="shubuh" id="shubuh_sampai" class="form-control" placeholder="Sampai" >
+                              <input type="text" name="shubuh" id="shubuh_dari" class="form-control" placeholder="Dari" value="04:00">
+                              <input type="text" name="shubuh" id="shubuh_sampai" class="form-control" placeholder="Sampai" value="06:00">
                           </div>
                         </div>
                         <div class="col-lg-3 nopadding">
                           <div class="form-group">
                             <label>Dzuhur :</label>
-                              <input type="text" name="dzuhur_dari" id="dzuhur_dari" class="form-control" placeholder="Dari" >
-                              <input type="text" name="dzuhur_sampai" id="dzuhur_sampai" class="form-control" placeholder="Sampai" >
+                              <input type="text" name="dzuhur_dari" id="dzuhur_dari" class="form-control" placeholder="Dari" value="12:00">
+                              <input type="text" name="dzuhur_sampai" id="dzuhur_sampai" class="form-control" placeholder="Sampai" value="13:00">
                           </div>
                         </div>
                         <div class="col-lg-3 nopadding">
                           <div class="form-group">
                             <label>Ashar :</label>
-                              <input type="text" name="ashar_dari" id="ashar_dari" class="form-control" placeholder="Dari" >
-                              <input type="text" name="ashar_sampai" id="ashar_sampai" class="form-control" placeholder="Sampai" >
+                              <input type="text" name="ashar_dari" id="ashar_dari" class="form-control" placeholder="Dari" value="15:00">
+                              <input type="text" name="ashar_sampai" id="ashar_sampai" class="form-control" placeholder="Sampai" value="16:00">
                           </div>
                         </div>
                         <div class="col-lg-3 nopadding">
                           <div class="form-group">
                             <label>Maghrib :</label>
-                              <input type="text" name="maghrib_dari" id="maghrib_dari" class="form-control" placeholder="Dari" >
-                              <input type="text" name="maghrib_sampai" id="maghrib_sampai" class="form-control" placeholder="Sampai" >
+                              <input type="text" name="maghrib_dari" id="maghrib_dari" class="form-control" placeholder="Dari" value="18:00">
+                              <input type="text" name="maghrib_sampai" id="maghrib_sampai" class="form-control" placeholder="Sampai" value="18:35">
                           </div>
                         </div>
                         <div class="col-lg-3 nopadding">
                           <div class="form-group">
                             <label>Isya :</label>
-                              <input type="text" name="isya_dari" id="isya_dari" class="form-control" placeholder="Dari" >
-                              <input type="text" name="isya_sampai" id="isya_sampai" class="form-control" placeholder="Sampai" >
+                              <input type="text" name="isya_dari" id="isya_dari" class="form-control" placeholder="Dari" value="19:00">
+                              <input type="text" name="isya_sampai" id="isya_sampai" class="form-control" placeholder="Sampai" value="20:00">
                           </div>
                         </div>
                       </div>
