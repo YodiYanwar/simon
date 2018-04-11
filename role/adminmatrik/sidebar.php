@@ -10,9 +10,10 @@
               }
             ?>
         ><a href="/simon"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a></li>
+        <!-- Sidebar Tree Shalat Wajib -->
         <li class="treeview <?php 
               if (isset($_GET['page'])) {
-                    if ($_GET['page'] == 'shalat' || $_GET['page'] == 'tahsin' || $_GET['page'] == 'talim') {
+                    if ($_GET['page'] == 'shalat') {
                       echo ' active';
                     } else{
                       echo '';
@@ -21,8 +22,8 @@
              ?>"
         >
           <a href="#">
-            <i class="fa fa-fire"></i>
-            <span>Pembinaan</span>
+            <i class="fa fa-bell"></i>
+            <span>Shalat Wajib</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
@@ -35,7 +36,7 @@
 	                    }
 	                  }
 	                ?>
-	            ><a href="?page=shalat"><i class="fa fa-bell"></i>&nbsp;Shalat Wajib</a></li>
+	            ><a href="?page=shalat"><i class="fa fa-circle-o"></i>&nbsp;Ikhtisar</a></li>
 	            <li <?php 
 	                  if (isset($_GET['page'])) {
 	                    if ($_GET['page'] == 'tahsin') {
@@ -43,7 +44,7 @@
 	                    }
 	                  }
 	                ?>
-	            ><a href="?page=tahsin"><i class="fa fa-leanpub"></i>&nbsp;Tahsin/Tahfidz</a></li>
+	            ><a href="?page=tahsin"><i class="fa fa-circle-o"></i>&nbsp;...</a></li>
 	            <li <?php 
 	                  if (isset($_GET['page'])) {
 	                    if ($_GET['page'] == 'talim') {
@@ -51,9 +52,105 @@
 	                    }
 	                  }
 	                ?>
-	            ><a href="?page=talim"><i class="fa fa-puzzle-piece"></i>&nbsp;Ta'lim</a></li>
+	            ><a href="?page=talim"><i class="fa fa-circle-o"></i>&nbsp;...</a></li>
 	          </ul>
           </li>
+          <!--/ Sidebar Tree Shalat Wajib -->
+
+        <!-- Sidebar Tree Tahsin/Tahfidz -->
+        <li class="treeview <?php 
+              if (isset($_GET['page'])) {
+                    if ($_GET['page'] == 'tahsin') {
+                      echo ' active';
+                    } else{
+                      echo '';
+                    }
+                  }
+             ?>"
+        >
+          <a href="#">
+            <i class="fa fa-leanpub"></i>
+            <span>Tahsin/Tahfidz</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+	          <ul class="treeview-menu">
+	            <li <?php 
+	                  if (isset($_GET['page'])) {
+	                    if ($_GET['page'] == 'tahsin') {
+	                      echo "class='active'";
+	                    }
+	                  }
+	                ?>
+	            ><a href="?page=shalat"><i class="fa fa-circle-o"></i>&nbsp;Ikhtisar</a></li>
+	            <li <?php 
+	                  if (isset($_GET['page'])) {
+	                    if ($_GET['page'] == 'tahsin') {
+	                      echo "class='active'";
+	                    }
+	                  }
+	                ?>
+	            ><a href="?page=tahsin"><i class="fa fa-circle-o"></i>&nbsp;...</a></li>
+	            <li <?php 
+	                  if (isset($_GET['page'])) {
+	                    if ($_GET['page'] == 'tahsin') {
+	                      echo "class='active'";
+	                    }
+	                  }
+	                ?>
+	            ><a href="?page=talim"><i class="fa fa-circle-o"></i>&nbsp;...</a></li>
+	          </ul>
+          </li>
+          <!--/ Sidebar Tree Tahsin/Tahfidz -->
+
+          <!-- Sidebar Tree Ta'lim -->
+        <li class="treeview <?php 
+              if (isset($_GET['page'])) {
+                    if ($_GET['page'] == 'talim') {
+                      echo ' active';
+                    } else{
+                      echo '';
+                    }
+                  }
+             ?>"
+        >
+          <a href="#">
+            <i class="fa fa-puzzle-piece"></i>
+            <span>Ta'lim</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+	          <ul class="treeview-menu">
+	            <li <?php 
+	                  if (isset($_GET['page'])) {
+	                    if ($_GET['page'] == 'talim') {
+	                      echo "class='active'";
+	                    }
+	                  }
+	                ?>
+	            ><a href="?page=shalat"><i class="fa fa-circle-o"></i>&nbsp;Ikhtisar</a></li>
+	            <li <?php 
+	                  if (isset($_GET['page'])) {
+	                    if ($_GET['page'] == 'talim') {
+	                      echo "class='active'";
+	                    }
+	                  }
+	                ?>
+	            ><a href="?page=tahsin"><i class="fa fa-circle-o"></i>&nbsp;...</a></li>
+	            <li <?php 
+	                  if (isset($_GET['page'])) {
+	                    if ($_GET['page'] == 'talim') {
+	                      echo "class='active'";
+	                    }
+	                  }
+	                ?>
+	            ><a href="?page=talim"><i class="fa fa-circle-o"></i>&nbsp;...</a></li>
+	          </ul>
+          </li>
+          <!--/ Sidebar Tree Ta'lim -->
+
         <li class="treeview <?php 
               if (isset($_GET['page'])) {
                     if ($_GET['page'] == 'pembina'|| $_GET['page'] == 'pembinadetails' || $_GET['page'] == 'editpembina'|| $_GET['page'] == 'mahasiswa' || $_GET['page'] == 'mahasiswadetails' || $_GET['page'] == 'editmahasiswa' || $_GET['page'] == 'tambahbinaan') {
