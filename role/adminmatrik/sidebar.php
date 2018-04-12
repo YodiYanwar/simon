@@ -151,10 +151,10 @@
           </li>
           <!--/ Sidebar Tree Ta'lim -->
 
-        <!--/ Sidebar Manajemen Pengguna -->
+        <!--/ Sidebar Peraturan -->
         <li class="treeview <?php 
               if (isset($_GET['page'])) {
-                    if ($_GET['page'] == 'pelanggaran') {
+                    if ($_GET['page'] == 'pelanggaran' || $_GET['page'] == 'peraturan') {
                       echo ' active';
                     } else{
                       echo '';
@@ -185,10 +185,26 @@
                     }
                   }
                 ?>
-             ><a href="?page=pembina"><i class="fa fa-institution"></i> Peraturan</a></li>
+             ><a href="?page=peraturan"><i class="fa fa-tachometer"></i> Bobot</a></li>
+             <li <?php 
+                  if (isset($_GET['page'])) {
+                    if ($_GET['page'] == 'peraturan') {
+                      echo "class='active'";
+                    }
+                  }
+                ?>
+             ><a href="?page=peraturan"><i class="fa fa-universal-access"></i> Sanksi</a></li>
+             <li <?php 
+                  if (isset($_GET['page'])) {
+                    if ($_GET['page'] == 'peraturan') {
+                      echo "class='active'";
+                    }
+                  }
+                ?>
+             ><a href="?page=peraturan"><i class="fa fa-institution"></i> Tindak Lanjut</a></li>
           	</ul>
           </li>
-          <!--/ Sidebar Manajemen Pengguna -->
+          <!--/ Sidebar Peraturan -->
 
         <!--/ Sidebar Manajemen Pengguna -->
         <li class="treeview <?php 
@@ -260,6 +276,8 @@
           include 'tambahbinaan.php';
         } else if ($_GET['page'] == 'shalat') {
           include 'shalat.php';
+        } else if ($_GET['page'] == 'peraturan') {
+          include 'peraturan.php';
         }
   		} else{
   			include 'dashboard.php';
