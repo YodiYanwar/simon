@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 04, 2018 at 08:25 AM
+-- Generation Time: Apr 12, 2018 at 06:14 AM
 -- Server version: 10.1.25-MariaDB
 -- PHP Version: 5.6.31
 
@@ -498,6 +498,34 @@ CREATE TABLE `m_binaan` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `pelanggaran`
+--
+
+CREATE TABLE `pelanggaran` (
+  `id_pelanggaran` int(11) NOT NULL,
+  `nama_pelanggaran` varchar(70) NOT NULL,
+  `kategori` varchar(10) NOT NULL,
+  `sanksi` varchar(50) NOT NULL,
+  `deskripsi` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `pelanggaran_mhs`
+--
+
+CREATE TABLE `pelanggaran_mhs` (
+  `id_mahasiswa` int(11) DEFAULT NULL,
+  `id_pelanggaran` int(11) DEFAULT NULL,
+  `tgl_melanggar` date NOT NULL,
+  `tindak_lanjut` varchar(100) NOT NULL,
+  `keterangan` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `pembina`
 --
 
@@ -547,439 +575,6 @@ CREATE TABLE `shalat` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tesmhs`
---
-
-CREATE TABLE `tesmhs` (
-  `id` varchar(10) NOT NULL,
-  `nim` varchar(50) NOT NULL,
-  `nama` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `tesmhs`
---
-
-INSERT INTO `tesmhs` (`id`, `nim`, `nama`) VALUES
-('1745', '17201015', '17201015'),
-('1432', '17102074', 'Abdul Latif'),
-('1434', '17101148', 'Abdullah Haidar'),
-('1442', '17103043', 'Abdurrahman Kholish'),
-('1488', '17102084', 'Abid Rahmatullah'),
-('1359', '17101097', 'Abyan Rakhman'),
-('1448', '17101140', 'Adam Nurdiansyah'),
-('1485', '17101179', 'Adi Pahlevi'),
-('1197', '17103003', 'Adila Nur Islamiaty'),
-('1290', '17104006', 'Adilah Lulu Aprilia Kusu'),
-('1251', '17102027', 'Adilia Nurul Zahra'),
-('1236', '17102022', 'Adinda Salsabila'),
-('1357', '17101099', 'Affa\' Mahdi'),
-('1289', '17101066', 'Afifa Rahmi Ihsana'),
-('1326', '17101085', 'Afini Dwina Andarini'),
-('2029', '17101225', 'Afka Qoriyanto'),
-('1282', '17103017', 'Afta Rizky Amalia'),
-('1388', '17102061', 'Agung Prasetyo Wibowo'),
-('1397', '17101122', 'Ahlam Nabila'),
-('1470', '17104009', 'Ahmad Atiq Abqari'),
-('1497', '17101187', 'Ahmad Hilmi Jamaludin'),
-('1461', '17103048', 'Ahmad Kariim Robbani'),
-('1285', '17103015', 'Aidatul Afifah Isra'),
-('1179', '17104002', 'Aisyah As-salafiyah'),
-('1503', '17103050', 'Akmal Mahira Setiawan'),
-('2030', '17', 'Alfariq Riansyah'),
-('1402', '17101120', 'Alif Limka Firdaus'),
-('1243', '17101040', 'Alin Duani'),
-('1234', '17101044', 'Alma Widiyanti'),
-('1293', '17101061', 'Amalia Hanifah Latief'),
-('1322', '17102045', 'Ania Iqrima Azalia'),
-('1317', '17102047', 'Anisa Irma Suryani'),
-('1305', '17103022', 'Anisa Nanda Faisjal'),
-('1212', '17101023', 'Anisah Afifah'),
-('1259', '17104004', 'Annastasha Wahyuningtyas'),
-('1300', '17101057', 'Annisa Mutia Ruza'),
-('1309', '17103020', 'Annisa Syahidah Mujahida'),
-('2031', '17101216', 'Anto Wijaya'),
-('1239', '17102021', 'Arda Prawi Agustanti'),
-('1356', '17101101', 'Arland Pratama Wijaya'),
-('1384', '17101105', 'Arman Fadil Maulana'),
-('1377', '17101109', 'Arta Saiful Hilmi'),
-('1302', '17101075', 'Aryawati'),
-('1277', '17101070', 'Ashilah Raihanah'),
-('2053', '17101207', 'Ashmita Merry Anggreini'),
-('2054', '17102090', 'Asih Purminta'),
-('1207', '17101018', 'Asphia Sahiba'),
-('1200', '17101015', 'Asri Nurazhari Putrimant'),
-('1399', '17103035', 'Asril Suwandi'),
-('1247', '17101038', 'Assyifa Nur Aziza'),
-('1206', '17101017', 'Atika Sundari'),
-('1303', '17101074', 'Aulia Azka'),
-('1262', '17101047', 'Aulia Nur Asyifa'),
-('1328', '17102043', 'Aulia Salsabila'),
-('1351', '17102054', 'Aulia Zahra'),
-('1231', '17103004', 'Ayu Dini Hastuti'),
-('2055', '17101227', 'Ayu Lestari'),
-('1360', '17101094', 'Aza Priambada'),
-('1271', '17102029', 'Azifatul Hasanah'),
-('1382', '17101108', 'Aziz Guntur Purnamaputra'),
-('1369', '17102058', 'Aziz Rachmadji'),
-('1499', '17101188', 'Azka Muharam'),
-('1481', '17101170', 'Azmi Syahid'),
-('1316', '17101081', 'Baiq Damayanti Azhar Put'),
-('1331', '17102041', 'Baiq Fathia Zulfahmia'),
-('1342', '17101076', 'Baiq Putri Nabila'),
-('1465', '17101161', 'Baso Ratulangi'),
-('1460', '17101163', 'Billy Muhammad Fadilah'),
-('1270', '17103012', 'Cita Rizki Ananda'),
-('1229', '17102018', 'Dara Ayu Kusuma Ningrum'),
-('1329', '17101084', 'Dea Nabilah'),
-('1353', '17102052', 'Defender Khoufarobbi'),
-('2056', '17101229', 'Dessy Kurnia Ramadhanti'),
-('1258', '17102026', 'Desy Norma Safira'),
-('1288', '17102033', 'Dias Hanifa Ardhanariswa'),
-('1392', '17101126', 'Difan Nurhafidzar Juanda'),
-('1484', '17101180', 'Dimas Adektama'),
-('1213', '17101024', 'Dinda Nur Maulidah'),
-('1345', '17101090', 'Dini Khoerunisa'),
-('2057', '17102094', 'Dwi Eldia Oktaviani'),
-('1245', '17102020', 'Dwika Noviana'),
-('1415', '17101125', 'Edo Abdulrahim Fattah'),
-('1230', '17102019', 'Eka Nursyahfitri'),
-('2058', '17101214', 'Eka Pratiwi'),
-('1371', '17103032', 'Eki'),
-('2032', '17101210', 'Eko Saputra'),
-('2080', '17101194', 'Elisa'),
-('1198', '17101013', 'Ella Wandania'),
-('1421', '17101154', 'Faatihan Aulia Azwin'),
-('1364', '17101118', 'Fahmi Marjuki'),
-('2033', '17101223', 'Fahri'),
-('1182', '17101008', 'Faizah Taufik'),
-('1204', '17102014', 'Fajriati Noer Hidayah'),
-('1438', '17101147', 'Falah Ageng Pakerti'),
-('2010', '17102088', 'Faliza Hafidhotul F'),
-('1196', '17102011', 'Fannia Mauludiyah Fachru'),
-('1335', '17103028', 'Farah Alia Intania Kamil'),
-('1284', '17101068', 'Farah Hafizhatun Nisa'),
-('1435', '17102073', 'Farhan Anshori'),
-('1352', '17101103', 'Farid Hidayatullah'),
-('1395', '17101123', 'Farras Mubasysyirsyah'),
-('1227', '17102016', 'Fatimah Tuzzahroh'),
-('1361', '17101096', 'Fauzan Hanif Sukma Pramo'),
-('2034', '17101221', 'Febby Kurniawan'),
-('1240', '17101041', 'Felia Rizkiana'),
-('1477', '17101171', 'Ferdi Wijaya'),
-('2051', '17101193', 'Feydhul Qodir Muwaffaq'),
-('1255', '17104005', 'Fifi Afiah Luqman'),
-('1250', '17101054', 'Fiki Hijjatun Nada'),
-('1398', '17101119', 'Fikri Abdurrohman Maajid'),
-('1298', '17102031', 'Firyal Arina Salsabila'),
-('1350', '17101092', 'Firza Faadhilah Arifian'),
-('2059', '17103060', 'Fitri Nursari'),
-('1263', '17101046', 'Fitria Novianti'),
-('1386', '17102063', 'Fuadhli Rahman Katam'),
-('1405', '17103040', 'Ganang Abi Rafianto'),
-('1433', '17103045', 'Ghazi Ahmad'),
-('1419', '17103046', 'Ghaznawie Ihyamukti'),
-('1241', '17101042', 'Ghina Lintang Azizah'),
-('1366', '17102060', 'Ghulam Hadi Al Fatah'),
-('2060', '17101228', 'Gressy Aurellia'),
-('1252', '17101052', 'Haanii Haritsa Yuzen'),
-('1424', '17101156', 'Hafisz Maulana Rasjid'),
-('1348', '17101093', 'Haikal Fernanda'),
-('1292', '17101064', 'Hana Azahra'),
-('1279', '17101071', 'Hana Nur Ratih'),
-('1235', '17101043', 'Hana Raisa Fahira'),
-('1174', '17101003', 'Hanapi Muslim'),
-('1311', '17102036', 'Hani Khairo Amalia N.a'),
-('1389', '17101127', 'Hanif Dwi Putra'),
-('1226', '17101037', 'Hanifah Salsabilla'),
-('1462', '17101162', 'Hariz Ilmam Husnan'),
-('1286', '17101067', 'Hasna Luthfi Khairunnisa'),
-('1452', '17101138', 'Herdy Almadiptha Rahman'),
-('1301', '17101077', 'Hidayatul Azqia'),
-('1297', '17101059', 'Hilda Hidayatul Muwafaqo'),
-('1253', '17101053', 'Hilga Hanistya Saputri'),
-('1423', '17104008', 'Hilmi Taqiyyudin Aufa'),
-('1426', '17101153', 'Hilmy Fikri'),
-('1177', '17101005', 'Hilwa Fitri Millenia'),
-('2035', '17101219', 'Holili'),
-('2061', '17103061', 'Holmi'),
-('1175', '17102002', 'Ibnu Hibban Hartono'),
-('1404', '17101135', 'Ibnu Rasyid Hamidi'),
-('1450', '17103041', 'Ilham Akbar'),
-('1483', '17101168', 'Ilham Akbar Ramadhan'),
-('1492', '17101183', 'Ilham Muhammad Ghifari'),
-('1453', '17103042', 'Ilham Zulkarami Aslam'),
-('1363', '17101104', 'Imaduddin Dwi Hananto'),
-('2036', '17101226', 'Imam'),
-('1261', '17102025', 'Indah Alfiarna'),
-('1318', '17103025', 'Indah Oktaviola'),
-('1482', '17101169', 'Indra Wijaya'),
-('1304', '17101073', 'Irena Siti Dzahrah Putri'),
-('1296', '17101060', 'Irma Rahmani'),
-('1431', '17101151', 'Irvan Riyansyah'),
-('1344', '17102053', 'Ismah Choirunnisa'),
-('2062', '17101231', 'Ismi Yati Azis'),
-('1323', '17101087', 'Isnafauziahbiljannah'),
-('1439', '17101146', 'Iza Fais Saputra'),
-('1337', '17101089', 'Izzati Luthfiyya'),
-('1254', '17101050', 'Jenny Ananda'),
-('2049', '17101203', 'Jihad Nabil Rafif Mahdi'),
-('1275', '17103018', 'Jihan Noer Evian'),
-('2037', '17101220', 'Jodi Prasetyo'),
-('1347', '17103030', 'Jougie Maulana Triadi'),
-('1451', '17101139', 'Juan Fadri Ramdhani'),
-('2083', '17103051', 'Juheri'),
-('2063', '17101230', 'Kana Nurrohma'),
-('1400', '17101121', 'Khalel Mohammed Amar'),
-('1422', '17102077', 'Khalid Syaifulhaq'),
-('2064', '17101209', 'Kirana Dewi Nouriand'),
-('1410', '17101130', 'L. M. Cahya Kurnia Harma'),
-('1412', '17101131', 'Labib Ulwan'),
-('1387', '17102059', 'Lalu Arya Pringgadani'),
-('1391', '17101124', 'Lalu Rizky Adriansyah'),
-('1466', '17103047', 'Lalu Satria Prayuda'),
-('1320', '17101086', 'Leli Irma Suryani'),
-('1341', '17103026', 'Leniari'),
-('2065', '17103054', 'Lilis Diana'),
-('1242', '17103007', 'Lisa Anita Pratiwi'),
-('1381', '17103031', 'Luqman Aulia Rizky'),
-('1180', '17101006', 'Luthfia Luhuringkania'),
-('1237', '17102023', 'Luthfiah Khairunisa'),
-('1294', '17101063', 'Luthfiah Siti Sarah'),
-('1358', '17101100', 'M Haekal Fajrul Falah'),
-('2038', '17102095', 'M Rizal'),
-('1467', '17102079', 'M. Angga Haryadi'),
-('1487', '17101178', 'M. Ridwan Saufi'),
-('1494', '17101181', 'M.farid'),
-('2066', '17101218', 'Maemunah'),
-('1219', '17101030', 'Maida Fitri Yani'),
-('1201', '17101016', 'Mala Mareta'),
-('1178', '17102003', 'Mas Ichsan Nurhayati'),
-('1454', '17102070', 'Maulana Rizky Septiaji'),
-('1278', '17101072', 'Maulida Jihan Aulia'),
-('1202', '17102012', 'Maulida Nur Safitri'),
-('1315', '17101080', 'Mawatu Shalihah Kaily'),
-('1307', '17102038', 'Mayang Nirwana'),
-('1186', '17103001', 'Meilisa'),
-('1193', '17102008', 'Melati Hasna Abidah'),
-('1394', '17103036', 'Miftah Azmi'),
-('1428', '17101152', 'Miftah Faruq Nugraha'),
-('2048', '17101195', 'Mikal Mufid Asdika'),
-('1446', '17101143', 'Moch. Lukmannul Hakim'),
-('1475', '17102082', 'Mochamad Ridho Fahlefi'),
-('1416', '17101129', 'Moh Ala Furqoni'),
-('1480', '17101167', 'Moh.yanis Yosfiah'),
-('1479', '17101173', 'Muahmmad Hafidz Fathoni'),
-('1256', '17101051', 'Mufidah Amalia'),
-('1374', '17102057', 'Muh Fathul Mubaraq Ss'),
-('1417', '17103038', 'Muh. Rifky Irsyadi'),
-('2039', '17101208', 'Muhamad Arjum'),
-('1368', '17101116', 'Muhamad Lutfi'),
-('1355', '17101098', 'Muhamad Rizky Maulana'),
-('1373', '17101111', 'Muhamad Solehudin'),
-('1406', '17103039', 'Muhammad Abdillah Dhafaq'),
-('1445', '17101144', 'Muhammad Ananda Fajar'),
-('1441', '17101145', 'Muhammad Angga Abdullah'),
-('1430', '17102075', 'Muhammad Bukhari Muslim'),
-('1455', '17101137', 'Muhammad Denito Bastian'),
-('1490', '17101177', 'Muhammad Diaz Advani'),
-('1472', '17101176', 'Muhammad Fadhil Mujahid'),
-('1414', '17102066', 'Muhammad Fadlil Kirom'),
-('1456', '17101136', 'Muhammad Faisal'),
-('1504', '17102087', 'Muhammad Faishal Hilman'),
-('1498', '17101189', 'Muhammad Farhan Maulana'),
-('1409', '17101132', 'Muhammad Fathan Farizan'),
-('1476', '17101174', 'Muhammad Fitriana Hasan'),
-('1425', '17101155', 'Muhammad Haniful Amin'),
-('1496', '17101185', 'Muhammad Iqbal'),
-('1396', '17102065', 'Muhammad Islam Assidiq'),
-('1411', '17102068', 'Muhammad Ismail'),
-('1440', '17102072', 'Muhammad Ivan Firmansyah'),
-('1471', '17101158', 'Muhammad Nasyith Sholahu'),
-('1436', '17101150', 'Muhammad Puji Pangestu'),
-('1378', '17101110', 'Muhammad Rafi\' Firdaus'),
-('1413', '17102067', 'Muhammad Raihan Alfathi'),
-('1505', '17101190', 'Muhammad Rasyid Ridha'),
-('1437', '17101149', 'Muhammad Rizki Sinar Ila'),
-('1349', '17103029', 'Muhammad Rouman Affan'),
-('1362', '17101106', 'Muhammad Syahri Ramadani'),
-('1393', '17103037', 'Muhammad Syihabudin'),
-('1408', '17101134', 'Muhammad Zacky Makarim S'),
-('1449', '17102069', 'Muhammad Zain Ghojali'),
-('1459', '17101164', 'Muhammad.daffa As-syauqi'),
-('1346', '17101095', 'Mustova Karim'),
-('1332', '17103023', 'Muti\'ah Azizah'),
-('1223', '17101034', 'Mutiara Lailla Ramadhini'),
-('1205', '17102015', 'Mutya Nurya Ningsih'),
-('1188', '17101009', 'Muyassaroh'),
-('1502', '17101186', 'Nabil Nur Salsabil'),
-('2081', '17102089', 'Nabila Farha'),
-('1218', '17101029', 'Nabila Kinanty Aqilla'),
-('1276', '17102035', 'Nabila Ramadiana'),
-('1280', '17101069', 'Nabilah Ghalisani Fildza'),
-('1225', '17101036', 'Nafira Fitri Ayu Widadar'),
-('1238', '17104003', 'Naimatul Kurniah'),
-('1486', '17102085', 'Nanda Wahyu Noerkamal'),
-('1313', '17102040', 'Nandya Ahlus Sanah'),
-('1407', '17101133', 'Naufal Ahmad'),
-('1403', '17102064', 'Naufal Al Baqir'),
-('1420', '17101157', 'Naufal Raditya Krisna'),
-('1268', '17101056', 'Nawarendra'),
-('1310', '17101079', 'Nila Hidayatunnisak'),
-('1339', '17102049', 'Novia Lestari'),
-('1370', '17101115', 'Noviyandi Difa Pratama'),
-('1232', '17103005', 'Nur Azizah Pulungan'),
-('1222', '17101033', 'Nur Halimah'),
-('1267', '17102030', 'Nur Ihsannisaa Riyadi'),
-('1183', '17101010', 'Nur Jamilah'),
-('1343', '17102048', 'Nur Khodijah Khairani'),
-('1199', '17101014', 'Nur Kintan Maharani'),
-('1269', '17103014', 'Nur Laila Madinatul Qoir'),
-('1192', '17102007', 'Nurma Hermila'),
-('1457', '17101166', 'Nurrahman Wira Aji'),
-('1324', '17103024', 'Nurul Hakim Dwi Yanti'),
-('1221', '17101032', 'Nurul \'Izzah Addiini'),
-('1246', '17101039', 'Nurul Ramdhany'),
-('2067', '17101222', 'Omiyuka'),
-('1493', '17102086', 'Orde Leo Al Fathur'),
-('2068', '17103056', 'Ovi Tri Astuti'),
-('1464', '17102080', 'Perdana Priambudi'),
-('1379', '17102055', 'Poltak Fathirisi Nurlam'),
-('1418', '17102078', 'Putra Muhammad Riawan Pa'),
-('1190', '17101012', 'Putri Ananda'),
-('2069', '17102092', 'Putri Faradiba'),
-('2047', '17101233', 'Qomardiansyah'),
-('1308', '17103021', 'Raehan Fadila'),
-('1444', '17102071', 'Rafi\' Muttaqin'),
-('1248', '17103010', 'Rahmaiola Raissa Aziza'),
-('2040', '17103053', 'Rahmanda'),
-('1210', '17101021', 'Rahmi Muflihah Abroni'),
-('1427', '17102076', 'Rakha Aditama Iskandar'),
-('1495', '17101184', 'Ramadan Arudi Satyagraha'),
-('1447', '17101141', 'Ramadhana Devandani Enti'),
-('1385', '17102062', 'Ramadhani'),
-('2070', '17104011', 'Rana Wulandari'),
-('2052', '17101192', 'Rangga Adithiya'),
-('2041', '17102091', 'Rangga Wijaya'),
-('1191', '17102006', 'Rasyifa Salsabilla'),
-('1473', '17101175', 'Rayhan Pasa Aryandra'),
-('2042', '17103057', 'Rayzandy Gunawan'),
-('1181', '17101007', 'Regina Zahra'),
-('2043', '17101204', 'Renaldi'),
-('1491', '17101182', 'Renaldi Septiawan'),
-('1489', '17103049', 'Reno Meizanggi'),
-('1443', '17101142', 'Reynaldi Wahab'),
-('1260', '17101048', 'Rhifa Azzahra Salsabila'),
-('1354', '17101102', 'Ridwan'),
-('1468', '17101159', 'Ridwan Hasyim'),
-('1257', '17101049', 'Rihaadatul Aisyi'),
-('1281', '17102034', 'Rihadatul Aisyi'),
-('1216', '17101027', 'Rika Ra\'idah Dwicahyani'),
-('2071', '17101224', 'Rini Anggreni'),
-('1327', '17101083', 'Riqotu Fuadatuddiniyah'),
-('1312', '17103019', 'Ririn Riani'),
-('1478', '17101172', 'Risang Muhammad'),
-('2072', '17103055', 'Riska Wijayanti'),
-('1325', '17102044', 'Riyadotul Mustamiah'),
-('2044', '17101212', 'Riyan Erwinsyah'),
-('1469', '17101160', 'Rizal Muhammad Fauzan'),
-('2045', '17101211', 'Robi Permana'),
-('1249', '17101055', 'Rossdinna Nurul Rizqi'),
-('1266', '17103013', 'Rufatulalawiah'),
-('1338', '17102050', 'Rukiyah Hasibuan'),
-('1209', '17101020', 'Sabrina Elsa Firdatul Ja'),
-('1291', '17102032', 'Safana Ishlah Madani'),
-('1195', '17102010', 'Sakinah Zahra'),
-('1176', '17101004', 'Salma Dliya Fuady'),
-('1321', '17101088', 'Salma Fatimah Az-zahra'),
-('1184', '17102004', 'Salma Nabilah Salsabil'),
-('1295', '17101062', 'Salma Qurrata A'),
-('1274', '17102028', 'Salma Rahiimi'),
-('1287', '17101065', 'Salma Shafira Salsabila'),
-('1194', '17102009', 'Salsabila'),
-('1208', '17101019', 'Salsabila Putri Sekar Ut'),
-('2046', '17102093', 'Saptiadi'),
-('1224', '17101035', 'Sausan Raniah Asy Syahid'),
-('1228', '17102017', 'Sekar Rizky Amalia Suher'),
-('2082', '17103062', 'Sella Septiani K'),
-('1372', '17101113', 'Sesa Afrian Yahya'),
-('1334', '17104007', 'Shofi Luthfiana'),
-('2073', '17103059', 'Sifa Aprilia'),
-('2074', '17101232', 'Silvia Afri Wulanti'),
-('1211', '17101022', 'Sintia Monica'),
-('1330', '17102042', 'Sofiya Nadhifah'),
-('1333', '17101082', 'Solehah'),
-('1272', '17103009', 'Suci Fauziah'),
-('2075', '17101206', 'Sumaria'),
-('2076', '17101215', 'Surni Meiyanti'),
-('1367', '17103033', 'Syafii Bin Kadaryono Haf'),
-('1233', '17103006', 'Syahila'),
-('1214', '17101025', 'Syanindita Ananda Riana'),
-('1244', '17103008', 'Syara Nur Fatimah'),
-('1265', '17102024', 'Syifa Aini Puspaning Dew'),
-('1220', '17101031', 'Syifa Qolbi Amalia'),
-('1429', '17103044', 'Tariq Mukhlisin'),
-('1203', '17102013', 'Tasya Aulia Damayanti'),
-('1401', '17103034', 'Taufik Nur Maarif'),
-('1501', '17104010', 'Taufiq Ismail'),
-('1474', '17102083', 'Tedy Zainul Muttaqin Ibn'),
-('1314', '17102039', 'Tia Anggraeni Nurdiana'),
-('1299', '17101058', 'Tiara Fatihah Ramadhanti'),
-('2077', '17103058', 'Tina Fitasari'),
-('1273', '17103011', 'Ummu Kaltsum'),
-('1319', '17102046', 'Umulia Safitri'),
-('1336', '17102051', 'Utsman Abdul Hakim'),
-('1340', '17101091', 'Vira Asriani'),
-('1217', '17101028', 'Wahyuni Utami'),
-('1185', '17102005', 'Wardatul Fadhilah'),
-('1283', '17103016', 'Wening Tyas Nur Anissa'),
-('1383', '17101107', 'Wildan Maulid Hanafi'),
-('1380', '17102056', 'Yazid Azam'),
-('1375', '17101114', 'Yody Nur Rachmat'),
-('1463', '17102081', 'Yonasya Esa Kautsarizki'),
-('2078', '17101205', 'Yulisandri'),
-('1306', '17102037', 'Yunita Surya Pratiwi'),
-('2079', '17101213', 'Yusriyanti'),
-('1189', '17101011', 'Zafarina Zati Hulwani'),
-('1376', '17101112', 'Zahid Ahmad'),
-('1215', '17101026', 'Zahidah Rahmah'),
-('1187', '17103002', 'Zahra Shafira'),
-('1264', '17101045', 'Zakia Chairani Ayudia'),
-('1500', '17103052', 'Zidan Muhammad Qushay'),
-('1365', '17101117', 'Zubeir Abdul Wahid Chan'),
-('1458', '17101165', 'Zuhdi Anjari Tigara'),
-('1390', '17101128', 'Zulfitra Hadianto Palwam');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `tesshalat`
---
-
-CREATE TABLE `tesshalat` (
-  `angkatan` int(11) NOT NULL,
-  `dari_tgl` date NOT NULL,
-  `sampai_tgl` date NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `tesshalat`
---
-
-INSERT INTO `tesshalat` (`angkatan`, `dari_tgl`, `sampai_tgl`) VALUES
-(15, '2018-03-20', '2018-03-27'),
-(17, '2018-03-21', '2018-03-27'),
-(16, '2018-03-01', '2018-03-31'),
-(17, '0000-00-00', '0000-00-00'),
-(15, '0000-00-00', '0000-00-00'),
-(16, '0000-00-00', '0000-00-00'),
-(17, '2018-03-01', '2018-03-31'),
-(15, '2018-03-21', '2018-03-27'),
-(17, '2018-03-21', '2018-03-27');
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `users`
 --
 
@@ -998,7 +593,7 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`id_user`, `username`, `password`, `password_default`, `level`, `last_login`) VALUES
 (1, 'admin', 'admin', 0, 0, '2018-03-12 08:11:33'),
-(2, 'derry', 'derry123', 0, 2, '2018-04-04 10:42:02'),
+(2, 'derry', 'derry123', 0, 2, '2018-04-12 08:31:20'),
 (21, 'bintang', 'bintang123', 0, 3, '2018-03-12 08:11:09'),
 (22, 'aya', 'aya123', 0, 3, '2017-12-02 16:23:35'),
 (23, 'hasan', 'hasan123', 0, 2, '2017-11-30 17:06:08'),
@@ -1432,6 +1027,19 @@ ALTER TABLE `m_binaan`
   ADD KEY `id_mahasiswa` (`id_mahasiswa`);
 
 --
+-- Indexes for table `pelanggaran`
+--
+ALTER TABLE `pelanggaran`
+  ADD PRIMARY KEY (`id_pelanggaran`);
+
+--
+-- Indexes for table `pelanggaran_mhs`
+--
+ALTER TABLE `pelanggaran_mhs`
+  ADD KEY `id_mahasiswa` (`id_mahasiswa`),
+  ADD KEY `id_pelanggaran` (`id_pelanggaran`);
+
+--
 -- Indexes for table `pembina`
 --
 ALTER TABLE `pembina`
@@ -1465,6 +1073,11 @@ ALTER TABLE `administrator`
 ALTER TABLE `adminmatrik`
   MODIFY `id_adminmatrik` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
+-- AUTO_INCREMENT for table `pelanggaran`
+--
+ALTER TABLE `pelanggaran`
+  MODIFY `id_pelanggaran` int(11) NOT NULL AUTO_INCREMENT;
+--
 -- AUTO_INCREMENT for table `pembina`
 --
 ALTER TABLE `pembina`
@@ -1496,6 +1109,13 @@ ALTER TABLE `adminmatrik`
 ALTER TABLE `m_binaan`
   ADD CONSTRAINT `m_binaan_ibfk_1` FOREIGN KEY (`id_pembina`) REFERENCES `pembina` (`id_pembina`),
   ADD CONSTRAINT `m_binaan_ibfk_2` FOREIGN KEY (`id_mahasiswa`) REFERENCES `mahasiswa` (`id_mahasiswa`);
+
+--
+-- Constraints for table `pelanggaran_mhs`
+--
+ALTER TABLE `pelanggaran_mhs`
+  ADD CONSTRAINT `pelanggaran_mhs_ibfk_1` FOREIGN KEY (`id_mahasiswa`) REFERENCES `mahasiswa` (`id_mahasiswa`),
+  ADD CONSTRAINT `pelanggaran_mhs_ibfk_2` FOREIGN KEY (`id_pelanggaran`) REFERENCES `pelanggaran` (`id_pelanggaran`);
 
 --
 -- Constraints for table `pembina`
