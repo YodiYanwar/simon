@@ -91,7 +91,7 @@
 	                    }
 	                  }
 	                ?>
-	            ><a href="?page=tahsin"><i class="fa fa-circle-o"></i>&nbsp;...</a></li>
+	            ><a href="?page=tahsin"><i class="fa fa-bookmark-o"></i>&nbsp;Hafalan Quran</a></li>
 	            <li <?php 
 	                  if (isset($_GET['page'])) {
 	                    if ($_GET['page'] == 'tahsin') {
@@ -151,6 +151,46 @@
           </li>
           <!--/ Sidebar Tree Ta'lim -->
 
+        <!--/ Sidebar Manajemen Pengguna -->
+        <li class="treeview <?php 
+              if (isset($_GET['page'])) {
+                    if ($_GET['page'] == 'pelanggaran') {
+                      echo ' active';
+                    } else{
+                      echo '';
+                    }
+                  }
+             ?>"
+        >
+          <a href="#">
+            <i class="fa fa-gavel"></i>
+            <span>Pelanggaran</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li <?php 
+                  if (isset($_GET['page'])) {
+                    if ($_GET['page'] == 'pelanggaran') {
+                      echo "class='active'";
+                    }
+                  }
+                ?>
+            ><a href="?page=pelanggaran"><i class="fa fa-circle-o"></i> Ikhtisar</a></li>
+            <li <?php 
+                  if (isset($_GET['page'])) {
+                    if ($_GET['page'] == 'peraturan') {
+                      echo "class='active'";
+                    }
+                  }
+                ?>
+             ><a href="?page=pembina"><i class="fa fa-institution"></i> Peraturan</a></li>
+          	</ul>
+          </li>
+          <!--/ Sidebar Manajemen Pengguna -->
+
+        <!--/ Sidebar Manajemen Pengguna -->
         <li class="treeview <?php 
               if (isset($_GET['page'])) {
                     if ($_GET['page'] == 'pembina'|| $_GET['page'] == 'pembinadetails' || $_GET['page'] == 'editpembina'|| $_GET['page'] == 'mahasiswa' || $_GET['page'] == 'mahasiswadetails' || $_GET['page'] == 'editmahasiswa' || $_GET['page'] == 'tambahbinaan') {
@@ -185,8 +225,9 @@
                   }
                 ?>
              ><a href="?page=pembina"><i class="fa fa-user"></i> Pembina Mahasiswa</a></li>
-          </ul>
+          	</ul>
           </li>
+          <!--/ Sidebar Manajemen Pengguna -->
       </ul>
     </section>
     <!-- /.sidebar -->
