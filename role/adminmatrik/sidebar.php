@@ -286,6 +286,8 @@
           include 'shalat.php';
         } else if ($_GET['page'] == 'pbentuk') {
           include 'pelanggaran/pbentuk.php';
+        } else if ($_GET['page'] == 'pdetil') {
+          include 'pelanggaran/pdetil.php';
         }
   		} else{
   			include 'dashboard.php';
