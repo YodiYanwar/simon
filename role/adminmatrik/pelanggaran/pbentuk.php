@@ -5,12 +5,12 @@
     <section class="content-header">
       <h1>
         Pelanggaran
-        <small>Bentuk Pelanggaran</small>
+        <small>Berdasarkan Bentuk Pelanggaran</small>
       </h1>
       <ol class="breadcrumb">
-        <li><a href="/simon/admin"><i class="fa fa-dashboard"></i> Dashboard</a></li>
+        <li><a href="index.php"><i class="fa fa-dashboard"></i> Dashboard</a></li>
         <li>Pelanggaran</li>
-        <li class="active">Berdasarkan Bentuk Pelanggaran</li>
+        <li class="active">Bentuk Pelanggaran</li>
       </ol>
     </section>
 
