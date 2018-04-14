@@ -288,6 +288,8 @@
           include 'pelanggaran/pbentuk.php';
         } else if ($_GET['page'] == 'pdetil') {
           include 'pelanggaran/pdetil.php';
+        }else if ($_GET['page'] == 'psanksi') {
+          include 'pelanggaran/psanksi.php';
         }
   		} else{
   			include 'dashboard.php';
