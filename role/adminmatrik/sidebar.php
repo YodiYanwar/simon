@@ -265,32 +265,34 @@
   			} else if ($_GET['page'] == 'pembina') {
   				include 'pembina.php';
   			} else if ($_GET['page'] == 'pembinadetails') {
-          include 'detailpembina.php';
-        } else if ($_GET['page'] == 'editpembina') {
-          include 'edit_pembina.php';
-        } else if ($_GET['page'] == 'profil') {
-          include 'profil.php';
-        } else if ($_GET['page'] == 'editprofil') {
-          include 'edit_profil.php';
-        } else if ($_GET['page'] == 'mahasiswadetails') {
-          include 'detailmahasiswa.php';
-        } else if ($_GET['page'] == 'editmahasiswa') {
-          include 'edit_mahasiswa.php';
-        } else if ($_GET['page'] == 'bypembina') {
-          include 'bypembina.php';
-        } else if ($_GET['page'] == 'bypembinadetail') {
-          include 'bypembinadetail.php';
-        } else if ($_GET['page'] == 'tambahbinaan') {
-          include 'tambahbinaan.php';
-        } else if ($_GET['page'] == 'shalat') {
-          include 'shalat.php';
-        } else if ($_GET['page'] == 'pbentuk') {
-          include 'pelanggaran/pbentuk.php';
-        } else if ($_GET['page'] == 'pdetil') {
-          include 'pelanggaran/pdetil.php';
-        }else if ($_GET['page'] == 'psanksi') {
-          include 'pelanggaran/psanksi.php';
-        }
+          	include 'detailpembina.php';
+	        } else if ($_GET['page'] == 'editpembina') {
+	          include 'edit_pembina.php';
+	        } else if ($_GET['page'] == 'profil') {
+	          include 'profil.php';
+	        } else if ($_GET['page'] == 'editprofil') {
+	          include 'edit_profil.php';
+	        } else if ($_GET['page'] == 'mahasiswadetails') {
+	          include 'detailmahasiswa.php';
+	        } else if ($_GET['page'] == 'editmahasiswa') {
+	          include 'edit_mahasiswa.php';
+	        } else if ($_GET['page'] == 'bypembina') {
+	          include 'bypembina.php';
+	        } else if ($_GET['page'] == 'bypembinadetail') {
+	          include 'bypembinadetail.php';
+	        } else if ($_GET['page'] == 'tambahbinaan') {
+	          include 'tambahbinaan.php';
+	        } else if ($_GET['page'] == 'shalat') {
+	          include 'shalat.php';
+	        } else if ($_GET['page'] == 'pbentuk') {
+	          include 'pelanggaran/pbentuk.php';
+	        } else if ($_GET['page'] == 'pdetil') {
+	          include 'pelanggaran/pdetil.php';
+	        } else if ($_GET['page'] == 'psanksi') {
+	          include 'pelanggaran/psanksi.php';
+	        } else if ($_GET['page'] == 'planjut') {
+	          include 'pelanggaran/planjut.php';
+	        }
   		} else{
   			include 'dashboard.php';
   		}
