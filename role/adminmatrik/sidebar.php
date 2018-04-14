@@ -151,10 +151,10 @@
           </li>
           <!--/ Sidebar Tree Ta'lim -->
 
-        <!--/ Sidebar Peraturan -->
+        <!--/ Sidebar Pelanggaran -->
         <li class="treeview <?php 
               if (isset($_GET['page'])) {
-                    if ($_GET['page'] == 'pelanggaran' || $_GET['page'] == 'peraturan') {
+                    if ($_GET['page'] == 'pikhtisar' || $_GET['page'] == 'pbentuk' || $_GET['page'] == 'pdetil' || $_GET['page'] == 'psanksi' || $_GET['page'] == 'planjut') {
                       echo ' active';
                     } else{
                       echo '';
@@ -172,39 +172,47 @@
           <ul class="treeview-menu">
             <li <?php 
                   if (isset($_GET['page'])) {
-                    if ($_GET['page'] == 'pelanggaran') {
+                    if ($_GET['page'] == 'pikhtisar') {
                       echo "class='active'";
                     }
                   }
                 ?>
-            ><a href="?page=pelanggaran"><i class="fa fa-circle-o"></i> Ikhtisar</a></li>
+            ><a href="?page=pikhtisar"><i class="fa fa-circle-o"></i> Ikhtisar</a></li>
             <li <?php 
                   if (isset($_GET['page'])) {
-                    if ($_GET['page'] == 'peraturan') {
+                    if ($_GET['page'] == 'pbentuk') {
                       echo "class='active'";
                     }
                   }
                 ?>
-             ><a href="?page=peraturan"><i class="fa fa-tachometer"></i> Bobot</a></li>
+             ><a href="?page=pbentuk"><i class="fa fa-tachometer"></i> Bentuk Pelanggaran</a></li>
              <li <?php 
                   if (isset($_GET['page'])) {
-                    if ($_GET['page'] == 'peraturan') {
+                    if ($_GET['page'] == 'pdetil') {
                       echo "class='active'";
                     }
                   }
                 ?>
-             ><a href="?page=peraturan"><i class="fa fa-universal-access"></i> Sanksi</a></li>
+             ><a href="?page=pdetil"><i class="fa fa-tachometer"></i> Detil Pelanggaran</a></li>
              <li <?php 
                   if (isset($_GET['page'])) {
-                    if ($_GET['page'] == 'peraturan') {
+                    if ($_GET['page'] == 'psanksi') {
                       echo "class='active'";
                     }
                   }
                 ?>
-             ><a href="?page=peraturan"><i class="fa fa-institution"></i> Tindak Lanjut</a></li>
+             ><a href="?page=psanksi"><i class="fa fa-universal-access"></i> Sanksi</a></li>
+             <li <?php 
+                  if (isset($_GET['page'])) {
+                    if ($_GET['page'] == 'planjut') {
+                      echo "class='active'";
+                    }
+                  }
+                ?>
+             ><a href="?page=planjut"><i class="fa fa-institution"></i> Tindak Lanjut</a></li>
           	</ul>
           </li>
-          <!--/ Sidebar Peraturan -->
+          <!--/ Sidebar Pelanggaran -->
 
         <!--/ Sidebar Manajemen Pengguna -->
         <li class="treeview <?php 
