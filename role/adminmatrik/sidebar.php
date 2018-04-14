@@ -284,8 +284,8 @@
           include 'tambahbinaan.php';
         } else if ($_GET['page'] == 'shalat') {
           include 'shalat.php';
-        } else if ($_GET['page'] == 'peraturan') {
-          include 'peraturan.php';
+        } else if ($_GET['page'] == 'pbentuk') {
+          include 'pelanggaran/pbentuk.php';
         }
   		} else{
   			include 'dashboard.php';
