@@ -20,7 +20,7 @@
         <div class="col-xs-12">
           <div class="box">
             <div class="box-header with-border">
-             <a href="index.php?page=tambahpsanksi" class="btn btn-primary"><i class="fa fa-chevron-circle-down"></i>&nbsp;Tambah Sanksi</a>
+             <a href="index.php?page=tambahpsanksi" class="btn btn-primary"><i class="fa fa-plus"></i>&nbsp;Tambah Sanksi</a>
             </div>
             <!-- /.box-header -->
             <!-- /.box-header -->

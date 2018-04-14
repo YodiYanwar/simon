@@ -20,7 +20,7 @@
         <div class="col-xs-12">
           <div class="box">
             <div class="box-header with-border">
-             <a href="index.php?page=tambahpdetil" class="btn btn-primary"><i class="fa fa-chevron-circle-down"></i>&nbsp;Tambah Detil Pelanggaran</a>
+             <a href="index.php?page=tambahpdetil" class="btn btn-primary"><i class="fa fa-plus"></i>&nbsp;Tambah Detil Pelanggaran</a>
             </div>
             <!-- /.box-header -->
             <!-- /.box-header -->
