@@ -5,7 +5,7 @@
     <section class="content-header">
       <h1>
         Pelanggaran
-        <small>Berdasarkan Detil Pelanggaran</small>
+        <small>Berdasarkan Aksi Pelanggaran</small>
       </h1>
       <ol class="breadcrumb">
         <li><a href="index.php"><i class="fa fa-dashboard"></i> Dashboard</a></li>
@@ -20,7 +20,7 @@
         <div class="col-xs-12">
           <div class="box">
             <div class="box-header with-border">
-             <a href="index.php?page=tambahpdetil" class="btn btn-primary"><i class="fa fa-plus"></i>&nbsp;Tambah Detil Pelanggaran</a>
+             <a href="index.php?page=tambahpaksi" class="btn btn-primary"><i class="fa fa-plus"></i>&nbsp;Tambah Aksi Pelanggaran</a>
             </div>
             <!-- /.box-header -->
             <!-- /.box-header -->
@@ -30,7 +30,7 @@
                 <thead>
                   <tr>
                     <th>NO</th>
-                    <th>Nama Detil Pelanggaran</th>
+                    <th>Nama Aksi Pelanggaran</th>
                     <th>Jumlah Pelanggaran</th>
                   </tr>
                 </thead>

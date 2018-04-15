@@ -154,7 +154,7 @@
         <!--/ Sidebar Pelanggaran -->
         <li class="treeview <?php 
               if (isset($_GET['page'])) {
-                    if ($_GET['page'] == 'pikhtisar' || $_GET['page'] == 'pbentuk' || $_GET['page'] == 'pdetil' || $_GET['page'] == 'psanksi' || $_GET['page'] == 'planjut') {
+                    if ($_GET['page'] == 'pikhtisar' || $_GET['page'] == 'pbentuk' || $_GET['page'] == 'paksi' || $_GET['page'] == 'psanksi' || $_GET['page'] == 'planjut') {
                       echo ' active';
                     } else{
                       echo '';
@@ -188,12 +188,12 @@
              ><a href="?page=pbentuk"><i class="fa fa-tachometer"></i> Bentuk Pelanggaran</a></li>
              <li <?php 
                   if (isset($_GET['page'])) {
-                    if ($_GET['page'] == 'pdetil') {
+                    if ($_GET['page'] == 'paksi') {
                       echo "class='active'";
                     }
                   }
                 ?>
-             ><a href="?page=pdetil"><i class="fa fa-tachometer"></i> Detil Pelanggaran</a></li>
+             ><a href="?page=paksi"><i class="fa fa-tachometer"></i> Detil Pelanggaran</a></li>
              <li <?php 
                   if (isset($_GET['page'])) {
                     if ($_GET['page'] == 'psanksi') {
@@ -286,8 +286,8 @@
 	          include 'shalat.php';
 	        } else if ($_GET['page'] == 'pbentuk') {
 	          include 'pelanggaran/pbentuk.php';
-	        } else if ($_GET['page'] == 'pdetil') {
-	          include 'pelanggaran/pdetil.php';
+	        } else if ($_GET['page'] == 'paksi') {
+	          include 'pelanggaran/paksi.php';
 	        } else if ($_GET['page'] == 'psanksi') {
 	          include 'pelanggaran/psanksi.php';
 	        } else if ($_GET['page'] == 'planjut') {
