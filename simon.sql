@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 12, 2018 at 06:14 AM
+-- Generation Time: Apr 16, 2018 at 03:16 AM
 -- Server version: 10.1.25-MariaDB
 -- PHP Version: 5.6.31
 
@@ -101,7 +101,7 @@ INSERT INTO `mahasiswa` (`id_mahasiswa`, `nim`, `nama`, `angkatan`, `j_kelamin`,
 (1176, 17101004, 'Salma Dliya Fuady', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 35),
 (1177, 17101005, 'Hilwa Fitri Millenia', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 36),
 (1178, 17102003, 'Mas Ichsan Nurhayati', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 37),
-(1179, 17104002, 'Aisyah As-salafiyah', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 38),
+(1179, 17104002, 'Aisyah As-salafiyah', NULL, 'Akhwat', NULL, NULL, NULL, NULL, NULL, 38),
 (1180, 17101006, 'Luthfia Luhuringkania', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 39),
 (1181, 17101007, 'Regina Zahra', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 40),
 (1182, 17101008, 'Faizah Taufik', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 41),
@@ -119,7 +119,7 @@ INSERT INTO `mahasiswa` (`id_mahasiswa`, `nim`, `nama`, `angkatan`, `j_kelamin`,
 (1194, 17102009, 'Salsabila', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 53),
 (1195, 17102010, 'Sakinah Zahra', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 54),
 (1196, 17102011, 'Fannia Mauludiyah Fachru', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 55),
-(1197, 17103003, 'Adila Nur Islamiaty', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 56),
+(1197, 17103003, 'Adila Nur Islamiaty', NULL, 'Akhwat', NULL, NULL, NULL, NULL, NULL, 56),
 (1198, 17101013, 'Ella Wandania', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 57),
 (1199, 17101014, 'Nur Kintan Maharani', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 58),
 (1200, 17101015, 'Asri Nurazhari Putrimant', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 59),
@@ -173,7 +173,7 @@ INSERT INTO `mahasiswa` (`id_mahasiswa`, `nim`, `nama`, `angkatan`, `j_kelamin`,
 (1248, 17103010, 'Rahmaiola Raissa Aziza', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 107),
 (1249, 17101055, 'Rossdinna Nurul Rizqi', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 108),
 (1250, 17101054, 'Fiki Hijjatun Nada', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 109),
-(1251, 17102027, 'Adilia Nurul Zahra', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 110),
+(1251, 17102027, 'Adilia Nurul Zahra', NULL, 'Akhwat', NULL, NULL, NULL, NULL, NULL, 110),
 (1252, 17101052, 'Haanii Haritsa Yuzen', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 111),
 (1253, 17101053, 'Hilga Hanistya Saputri', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 112),
 (1254, 17101050, 'Jenny Ananda', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 113),
@@ -207,12 +207,12 @@ INSERT INTO `mahasiswa` (`id_mahasiswa`, `nim`, `nama`, `angkatan`, `j_kelamin`,
 (1282, 17103017, 'Afta Rizky Amalia', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 141),
 (1283, 17103016, 'Wening Tyas Nur Anissa', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 142),
 (1284, 17101068, 'Farah Hafizhatun Nisa', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 143),
-(1285, 17103015, 'Aidatul Afifah Isra', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 144),
+(1285, 17103015, 'Aidatul Afifah Isra', NULL, 'Akhwat', NULL, NULL, NULL, NULL, NULL, 144),
 (1286, 17101067, 'Hasna Luthfi Khairunnisa', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 145),
 (1287, 17101065, 'Salma Shafira Salsabila', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 146),
 (1288, 17102033, 'Dias Hanifa Ardhanariswa', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 147),
 (1289, 17101066, 'Afifa Rahmi Ihsana', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 148),
-(1290, 17104006, 'Adilah Lulu Aprilia Kusu', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 149),
+(1290, 17104006, 'Adilah Lulu Aprilia Kusu', NULL, 'Akhwat', NULL, NULL, NULL, NULL, NULL, 149),
 (1291, 17102032, 'Safana Ishlah Madani', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 150),
 (1292, 17101064, 'Hana Azahra', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 151),
 (1293, 17101061, 'Amalia Hanifah Latief', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 152),
@@ -248,7 +248,7 @@ INSERT INTO `mahasiswa` (`id_mahasiswa`, `nim`, `nama`, `angkatan`, `j_kelamin`,
 (1323, 17101087, 'Isnafauziahbiljannah', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 182),
 (1324, 17103024, 'Nurul Hakim Dwi Yanti', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 183),
 (1325, 17102044, 'Riyadotul Mustamiah', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 184),
-(1326, 17101085, 'Afini Dwina Andarini', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 185),
+(1326, 17101085, 'Afini Dwina Andarini', NULL, 'Akhwat', NULL, NULL, NULL, NULL, NULL, 185),
 (1327, 17101083, 'Riqotu Fuadatuddiniyah', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 186),
 (1328, 17102043, 'Aulia Salsabila', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 187),
 (1329, 17101084, 'Dea Nabilah', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 188),
@@ -310,7 +310,7 @@ INSERT INTO `mahasiswa` (`id_mahasiswa`, `nim`, `nama`, `angkatan`, `j_kelamin`,
 (1385, 17102062, 'Ramadhani', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 244),
 (1386, 17102063, 'Fuadhli Rahman Katam', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 245),
 (1387, 17102059, 'Lalu Arya Pringgadani', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 246),
-(1388, 17102061, 'Agung Prasetyo Wibowo', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 247),
+(1388, 17102061, 'Agung Prasetyo Wibowo', NULL, 'Ikhwan', NULL, NULL, NULL, NULL, NULL, 247),
 (1389, 17101127, 'Hanif Dwi Putra', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 248),
 (1390, 17101128, 'Zulfitra Hadianto Palwam', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 249),
 (1391, 17101124, 'Lalu Rizky Adriansyah', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 250),
@@ -429,8 +429,8 @@ INSERT INTO `mahasiswa` (`id_mahasiswa`, `nim`, `nama`, `angkatan`, `j_kelamin`,
 (1504, 17102087, 'Muhammad Faishal Hilman', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 363),
 (1505, 17101190, 'Muhammad Rasyid Ridha', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 364),
 (2010, 17102088, 'Faliza Hafidhotul F', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 365),
-(2029, 17101225, 'Afka Qoriyanto', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 366),
-(2030, 17101217, 'Alfariq Riansyah', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 367),
+(2029, 17101225, 'Afka Qoriyanto', NULL, 'Ikhwan', NULL, NULL, NULL, NULL, NULL, 366),
+(2030, 17101217, 'Alfariq Riansyah', NULL, 'Ikhwan', NULL, NULL, NULL, NULL, NULL, 367),
 (2031, 17101216, 'Anto Wijaya', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 368),
 (2032, 17101210, 'Eko Saputra', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 369),
 (2033, 17101223, 'Fahri', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 370),
@@ -491,9 +491,71 @@ INSERT INTO `mahasiswa` (`id_mahasiswa`, `nim`, `nama`, `angkatan`, `j_kelamin`,
 --
 
 CREATE TABLE `m_binaan` (
+  `id_mhsbinaan` int(11) NOT NULL,
   `id_pembina` int(11) NOT NULL,
   `id_mahasiswa` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `m_binaan`
+--
+
+INSERT INTO `m_binaan` (`id_mhsbinaan`, `id_pembina`, `id_mahasiswa`) VALUES
+(1, 22, 1197),
+(2, 22, 1290),
+(3, 22, 1251),
+(4, 26, 1326),
+(5, 26, 1285),
+(6, 26, 1179),
+(7, 20, 2029),
+(8, 20, 1388),
+(9, 20, 2030);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `paksi`
+--
+
+CREATE TABLE `paksi` (
+  `id_paksi` int(11) NOT NULL,
+  `nama_aksi` varchar(50) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `paksi`
+--
+
+INSERT INTO `paksi` (`id_paksi`, `nama_aksi`) VALUES
+(1, 'mencuri'),
+(2, 'miras'),
+(3, 'mencuri'),
+(4, 'miras'),
+(5, 'narkoba'),
+(6, 'pornografi'),
+(7, 'pornoaksi'),
+(8, 'zina'),
+(9, 'merokok'),
+(10, 'membawa rokok');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `pbentuk`
+--
+
+CREATE TABLE `pbentuk` (
+  `id_pbentuk` int(11) NOT NULL,
+  `nama_bentuk` varchar(100) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `pbentuk`
+--
+
+INSERT INTO `pbentuk` (`id_pbentuk`, `nama_bentuk`) VALUES
+(1, 'Melakukan perbuatan maksiat yang dapat mencemarkan nama baik pribadi dan\r\natau STEI TAZKIA'),
+(2, 'Berkhalwat');
 
 -- --------------------------------------------------------
 
@@ -558,6 +620,80 @@ INSERT INTO `pembina` (`id_pembina`, `nama`, `j_kelamin`, `tgl_lahir`, `gelar`, 
 (26, 'Diva Azka Karimah', 'Akhwat', '2017-12-13', 'S.E', 'Jakarta', 'diva@tazkia.ac.id', '0812758382', NULL, 30),
 (27, 'Nashrudin Al-Huda', 'Ikhwan', '2017-12-20', 'S.E', 'Semarang', 'huda@tazkia.ac.id', '0856738232', NULL, 31),
 (28, 'Alfin', 'Ikhwan', '2017-12-16', 'S.E', 'Banten', 'alfin@tazkia.ac.id', '0856738283', NULL, 32);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `planjut`
+--
+
+CREATE TABLE `planjut` (
+  `id_planjut` int(11) NOT NULL,
+  `nama_tindaklanjut` varchar(50) DEFAULT NULL,
+  `level` int(1) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `planjut`
+--
+
+INSERT INTO `planjut` (`id_planjut`, `nama_tindaklanjut`, `level`) VALUES
+(1, 'Diberikan nasehat', 1),
+(2, 'Barang disita', 2),
+(3, 'Anulir 5% Nilai Pembinaan', 3),
+(4, 'Anulir 10% Nilai Pembinaan', 4),
+(5, 'Anulir 20% Nilai Pembinaan', 5),
+(6, 'Anulir 30% Nilai Pembinaan', 6),
+(7, 'Diskors', 7),
+(8, 'Anulir 1 Semester Nilai Pembinaan', 8),
+(9, 'Anulir 2 Semester Nilai Pembinaan', 9),
+(10, 'Drop out', 10);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `pmain`
+--
+
+CREATE TABLE `pmain` (
+  `id_pelanggaran` int(11) NOT NULL,
+  `id_mhsbinaan` int(11) DEFAULT NULL,
+  `id_pbentuk` int(11) DEFAULT NULL,
+  `id_paksi` int(11) DEFAULT NULL,
+  `id_psanksi` int(11) DEFAULT NULL,
+  `id_planjut` int(11) DEFAULT NULL,
+  `deskripsi` varchar(255) DEFAULT NULL,
+  `tanggal` date DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `pmain`
+--
+
+INSERT INTO `pmain` (`id_pelanggaran`, `id_mhsbinaan`, `id_pbentuk`, `id_paksi`, `id_psanksi`, `id_planjut`, `deskripsi`, `tanggal`) VALUES
+(1, 1, 1, 5, 3, 8, 'test', '2018-04-15'),
+(2, 4, 2, 8, 3, 10, 'test', '2018-04-06');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `psanksi`
+--
+
+CREATE TABLE `psanksi` (
+  `id_psanksi` int(11) NOT NULL,
+  `nama_sanksi` varchar(5) DEFAULT NULL,
+  `bobot` varchar(7) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `psanksi`
+--
+
+INSERT INTO `psanksi` (`id_psanksi`, `nama_sanksi`, `bobot`) VALUES
+(1, 'SP 1', NULL),
+(2, 'SP 2', NULL),
+(3, 'SP 3', NULL);
 
 -- --------------------------------------------------------
 
@@ -1023,8 +1159,21 @@ ALTER TABLE `mahasiswa`
 -- Indexes for table `m_binaan`
 --
 ALTER TABLE `m_binaan`
+  ADD PRIMARY KEY (`id_mhsbinaan`),
   ADD KEY `id_pembina` (`id_pembina`),
   ADD KEY `id_mahasiswa` (`id_mahasiswa`);
+
+--
+-- Indexes for table `paksi`
+--
+ALTER TABLE `paksi`
+  ADD PRIMARY KEY (`id_paksi`);
+
+--
+-- Indexes for table `pbentuk`
+--
+ALTER TABLE `pbentuk`
+  ADD PRIMARY KEY (`id_pbentuk`);
 
 --
 -- Indexes for table `pelanggaran`
@@ -1045,6 +1194,29 @@ ALTER TABLE `pelanggaran_mhs`
 ALTER TABLE `pembina`
   ADD PRIMARY KEY (`id_pembina`),
   ADD UNIQUE KEY `id_user` (`id_user`);
+
+--
+-- Indexes for table `planjut`
+--
+ALTER TABLE `planjut`
+  ADD PRIMARY KEY (`id_planjut`);
+
+--
+-- Indexes for table `pmain`
+--
+ALTER TABLE `pmain`
+  ADD PRIMARY KEY (`id_pelanggaran`),
+  ADD KEY `id_mhsbinaan` (`id_mhsbinaan`),
+  ADD KEY `id_pbentuk` (`id_pbentuk`),
+  ADD KEY `id_paksi` (`id_paksi`),
+  ADD KEY `id_psanksi` (`id_psanksi`),
+  ADD KEY `id_planjut` (`id_planjut`);
+
+--
+-- Indexes for table `psanksi`
+--
+ALTER TABLE `psanksi`
+  ADD PRIMARY KEY (`id_psanksi`);
 
 --
 -- Indexes for table `shalat`
@@ -1073,6 +1245,21 @@ ALTER TABLE `administrator`
 ALTER TABLE `adminmatrik`
   MODIFY `id_adminmatrik` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
+-- AUTO_INCREMENT for table `m_binaan`
+--
+ALTER TABLE `m_binaan`
+  MODIFY `id_mhsbinaan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+--
+-- AUTO_INCREMENT for table `paksi`
+--
+ALTER TABLE `paksi`
+  MODIFY `id_paksi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+--
+-- AUTO_INCREMENT for table `pbentuk`
+--
+ALTER TABLE `pbentuk`
+  MODIFY `id_pbentuk` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+--
 -- AUTO_INCREMENT for table `pelanggaran`
 --
 ALTER TABLE `pelanggaran`
@@ -1082,6 +1269,21 @@ ALTER TABLE `pelanggaran`
 --
 ALTER TABLE `pembina`
   MODIFY `id_pembina` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
+--
+-- AUTO_INCREMENT for table `planjut`
+--
+ALTER TABLE `planjut`
+  MODIFY `id_planjut` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+--
+-- AUTO_INCREMENT for table `pmain`
+--
+ALTER TABLE `pmain`
+  MODIFY `id_pelanggaran` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+--
+-- AUTO_INCREMENT for table `psanksi`
+--
+ALTER TABLE `psanksi`
+  MODIFY `id_psanksi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT for table `users`
 --
@@ -1122,6 +1324,16 @@ ALTER TABLE `pelanggaran_mhs`
 --
 ALTER TABLE `pembina`
   ADD CONSTRAINT `pembina_ibfk_1` FOREIGN KEY (`id_user`) REFERENCES `users` (`id_user`);
+
+--
+-- Constraints for table `pmain`
+--
+ALTER TABLE `pmain`
+  ADD CONSTRAINT `pmain_ibfk_1` FOREIGN KEY (`id_mhsbinaan`) REFERENCES `m_binaan` (`id_mhsbinaan`),
+  ADD CONSTRAINT `pmain_ibfk_2` FOREIGN KEY (`id_pbentuk`) REFERENCES `pbentuk` (`id_pbentuk`),
+  ADD CONSTRAINT `pmain_ibfk_3` FOREIGN KEY (`id_paksi`) REFERENCES `paksi` (`id_paksi`),
+  ADD CONSTRAINT `pmain_ibfk_4` FOREIGN KEY (`id_psanksi`) REFERENCES `psanksi` (`id_psanksi`),
+  ADD CONSTRAINT `pmain_ibfk_5` FOREIGN KEY (`id_planjut`) REFERENCES `planjut` (`id_planjut`);
 
 --
 -- Constraints for table `shalat`
