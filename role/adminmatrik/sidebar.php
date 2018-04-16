@@ -193,7 +193,7 @@
                     }
                   }
                 ?>
-             ><a href="?page=paksi"><i class="fa fa-tachometer"></i> Detil Pelanggaran</a></li>
+             ><a href="?page=paksi"><i class="fa fa-tachometer"></i> Aksi Pelanggaran</a></li>
              <li <?php 
                   if (isset($_GET['page'])) {
                     if ($_GET['page'] == 'psanksi') {
