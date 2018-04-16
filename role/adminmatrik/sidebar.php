@@ -193,7 +193,7 @@
                     }
                   }
                 ?>
-             ><a href="?page=paksi"><i class="fa fa-tachometer"></i> Aksi Pelanggaran</a></li>
+             ><a href="?page=paksi"><i class="fa fa-universal-access"></i> Aksi Pelanggaran</a></li>
              <li <?php 
                   if (isset($_GET['page'])) {
                     if ($_GET['page'] == 'psanksi') {
@@ -201,7 +201,7 @@
                     }
                   }
                 ?>
-             ><a href="?page=psanksi"><i class="fa fa-universal-access"></i> Sanksi</a></li>
+             ><a href="?page=psanksi"><i class="fa fa-bookmark-o"></i> Sanksi</a></li>
              <li <?php 
                   if (isset($_GET['page'])) {
                     if ($_GET['page'] == 'planjut') {
