@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 16, 2018 at 11:09 AM
+-- Generation Time: Apr 16, 2018 at 03:45 PM
 -- Server version: 10.1.25-MariaDB
 -- PHP Version: 5.6.31
 
@@ -520,23 +520,22 @@ INSERT INTO `m_binaan` (`id_mhsbinaan`, `id_pembina`, `id_mahasiswa`) VALUES
 CREATE TABLE `paksi` (
   `id_paksi` int(11) NOT NULL,
   `id_pbentuk` int(11) DEFAULT NULL,
-  `nama_aksi` varchar(50) DEFAULT NULL,
-  `id_psanksi` int(11) DEFAULT NULL
+  `nama_aksi` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `paksi`
 --
 
-INSERT INTO `paksi` (`id_paksi`, `id_pbentuk`, `nama_aksi`, `id_psanksi`) VALUES
-(3, 1, 'mencuri', 3),
-(4, 1, 'miras', 3),
-(5, 1, 'narkoba', 3),
-(6, 1, 'pornografi', 3),
-(7, 1, 'pornoaksi', 3),
-(8, 1, 'zina', 3),
-(9, 3, 'merokok', NULL),
-(10, 3, 'membawa rokok', NULL);
+INSERT INTO `paksi` (`id_paksi`, `id_pbentuk`, `nama_aksi`) VALUES
+(3, 1, 'mencuri'),
+(4, 1, 'miras'),
+(5, 1, 'narkoba'),
+(6, 1, 'pornografi'),
+(7, 1, 'pornoaksi'),
+(8, 1, 'zina'),
+(9, 3, 'merokok'),
+(10, 3, 'membawa rokok');
 
 -- --------------------------------------------------------
 
@@ -604,7 +603,7 @@ CREATE TABLE `planjut` (
   `id_planjut` int(11) NOT NULL,
   `id_psanksi` int(11) DEFAULT NULL,
   `nama_tindaklanjut` varchar(50) DEFAULT NULL,
-  `level` int(1) NOT NULL
+  `level` int(1) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -613,15 +612,15 @@ CREATE TABLE `planjut` (
 
 INSERT INTO `planjut` (`id_planjut`, `id_psanksi`, `nama_tindaklanjut`, `level`) VALUES
 (1, NULL, 'Diberikan nasehat', 1),
-(2, NULL, 'Barang disita', 2),
+(2, 1, 'Barang disita', 2),
 (3, NULL, 'Anulir 5% Nilai Pembinaan', 3),
-(4, NULL, 'Anulir 10% Nilai Pembinaan', 4),
-(5, NULL, 'Anulir 20% Nilai Pembinaan', 5),
+(4, 2, 'Anulir 10% Nilai Pembinaan', 4),
+(5, 2, 'Anulir 20% Nilai Pembinaan', 5),
 (6, NULL, 'Anulir 30% Nilai Pembinaan', 6),
 (7, NULL, 'Diskors', 7),
-(8, NULL, 'Anulir 1 Semester Nilai Pembinaan', 8),
-(9, NULL, 'Anulir 2 Semester Nilai Pembinaan', 9),
-(10, NULL, 'Drop out', 10);
+(8, 3, 'Anulir 1 Semester Nilai Pembinaan', 8),
+(9, 3, 'Anulir 2 Semester Nilai Pembinaan', 9),
+(10, 3, 'Drop out', 10);
 
 -- --------------------------------------------------------
 
@@ -656,7 +655,6 @@ INSERT INTO `pmain` (`id_pelanggaran`, `id_mhsbinaan`, `id_pbentuk`, `id_paksi`,
 
 CREATE TABLE `psanksi` (
   `id_psanksi` int(11) NOT NULL,
-  `id_paksi` int(11) DEFAULT NULL,
   `nama_sanksi` varchar(5) DEFAULT NULL,
   `bobot` varchar(7) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -665,10 +663,10 @@ CREATE TABLE `psanksi` (
 -- Dumping data for table `psanksi`
 --
 
-INSERT INTO `psanksi` (`id_psanksi`, `id_paksi`, `nama_sanksi`, `bobot`) VALUES
-(1, NULL, 'SP 1', NULL),
-(2, NULL, 'SP 2', NULL),
-(3, NULL, 'SP 3', NULL);
+INSERT INTO `psanksi` (`id_psanksi`, `nama_sanksi`, `bobot`) VALUES
+(1, 'SP 1', 'Ringan'),
+(2, 'SP 2', 'Menenga'),
+(3, 'SP 3', 'Berat');
 
 -- --------------------------------------------------------
 
@@ -704,7 +702,7 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`id_user`, `username`, `password`, `password_default`, `level`, `last_login`) VALUES
 (1, 'admin', 'admin', 0, 0, '2018-03-12 08:11:33'),
-(2, 'derry', 'derry123', 0, 2, '2018-04-16 14:09:39'),
+(2, 'derry', 'derry123', 0, 2, '2018-04-16 19:49:37'),
 (21, 'bintang', 'bintang123', 0, 3, '2018-03-12 08:11:09'),
 (22, 'aya', 'aya123', 0, 3, '2017-12-02 16:23:35'),
 (23, 'hasan', 'hasan123', 0, 2, '2017-11-30 17:06:08'),
@@ -1143,8 +1141,7 @@ ALTER TABLE `m_binaan`
 --
 ALTER TABLE `paksi`
   ADD PRIMARY KEY (`id_paksi`),
-  ADD KEY `id_pbentuk` (`id_pbentuk`),
-  ADD KEY `id_psanksi` (`id_psanksi`);
+  ADD KEY `id_pbentuk` (`id_pbentuk`);
 
 --
 -- Indexes for table `pbentuk`
@@ -1181,8 +1178,7 @@ ALTER TABLE `pmain`
 -- Indexes for table `psanksi`
 --
 ALTER TABLE `psanksi`
-  ADD PRIMARY KEY (`id_psanksi`),
-  ADD KEY `id_paksi` (`id_paksi`);
+  ADD PRIMARY KEY (`id_psanksi`);
 
 --
 -- Indexes for table `shalat`
@@ -1216,35 +1212,10 @@ ALTER TABLE `adminmatrik`
 ALTER TABLE `m_binaan`
   MODIFY `id_mhsbinaan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 --
--- AUTO_INCREMENT for table `paksi`
---
-ALTER TABLE `paksi`
-  MODIFY `id_paksi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
---
--- AUTO_INCREMENT for table `pbentuk`
---
-ALTER TABLE `pbentuk`
-  MODIFY `id_pbentuk` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
---
 -- AUTO_INCREMENT for table `pembina`
 --
 ALTER TABLE `pembina`
   MODIFY `id_pembina` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
---
--- AUTO_INCREMENT for table `planjut`
---
-ALTER TABLE `planjut`
-  MODIFY `id_planjut` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
---
--- AUTO_INCREMENT for table `pmain`
---
-ALTER TABLE `pmain`
-  MODIFY `id_pelanggaran` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
---
--- AUTO_INCREMENT for table `psanksi`
---
-ALTER TABLE `psanksi`
-  MODIFY `id_psanksi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT for table `users`
 --
@@ -1277,8 +1248,7 @@ ALTER TABLE `m_binaan`
 -- Constraints for table `paksi`
 --
 ALTER TABLE `paksi`
-  ADD CONSTRAINT `paksi_ibfk_1` FOREIGN KEY (`id_pbentuk`) REFERENCES `pbentuk` (`id_pbentuk`),
-  ADD CONSTRAINT `paksi_ibfk_2` FOREIGN KEY (`id_psanksi`) REFERENCES `psanksi` (`id_psanksi`);
+  ADD CONSTRAINT `paksi_ibfk_1` FOREIGN KEY (`id_pbentuk`) REFERENCES `pbentuk` (`id_pbentuk`);
 
 --
 -- Constraints for table `pembina`
@@ -1301,12 +1271,6 @@ ALTER TABLE `pmain`
   ADD CONSTRAINT `pmain_ibfk_3` FOREIGN KEY (`id_paksi`) REFERENCES `paksi` (`id_paksi`),
   ADD CONSTRAINT `pmain_ibfk_4` FOREIGN KEY (`id_psanksi`) REFERENCES `psanksi` (`id_psanksi`),
   ADD CONSTRAINT `pmain_ibfk_5` FOREIGN KEY (`id_planjut`) REFERENCES `planjut` (`id_planjut`);
-
---
--- Constraints for table `psanksi`
---
-ALTER TABLE `psanksi`
-  ADD CONSTRAINT `psanksi_ibfk_1` FOREIGN KEY (`id_paksi`) REFERENCES `paksi` (`id_paksi`);
 
 --
 -- Constraints for table `shalat`
