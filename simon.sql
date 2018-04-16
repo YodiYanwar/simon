@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 16, 2018 at 09:18 AM
+-- Generation Time: Apr 16, 2018 at 09:22 AM
 -- Server version: 10.1.25-MariaDB
 -- PHP Version: 5.6.31
 
@@ -556,34 +556,6 @@ CREATE TABLE `pbentuk` (
 INSERT INTO `pbentuk` (`id_pbentuk`, `nama_bentuk`) VALUES
 (1, 'Melakukan perbuatan maksiat yang dapat mencemarkan nama baik pribadi dan\r\natau STEI TAZKIA'),
 (2, 'Berkhalwat');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `pelanggaran`
---
-
-CREATE TABLE `pelanggaran` (
-  `id_pelanggaran` int(11) NOT NULL,
-  `nama_pelanggaran` varchar(70) NOT NULL,
-  `kategori` varchar(10) NOT NULL,
-  `sanksi` varchar(50) NOT NULL,
-  `deskripsi` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `pelanggaran_mhs`
---
-
-CREATE TABLE `pelanggaran_mhs` (
-  `id_mahasiswa` int(11) DEFAULT NULL,
-  `id_pelanggaran` int(11) DEFAULT NULL,
-  `tgl_melanggar` date NOT NULL,
-  `tindak_lanjut` varchar(100) NOT NULL,
-  `keterangan` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -9560,19 +9532,6 @@ ALTER TABLE `pbentuk`
   ADD PRIMARY KEY (`id_pbentuk`);
 
 --
--- Indexes for table `pelanggaran`
---
-ALTER TABLE `pelanggaran`
-  ADD PRIMARY KEY (`id_pelanggaran`);
-
---
--- Indexes for table `pelanggaran_mhs`
---
-ALTER TABLE `pelanggaran_mhs`
-  ADD KEY `id_mahasiswa` (`id_mahasiswa`),
-  ADD KEY `id_pelanggaran` (`id_pelanggaran`);
-
---
 -- Indexes for table `pembina`
 --
 ALTER TABLE `pembina`
@@ -9644,11 +9603,6 @@ ALTER TABLE `paksi`
 ALTER TABLE `pbentuk`
   MODIFY `id_pbentuk` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
--- AUTO_INCREMENT for table `pelanggaran`
---
-ALTER TABLE `pelanggaran`
-  MODIFY `id_pelanggaran` int(11) NOT NULL AUTO_INCREMENT;
---
 -- AUTO_INCREMENT for table `pembina`
 --
 ALTER TABLE `pembina`
@@ -9695,13 +9649,6 @@ ALTER TABLE `adminmatrik`
 ALTER TABLE `m_binaan`
   ADD CONSTRAINT `m_binaan_ibfk_1` FOREIGN KEY (`id_pembina`) REFERENCES `pembina` (`id_pembina`),
   ADD CONSTRAINT `m_binaan_ibfk_2` FOREIGN KEY (`id_mahasiswa`) REFERENCES `mahasiswa` (`id_mahasiswa`);
-
---
--- Constraints for table `pelanggaran_mhs`
---
-ALTER TABLE `pelanggaran_mhs`
-  ADD CONSTRAINT `pelanggaran_mhs_ibfk_1` FOREIGN KEY (`id_mahasiswa`) REFERENCES `mahasiswa` (`id_mahasiswa`),
-  ADD CONSTRAINT `pelanggaran_mhs_ibfk_2` FOREIGN KEY (`id_pelanggaran`) REFERENCES `pelanggaran` (`id_pelanggaran`);
 
 --
 -- Constraints for table `pembina`
