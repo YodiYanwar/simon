@@ -10,7 +10,7 @@
       <ol class="breadcrumb">
         <li><a href="index.php"><i class="fa fa-dashboard"></i> Dashboard</a></li>
         <li>Pelanggaran</li>
-        <li class="active">Detil Pelanggaran</li>
+        <li class="active">Aksi Pelanggaran</li>
       </ol>
     </section>
 
