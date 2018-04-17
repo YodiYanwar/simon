@@ -35,6 +35,7 @@
                     <th>Sanksi</th>
                     <th>Tindak Lanjut</th>
                     <th>Tanggal</th>
+                    <th></th>
                   </tr>
                 </thead>
                 <tbody>
@@ -53,6 +54,7 @@
                   <td><?php echo $row['nama_sanksi']; ?></td>
                   <td><?php echo $row['nama_tindaklanjut']; ?></td>
                   <td><?php echo $row['tanggal']; ?></td>
+                  <td><a class="btn btn-info btn-sm" href="index.php?page=pdetail&id=<?php echo $row['id_pelanggaran']; ?>"><i class="fa fa-plus"></i>&nbsp;Detil</a></td>
                 </tr>
                  <?php 
                    $no++; }
