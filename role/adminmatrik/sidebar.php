@@ -292,7 +292,9 @@
 	          include 'pelanggaran/psanksi.php';
 	        } else if ($_GET['page'] == 'planjut') {
 	          include 'pelanggaran/planjut.php';
-	        }
+	        } else if ($_GET['page'] == 'pikhtisar') {
+            include 'pelanggaran/pikhtisar.php';
+          }
   		} else{
   			include 'dashboard.php';
   		}

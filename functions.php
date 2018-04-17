@@ -137,6 +137,17 @@
 		}
 	}	
 
+	function tampilPikhtisar(){
+		$ambildata = mysql_query("SELECT id_pelanggaran, b.id_mahasiswa, b.namamhs, nama_bentuk, nama_aksi, nama_sanksi, nama_tindaklanjut, deskripsi, tanggal FROM pmain pm LEFT JOIN pbentuk pb ON pm.id_pbentuk = pb.id_pbentuk LEFT JOIN paksi pa ON pm.id_paksi = pa.id_paksi LEFT JOIN psanksi ps ON pm.id_psanksi = ps.id_psanksi LEFT JOIN planjut pl ON pm.id_planjut = pl.id_planjut LEFT JOIN( SELECT m.id_mahasiswa, m.nama AS namamhs, mb.id_mhsbinaan FROM m_binaan mb LEFT JOIN mahasiswa m ON mb.id_mahasiswa = m.id_mahasiswa ) b ON pm.id_mhsbinaan = b.id_mhsbinaan") or die(mysql_error());
+		if (mysql_num_rows($ambildata) > 0) {
+			while ($ad = mysql_fetch_assoc($ambildata)) // Perulangan while ini JANGAN pake {}
+				$data[] = $ad;
+				return $data;
+		} else{
+			echo "Data pelanggaran masih kosong";
+		}
+	}	
+
 	function MhsByPembinaDetail($idPembina){
 		$ambildata = mysql_query("SELECT mb.id_mahasiswa, m.nim , m.nama AS 'nama_mahasiswa', m.id_user AS 'uid_mahasiswa', p.id_user AS 'uid_pembina' FROM m_binaan mb LEFT JOIN mahasiswa m ON mb.id_mahasiswa = m.id_mahasiswa LEFT JOIN pembina p ON mb.id_pembina = p.id_pembina WHERE mb.id_pembina = $idPembina ORDER BY m.nama");
 		if (mysql_num_rows($ambildata) > 0) {
