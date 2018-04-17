@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 16, 2018 at 03:45 PM
+-- Generation Time: Apr 17, 2018 at 09:48 AM
 -- Server version: 10.1.25-MariaDB
 -- PHP Version: 5.6.31
 
@@ -70,6 +70,22 @@ CREATE TABLE `adminmatrik` (
 INSERT INTO `adminmatrik` (`id_adminmatrik`, `nama`, `telp`, `email`, `j_kelamin`, `tgl_lahir`, `id_user`, `avatar`) VALUES
 (2, 'Derry', '085637242', 'derry@tazkia.ac.id', 'Laki-laki', '1987-01-02', 2, 'color-combinatioin-black.jpg'),
 (3, 'Hasan Ishaq', '081265484', 'hasan@tazkia.ac.id', 'Laki-laki', '2017-11-11', 23, NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Stand-in structure for view `data_mahasiswa`
+-- (See below for the actual view)
+--
+CREATE TABLE `data_mahasiswa` (
+`nama` varchar(35)
+,`nim` int(11)
+,`id_mahasiswa` int(11)
+,`id_user` int(11)
+,`j_kelamin` varchar(15)
+,`last_login` datetime
+,`password` varchar(50)
+);
 
 -- --------------------------------------------------------
 
@@ -656,7 +672,7 @@ INSERT INTO `pmain` (`id_pelanggaran`, `id_mhsbinaan`, `id_pbentuk`, `id_paksi`,
 CREATE TABLE `psanksi` (
   `id_psanksi` int(11) NOT NULL,
   `nama_sanksi` varchar(5) DEFAULT NULL,
-  `bobot` varchar(7) DEFAULT NULL
+  `bobot` varchar(20) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -665,7 +681,7 @@ CREATE TABLE `psanksi` (
 
 INSERT INTO `psanksi` (`id_psanksi`, `nama_sanksi`, `bobot`) VALUES
 (1, 'SP 1', 'Ringan'),
-(2, 'SP 2', 'Menenga'),
+(2, 'SP 2', 'Menengah'),
 (3, 'SP 3', 'Berat');
 
 -- --------------------------------------------------------
@@ -702,7 +718,7 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`id_user`, `username`, `password`, `password_default`, `level`, `last_login`) VALUES
 (1, 'admin', 'admin', 0, 0, '2018-03-12 08:11:33'),
-(2, 'derry', 'derry123', 0, 2, '2018-04-16 19:49:37'),
+(2, 'derry', 'derry123', 0, 2, '2018-04-17 14:34:59'),
 (21, 'bintang', 'bintang123', 0, 3, '2018-03-12 08:11:09'),
 (22, 'aya', 'aya123', 0, 3, '2017-12-02 16:23:35'),
 (23, 'hasan', 'hasan123', 0, 2, '2017-11-30 17:06:08'),
@@ -1102,6 +1118,15 @@ INSERT INTO `users` (`id_user`, `username`, `password`, `password_default`, `lev
 (417, '17102089', '36g0k5pcTl', 1, 4, '0000-00-00 00:00:00'),
 (418, '17103062', '81Yyh6Vk70', 1, 4, '0000-00-00 00:00:00'),
 (419, '17103051', 'c39oz4J9Mv', 1, 4, '0000-00-00 00:00:00');
+
+-- --------------------------------------------------------
+
+--
+-- Structure for view `data_mahasiswa`
+--
+DROP TABLE IF EXISTS `data_mahasiswa`;
+
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `data_mahasiswa`  AS  select `mahasiswa`.`nama` AS `nama`,`mahasiswa`.`nim` AS `nim`,`mahasiswa`.`id_mahasiswa` AS `id_mahasiswa`,`mahasiswa`.`id_user` AS `id_user`,`mahasiswa`.`j_kelamin` AS `j_kelamin`,`users`.`last_login` AS `last_login`,`users`.`password` AS `password` from (`users` join `mahasiswa` on((`mahasiswa`.`id_user` = `users`.`id_user`))) order by `mahasiswa`.`nama` ;
 
 --
 -- Indexes for dumped tables
