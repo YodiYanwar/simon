@@ -29,49 +29,16 @@
               <table id="tablePembina" class="table table-bordered table-hover table-condensed">
                 <thead>
                   <tr>
-                    <th>NO</th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
                     <th>NIM</th>
                     <th>Nama</th>
                     <th>Ikhwan/Akhwat</th>
                     <th>Terakhir Login</th>
-                    <th></th>
+                    <th>Action</th>
                   </tr>
-                </thead>
-                <tbody>
-                  <?php 
-                    $dataMahasiswa = tampilMahasiswa();
-                    
-                    $no = 1;
-                  if (is_array($dataMahasiswa) || is_object($dataMahasiswa)){
-                    foreach($dataMahasiswa as $row){
-
-                   ?>
-                <tr>
-                  <td><?php echo $no ?></td>
-                  <td><?php echo "<span class='badge'>".$row['nim']."</span>" ?></td>
-                  <td><?php echo "<a href='index.php?page=mahasiswadetails&id=".$row['id_user']."'>".$row['nama']."</a>" ?></td>
-                  <td><?php if($row['j_kelamin'] == 'Ikhwan' || $row['j_kelamin'] == 'Laki-laki'){echo '<span class="label bg-green">Ikhwan</span>';} else if($row['j_kelamin'] == 'Akhwat' || $row['j_kelamin'] == 'Perempuan'){echo '<span class="label bg-yellow">Akhwat</span>';} else if($row['j_kelamin'] == NULL){echo '<span class="label bg-gray">Belum diset</span>';} ?></td>
-                  <td><?php if ($row['last_login'] == '0000-00-00 00:00:00'){ echo 'Belum Pernah';}else{ echo date("d-m-Y H:i", strtotime($row['last_login'])) ;}
-                  ?></td>
-                  <td>
-                    <div class="dropdown">
-                      <button class="btn btn-default btn-sm dropdown-toggle " type="button" data-toggle="dropdown">
-                        <i class="fa fa-cog fa-lg"></i>&nbsp;&nbsp;<span class="caret"></span>
-                      </button>
-                      <ul class="dropdown-menu">
-                        <li><a style="color:#3C8DBC;" href="index.php?page=editmahasiswa&id=<?php echo $row['id_user']; ?> " class='dropdown-item'><i class='fa fa-edit'></i>Edit</a></li>
-                        <?php if(strlen($row['password']) > 5){ echo "<li><a style='color:#3C8DBC;' href='#ModalResetPassword' class='dropdown-item' data-toggle='modal'><i class='fa fa-unlock-alt'></i>&nbsp;&nbsp;Reset Password</a></li>";} ?>
-                        <li><?php echo "<a style='color:#DD4B39;' href='#ModalHapusMahasiswa' class='dropdown-item' data-toggle='modal' data-href='action/hapus.php?idmahasiswa=".$row['id_mahasiswa']."&iduser=".$row['id_user']."' aria-hidden='true'><i class='fa fa-remove'></i>Hapus</a>"; ?></li>
-                        
-                      </ul>
-                    </div>
-                  </td>
-                </tr>
-                 <?php 
-                   $no++; }
-                  }
-                ?>      
-                </tbody>          
+                </thead>         
               </table>
               <!-- /Table Daftar Pembina -->
             </div>
@@ -145,3 +112,19 @@
 
     </section>
     <!-- /.content -->
+
+    <script>
+    $(document).ready(function() {
+      var t = $('#tablePembina').DataTable( {
+            "processing": true,
+            "serverSide": true,
+            "ajax": "/simon/dataMahasiswa.php",
+            "order": [[ 4, "asc" ]],
+            "columnDefs": [
+              { "visible": false, "targets": [0,1,2]},
+              { "searchable": false, "orderable": false, "targets": [5,6,7]}
+            ]
+        } );
+
+    } );
+    </script>
