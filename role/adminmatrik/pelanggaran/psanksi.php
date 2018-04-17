@@ -26,7 +26,7 @@
             <!-- /.box-header -->
             <div class="box-body">
               <!-- Table Daftar Pembina -->
-              <table id="tableSanksiPelanggaran" class="table table-bordered table-hover table-condensed">
+              <table id="tablePelanggaran" class="table table-bordered table-hover table-condensed">
                 <thead>
                   <tr>
                     <th>NO</th>

@@ -342,6 +342,10 @@ $(document).ready(function() {
   $(document).ready(function() {
     $('#tableUsers').DataTable()
   });
+
+  $(document).ready(function() {
+    $('#tablePelanggaran').DataTable()
+  });
 </script>
 
 <script type="text/javascript">
