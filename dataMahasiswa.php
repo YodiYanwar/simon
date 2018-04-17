@@ -58,7 +58,7 @@
 				'db'		=> 'id_user',
 				'dt'        => 7,
 				'formatter' => function( $d, $row ) {
-					if(strlen($row[2]) > 5){
+					if(strlen($row[2]) == 10){
 						$password = "<li><a style='color:#3C8DBC;' href='#ModalResetPassword' class='dropdown-item' data-toggle='modal'><i class='fa fa-unlock-alt'></i>&nbsp;&nbsp;Reset Password</a></li>";
 					}
 					return '<div class="dropdown">
