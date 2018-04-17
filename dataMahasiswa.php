@@ -78,9 +78,9 @@
 		// SQL server connection information
 		$sql_details = array(
 			'user' => 'root',
-			'pass' => 'password',
+			'pass' => '',
 			'db'   => 'simon',
-			'host' => '172.18.0.2'
+			'host' => 'localhost'
 		);
 		
 		require( 'ssp.class.php' );
