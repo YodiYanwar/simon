@@ -37,19 +37,22 @@
                 </thead>
                 <tbody>
                   <?php 
-                    /*$dataMahasiswa = tampilMahasiswa();
+                    $dataPsanksi = tampilPsanksi();
                     
                     $no = 1;
-                  if (is_array($dataMahasiswa) || is_object($dataMahasiswa)){
-                    foreach($dataMahasiswa as $row){*/
+                  if (is_array($dataPsanksi) || is_object($dataPsanksi)){
+                    foreach($dataPsanksi as $row){
 
                    ?>
                 <tr>
-                  
+                  <td><?php echo $no; ?></td>
+                  <td><?php echo $row['nama_sanksi']; ?></td>
+                  <td><?php echo $row['bobot']; ?></td>
+                  <td><?php echo $row['jumlah']; ?></td>
                 </tr>
                  <?php 
-                   // $no++; }
-                  // }
+                   $no++; }
+                  }
                 ?>      
                 </tbody>          
               </table>

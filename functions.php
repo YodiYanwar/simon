@@ -104,6 +104,39 @@
 		}
 	}
 
+	function tampilPaksi(){
+		$ambildata = mysql_query("SELECT pa.id_paksi, pa.nama_aksi, COUNT(DISTINCT pm.id_paksi) AS jumlah FROM paksi pa LEFT JOIN pmain pm ON pa.id_paksi = pm.id_paksi GROUP BY pa.nama_aksi") or die(mysql_error());
+		if (mysql_num_rows($ambildata) > 0) {
+			while ($ad = mysql_fetch_assoc($ambildata)) // Perulangan while ini JANGAN pake {}
+				$data[] = $ad;
+				return $data;
+		} else{
+			echo "Aksi pelanggaran belum ditambahkan";
+		}
+	}	
+
+	function tampilPsanksi(){
+		$ambildata = mysql_query("SELECT ps.id_psanksi, ps.nama_sanksi, ps.bobot ,COUNT(pm.id_psanksi) AS jumlah FROM psanksi ps LEFT JOIN pmain pm ON ps.id_psanksi = pm.id_psanksi GROUP BY ps.nama_sanksi") or die(mysql_error());
+		if (mysql_num_rows($ambildata) > 0) {
+			while ($ad = mysql_fetch_assoc($ambildata)) // Perulangan while ini JANGAN pake {}
+				$data[] = $ad;
+				return $data;
+		} else{
+			echo "Sanksi belum ditambahkan";
+		}
+	}		
+
+	function tampilPlanjut(){
+		$ambildata = mysql_query("SELECT pl.id_planjut, pl.nama_tindaklanjut, ps.nama_sanksi, COUNT(pm.id_planjut) AS jumlah FROM planjut pl LEFT JOIN pmain pm ON pl.id_planjut = pm.id_planjut LEFT JOIN psanksi ps ON pl.id_psanksi = ps.id_psanksi GROUP BY pl.nama_tindaklanjut") or die(mysql_error());
+		if (mysql_num_rows($ambildata) > 0) {
+			while ($ad = mysql_fetch_assoc($ambildata)) // Perulangan while ini JANGAN pake {}
+				$data[] = $ad;
+				return $data;
+		} else{
+			echo "Sanksi belum ditambahkan";
+		}
+	}	
+
 	function MhsByPembinaDetail($idPembina){
 		$ambildata = mysql_query("SELECT mb.id_mahasiswa, m.nim , m.nama AS 'nama_mahasiswa', m.id_user AS 'uid_mahasiswa', p.id_user AS 'uid_pembina' FROM m_binaan mb LEFT JOIN mahasiswa m ON mb.id_mahasiswa = m.id_mahasiswa LEFT JOIN pembina p ON mb.id_pembina = p.id_pembina WHERE mb.id_pembina = $idPembina ORDER BY m.nama");
 		if (mysql_num_rows($ambildata) > 0) {

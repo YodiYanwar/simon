@@ -31,24 +31,28 @@
                   <tr>
                     <th>NO</th>
                     <th>Tindak Lanjut</th>
+                    <th>Sanksi</th>
                     <th>Jumlah Pelanggaran</th>
                   </tr>
                 </thead>
                 <tbody>
                   <?php 
-                    /*$dataMahasiswa = tampilMahasiswa();
+                    $dataPlanjut = tampilPlanjut();
                     
                     $no = 1;
-                  if (is_array($dataMahasiswa) || is_object($dataMahasiswa)){
-                    foreach($dataMahasiswa as $row){*/
+                  if (is_array($dataPlanjut) || is_object($dataPlanjut)){
+                    foreach($dataPlanjut as $row){
 
                    ?>
                 <tr>
-                  
+                  <td><?php echo $no; ?></td>
+                  <td><?php echo $row['nama_tindaklanjut']; ?></td>
+                  <td><?php echo $row['nama_sanksi']; ?></td>
+                  <td><?php echo $row['jumlah']; ?></td>
                 </tr>
                  <?php 
-                   // $no++; }
-                  // }
+                    $no++; }
+                  }
                 ?>      
                 </tbody>          
               </table>
