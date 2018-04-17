@@ -185,7 +185,7 @@
                     }
                   }
                 ?>
-             ><a href="?page=pbentuk"><i class="fa fa-tachometer"></i> Bentuk Pelanggaran</a></li>
+             ><a href="?page=pbentuk"><i class="fa fa-cube"></i> Bentuk Pelanggaran</a></li>
              <li <?php 
                   if (isset($_GET['page'])) {
                     if ($_GET['page'] == 'paksi') {

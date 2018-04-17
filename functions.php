@@ -93,6 +93,17 @@
 		}		
 	}	
 
+	function tampilPbentuk(){
+		$ambildata = mysql_query("SELECT pb.id_pbentuk, pb.nama_bentuk, COUNT(DISTINCT pm.id_pbentuk) AS jumlah FROM pbentuk pb LEFT JOIN pmain pm ON pb.id_pbentuk = pm.id_pbentuk GROUP BY pb.nama_bentuk") or die(mysql_error());
+		if (mysql_num_rows($ambildata) > 0) {
+			while ($ad = mysql_fetch_assoc($ambildata)) // Perulangan while ini JANGAN pake {}
+				$data[] = $ad;
+				return $data;
+		} else{
+			echo "Bentuk pelanggaran belum ditambahkan";
+		}
+	}
+
 	function MhsByPembinaDetail($idPembina){
 		$ambildata = mysql_query("SELECT mb.id_mahasiswa, m.nim , m.nama AS 'nama_mahasiswa', m.id_user AS 'uid_mahasiswa', p.id_user AS 'uid_pembina' FROM m_binaan mb LEFT JOIN mahasiswa m ON mb.id_mahasiswa = m.id_mahasiswa LEFT JOIN pembina p ON mb.id_pembina = p.id_pembina WHERE mb.id_pembina = $idPembina ORDER BY m.nama");
 		if (mysql_num_rows($ambildata) > 0) {

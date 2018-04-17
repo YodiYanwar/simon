@@ -36,19 +36,21 @@
                 </thead>
                 <tbody>
                   <?php 
-                    /*$dataMahasiswa = tampilMahasiswa();
+                    $dataPBentuk = tampilPbentuk();
                     
                     $no = 1;
-                  if (is_array($dataMahasiswa) || is_object($dataMahasiswa)){
-                    foreach($dataMahasiswa as $row){*/
+                  if (is_array($dataPBentuk) || is_object($dataPBentuk)){
+                    foreach($dataPBentuk as $row){
 
                    ?>
                 <tr>
-                  
+                  <td><?php echo $no; ?></td>
+                  <td><?php echo $row['nama_bentuk']; ?></td>
+                  <td><?php echo $row['jumlah']; ?></td>
                 </tr>
                  <?php 
-                   // $no++; }
-                  // }
+                   $no++; }
+                  }
                 ?>      
                 </tbody>          
               </table>
