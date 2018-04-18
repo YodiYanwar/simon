@@ -150,7 +150,7 @@
 
 	function pDetailById($kategori, $id){
 
-		$sql = "SELECT id_pelanggaran, b.uid_pembina, b.id_pembina, b.namap, uid_mhs, b.nim, b.id_mahasiswa, b.namamhs, nama_bentuk, nama_aksi, nama_sanksi, nama_tindaklanjut, deskripsi, tanggal FROM pmain pm LEFT JOIN pbentuk pb ON pm.id_pbentuk = pb.id_pbentuk LEFT JOIN paksi pa ON pm.id_paksi = pa.id_paksi LEFT JOIN psanksi ps ON pm.id_psanksi = ps.id_psanksi LEFT JOIN planjut pl ON pm.id_planjut = pl.id_planjut LEFT JOIN( SELECT p.id_pembina, p.id_user AS uid_pembina, p.nama AS namap, m.id_user AS uid_mhs, m.nim, m.id_mahasiswa, m.nama AS namamhs, mb.id_mhsbinaan FROM m_binaan mb LEFT JOIN pembina p ON mb.id_pembina = p.id_pembina LEFT JOIN mahasiswa m ON mb.id_mahasiswa = m.id_mahasiswa ) b ON pm.id_mhsbinaan = b.id_mhsbinaan";
+		$sql = "SELECT id_pelanggaran, b.uid_pembina, b.id_pembina, b.namap, uid_mhs, b.nim, b.id_mahasiswa, b.namamhs, pb.id_pbentuk, nama_bentuk, pa.id_paksi, nama_aksi, ps.id_psanksi, nama_sanksi, pl.id_planjut, nama_tindaklanjut, deskripsi, tanggal FROM pmain pm LEFT JOIN pbentuk pb ON pm.id_pbentuk = pb.id_pbentuk LEFT JOIN paksi pa ON pm.id_paksi = pa.id_paksi LEFT JOIN psanksi ps ON pm.id_psanksi = ps.id_psanksi LEFT JOIN planjut pl ON pm.id_planjut = pl.id_planjut LEFT JOIN( SELECT p.id_pembina, p.id_user AS uid_pembina, p.nama AS namap, m.id_user AS uid_mhs, m.nim, m.id_mahasiswa, m.nama AS namamhs, mb.id_mhsbinaan FROM m_binaan mb LEFT JOIN pembina p ON mb.id_pembina = p.id_pembina LEFT JOIN mahasiswa m ON mb.id_mahasiswa = m.id_mahasiswa ) b ON pm.id_mhsbinaan = b.id_mhsbinaan";
 
 		if ($kategori == 'ikhtisar') {
 			$ambildata = mysql_query($sql." WHERE id_pelanggaran = $id") or die(mysql_error());

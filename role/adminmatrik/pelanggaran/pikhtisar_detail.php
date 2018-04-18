@@ -55,22 +55,22 @@
                   <tr>
                     <th>Bentuk Pelanggaran</th>
                     <td>:</td>
-                    <td><?php echo $row['nama_bentuk']; ?></td>
+                    <td><a href="?page=pbentukdetail&id=<?php echo $row['id_pbentuk']; ?>"><?php echo $row['nama_bentuk']; ?></a></td>
                   </tr>
                   <tr>
                     <th>Aksi Pelanggaran</th>
                     <td>:</td>
-                    <td><?php echo $row['nama_aksi']; ?></td>
+                    <td><a href="?page=paksidetail&id=<?php echo $row['id_paksi']; ?>"><?php echo $row['nama_aksi']; ?></a></td>
                   </tr>
                   <tr>
                     <th>Sanksi</th>
                     <td>:</td>
-                    <td><?php echo $row['nama_sanksi']; ?></td>
+                    <td><a href="?page=psanksidetail&id=<?php echo $row['id_psanksi']; ?>"><?php echo $row['nama_sanksi']; ?></a></td>
                   </tr>
                   <tr>
                     <th>Tindak Lanjut</th>
                     <td>:</td>
-                    <td><?php echo $row['nama_tindaklanjut']; ?></td>
+                    <td><a href="?page=planjutdetail&id=<?php echo $row['id_planjut']; ?>"><?php echo $row['nama_tindaklanjut']; ?></a></td>
                   </tr>
                   <tr>
                     <th>Tanggal</th>

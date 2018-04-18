@@ -46,7 +46,7 @@
                    ?>
                 <tr>
                   <td><?php echo $no; ?></td>
-                  <td><a href="?page=planjutkdetail&id=<?php echo $row['id_planjut']; ?> "><?php echo $row['nama_tindaklanjut']; ?></a></td>
+                  <td><a href="?page=planjutdetail&id=<?php echo $row['id_planjut']; ?> "><?php echo $row['nama_tindaklanjut']; ?></a></td>
                   <td><?php echo $row['nama_sanksi']; ?></td>
                   <td><?php echo $row['jumlah']; ?></td>
                 </tr>
