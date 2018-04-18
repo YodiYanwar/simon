@@ -19,7 +19,7 @@
     <!-- Main content -->
     <section class="content">
       <div class="row">
-        <div class="col-xs-12">
+        <div class="col-md-10">
           <div class="box box-primary">
             <div class="box-header">
               <h3 class="box-title">Detil Pelanggaran</h3>
@@ -30,54 +30,57 @@
             <div class="box-body">
               <!-- Table Daftar Pembina -->
               <table id="tablePelanggaran" class="table table-condensed">
+              <col width="170">
+              <col width="20">
+              <col width="750">
               <?php 
                 $dataPelanggaran = pIkhtisarDetailById($idP);
                 foreach($dataPelanggaran as $row){ 
                ?>
                   <tr> 
                     <th>ID Pelanggaran</th>
-                    <th>:</th>
+                    <td>:</td>
                     <td><?php echo $row['id_pelanggaran']; ?></td>
                   </tr>
                   <tr>
                     <th>Nama Mahasiswa</th>
-                    <th>:</th>
+                    <td>:</td>
                     <td><a href="?page=mahasiswadetails&id=<?php echo $row['uid_mhs']; ?>"><?php echo $row['namamhs']; ?></a></td>
                   </tr>
                   <tr>
                     <th>Nama Pembina</th>
-                    <th>:</th>
+                    <td>:</td>
                     <td><a href="?page=pembinadetails&id=<?php echo $row['uid_pembina']; ?>"><?php echo $row['namap']; ?></a></td>
                   </tr>
                   <tr>
                     <th>Bentuk Pelanggaran</th>
-                    <th>:</th>
+                    <td>:</td>
                     <td><?php echo $row['nama_bentuk']; ?></td>
                   </tr>
                   <tr>
                     <th>Aksi Pelanggaran</th>
-                    <th>:</th>
+                    <td>:</td>
                     <td><?php echo $row['nama_aksi']; ?></td>
                   </tr>
                   <tr>
                     <th>Sanksi</th>
-                    <th>:</th>
+                    <td>:</td>
                     <td><?php echo $row['nama_sanksi']; ?></td>
                   </tr>
                   <tr>
                     <th>Tindak Lanjut</th>
-                    <th>:</th>
+                    <td>:</td>
                     <td><?php echo $row['nama_tindaklanjut']; ?></td>
                   </tr>
                   <tr>
-                    <th>Keterangan</th>
-                    <th>:</th>
-                    <td><?php echo $row['deskripsi']; ?></td>
+                    <th>Tanggal</th>
+                    <td>:</td>
+                    <td><?php echo $row['tanggal']; ?></td>
                   </tr>
                   <tr>
-                    <th>Tanggal</th>
-                    <th>:</th>
-                    <td><?php echo $row['tanggal']; ?></td>
+                    <th>Keterangan</th>
+                    <td height="100">:</td>
+                    <td><?php echo $row['deskripsi']; ?></td>
                   </tr>
                   <?php } ?>
                 </table>
