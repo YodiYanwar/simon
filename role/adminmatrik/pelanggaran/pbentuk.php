@@ -66,7 +66,7 @@
         </div>
       </div>      
 
-      <!-- Modal Tambah Pembina -->
+      <!-- Modal Tambah Bentuk Pelanggaran -->
       <div class="modal fade" id="tambahPbentuk" role="dialog">
             <div class="modal-dialog" role="document">
               <form class="form-horizontal" method="POST">
@@ -83,13 +83,21 @@
                         </div>
                     </div>                  
                     <div class="modal-footer">
-                      <button type="button" class="btn btn-secondary" data-dismiss="modal"><i class="fa fa-undo" aria-hidden="true"></i>&nbsp;Batal</button>                
-                      <button type="submit" class="btn btn-primary" name="tambahPembina"><i class="fa fa-check" aria-hidden="true"></i>&nbsp;Submit</button>
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal"><i class="fa fa-undo" aria-hidden="true"></i>&nbsp;Batal</button>
+                      <button type="submit" class="btn btn-primary" name="tambahPbentuk"><i class="fa fa-check" aria-hidden="true"></i>&nbsp;Submit</button>
                     </div>
                   </div>
                 </form>    
               </div>
         </div>
-        <!-- /Modal Tambah Pembina -->
+        <!-- /Modal Tambah Bentuk Pelanggaran -->
+
+    <?php 
+      if (isset($_POST['tambahPbentuk'])) {
+        tambahPbentuk($_POST['nama_bentuk']);
+        echo "<script>document.location='index.php?page=pbentuk'</script>";
+      }
+    ?> 
+
     </section>
     <!-- /.content -->

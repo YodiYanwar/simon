@@ -104,6 +104,10 @@
 		}
 	}
 
+	function tambahPbentuk($nama_bentuk){
+		mysql_query("INSERT INTO pbentuk(nama_bentuk) VALUES ('$nama_bentuk'); ");
+	}
+
 	function tampilPaksi(){
 		$ambildata = mysql_query("SELECT pa.id_paksi, pa.nama_aksi, COUNT(pm.id_paksi) AS jumlah FROM paksi pa LEFT JOIN pmain pm ON pa.id_paksi = pm.id_paksi GROUP BY pa.nama_aksi ORDER BY jumlah DESC") or die(mysql_error());
 		if (mysql_num_rows($ambildata) > 0) {
