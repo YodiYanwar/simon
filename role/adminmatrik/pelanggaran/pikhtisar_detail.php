@@ -35,7 +35,7 @@
               <col width="20">
               <col width="750">
               <?php 
-                $dataPelanggaran = pDetailById($idP);
+                $dataPelanggaran = pDetailById('ikhtisar', $idP);
                 foreach($dataPelanggaran as $row){ 
                ?>
                   <tr> 
