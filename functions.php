@@ -113,7 +113,7 @@
 		} else{
 			echo "Bentuk pelanggaran belum ditambahkan";
 		}
-	}
+	}	
 
 	function tambahPbentuk($nama_bentuk){
 		mysql_query("INSERT INTO pbentuk(nama_bentuk) VALUES ('$nama_bentuk'); ");
