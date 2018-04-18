@@ -20,7 +20,7 @@
         <div class="col-xs-12">
           <div class="box">
             <div class="box-header with-border">
-             <button class="btn btn-primary" data-toggle="modal" data-target="#tambahPsanksi"><i class="fa fa-plus"></i>&nbsp;Tambah</i></button>
+             <!-- <button class="btn btn-primary" data-toggle="modal" data-target="#tambahPsanksi"><i class="fa fa-plus"></i>&nbsp;Tambah</i></button> -->
             </div>
             <!-- /.box-header -->
             <!-- /.box-header -->

@@ -78,22 +78,25 @@
                         <div class="form-group">
                           <label class="control-label col-sm-4" for="paksi">Aksi Pelanggaran:</label>
                           <div class="col-sm-8">
-                            <input type="text" class="form-control" id="paksi" placeholder="Masukan Aksi Bentuk Pelanggaran" name="nama_aksi">
+                            <input type="text" class="form-control" id="paksi" placeholder="Masukan Aksi Bentuk Pelanggaran" name="nama_aksi" required>
                           </div>
                         </div>
                         <div class="form-group">
                           <label class="control-label col-sm-4" for="paksi">Bentuk Pelanggaran:</label>
                           <div class="col-sm-8">
-                            <select id="kota" name="kota" class="form-control">
+                            <select id="pbentuk" name="idPbentuk" class="form-control" required>
                                 <option value="">Pilih</option>
                                 <?php
-                                  $query = mysql_query("SELECT id_pbentuk, nama_bentuk FROM pbentuk");
-                                  while ($row = mysql_fetch_array($query)) {
+                                  $namaPbentuk = tampilPbentukAsModal();
+
+                                  if (is_array($namaPbentuk) || is_object($namaPbentuk)){
+                                    foreach($namaPbentuk as $row){
                                 ?>
-                                    <option id="kota" class="<?php echo $row['id_pbentuk']; ?>" value="<?php echo $row['id_pbentuk']; ?>">
+                                    <option id="pbentuk" class="<?php echo $row['id_pbentuk']; ?>" value="<?php echo $row['id_pbentuk']; ?>">
                                         <?php echo $row['nama_bentuk']; ?>
                                     </option>
                                 <?php
+                                   }
                                   }
                                 ?>
                             </select>  
@@ -109,6 +112,13 @@
               </div>
         </div>
         <!-- /Modal Tambah Aksi Pelanggaran -->
+
+    <?php 
+      if (isset($_POST['tambahPaksi'])) {
+        tambahPaksi($_POST['idPbentuk'], $_POST['nama_aksi']);
+        echo "<script>document.location='index.php?page=paksi'</script>";
+      }
+    ?> 
 
     </section>
     <!-- /.content -->

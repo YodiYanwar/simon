@@ -104,8 +104,23 @@
 		}
 	}
 
+	function tampilPbentukAsModal(){
+		$ambildata = mysql_query("SELECT id_pbentuk, nama_bentuk FROM pbentuk") or die(mysql_error());
+		if (mysql_num_rows($ambildata) > 0) {
+			while ($ad = mysql_fetch_assoc($ambildata)) // Perulangan while ini JANGAN pake {}
+				$data[] = $ad;
+				return $data;
+		} else{
+			echo "Bentuk pelanggaran belum ditambahkan";
+		}
+	}
+
 	function tambahPbentuk($nama_bentuk){
 		mysql_query("INSERT INTO pbentuk(nama_bentuk) VALUES ('$nama_bentuk'); ");
+	}
+
+	function tambahPaksi($idPbentuk, $namaAksi){
+		mysql_query("INSERT INTO paksi(id_pbentuk, nama_aksi) VALUES ('$idPbentuk', '$namaAksi'); ");
 	}
 
 	function tampilPaksi(){
