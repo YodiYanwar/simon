@@ -29,7 +29,7 @@
               <table id="tablePelanggaran" class="table table-bordered table-hover table-condensed">
                 <thead>
                   <tr>
-                    <th>NO</th>
+                    <th>Level</th>
                     <th>Tindak Lanjut</th>
                     <th>Sanksi</th>
                     <th>Jumlah Pelanggaran</th>
