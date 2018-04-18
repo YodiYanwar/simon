@@ -168,7 +168,7 @@
 		}
 	}
 
-	function tampilNamaKategori($table, $column, $row, $id){
+	function tampilSesuatu($table, $column, $row, $id){
 		$ambildata = mysql_query("SELECT $column FROM $table WHERE $row = $id");
 		$data = mysql_fetch_assoc($ambildata);
 		return $data;

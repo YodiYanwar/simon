@@ -2,7 +2,7 @@
   include 'functions.php';
   $idPbentuk = $_GET['id']; 
 
-  $nbP = tampilNamaKategori('pbentuk', 'nama_bentuk', 'id_pbentuk', $idPbentuk);
+  $nbP = tampilSesuatu('pbentuk', 'nama_bentuk', 'id_pbentuk', $idPbentuk);
  ?>    
     <!-- Content Header (Page header) -->
     <section class="content-header">
