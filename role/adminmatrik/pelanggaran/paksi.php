@@ -81,6 +81,24 @@
                             <input type="text" class="form-control" id="paksi" placeholder="Masukan Aksi Bentuk Pelanggaran" name="nama_aksi">
                           </div>
                         </div>
+                        <div class="form-group">
+                          <label class="control-label col-sm-4" for="paksi">Bentuk Pelanggaran:</label>
+                          <div class="col-sm-8">
+                            <select id="kota" name="kota" class="form-control">
+                                <option value="">Pilih</option>
+                                <?php
+                                  $query = mysql_query("SELECT id_pbentuk, nama_bentuk FROM pbentuk");
+                                  while ($row = mysql_fetch_array($query)) {
+                                ?>
+                                    <option id="kota" class="<?php echo $row['id_pbentuk']; ?>" value="<?php echo $row['id_pbentuk']; ?>">
+                                        <?php echo $row['nama_bentuk']; ?>
+                                    </option>
+                                <?php
+                                  }
+                                ?>
+                            </select>  
+                          </div>
+                        </div>
                     </div>                  
                     <div class="modal-footer">
                       <button type="button" class="btn btn-secondary" data-dismiss="modal"><i class="fa fa-undo" aria-hidden="true"></i>&nbsp;Batal</button>
