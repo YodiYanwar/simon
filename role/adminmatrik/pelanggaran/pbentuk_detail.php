@@ -1,6 +1,8 @@
 <?php 
   include 'functions.php';
   $idPbentuk = $_GET['id']; 
+
+  $nbP = tampilNamaKategori('pbentuk', 'nama_bentuk', 'id_pbentuk', $idPbentuk);
  ?>    
     <!-- Content Header (Page header) -->
     <section class="content-header">
@@ -23,6 +25,7 @@
         <div class="col-xs-12">
           <div class="box">
             <div class="box-header">
+              <h3 class="box-title"><?php foreach($nbP as $namaPbentuk){ echo $namaPbentuk; }?></h3>
             </div>
             <!-- /.box-header -->
             <!-- /.box-header -->
