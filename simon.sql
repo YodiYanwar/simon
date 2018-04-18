@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 17, 2018 at 09:48 AM
+-- Generation Time: Apr 18, 2018 at 10:12 AM
 -- Server version: 10.1.25-MariaDB
 -- PHP Version: 5.6.31
 
@@ -571,7 +571,8 @@ CREATE TABLE `pbentuk` (
 INSERT INTO `pbentuk` (`id_pbentuk`, `nama_bentuk`) VALUES
 (1, 'Melakukan perbuatan maksiat yang dapat mencemarkan nama baik pribadi dan\r\natau STEI TAZKIA'),
 (2, 'Berkhalwat'),
-(3, 'merokok');
+(3, 'merokok'),
+(4, 'Rokok');
 
 -- --------------------------------------------------------
 
@@ -1237,10 +1238,35 @@ ALTER TABLE `adminmatrik`
 ALTER TABLE `m_binaan`
   MODIFY `id_mhsbinaan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 --
+-- AUTO_INCREMENT for table `paksi`
+--
+ALTER TABLE `paksi`
+  MODIFY `id_paksi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+--
+-- AUTO_INCREMENT for table `pbentuk`
+--
+ALTER TABLE `pbentuk`
+  MODIFY `id_pbentuk` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+--
 -- AUTO_INCREMENT for table `pembina`
 --
 ALTER TABLE `pembina`
   MODIFY `id_pembina` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
+--
+-- AUTO_INCREMENT for table `planjut`
+--
+ALTER TABLE `planjut`
+  MODIFY `id_planjut` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+--
+-- AUTO_INCREMENT for table `pmain`
+--
+ALTER TABLE `pmain`
+  MODIFY `id_pelanggaran` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+--
+-- AUTO_INCREMENT for table `psanksi`
+--
+ALTER TABLE `psanksi`
+  MODIFY `id_psanksi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT for table `users`
 --
@@ -1250,20 +1276,6 @@ ALTER TABLE `users`
 -- Constraints for dumped tables
 --
 
-ALTER TABLE `pmain`
-  MODIFY `id_pelanggaran` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
-
-ALTER TABLE pbentuk
-  MODIFY `id_pbentuk` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
-
-ALTER TABLE paksi
-  MODIFY `id_paksi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
-
-ALTER TABLE psanksi
-  MODIFY `id_psanksi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
-
-ALTER TABLE planjut
-  MODIFY `id_planjut` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;      
 --
 -- Constraints for table `administrator`
 --
