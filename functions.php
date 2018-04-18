@@ -94,7 +94,7 @@
 	}	
 
 	function tampilPbentuk(){
-		$ambildata = mysql_query("SELECT pb.id_pbentuk, pb.nama_bentuk, COUNT(DISTINCT pm.id_pbentuk) AS jumlah FROM pbentuk pb LEFT JOIN pmain pm ON pb.id_pbentuk = pm.id_pbentuk GROUP BY pb.nama_bentuk ORDER BY jumlah DESC") or die(mysql_error());
+		$ambildata = mysql_query("SELECT pb.id_pbentuk, pb.nama_bentuk, COUNT(pm.id_pbentuk) AS jumlah FROM pbentuk pb LEFT JOIN pmain pm ON pb.id_pbentuk = pm.id_pbentuk GROUP BY pb.nama_bentuk ORDER BY jumlah DESC") or die(mysql_error());
 		if (mysql_num_rows($ambildata) > 0) {
 			while ($ad = mysql_fetch_assoc($ambildata)) // Perulangan while ini JANGAN pake {}
 				$data[] = $ad;
@@ -105,7 +105,7 @@
 	}
 
 	function tampilPaksi(){
-		$ambildata = mysql_query("SELECT pa.id_paksi, pa.nama_aksi, COUNT(DISTINCT pm.id_paksi) AS jumlah FROM paksi pa LEFT JOIN pmain pm ON pa.id_paksi = pm.id_paksi GROUP BY pa.nama_aksi ORDER BY jumlah DESC") or die(mysql_error());
+		$ambildata = mysql_query("SELECT pa.id_paksi, pa.nama_aksi, COUNT(pm.id_paksi) AS jumlah FROM paksi pa LEFT JOIN pmain pm ON pa.id_paksi = pm.id_paksi GROUP BY pa.nama_aksi ORDER BY jumlah DESC") or die(mysql_error());
 		if (mysql_num_rows($ambildata) > 0) {
 			while ($ad = mysql_fetch_assoc($ambildata)) // Perulangan while ini JANGAN pake {}
 				$data[] = $ad;

@@ -53,7 +53,7 @@
                   <td><?php echo $row['nama_aksi']; ?></td>
                   <td><?php echo $row['nama_sanksi']; ?></td>
                   <td><?php echo $row['nama_tindaklanjut']; ?></td>
-                  <td><?php echo $row['tanggal']; ?></td>
+                  <td><?php echo date('d M Y', strtotime($row['tanggal'])); ?></td>
                   <td><a class="btn btn-info btn-sm" href="index.php?page=pmaindetail&id=<?php echo $row['id_pelanggaran']; ?>"><i class="fa fa-plus"></i>&nbsp;Detil</a></td>
                 </tr>
                  <?php 
