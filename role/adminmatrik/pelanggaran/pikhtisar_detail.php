@@ -35,32 +35,48 @@
                ?>
                   <tr> 
                     <th>ID Pelanggaran</th>
+                    <th>:</th>
                     <td><?php echo $row['id_pelanggaran']; ?></td>
                   </tr>
                   <tr>
                     <th>Nama Mahasiswa</th>
+                    <th>:</th>
                     <td><?php echo $row['namamhs']; ?></td>
                   </tr>
-                  <th>Bentuk Pelanggaran</th>
+                  <tr>
+                    <th>Nama Pembina</th>
+                    <th>:</th>
+                    <td><?php echo $row['namap']; ?></td>
+                  </tr>
+                  <tr>
+                    <th>Bentuk Pelanggaran</th>
+                    <th>:</th>
                     <td><?php echo $row['nama_bentuk']; ?></td>
                   </tr>
                   <tr>
                     <th>Aksi Pelanggaran</th>
+                    <th>:</th>
                     <td><?php echo $row['nama_aksi']; ?></td>
                   </tr>
-                  <th>Sanksi</th>
+                  <tr>
+                    <th>Sanksi</th>
+                    <th>:</th>
                     <td><?php echo $row['nama_sanksi']; ?></td>
                   </tr>
                   <tr>
                     <th>Tindak Lanjut</th>
+                    <th>:</th>
                     <td><?php echo $row['nama_tindaklanjut']; ?></td>
                   </tr>
-                  <th>Keterangan</th>
-                    <td><?php echo $row['id_pelanggaran']; ?></td>
+                  <tr>
+                    <th>Keterangan</th>
+                    <th>:</th>
+                    <td><?php echo $row['deskripsi']; ?></td>
                   </tr>
                   <tr>
                     <th>Tanggal</th>
-                    <td><?php echo $row['namamhs']; ?></td>
+                    <th>:</th>
+                    <td><?php echo $row['tanggal']; ?></td>
                   </tr>
                   <?php } ?>
                 </table>
