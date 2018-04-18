@@ -20,7 +20,7 @@
         <div class="col-xs-12">
           <div class="box">
             <div class="box-header with-border">
-             <a href="index.php?page=tambahpbentuk" class="btn btn-primary"><i class="fa fa-plus"></i>&nbsp;Tambah</a>
+             <button class="btn btn-primary" data-toggle="modal" data-target="#tambahPbentuk"><i class="fa fa-plus"></i>&nbsp;Tambah</i></button>
             </div>
             <!-- /.box-header -->
             <!-- /.box-header -->
@@ -65,5 +65,31 @@
           <!-- /.box -->
         </div>
       </div>      
+
+      <!-- Modal Tambah Pembina -->
+      <div class="modal fade" id="tambahPbentuk" role="dialog">
+            <div class="modal-dialog" role="document">
+              <form class="form-horizontal" method="POST">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title"><i class="fa fa-cube" aria-hidden="true"></i>&nbsp; <b>Tambah Data Master Bentuk Pelanggaran Mahasiswa</b></h4>
+                    </div>
+                    <div class="modal-body">      
+                        <div class="form-group">
+                          <label class="control-label col-sm-4" for="pbentuk">Bentuk Pelanggaran:</label>
+                          <div class="col-sm-8">
+                            <input type="text" class="form-control" id="pbentuk" placeholder="Masukan Nama Bentuk Pelanggaran" name="nama_bentuk">
+                          </div>
+                        </div>
+                    </div>                  
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal"><i class="fa fa-undo" aria-hidden="true"></i>&nbsp;Batal</button>                
+                      <button type="submit" class="btn btn-primary" name="tambahPembina"><i class="fa fa-check" aria-hidden="true"></i>&nbsp;Submit</button>
+                    </div>
+                  </div>
+                </form>    
+              </div>
+        </div>
+        <!-- /Modal Tambah Pembina -->
     </section>
     <!-- /.content -->
