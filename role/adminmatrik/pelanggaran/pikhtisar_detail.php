@@ -1,7 +1,6 @@
 <?php 
   include 'functions.php';
-
-    $idP = $_GET['id']; 
+  $idP = $_GET['id']; 
  ?>    
     <!-- Content Header (Page header) -->
     <section class="content-header">
@@ -13,7 +12,7 @@
         <li><a href="index.php"><i class="fa fa-dashboard"></i> Dashboard</a></li>
         <li>Pelanggaran</li>
         <li><a href="?page=pikhtisar">Ikhtisar</a></li>
-        <li class="active">Detil</li>
+        <li class="active">Detil Pelanggaran</li>
       </ol>
     </section>
 

@@ -1,16 +1,19 @@
 <?php 
   include 'functions.php';
+  $idPbentuk = $_GET['id']; 
  ?>    
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
+        <a class="btn btn-primary" href="index.php?page=pbentuk"><i class="fa fa-arrow-left"></i></a>&nbsp;
         Pelanggaran
         <small>Berdasarkan Bentuk Pelanggaran</small>
       </h1>
       <ol class="breadcrumb">
         <li><a href="index.php"><i class="fa fa-dashboard"></i> Dashboard</a></li>
         <li>Pelanggaran</li>
-        <li class="active">Bentuk Pelanggaran</li>
+        <li><a href="?page=pbentuk">Bentuk Pelanggaran</a></li>
+        <li class="active">Detil</li>
       </ol>
     </section>
 
@@ -19,8 +22,7 @@
       <div class="row">
         <div class="col-xs-12">
           <div class="box">
-            <div class="box-header with-border">
-             <a href="index.php?page=tambahpbentuk" class="btn btn-primary"><i class="fa fa-plus"></i>&nbsp;Tambah</a>
+            <div class="box-header">
             </div>
             <!-- /.box-header -->
             <!-- /.box-header -->
@@ -29,14 +31,16 @@
               <table id="tablePelanggaran" class="table table-bordered table-hover table-condensed">
                 <thead>
                   <tr>
-                    <th>NO</th>
-                    <th>Bentuk Pelanggaran</th>
-                    <th>Jumlah Pelanggaran</th>
+                    <th>ID Pelanggaran</th>
+                    <th>Nama Mahasiswa</th>
+                    <th>Aksi Pelanggaran</th>
+                    <th>Tanggal</th>
+                    <th></th>
                   </tr>
                 </thead>
                 <tbody>
                   <?php 
-                    $dataPBentuk = tampilPbentuk();
+                    $dataPBentuk = pDetailById('pbentuk', $idPbentuk);
                     
                     $no = 1;
                   if (is_array($dataPBentuk) || is_object($dataPBentuk)){
@@ -44,12 +48,14 @@
 
                    ?>
                 <tr>
-                  <td><?php echo $no; ?></td>
-                  <td><a href="?page=pbentukdetail&id=<?php echo $row['id_pbentuk']; ?> "><?php echo $row['nama_bentuk']; ?></a></td>
-                  <td><?php echo $row['jumlah']; ?></td>
+                  <td><?php echo $row['id_pelanggaran']; ?></td>
+                  <td><?php echo $row['namamhs']; ?></td>
+                  <td><?php echo $row['nama_aksi']; ?></td>
+                  <td><?php echo date('d M Y', strtotime($row['tanggal'])); ?></td>
+                  <td><a class="btn btn-info btn-sm" href="index.php?page=pmaindetail&id=<?php echo $row['id_pelanggaran']; ?>"><i class="fa fa-plus"></i>&nbsp;Detil</a></td>
                 </tr>
                  <?php 
-                   $no++; }
+                    }
                   }
                 ?>      
                 </tbody>          
