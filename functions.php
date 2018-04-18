@@ -160,6 +160,9 @@
 		} else
 		if($kategori == 'paksi'){
 			$ambildata = mysql_query($sql." WHERE pa.id_paksi = $id") or die(mysql_error());
+		} else
+		if($kategori == 'psanksi'){
+			$ambildata = mysql_query($sql." WHERE ps.id_psanksi = $id") or die(mysql_error());
 		}
 		
 		if (mysql_num_rows($ambildata) > 0) {
