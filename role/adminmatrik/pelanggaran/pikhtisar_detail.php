@@ -42,12 +42,12 @@
                   <tr>
                     <th>Nama Mahasiswa</th>
                     <th>:</th>
-                    <td><?php echo $row['namamhs']; ?></td>
+                    <td><a href="?page=mahasiswadetails&id=<?php echo $row['uid_mhs']; ?>"><?php echo $row['namamhs']; ?></a></td>
                   </tr>
                   <tr>
                     <th>Nama Pembina</th>
                     <th>:</th>
-                    <td><?php echo $row['namap']; ?></td>
+                    <td><a href="?page=pembinadetails&id=<?php echo $row['uid_pembina']; ?>"><?php echo $row['namap']; ?></a></td>
                   </tr>
                   <tr>
                     <th>Bentuk Pelanggaran</th>
