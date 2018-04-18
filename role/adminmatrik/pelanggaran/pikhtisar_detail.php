@@ -76,7 +76,7 @@
                   <tr>
                     <th>Tanggal</th>
                     <td>:</td>
-                    <td><?php echo $row['tanggal']; ?></td>
+                    <td><?php echo date('d F Y', strtotime($row['tanggal'])); ?></td>
                   </tr>
                   <tr>
                     <th>Keterangan</th>
