@@ -154,7 +154,7 @@
         <!--/ Sidebar Pelanggaran -->
         <li class="treeview <?php 
               if (isset($_GET['page'])) {
-                    if ($_GET['page'] == 'pikhtisar' || $_GET['page'] == 'pbentuk' || $_GET['page'] == 'paksi' || $_GET['page'] == 'psanksi' || $_GET['page'] == 'planjut') {
+                    if ($_GET['page'] == 'pikhtisar' || $_GET['page'] == 'pbentuk' || $_GET['page'] == 'paksi' || $_GET['page'] == 'psanksi' || $_GET['page'] == 'planjut' || $_GET['page'] == 'pmaindetail') {
                       echo ' active';
                     } else{
                       echo '';
@@ -172,7 +172,7 @@
           <ul class="treeview-menu">
             <li <?php 
                   if (isset($_GET['page'])) {
-                    if ($_GET['page'] == 'pikhtisar') {
+                    if ($_GET['page'] == 'pikhtisar' || $_GET['page'] == 'pmaindetail') {
                       echo "class='active'";
                     }
                   }
@@ -294,6 +294,8 @@
 	          include 'pelanggaran/planjut.php';
 	        } else if ($_GET['page'] == 'pikhtisar') {
             include 'pelanggaran/pikhtisar.php';
+          } else if ($_GET['page'] == 'pmaindetail') {
+            include 'pelanggaran/pikhtisar_detail.php';
           }
   		} else{
   			include 'dashboard.php';
