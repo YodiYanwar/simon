@@ -12,6 +12,7 @@
       <ol class="breadcrumb">
         <li><a href="index.php"><i class="fa fa-dashboard"></i> Dashboard</a></li>
         <li>Pelanggaran</li>
+        <li><a href="?page=pikhtisar">Ikhtisar</a></li>
         <li class="active">Detil</li>
       </ol>
     </section>
