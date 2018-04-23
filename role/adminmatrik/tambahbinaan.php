@@ -34,7 +34,7 @@
             <div class="box-body">
               <form method="POST">
               <!-- Table Daftar Pembina -->
-                <table id="tablePembina" class="table table-bordered table-hover table-condensed">
+                <table id="tableUsers" class="table table-bordered table-hover table-condensed">
                   <thead>
                     <tr>
                       <th>Pilih</th>
@@ -53,7 +53,7 @@
                     <td><input type="checkbox" class="flat-red" name="idMahasiswa[]" value="<?php echo $row['id_mahasiswa']; ?>"></td>
                     <td><?php echo "<span class='badge'>".$row['nim']."</span>" ?></td>
                     <td><?php echo "<a href='index.php?page=mahasiswadetails&id=".$row['id_user']."'>".$row['nama']."</a>" ?></td>
-                    <td><?php if($row['j_kelamin'] == 'Ikhwan' || $row['j_kelamin'] == 'Laki-laki'){echo '<span class="label bg-green">Ikhwan</span>';} else if($row['j_kelamin'] == 'Akhwat' || $row['j_kelamin'] == 'Perempuan'){echo '<span class="label bg-yellow">Akhwat</span>';} else if($row['j_kelamin'] == NULL){echo '<span class="label bg-gray">Belum diset</span>';} ?></td>
+                    <td><?php if($row['j_kelamin'] == 'Ikhwan' || $row['j_kelamin'] == 'Laki-laki'){echo '<span class="label bg-green">Ikhwan</span>';} else if($row['j_kelamin'] == 'Akhwat' || $row['j_kelamin'] == 'Perempuan'){echo '<span class="label bg-yellow">Akhwat</span>';} else if($row['j_kelamin'] == NULL){echo '<h6><span class="label bg-gray">Belum diset</span></h6>';} ?></td>
                   </tr>
                     <?php 
                       $no++; }
@@ -74,33 +74,12 @@
           <!-- /.box -->
         </form>
         </div>
-      </div>      
-
-      <!-- Modal Tambah Pembina -->
-      <div class="modal fade" id="importMhsModal" role="dialog">
-            <div class="modal-dialog modal-sm" role="document">
-            <form method="POST">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h4 class="modal-title"><i class="fa fa-folder-open" aria-hidden="true"></i>&nbsp; <b>Import Data Mahasiswa</b></h4>
-                    </div>
-                    <div class="modal-body">
-                     
-                    </div>
-                    <div class="modal-footer">
-                      <button type="button" class="btn btn-secondary" data-dismiss="modal"><i class="fa fa-undo" aria-hidden="true"></i>&nbsp;Batal</button>                
-                      <button type="submit" class="btn btn-primary" name="importMahasiswa"><i class="fa fa-check" aria-hidden="true"></i>&nbsp;Submit</button>
-                    </div>
-                  </div>
-                </form>
-              </div>
-        </div>
-        <!-- /Modal Tambah Pembina -->      
+      </div>            
 
     <?php 
 
-    foreach($ip as $idP){
-      if (isset($_POST['submitBinaanMahasiswa'])) {
+      foreach($ip as $idP){
+        if (isset($_POST['submitBinaanMahasiswa'])) {
 
         if(!empty($_POST['idMahasiswa'])) {
           foreach($_POST['idMahasiswa'] as $idMhs) {

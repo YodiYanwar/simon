@@ -205,7 +205,7 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal"><i class="fa fa-undo"></i>&nbsp;Batal</button>
-                        <a href="logout.php" class="btn btn-danger" name="resetPass"><i class="fa fa-power-off"></i>&nbsp;Logout</a>  
+                        <a href="logout.php" class="btn btn-danger"><i class="fa fa-power-off"></i>&nbsp;Logout</a>  
                     </div>
                 </div>
             </div>

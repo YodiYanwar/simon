@@ -64,7 +64,7 @@
                 </li>                                  
               </ul>
                 <a href="index.php?page=editprofil" class='btn btn-primary btn-block'><i class='fa fa-pencil'></i>&nbsp;&nbsp;Edit Data Profil</a>
-                <?php echo "<a href='#ModalGantiPass' class='btn btn-warning btn-outline btn-block' data-toggle='modal' data-href='action/hapus.php?&iduser=".$row['id_user']."'><i class='fa fa-lock'></i>&nbsp;&nbsp;Ganti Password</a>"; ?>
+                <?php echo "<a href='#ModalGantiPass' class='btn btn-warning btn-outline btn-block' data-toggle='modal'><i class='fa fa-lock'></i>&nbsp;&nbsp;Ganti Password</a>"; ?>
             </div>
             <!-- /.box-body -->
           </div>

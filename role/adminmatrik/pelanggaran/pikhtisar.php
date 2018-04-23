@@ -65,10 +65,6 @@
               <!-- /Table Daftar Pembina -->
             </div>
             <!-- /.box-body -->            
-            <div class="box-body table-responsive no-padding">
-
-            </div>
-            <!-- /.box-body -->
           </div>
           <!-- /.box -->
         </div>

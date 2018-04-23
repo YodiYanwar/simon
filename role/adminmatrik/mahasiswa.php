@@ -26,7 +26,7 @@
             <!-- /.box-header -->
             <div class="box-body">
               <!-- Table Daftar Pembina -->
-              <table id="tablePembina" class="table table-bordered table-hover table-condensed">
+              <table id="tableMahasiswa" class="table table-bordered table-hover table-condensed">
                 <thead>
                   <tr>
                     <th></th>
@@ -115,7 +115,7 @@
 
     <script>
     $(document).ready(function() {
-      var t = $('#tablePembina').DataTable( {
+      var t = $('#tableMahasiswa').DataTable( {
             "processing": true,
             "serverSide": true,
             "ajax": "/simon/dataMahasiswa.php",

@@ -3,6 +3,7 @@
   include 'functions.php';
   $tb = totalPembina();
   $tm = totalMahasiswa();
+  $tp = totalPelanggaran();
    
 ?>
 
@@ -40,6 +41,7 @@
           <div class="small-box bg-green">
             <div class="inner">
               <h3><?php foreach($tm as $totalMahasiswa){ echo $totalMahasiswa; }?></h3>
+              
               <p>Jumlah Mahasiswa</p>
             </div>
             <div class="icon">
@@ -48,6 +50,19 @@
             <a href="index.php?page=mahasiswa" class="small-box-footer">Lebih Detil &nbsp;<i class="fa fa-arrow-circle-right"></i></a>
           </div>         
         </div>        
+        <div class="col-lg-3 col-xs-6">
+          <!-- small box -->
+          <div class="small-box bg-red">
+            <div class="inner">
+              <h3><?php foreach($tp as $totalPelanggaran){ echo $totalPelanggaran; }?></h3>
+              <p>Jumlah Pelanggaran</p>
+            </div>
+            <div class="icon">
+              <i class="ion ion-alert-circled ion-18"></i>
+            </div>
+            <a href="index.php?page=pikhtisar" class="small-box-footer">Lebih Detil &nbsp;<i class="fa fa-arrow-circle-right"></i></a>
+          </div>         
+        </div>  
       </div>
       <!-- /.row -->    
     </section>
